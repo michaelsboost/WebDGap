@@ -1,0 +1,127 @@
+@import url("normalize.css");
+@import url("fonts/font-awesome.css");
+@import url("fonts/macset.css");
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  background: rgb(0, 28, 66);
+  font: 20px 'Open Sans',helvetica, arial, sans-serif;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+/* Main Greeting */
+.head {
+  width: 100%;
+  height: 100%;
+  background-image: url("../freedom-in-the-shape-of-a-cross.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.column > header {
+  display: table;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  background: rgba(108, 65, 34, 0.64);
+  color: #fff;
+  text-align: center;
+  overflow: hidden;
+  font-size: 16px;
+}
+.column > header a {
+  color: #fff;
+  font-size: 3em;
+}
+nav {
+  display: table-cell;
+  vertical-align: middle;
+  z-index: 1;
+}
+p a.donate {
+  background: rgba(39, 140, 32, 0.63);
+  padding: .5em 0;
+  text-shadow: 0 0 4px #064F0B;
+  padding: .6em;
+  font-size: 100%;
+  color: #FCFDFE;
+  border-radius: 10px;
+}
+
+::-webkit-input-placeholder {
+  color: #CCC;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+  color: #CCC;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+  color: #CCC;
+}
+
+:-ms-input-placeholder {  
+  color: #CCC;
+}
+
+input[type=text]:focus {
+  outline: 0;
+  box-shadow: inset 0 0 4px rgba(0,0,0,0.5);
+}
+
+.comingsoon {
+  opacity: 0.5;
+}
+
+.msicon-osx {
+  position: relative;
+  top: 4px;
+}
+
+.nocur {
+  cursor: default;
+}
+
+/* Features/Preview */
+.preview {
+  width: 100%;
+  height: 100%;
+  background-position: top left;
+  background-repeat: no-repeat;
+}
+.preview {
+  background-image:url("../freedom-in-the-shape-of-a-cross.jpg");
+}
+
+/* Misc */
+.hide {
+  display: none;
+}
+h3, h4 {
+  margin: 0 0 1em 0;
+}
+.alert, .alert-danger {
+  background: rgba(219, 56, 56, 0.63);
+  padding: .5em 0;
+  text-shadow: 0 0 4px #B22121;
+  box-shadow: 0 0 1em rgba(102, 0, 0, 0.79);
+}
+.result ul {
+  padding: .5em 0;
+/*
+  background: rgba(38, 150, 190, 0.63);
+  text-shadow: 0 0 4px #426E0B;
+  box-shadow: 0 0 1em rgba(0, 40, 55, 0.63);
+*/
+  font-size: 100%;
+  color: #FCFDFE;
+}
