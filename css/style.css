@@ -20,13 +20,17 @@ a {
 
 /* Main Greeting */
 .head {
+  position: absolute;
+  top: 0;
+  bottom: 0;
   width: 100%;
   height: 100%;
   background-image: url("../freedom-in-the-shape-of-a-cross.jpg");
   background-position: center center;
   background-repeat: no-repeat;
+  overflow: auto;
 }
-.column > header {
+.column > div {
   display: table;
   position: absolute;
   width: 100%;
@@ -38,7 +42,7 @@ a {
   overflow: hidden;
   font-size: 16px;
 }
-.column > header a {
+.column > div a {
   color: #fff;
   font-size: 3em;
 }
