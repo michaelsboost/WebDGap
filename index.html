@@ -46,11 +46,9 @@
               <i class="fa fa-mobile"></i>
             </a>
             
-<!--
-            <a title="Download Chrome Application">
+            <a class="check export-as-chrome-app hide" title="Download Chrome Application">
               <i class="fa msicon-chrome"></i>
             </a>
--->
             
             <a title="Download the source code" href="https://github.com/mikethedj4/WebDGap" target="_blank">
               <i class="fa fa-github"></i>
@@ -60,7 +58,7 @@
               <i class="fa fa-paypal"></i>
             </a>
             
-            <a title="Load in a zip file" class="loadzip">
+            <a title="Load in a zip file" class="loadzip hide">
               <i class="fa fa-file-zip-o"></i>
             </a>
             
@@ -68,8 +66,19 @@
                 Note: Your browser will process the zip file, <u>don't choose a file too big!</u> <br /><br />
             </div>
             
+            <div>
+              <input type="file" class="load" accept="image/jpeg, image/png" />
+            </div>
+            
+            <div class="fill logo" align="center">
+              <canvas class="n16 hide" width="16" height="16"></canvas>
+              <canvas class="n32 hide" width="32" height="32"></canvas>
+              <canvas class="n64 hide" width="64" height="64"></canvas>
+              <canvas class="holder" width="128" height="128"></canvas>
+            </div>
+            
             <div class="hide">
-              <input type="file" id="file" name="file" multiple /> <br /><br />
+              <input type="file" id="file" name="file" accept="application/x-zip-compressed" multiple /> <br /><br />
             </div>
 
             <div class="error_block alert alert-danger hide">
