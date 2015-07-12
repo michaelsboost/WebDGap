@@ -28,7 +28,9 @@
           <h1>
             WebDGap
           </h1>
-          Web Apps to Native Desktop Apps
+          <h4>
+            Web Apps to Native Desktop Apps
+          </h4>
           <p>
             <a class="check export-as-win-app hide" title="Export for Windows">
               <i class="fa fa-windows"></i>
@@ -62,15 +64,15 @@
               <i class="fa fa-file-zip-o"></i>
             </a>
             
-            <div class="note">
+            <h4 class="note">
                 Note: Your browser will process the zip file, <u>don't choose a file too big!</u> <br /><br />
-            </div>
+            </h4>
             
             <div>
               <input type="file" class="load" accept="image/jpeg, image/png" />
             </div>
             
-            <div class="fill logo" align="center">
+            <div class="fill logo hide" align="center">
               <canvas class="n16 hide" width="16" height="16"></canvas>
               <canvas class="n32 hide" width="32" height="32"></canvas>
               <canvas class="n64 hide" width="64" height="64"></canvas>
@@ -92,6 +94,37 @@
         </nav>
       </div>
     </header>
+    
+    <!-- Main Dialog -->
+    <header class="dialog-bg column">
+      <div>
+        <nav>
+          <div class="grid dialog">
+            <div class="grid__col--12"> 
+              <form class="form">
+                <input class="form__input input name" type="text" placeholder="Application Name">
+
+                <textarea class="form__input descr" placeholder="Description" rows="7"></textarea>
+                
+                <h4>
+                  Offline:
+                </h4>
+                
+                <p class="onoffswitch">
+                  <input type="checkbox" name="onoffswitch" class="offline-mode" id="myonoffswitch" checked>
+                  <label class="onoffswitch-label" for="myonoffswitch">
+                    <span class="onoffswitch-inner"></span>
+                    <span class="onoffswitch-switch"></span>
+                  </label>
+                </p>
+                
+                <input class="btn--default confirm" type="submit" value="Confirm">
+                <input class="btn--warning cancel" type="reset" value="Cancel">
+              </form>
+            </div>
+          </nav>
+        </div>
+      </header>
     
     <script type="text/javascript" src="js/script.js"></script>
   </body>

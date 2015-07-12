@@ -42,6 +42,8 @@ function displayPreview(file) {
 }
 
 $(document).ready(function() {
+  $(".dialog-bg").hide();
+  
   // Detect if users browser can load and download files in Javascript
   if (window.File && window.FileReader && window.FileList && window.Blob) {
     // Detect if users browser can download files in Javascript
@@ -95,7 +97,7 @@ $(document).ready(function() {
   }
   
   loader.on("change", function(evt) {
-    $(".loadzip").removeClass("hide");
+    $(".loadzip, .logo").removeClass("hide");
     $(this).addClass("hide");
     
     var file = evt.target.files[0];
@@ -206,6 +208,37 @@ $(document).ready(function() {
                 saveAs(content, theFile.name.substr(theFile.name.length - theFile.name.length, theFile.name.length - 4) + "-lin.zip");
                 return false;
               });
+            });
+            
+            // Download as Chrome App
+            $(".export-as-chrome-app").on("click", function() {
+              $(".dialog-bg").fadeIn();
+            });
+            $(".cancel").on("click", function() {
+              $(".dialog-bg").fadeOut();
+            });
+            
+            $(".confirm").on("click", function() {
+              var zip = new JSZip();
+              zip.folder("app").load(webAppZipBinary);
+              var Img128 = canvas[0].toDataURL("image/png");
+              zip.file("assets/128.png", Img128.split('base64,')[1],{base64: true});
+              
+              zip.file("background.js", "/**\n * Listens for the app launching, then creates the window.\n *\n * @see http://developer.chrome.com/apps/app.runtime.html\n * @see http://developer.chrome.com/apps/app.window.html\n */\nchrome.app.runtime.onLaunched.addListener(function(launchData) {\n  chrome.app.window.create(\n    'index.html',\n    {\n      id: 'mainWindow',\n      bounds: {width: 800, height: 600}\n    }\n  );\n});");
+              zip.file("css/style.css", "html, body {\n  margin: 0;\n  padding: 0;\n  width: 100%;\n  height: 100%;\n}\n\nwebview, iframe {\n  width: 100%;\n  height: 100%;\n  border: 0;\n}");
+              zip.file("index.html", "<!DOCTYPE html>\n<html>\n  <head>\n    <title>"+ $(".name").val() +"</title>\n    <link rel=\"stylesheet\" href=\"css/style.css\" />\n  </head>\n  <body>\n    <iframe src=\"app/index.html\">\n      Your Chromebook does not support the iFrame html element.\n    </iframe>\n  </body>\n</html>");
+              
+              if ( $(".offline-mode").is(":checked") ) {
+                zip.file("manifest.json", '{\n  "manifest_version": 2,\n  "name": "'+ $(".name").val() +'",\n  "short_name": "'+ $(".name").val() +'",\n  "description": "'+ $(".descr").val() +'",\n  "version": "1.0",\n  "minimum_chrome_version": "38",\n  "offline_enabled": true,\n  "icons": {\n    "16": "assets/16.png",\n    "32": "assets/32.png",\n    "64": "assets/64.png",\n    "128": "assets/128.png"\n  },\n\n  "app": {\n    "background": {\n      "scripts": ["background.js"]\n    }\n  }\n}\n');
+              } else {
+                zip.file("manifest.json", '{\n  "manifest_version": 2,\n  "name": "'+ $(".name").val() +'",\n  "short_name": "'+ $(".name").val() +'",\n  "description": "'+ $(".descr").val() +'",\n  "version": "1.0",\n  "minimum_chrome_version": "38",\n  "offline_enabled": false,\n  "icons": {\n    "16": "assets/16.png",\n    "32": "assets/32.png",\n    "64": "assets/64.png",\n    "128": "assets/128.png"\n  },\n\n  "app": {\n    "background": {\n      "scripts": ["background.js"]\n    }\n  }\n}\n');
+              }
+              
+              // Your Web App
+              var content = zip.generate({type:"blob"});
+              saveAs(content, theFile.name.substr(theFile.name.length - theFile.name.length, theFile.name.length - 4) + "-chrome.zip");
+              $(".dialog-bg").fadeOut();
+              return false;
             });
 
           }

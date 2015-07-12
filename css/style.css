@@ -1,6 +1,8 @@
 @import url("normalize.css");
 @import url("fonts/font-awesome.css");
 @import url("fonts/macset.css");
+@import url("polyui.css");
+@import url("http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900");
 
 html, body {
   margin: 0;
@@ -10,7 +12,6 @@ html, body {
 
 body {
   background: rgb(0, 28, 66);
-  font: 20px 'Open Sans',helvetica, arial, sans-serif;
 }
 
 a {
@@ -106,6 +107,18 @@ input[type=text]:focus {
   background-image:url("../freedom-in-the-shape-of-a-cross.jpg");
 }
 
+/* Dialog's */
+.dialog-bg {
+  background: rgb(255, 255, 255);
+  background: rgba(255, 255, 255, 0.25);
+}
+.dialog {
+  padding: 2em;
+  border-radius: 0.4em;
+  background: rgb(255, 255, 255);
+  overflow: auto;
+}
+
 /* Misc */
 .hide {
   display: none;
@@ -128,4 +141,52 @@ h3, h4 {
 */
   font-size: 100%;
   color: #FCFDFE;
+}
+
+/* Toggle Switch */
+.onoffswitch {
+  position: relative; width: 90px;
+  -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+}
+.offline-mode {
+  display: none;
+}
+.onoffswitch-label {
+  display: block; overflow: hidden; cursor: pointer;
+  border: 2px solid #999999; border-radius: 20px;
+}
+.onoffswitch-inner {
+  display: block; width: 200%; margin-left: -100%;
+  -moz-transition: margin 0.3s ease-in 0s; -webkit-transition: margin 0.3s ease-in 0s;
+  -o-transition: margin 0.3s ease-in 0s; transition: margin 0.3s ease-in 0s;
+}
+.onoffswitch-inner:before, .onoffswitch-inner:after {
+  display: block; float: left; width: 50%; height: 30px; padding: 0; line-height: 30px;
+  font-size: 14px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+.onoffswitch-inner:before {
+  content: "Yes";
+  padding-left: 10px;
+  background-color: #34A7C1; color: #FFFFFF;
+}
+.onoffswitch-inner:after {
+  content: "No";
+  padding-right: 10px;
+  background-color: #EEEEEE; color: #999999;
+  text-align: right;
+}
+.onoffswitch-switch {
+  display: block; width: 18px; margin: 6px;
+  background: #FFFFFF;
+  border: 2px solid #999999; border-radius: 20px;
+  position: absolute; top: 0; bottom: 0; right: 56px;
+  -moz-transition: all 0.3s ease-in 0s; -webkit-transition: all 0.3s ease-in 0s;
+  -o-transition: all 0.3s ease-in 0s; transition: all 0.3s ease-in 0s; 
+}
+.offline-mode:checked + .onoffswitch-label .onoffswitch-inner {
+  margin-left: 0;
+}
+.offline-mode:checked + .onoffswitch-label .onoffswitch-switch {
+  right: 0; 
 }
