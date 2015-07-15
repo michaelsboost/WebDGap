@@ -221,7 +221,13 @@ $(document).ready(function() {
             $(".confirm").on("click", function() {
               var zip = new JSZip();
               zip.folder("app").load(webAppZipBinary);
+              var Img16 = c16[0].toDataURL("image/png");
+              var Img32 = c32[0].toDataURL("image/png");
+              var Img64 = c64[0].toDataURL("image/png");
               var Img128 = canvas[0].toDataURL("image/png");
+              zip.file("assets/16.png", Img16.split('base64,')[1],{base64: true});
+              zip.file("assets/32.png", Img32.split('base64,')[1],{base64: true});
+              zip.file("assets/64.png", Img64.split('base64,')[1],{base64: true});
               zip.file("assets/128.png", Img128.split('base64,')[1],{base64: true});
               
               zip.file("background.js", "/**\n * Listens for the app launching, then creates the window.\n *\n * @see http://developer.chrome.com/apps/app.runtime.html\n * @see http://developer.chrome.com/apps/app.window.html\n */\nchrome.app.runtime.onLaunched.addListener(function(launchData) {\n  chrome.app.window.create(\n    'index.html',\n    {\n      id: 'mainWindow',\n      bounds: {width: 800, height: 600}\n    }\n  );\n});");
@@ -229,9 +235,9 @@ $(document).ready(function() {
               zip.file("index.html", "<!DOCTYPE html>\n<html>\n  <head>\n    <title>"+ $(".name").val() +"</title>\n    <link rel=\"stylesheet\" href=\"css/style.css\" />\n  </head>\n  <body>\n    <iframe src=\"app/index.html\">\n      Your Chromebook does not support the iFrame html element.\n    </iframe>\n  </body>\n</html>");
               
               if ( $(".offline-mode").is(":checked") ) {
-                zip.file("manifest.json", '{\n  "manifest_version": 2,\n  "name": "'+ $(".name").val() +'",\n  "short_name": "'+ $(".name").val() +'",\n  "description": "'+ $(".descr").val() +'",\n  "version": "1.0",\n  "minimum_chrome_version": "38",\n  "offline_enabled": true,\n  "icons": {\n    "16": "assets/16.png",\n    "32": "assets/32.png",\n    "64": "assets/64.png",\n    "128": "assets/128.png"\n  },\n\n  "app": {\n    "background": {\n      "scripts": ["background.js"]\n    }\n  }\n}\n');
+                zip.file("manifest.json", '{\n  "manifest_version": 2,\n  "name": "'+ $(".name").val() +'",\n  "short_name": "'+ $(".name").val() +'",\n  "description": "'+ $(".descr").val() +'",\n  "version": "1.0",\n  "minimum_chrome_version": "38",\n  "offline_enabled": true,\n  "permissions": [ "storage", "fileSystem", "unlimitedStorage", "http://*/", "https://*/" ],\n  "icons": {\n    "16": "assets/16.png",\n    "32": "assets/32.png",\n    "64": "assets/64.png",\n    "128": "assets/128.png"\n  },\n\n  "app": {\n    "background": {\n      "scripts": ["background.js"]\n    }\n  }\n}\n');
               } else {
-                zip.file("manifest.json", '{\n  "manifest_version": 2,\n  "name": "'+ $(".name").val() +'",\n  "short_name": "'+ $(".name").val() +'",\n  "description": "'+ $(".descr").val() +'",\n  "version": "1.0",\n  "minimum_chrome_version": "38",\n  "offline_enabled": false,\n  "icons": {\n    "16": "assets/16.png",\n    "32": "assets/32.png",\n    "64": "assets/64.png",\n    "128": "assets/128.png"\n  },\n\n  "app": {\n    "background": {\n      "scripts": ["background.js"]\n    }\n  }\n}\n');
+                zip.file("manifest.json", '{\n  "manifest_version": 2,\n  "name": "'+ $(".name").val() +'",\n  "short_name": "'+ $(".name").val() +'",\n  "description": "'+ $(".descr").val() +'",\n  "version": "1.0",\n  "minimum_chrome_version": "38",\n  "offline_enabled": false,\n  "permissions": [ "storage", "fileSystem", "unlimitedStorage", "http://*/", "https://*/" ],\n  "icons": {\n    "16": "assets/16.png",\n    "32": "assets/32.png",\n    "64": "assets/64.png",\n    "128": "assets/128.png"\n  },\n\n  "app": {\n    "background": {\n      "scripts": ["background.js"]\n    }\n  }\n}\n');
               }
               
               // Your Web App
