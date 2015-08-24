@@ -7,7 +7,7 @@ WebDGap requires you to load in your application logo first. Then load your web 
 **NOTE:** Larger zip files take a longer time loading and exporting!
 
 ### Version
-1.0.2
+1.0.5
 
 ### Tech
 
@@ -15,7 +15,8 @@ WebDGap uses a number of open source projects to work properly:
 
 * [jQuery](http://jquery.com/) - duh
 * [JSZip](https://stuk.github.io/jszip/) - package zip files in javascript
-* [AppJS](http://appjs.com/) - run web apps as desktop apps (comes with [node.js](https://nodejs.org/))
+* [Electron](http://electron.atom.io/) - run web apps as desktop apps
+* [AppJS](http://appjs.com/) - run web apps as desktop apps (deprecated)
 
 ### License
 MIT
@@ -27,12 +28,13 @@ MIT
 - [AngularJS](http://angularjs.org)
 - [jQuery](http://jquery.com)
 - [Codemirror](http://codemirror.net/)
+- [io.js](https://iojs.org/en/index.html)
 - [node.js](http://nodejs.org)
 - [JSZip](https://stuk.github.io/jszip/)
 - [Twitter Bootstrap](http://twitter.github.com/bootstrap/)
 - [Poly UI Kit](https://github.com/Guilh/Poly)
 - [CodePen](http://codepen.io/mikethedj4)
 
-**Team**
+**Author**
 
 - [michael schwartz](http://mikethedj4.github.io/)
