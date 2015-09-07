@@ -2,7 +2,19 @@
 @import url("fonts/font-awesome.css");
 @import url("fonts/macset.css");
 @import url("polyui.css");
+/*
 @import url("http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900");
+*/
+
+@font-face {
+  font-family: FiraSans;
+  src: url("fonts/FiraSans-Light.ttf");
+}
+
+@font-face {
+  font-family: Lato;
+  src: url("fonts/Lato-Light.ttf");
+}
 
 html, body {
   margin: 0;
@@ -36,14 +48,13 @@ a {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: #000;
-  background: rgba(34, 66, 108, 0.5);
+  background: #363C69;
+  background: rgba(34, 51, 95, 0.7);
   color: #fff;
-  text-align: center;
   overflow: hidden;
   font-size: 16px;
 }
-.column > div a {
+.column > div a:not(.call) {
   color: #fff;
   font-size: 3em;
 }
@@ -100,11 +111,10 @@ input[type=text]:focus {
 .preview {
   width: 100%;
   height: 100%;
+  background-image:url("../freedom-in-the-shape-of-a-cross.jpg");
   background-position: top left;
   background-repeat: no-repeat;
-}
-.preview {
-  background-image:url("../freedom-in-the-shape-of-a-cross.jpg");
+  background-size: 100% auto;
 }
 
 /* Dialog's */
@@ -126,6 +136,17 @@ input[type=text]:focus {
 h3, h4 {
   margin: 0 0 1em 0;
 }
+#imageloader {
+  border: 10px dashed #ccc;
+  text-align: center;
+  padding: 1em 0;
+}
+#imageloader.hover {
+  border: 10px dashed #4F7E9C;
+}
+.fill {
+  width: 100%;
+}
 .alert, .alert-danger {
   background: rgba(219, 56, 56, 0.63);
   padding: .5em 0;
@@ -141,6 +162,18 @@ h3, h4 {
 */
   font-size: 100%;
   color: #FCFDFE;
+}
+.column > div, .txtcenter {
+  text-align: center;
+}
+/* Textbox for Application Name */
+.nameSpace {
+  background: transparent;
+  border: 0;
+  color: #d6d7d9;
+  font-size: 20px;
+  font-family: "FiraSans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.5;
 }
 
 /* Toggle Switch */
