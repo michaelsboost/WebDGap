@@ -113,7 +113,7 @@ $(document).ready(function() {
     $result.append($fileContent);
   }
   
-  $(".click").click(function() {
+  $(".call").click(function() {
     loader.trigger("click");
   });
 
