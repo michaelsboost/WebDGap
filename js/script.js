@@ -47,12 +47,12 @@ $(document).ready(function() {
   
   $(window).on("load resize", function() {
     // Landscape
-    if ( $(window).width() > $(window).height() ) {
-      $(".head").attr("style", "background-size: 100% auto");
-      // Portrait
-    } else if ( $(window).width() < $(window).height() ) {
-      $(".head").attr("style", "background-size: auto 100%;");
-    }
+    // if ( $(window).width() > $(window).height() ) {
+    //   $(".head").attr("style", "background-size: 100% auto");
+    //   // Portrait
+    // } else if ( $(window).width() < $(window).height() ) {
+    //   $(".head").attr("style", "background-size: auto 100%;");
+    // }
     
     if ( $(window).width() > 670 ) {
       $("#imageloader").attr("class", "").css("margin", "20px 10em");
