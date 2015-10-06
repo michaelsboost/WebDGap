@@ -17,7 +17,7 @@ Convert any web app to a native Windows, Linux, Mac, or Chrome desktop applicati
 **NOTE:** Larger zip files take a longer time loading and exporting!
 
 ### Version
-1.0.7
+1.0.8
 
 ### Tech
 
