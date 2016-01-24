@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -7,136 +6,226 @@
     <meta name="Description" content="Convert any web application to a native Windows, Linux, or Mac OS X desktop application.">
     <meta name="Keywords" content="webdgap, convert, zip, web, website, websites, desktop, app, application, native, free, open, source, cross, platform, windows, linux, mac, os, x, 10, chrome, extension, compile">
     <meta name="viewport" content="initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=9">
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
     <link rel="icon" type="image/vnd.microsoft.icon" href="favicon.ico">
     <link rel="SHORTCUT ICON" href="favicon.ico">
-    <link rel="stylesheet" href="css/style.css">
-    <script src="js/jquery.js"></script>
+    <link rel="stylesheet" href="libraries/polyui/polyui.css">
+    <link rel="stylesheet" href="libraries/font-awesome/font-awesome.css" />
+    <link rel="stylesheet" href="libraries/font-awesome/macset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="libraries/jquery/jquery.js"></script>
+    <link rel="stylesheet" href="libraries/alertify/themes/alertify.core.css" />
+    <link rel="stylesheet" href="libraries/alertify/themes/alertify.default.css" />
+    <script src="libraries/alertify/alertify.min.js"></script>
     <script src="dist/jszip.min.js"></script>
     <script src="dist/jszip-utils.js"></script>
     <script src="dist/FileSaver.js"></script>
-    <!--<link href="http://fonts.googleapis.com/css?family=Cookie&amp;text=tweenui" type="text/css">-->
-    <!--<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600&subset=latin" type="text/css">-->
   </head>
   <body>
     <!-- Image to show on facebook preview -->
     <img class="hide" src="logo.png">
-    
-    <!-- Main Display -->
-    <header class="head column">
-      <div>
-        <nav>
-          <h1>
-            WebDGap
-          </h1>
-          <h4>
-            Web Apps to Native Desktop Apps
-          </h4>
-          
-          <input class="txtcenter nameSpace" type="text" placeholder="Application Name" value=""="Application Name" data-action="sitename">
-          
-          <p>
-            <a class="check export-as-win-app hide" title="Export for Windows">
-              <i class="fa fa-windows"></i>
-            </a>
-            
-            <a class="check export-as-mac-app hide" title="Export for Mac OS X">
-              <i class="fa msicon-osx"></i>
-            </a>
-            
-            <a class="check export-as-lin-app hide" title="Export for Linux">
-              <i class="fa fa-linux"></i>
-            </a>
-        
-            <a class="check hide" title="Export for tablets and smart phones" href="http://build.phonegap.com/" target="_blank">
-              <i class="fa fa-mobile"></i>
-            </a>
-            
-            <a class="check export-as-chrome-app hide" title="Download Chrome Application">
-              <i class="fa msicon-chrome"></i>
-            </a>
-            
-            <a title="Download the source code" href="https://github.com/mikethedj4/WebDGap" target="_blank">
-              <i class="fa fa-github"></i>
-            </a>
-            
-            <a title="Keep the project alive" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BSYGA2RB5ZJCC" target="_blank">
-              <i class="fa fa-paypal"></i>
-            </a>
-            
-            <a title="Load in a zip file" class="loadzip hide">
-              <i class="fa fa-file-zip-o"></i>
-            </a>
-            
-            <h4 class="note">
-                Note: Your browser will process the zip file, <u>don't choose a file too big!</u> <br /><br />
-            </h4>
 
-            <div class="checkimageloader hide">
-              <div id="imageloader">
-                Drag and drop image <a class="call"><u>here</u></a>
-              </div> 
-            </div>
-            
-            <div class="hide">
-              <input type="file" class="load" accept="image/jpeg, image/png" />
-            </div>
-            
-            <div class="fill logo hide" align="center">
-              <canvas class="n16 hide" width="16" height="16"></canvas>
-              <canvas class="n32 hide" width="32" height="32"></canvas>
-              <canvas class="n64 hide" width="64" height="64"></canvas>
-              <canvas class="holder" width="128" height="128"></canvas>
-            </div>
-            
-            <div class="hide">
-              <input type="file" id="file" name="file" accept="application/x-zip-compressed" multiple /> <br /><br />
-            </div>
-
-            <div class="error_block alert alert-danger hide">
-              You will need a recent browser to use this demo :(
-            </div>
-
-            <div class="result_block hide">
-              <div class="result"></div>
-            </div>
-          </p>
-        </nav>
+    <div class="wholedialog fixedfill">
+      <div class="grid table">
+        <div class="cell">
+        	<button class="btn--success" data-id="convertapp">Convert App</button>
+        </div>
+        <div class="cell">
+        	<button class="btn--default" data-id="convertsite">Convert Site</button>
+        </div>
       </div>
-    </header>
-    
-    <!-- Main Dialog -->
-    <header class="dialog-bg column">
-      <div>
-        <nav>
-          <div class="grid dialog">
-            <div class="grid__col--12"> 
-              <form class="form">
-                <input class="form__input input name hide" type="text" placeholder="Application Name">
+    </div>
 
-                <textarea class="form__input descr" placeholder="Description" rows="7"></textarea>
-                
-                <h4>
-                  Offline:
-                </h4>
-                
-                <p class="onoffswitch">
-                  <input type="checkbox" name="onoffswitch" class="offline-mode" id="myonoffswitch" checked>
-                  <label class="onoffswitch-label" for="myonoffswitch">
-                    <span class="onoffswitch-inner"></span>
-                    <span class="onoffswitch-switch"></span>
-                  </label>
-                </p>
-                
-                <input class="btn--default confirm" type="submit" value="Confirm">
-                <input class="btn--warning cancel" type="reset" value="Cancel">
+    <!-- <div class="pagefill" id="top"> -->
+    <div class="pagefill">
+      <div class="grid">
+        <header class="grid__col--12 panel--padded--centered" role="banner">
+          <span class="sitelogo">
+            <b class="srt">WebDGap</b>
+          </span>
+        </header>
+      </div>
+
+      <div class="grid">
+        <div class="grid__col--12 panel--padded--centered">
+          <h1 class="headline-primary--grouped">
+            <a title="Export for tablets and smart phones" href="http://build.phonegap.com/" target="_blank"><em>PhoneGap</em></a>
+             for your <u>Desktop</u> applications.
+          </h1>
+          <h2 class="headline-secondary--grouped maindesc">Convert any web application to a native Windows/Linux/Mac/Chrome application.</h2>
+        </div>
+      </div>
+
+      <div class="grid">
+        <div class="grid__col--12 center">
+          <div class="checkimageloader hide">
+            <h1 class="outputname hide"></h1>
+            <div id="imageloader" class="iblock roundit">
+              <img class="call loadavatar pointer" src="assets/loadlogo-rounded.svg" alt="Avatar" width="135" height="135">
+
+              <div class="fill logo hide" align="center">
+                <canvas class="n16 hide" width="16" height="16"></canvas>
+                <canvas class="n32 hide" width="32" height="32"></canvas>
+                <canvas class="n64 hide" width="64" height="64"></canvas>
+                <canvas class="holder call pointer" width="128" height="128"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid logoisloadedsite">
+        <div class="grid__col--12">
+          <label class="form__label--hidden" for="name">Application Name:</label>
+          <input class="form__input" type="text" id="name" placeholder="Application Name" data-id="sitename">
+        </div>
+        <div class="grid__col--8">
+          <label class="form__label--hidden hide" for="website">http://website.com/</label>
+          <input class="form__input hide" type="text" id="website" placeholder="http://website.com/" data-action="website">
+        </div>
+        <div class="grid__col--3">
+          <button class="btn--default hide" data-action="applyvalues">Apply</button>
+        </div>
+      </div>
+      <div class="grid logoisloadedapp hide">
+        <div class="grid__col--12 center">
+          <button class="btn--info loadzip hide">
+            Load zip file
+          </button>
+
+          <div class="result_block hide">
+            <div class="result"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pickbits check hide">
+        <div class="grid">
+          <div class="grid__col--12 panel--padded--centered">
+            <h2 class="headline-secondary--grouped export4text">Are you exporting for a 32bit or for a 64bit processor?</h2>
+          </div>
+        </div>
+
+        <div class="grid center">
+          <div class="grid__col--6">
+            <button class="btn--success export64">64bit</button>
+          </div>
+          <div class="grid__col--6">
+            <button class="btn--default export32">32bit</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="chosenbit check hide">
+        <div class="grid">
+          <div class="grid__col--12 panel--padded--centered">
+            <button class="btn--error btnexport export-as-win-app 64bit hide">
+              <i class="msicon-windows"></i>
+            </button>
+            <button class="btn--error btnexport export-as-win32-app 32bit hide">
+              <i class="msicon-windows"></i>
+            </button>
+            <button class="btn--default btnexport export-as-mac-app">
+              <i class="msicon-osx"></i>
+            </button>
+            <button class="btn--success btnexport export-as-lin-app 64bit hide">
+              <i class="msicon-tux"></i>
+            </button>
+            <button class="btn--success btnexport export-as-lin32-app 32bit hide">
+              <i class="msicon-tux"></i>
+            </button>
+            <button class="btn--info btnexport export-for-chrome">
+              <i class="msicon-chrome"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Chrome Export Pick -->
+        <div class="pickchromes hide">
+          <div class="grid">
+            <div class="grid__col--12 panel--padded--centered">
+              <h2 class="headline-secondary--grouped export4text">Chrome Application, or Popup Extension?</h2>
+            </div>
+          </div>
+
+          <div class="grid center">
+            <div class="grid__col--6">
+              <button class="btn--default chromeapp">Application</button>
+            </div>
+            <div class="grid__col--6">
+              <button class="btn--default chromepopup">Popup</button>
+            </div>
+          </div>
+
+          <!-- Chrome Export dialog -->
+          <div class="grid dialog whitebg panel--padded--centered chrome-border">
+            <div class="grid__col--12">
+              <form class="form">
+                <input class="form__input " type="number" min="0.1" step="0.1" value="0.1" data-value="version">
+                <textarea class="form__input resetval" data-value="description" placeholder="Description" rows="7"></textarea>
+
+                <span class="chromeappcheck">
+                  <h4>
+                    Offline:
+                  </h4>
+
+                  <p class="onoffswitch">
+                    <input type="checkbox" name="onoffswitch" class="offline-mode" id="myonoffswitch" checked>
+                    <label class="onoffswitch-label" for="myonoffswitch">
+                      <span class="onoffswitch-inner"></span>
+                      <span class="onoffswitch-switch"></span>
+                    </label>
+                  </p>
+                </span>
+
+                <div class="center">
+                  <input class="btn--default chromeappexport hide" type="submit" value="Confirm">
+                  <input class="btn--default chromepopexport hide" type="submit" value="Confirm">
+                  <input class="btn--warning reset" type="reset" value="Reset">
+                </div>
               </form>
             </div>
           </div>
-        </nav>
+        </div>
+
+        <div class="grid">
+          <div class="grid__col--12 panel--padded--centered">
+            <h1 class="headline-primary--grouped note export4text">
+              Note: Your browser will process the zip file, <u>don't choose a file too big!</u>
+            </h1>
+          </div>
+        </div>
       </div>
-    </header>
-    
-    <script src="js/script.js"></script>
+
+      <div class="fixedfill preloader hide">
+        <div class="table">
+          <div class="cell">
+            <h1>Creating application!</h1>
+            <div class="spinner">
+              <div class="bounce1"></div><div class="bounce2"></div><div class="bounce3"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hide">
+        <input type="file" class="load" accept="image/jpeg, image/png" />
+      </div>
+
+      <div class="hide">
+        <input type="file" id="file" name="file" accept="application/x-zip-compressed" />
+      </div>
+
+      <div class="error_block alert alert-danger hide">
+        You will need a recent browser to use this demo :(
+
+        <p>
+          We recommend <a href="http://google.com/chrome" target="_blank">Google Chrome</a> or <a href="https://www.mozilla.org/en-US/firefox/new/" target="_blank">Mozilla Firefox</a>
+        </p>
+      </div>
+    </div>
+
+    <script src="js/index.js"></script>
+    <script src="js/convertapp.js"></script>
   </body>
 </html>

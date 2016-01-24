@@ -1,0 +1,89 @@
+@font-face {
+  font-family: 'macset';
+  src:url('macset.eot?koqt2m');
+  src:url('macset.eot?#iefixkoqt2m') format('embedded-opentype'),
+    url('macset.woff?koqt2m') format('woff'),
+    url('macset.ttf?koqt2m') format('truetype'),
+    url('macset.svg?koqt2m#macset') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="msicon-"], [class*=" msicon-"] {
+  font-family: 'macset';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.msicon-mac:before {
+  content: "\e601";
+}
+
+.msicon-mac-face:before {
+  content: "\e602";
+}
+
+.msicon-mac-face2:before {
+  content: "\e603";
+}
+
+.msicon-mac-noborder:before {
+  content: "\e604";
+}
+
+.msicon-osx:before {
+  content: "\e605";
+}
+
+.msicon-linux:before {
+  content: "\e600";
+}
+
+.msicon-tux:before {
+  content: "\eabe";
+}
+
+.msicon-apple:before {
+  content: "\eabf";
+}
+
+.msicon-finder:before {
+  content: "\eac0";
+}
+
+.msicon-windows:before {
+  content: "\eac2";
+}
+
+.msicon-windows8:before {
+  content: "\eac3";
+}
+
+.msicon-chrome:before {
+  content: "\eae5";
+}
+
+.msicon-firefox:before {
+  content: "\eae6";
+}
+
+.msicon-IE:before {
+  content: "\eae7";
+}
+
+.msicon-opera:before {
+  content: "\eae8";
+}
+
+.msicon-safari:before {
+  content: "\eae9";
+}
+
