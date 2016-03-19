@@ -192,3 +192,88 @@ a {
     transform: scale(1);
   }
 }
+
+/* Footer */
+.foot {
+  background: #000;
+  padding: 12px;
+  color: #888;
+  text-align: right;
+  height: 104px;
+  margin: 46px 0 0 0;
+}
+
+.footlinks a {
+  display: inline-block;
+  color: #adadad;
+}
+
+.foot a:hover {
+  color: #fff;
+}
+.footlinks a {
+  padding: 0 0 0 10px;
+  font-size: 12px;
+}
+.author a {
+  padding: 0;
+  font-size: 12px;
+}
+
+.author, .author a {
+  font-size: 11px;
+  padding-top: 7px;
+}
+
+.foot .logo {
+  position: relative;
+  top: 12px;
+  background-image: url("../icon.png");
+  background-repeat: no-repeat;
+  padding: 16px;
+  background-size: auto 100%;
+  color: #adadad;
+  z-index: 1;
+}
+
+.foot .logotxt {
+  /* line-height: 5px; */
+  padding: 0 0 0 50px;
+}
+
+@media all and (max-width:390px) {
+  .foot .logotxt {
+    padding: 0;
+    font-size: 8px;
+    opacity: 0;
+  }
+}
+
+/* Misc */
+.fl {
+  float: left;
+}
+.fn {
+  float: none;
+}
+.fr {
+  float: right;
+}
+.tl {
+  text-align: left;
+}
+.tr {
+  text-align: right;
+}
+.pointa {
+  cursor: pointer;
+}
+.tc {
+  text-align: center;
+}
+.hide {
+  display: none;
+}
+.wfill {
+  width: 100%;
+}

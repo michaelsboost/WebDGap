@@ -1,4 +1,4 @@
-var loader = $(".load");
+var loader = $(".load")
 
 // Run Onload
 $("html, body").animate({ scrollTop: 0 }, "slow")
@@ -92,6 +92,11 @@ $("[data-action=applyvalues]").click(function() {
   $(".checkimageloader, .outputname").removeClass("hide")
   $(".logoisloadedsite").addClass("hide")
   $(".outputname").text($("[data-id=sitename]").val());
+})
+
+// Reload application
+$("[data-action=reload]").click(function() {
+  location.reload(true)
 })
 
 // Test Script

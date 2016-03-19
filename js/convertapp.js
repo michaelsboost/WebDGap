@@ -361,6 +361,7 @@ $(document).ready(function() {
     e.preventDefault()
     var file = e.dataTransfer.files[0]
     displayPreview(file)
+    $("[data-action=displayfooter]").removeClass("hide")
 
     if ( $(".convertsite-picked").is(":visible") ) {
       $(".logoisloadedsite, .logoisloadedapp, .loadavatar").addClass("hide")
@@ -378,6 +379,7 @@ $(document).ready(function() {
   loader.on("change", function(evt) {
     var file = evt.target.files[0]
     displayPreview(file)
+    $("[data-action=displayfooter]").removeClass("hide")
 
     if ( $(".convertsite-picked").is(":visible") ) {
       $(".logoisloadedsite, .logoisloadedapp, .loadavatar").addClass("hide")
