@@ -24,7 +24,7 @@ The zip example below **WILL NOT WORK!!!**
 **NOTE:** Larger zip files take a longer time loading and exporting!
 
 ### Version
-1.2.0
+1.2.1
 
 ### Tech
 
@@ -33,8 +33,7 @@ WebDGap uses a number of open source projects to work properly:
 * [Poly UI Kit](https://github.com/Guilh/Poly) - Used for the application's user interface
 * [jQuery](http://jquery.com/) - duh
 * [JSZip](https://stuk.github.io/jszip/) - package zip files in javascript
-* [Electron](http://electron.atom.io/) - run web apps as desktop apps (Used for 64bit processors)
-* [node-webkit](http://nwjs.io/) - run web apps as desktop apps (Used for 32bit processors)
+* [node-webkit](http://nwjs.io/) - run web apps as desktop apps
 
 ### License
 MIT

@@ -18,18 +18,19 @@
     <link rel="stylesheet" href="libraries/polyui/polyui.css">
     <link rel="stylesheet" href="libraries/font-awesome/font-awesome.css" />
     <link rel="stylesheet" href="libraries/font-awesome/macset.css" />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="libraries/alertifyjs/css/alertify.min.css" />
+    <link rel="stylesheet" href="libraries/alertifyjs/css/themes/default.min.css" />
+    <link rel="stylesheet" href="css/style.min.css" />
     <script src="libraries/jquery/jquery.js"></script>
-    <link rel="stylesheet" href="libraries/alertify/themes/alertify.core.css" />
-    <link rel="stylesheet" href="libraries/alertify/themes/alertify.default.css" />
-    <script src="libraries/alertify/alertify.min.js"></script>
+    <script src="libraries/prefixfree/prefixfree.min.js"></script>
+    <script src="libraries/alertifyjs/alertify.min.js"></script>
     <script src="dist/jszip.min.js"></script>
     <script src="dist/jszip-utils.js"></script>
     <script src="dist/FileSaver.js"></script>
   </head>
   <body>
     <!-- Image to show on facebook preview -->
-    <img class="hide" src="logo.png">
+    <img class="hide" src="icons/logo.png">
 
     <div class="wholedialog fixedfill">
       <div class="grid table">
@@ -67,7 +68,9 @@
           <div class="checkimageloader hide">
             <h1 class="outputname hide"></h1>
             <div id="imageloader" class="iblock roundit">
-              <img class="call loadavatar pointer" src="assets/loadlogo-rounded.svg" alt="Avatar" width="135" height="135">
+              <label for="load">
+                <img class="call loadavatar pointer" src="assets/loadlogo-rounded.svg" alt="Avatar" width="135" height="135">
+              </label>
 
               <div class="fill logo hide" align="center">
                 <canvas class="n16 hide" width="16" height="16"></canvas>
@@ -95,8 +98,10 @@
       </div>
       <div class="grid logoisloadedapp hide">
         <div class="grid__col--12 center">
-          <button class="btn--info loadzip hide">
-            Load zip file
+          <button class="btn--info loadzip pointa hide">
+            <label for="file" class="pointa">
+              Load zip file
+            </label>
           </button>
 
           <div class="result_block hide">
@@ -215,7 +220,7 @@
       </div>
 
       <div class="hide">
-        <input type="file" class="load" accept="image/jpeg, image/png" />
+        <input type="file" id="load" accept="image/jpeg, image/png" />
       </div>
 
       <div class="hide">
@@ -247,7 +252,6 @@
       </div>
     </div>
 
-    <script src="js/index.js"></script>
-    <script src="js/convertapp.js"></script>
+    <script src="js/webdgap.min.js"></script>
   </body>
 </html>
