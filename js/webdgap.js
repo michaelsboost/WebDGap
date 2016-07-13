@@ -386,6 +386,30 @@ function displayPreview(file) {
 }
 
 $(document).ready(function() {
+  // Change Welcome Dialog Margin when Orientation Changes
+  $(window).on("load resize", function() {
+    if ( window.innerWidth > window.innerHeight ) {
+      // Landscape
+      document.querySelector(".walkthrough-dialog").style = "";
+    } else if ( window.innerWidth < window.innerHeight ) {
+      // Portrait
+      document.querySelector(".walkthrough-dialog").style.margin = "2em";
+    }
+  });
+  // Use localStorage for Welcome dialog
+  // If user closed it prevent show upon every reload
+  var closedWelcome = localStorage.getItem("closedWelcome");
+  if (closedWelcome === "true") {
+    // hide dialog
+    $("#close-walkthrough").prop("checked", true);
+  } else {
+    // show dialog
+    $("#close-walkthrough").prop("checked", "");
+  }
+  $("#close-walkthrough").click(function() {
+    localStorage.setItem("closedWelcome", $(this).prop("checked"));
+  });
+  
   // Detect if users browser can load and download files in Javascript
   if (window.File && window.FileReader && window.FileList && window.Blob) {
     // Detect if users browser can download files in Javascript

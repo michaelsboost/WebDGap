@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -30,7 +31,7 @@
   </head>
   <body>
     <!-- Image to show on facebook preview -->
-    <img class="hide" src="icons/logo.png">
+    <img class="hide" src="imgs/logo.png">
 
     <div class="wholedialog fixedfill">
       <div class="grid table">
@@ -242,7 +243,7 @@
 
         <div class="footlinks fr">
           <a data-action="reload">Home</a>
-            <a href="https://github.com/mikethedj4/WebDGap" target="_blank">Github</a>
+          <a href="https://github.com/mikethedj4/WebDGap" target="_blank">Github</a>
           <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=BSYGA2RB5ZJCC" target="_blank">Donate</a>
 
           <div class="author">
@@ -250,6 +251,45 @@
           </div>
         </div>
       </div>
+    </div>
+    
+    <!-- Walkthrough Navigation Dialog -->
+    <input type="radio" id="close-walkthrough" class="hide" name="walkthrough-group">
+
+    <label for="close-walkthrough" class="walkthrough-dialogbg pointer"></label>
+    <div class="walkthrough-dialog">
+      <input type="radio" id="tab1" class="hide" name="walkthrough-group" checked>
+      <!-- <input type="radio" id="tab2" class="hide" name="walkthrough-group"> -->
+      <!-- <input type="radio" id="tab3" class="hide" name="walkthrough-group"> -->
+
+      <div class="walkthrough-menu">
+        <!-- <label for="tab1">Using WebDGap</label> -->
+        <label for="tab1">How To Use WebDGap</label>
+        <!-- <label for="tab2">Exportation</label> -->
+        <!-- <label for="tab3">Feed</label> -->
+        <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BSYGA2RB5ZJCC" target="_blank">
+          <label>Donate</label>
+        </a>
+
+        <label for="close-walkthrough" class="walkthrough-close">
+          <span class="fa fa-times-circle-o"></span>
+        </label>
+      </div>
+
+      <!-- Tab Content -->
+      <div id="walkthrough" class="walkthrough-content">
+        <iframe width="100%" height="360" src="https://www.youtube.com/embed/-AszZcClVXA" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <!--
+      <div id="exportation" class="walkthrough-content">
+        <iframe width="100%" height="360" src="https://www.youtube.com/embed/-AszZcClVXA" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <div id="feed" class="walkthrough-content">
+        <a class="twitter-timeline" href="https://twitter.com/kodeweave_app">Tweets by kodeweave_app</a>
+        <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+        <style>.walkthrough-content iframe[id*="twitter-widget"] {float: none; width: 100%!important;}</style>
+      </div>
+      -->
     </div>
 
     <script src="js/webdgap.min.js"></script>
