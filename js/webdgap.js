@@ -103,7 +103,7 @@ var loader = $(".load"),
       reader.onload = function(e) {
         // Export as Windows App
         $(".export-as-win-app").on("click", function() {
-          JSZipUtils.getBinaryContent("../assets/YourWinApp.zip", function(err, data) {
+          JSZipUtils.getBinaryContent("assets/YourWinApp.zip", function(err, data) {
             if(err) {
               throw err // or handle err
             }
@@ -131,7 +131,7 @@ var loader = $(".load"),
           return false;
         });
         $(".export-as-win32-app").on("click", function() {
-          JSZipUtils.getBinaryContent("../assets/YourWin32App.zip", function(err, data) {
+          JSZipUtils.getBinaryContent("assets/YourWin32App.zip", function(err, data) {
             if(err) {
               throw err // or handle err
             }
@@ -161,7 +161,7 @@ var loader = $(".load"),
 
         // Export as Mac App
         $(".export-as-mac-app").on("click", function() {
-          JSZipUtils.getBinaryContent("../assets/YourMacApp.zip", function(err, data) {
+          JSZipUtils.getBinaryContent("assets/YourMacApp.zip", function(err, data) {
             if(err) {
               throw err // or handle err
             }
@@ -193,7 +193,7 @@ var loader = $(".load"),
 
         // Export as Linux App
         $(".export-as-lin-app").on("click", function() {
-          JSZipUtils.getBinaryContent("../assets/YourLinApp.zip", function(err, data) {
+          JSZipUtils.getBinaryContent("assets/YourLinApp.zip", function(err, data) {
             if(err) {
               throw err // or handle err
             }
@@ -226,7 +226,7 @@ var loader = $(".load"),
           return false;
         });
         $(".export-as-lin32-app").on("click", function() {
-          JSZipUtils.getBinaryContent("../assets/YourLin32App.zip", function(err, data) {
+          JSZipUtils.getBinaryContent("assets/YourLin32App.zip", function(err, data) {
             if(err) {
               throw err // or handle err
             }
@@ -532,7 +532,7 @@ $(document).ready(function() {
 
             // Download as Windows App
             $(".export-as-win-app").on("click", function() {
-              JSZipUtils.getBinaryContent("../assets/YourWinApp.zip", function(err, data) {
+              JSZipUtils.getBinaryContent("assets/YourWinApp.zip", function(err, data) {
                 if(err) {
                   throw err // or handle err
                 }
@@ -566,7 +566,7 @@ $(document).ready(function() {
               });
             });
             $(".export-as-win32-app").on("click", function() {
-              JSZipUtils.getBinaryContent("../assets/YourWin32App.zip", function(err, data) {
+              JSZipUtils.getBinaryContent("assets/YourWin32App.zip", function(err, data) {
                 if(err) {
                   throw err // or handle err
                 }
@@ -602,7 +602,7 @@ $(document).ready(function() {
 
             // Download as Linux App
             $(".export-as-lin-app").on("click", function() {
-              JSZipUtils.getBinaryContent("../assets/YourLinApp.zip", function(err, data) {
+              JSZipUtils.getBinaryContent("assets/YourLinApp.zip", function(err, data) {
                 if(err) {
                   throw err // or handle err
                 }
@@ -638,7 +638,7 @@ $(document).ready(function() {
               });
             });
             $(".export-as-lin32-app").on("click", function() {
-              JSZipUtils.getBinaryContent("../assets/YourLin32App.zip", function(err, data) {
+              JSZipUtils.getBinaryContent("assets/YourLin32App.zip", function(err, data) {
                 if(err) {
                   throw err // or handle err
                 }
@@ -676,7 +676,7 @@ $(document).ready(function() {
 
             // Download as Mac App
             $(".export-as-mac-app").on("click", function() {
-              JSZipUtils.getBinaryContent("../assets/YourMacApp.zip", function(err, data) {
+              JSZipUtils.getBinaryContent("assets/YourMacApp.zip", function(err, data) {
                 if(err) {
                   throw err // or handle err
                 }
