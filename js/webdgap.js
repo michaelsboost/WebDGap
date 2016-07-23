@@ -293,15 +293,35 @@ var loader = $(".load"),
             var Img32 = c32[0].toDataURL("image/png");
             var Img64 = c64[0].toDataURL("image/png");
             var Img128 = canvas[0].toDataURL("image/png");
-            zip.file("assets/16.png", Img16.split('base64,')[1],{base64: true});
-            zip.file("assets/32.png", Img32.split('base64,')[1],{base64: true});
-            zip.file("assets/64.png", Img64.split('base64,')[1],{base64: true});
-            zip.file("assets/128.png", Img128.split('base64,')[1],{base64: true});
+            zip.file("img/16.png", Img16.split('base64,')[1],{base64: true});
+            zip.file("img/32.png", Img32.split('base64,')[1],{base64: true});
+            zip.file("img/64.png", Img64.split('base64,')[1],{base64: true});
+            zip.file("img/128.png", Img128.split('base64,')[1],{base64: true});
+            
+            if (document.getElementById("audiocapture").checked) {
+              audioCapture = ", \"audioCapture\"";
+            } else {
+              audioCapture = "";
+            }
+            if (document.getElementById("videocapture").checked) {
+              videoCapture = ", \"videoCapture\"";
+            } else {
+              videoCapture = "";
+            }
+            if (document.getElementById("storage").checked) {
+              storagePerm = ", \"storage\", \"fileSystem\", \"unlimitedStorage\"";
+            } else {
+              storagePerm = "";
+            }
+            listPermissions = audioCapture + videoCapture + storagePerm;
+            
             // Files for exported app
-            zip.file("background.js", "/**\n * Listens for the app launching, then creates the window.\n *\n * @see http://developer.chrome.com/apps/app.runtime.html\n * @see http://developer.chrome.com/apps/app.window.html\n */\nchrome.app.runtime.onLaunched.addListener(function(launchData) {\n  chrome.app.window.create(\n    'index.html',\n    {\n      id: 'mainWindow',\n      innerBounds: {\n        'width': 800,\n        'height': 600\n      }\n    }\n  );\n});");
-            zip.file("manifest.json", '{\n  "manifest_version": 2,\n  "name": "'+ $("[data-id=sitename]").val() +'",\n  "short_name": "'+ $("[data-id=sitename]").val() +'",\n  "description": "A native '+ $("[data-id=sitename]").val() +' standalone webview app for your Chrome Browser.",\n  "version": "'+ $("[data-value=version]").val() +'",\n  "minimum_chrome_version": "38",\n  "permissions":[ "webview", "storage", "fileSystem", "unlimitedStorage", "http://*/", "https://*/" ],\n  "icons": {\n    "16": "assets/16.png",\n    "32": "assets/32.png",\n    "64": "assets/64.png",\n    "128": "assets/128.png"\n  },\n\n  "app": {\n    "background": {\n      "scripts": ["background.js"]\n    }\n  }\n}\n');
-            zip.file("css/style.css", "html, body {\n  margin: 0;\n  padding: 0;\n  width: 100%;\n  height: 100%;\n}\n\nwebview {\n  width: 100%;\n  height: 100%;\n}");
-            zip.file("index.html", "<!DOCTYPE html>\n<html>\n  <head>\n    <title>"+ $("[data-id=sitename]").val() +"</title>\n    <link rel=\"stylesheet\" href=\"css/style.css\" />\n  </head>\n  <body>\n    <webview src=\""+ $("[data-action=website]").val() +"\">\n      Your Chromebook does not support the WebView html5 element.\n    </webview>\n  </body>\n</html>");
+            zip.file("css/reset.css", "/* http://meyerweb.com/eric/tools/css/reset/ \n   v2.0 | 20110126\n   License: none (public domain)\n*/\n\nhtml, body, div, span, applet, object, iframe,\nh1, h2, h3, h4, h5, h6, p, blockquote, pre,\na, abbr, acronym, address, big, cite, code,\ndel, dfn, em, img, ins, kbd, q, s, samp,\nsmall, strike, strong, sub, sup, tt, var,\nb, u, i, center,\ndl, dt, dd, ol, ul, li,\nfieldset, form, label, legend,\ntable, caption, tbody, tfoot, thead, tr, th, td,\narticle, aside, canvas, details, embed, \nfigure, figcaption, footer, header, hgroup, \nmenu, nav, output, ruby, section, summary,\ntime, mark, audio, video {\n	margin: 0;\n	padding: 0;\n	border: 0;\n	font-size: 100%;\n	font: inherit;\n	vertical-align: baseline;\n}\n/* HTML5 display-role reset for older browsers */\narticle, aside, details, figcaption, figure, \nfooter, header, hgroup, menu, nav, section {\n	display: block;\n}\nbody {\n	line-height: 1;\n}\nol, ul {\n	list-style: none;\n}\nblockquote, q {\n	quotes: none;\n}\nblockquote:before, blockquote:after,\nq:before, q:after {\n	content: '';\n	content: none;\n}\ntable {\n	border-collapse: collapse;\n	border-spacing: 0;\n}");
+            zip.file("css/style.css", "webview {\n    width: 100vw;\n    height: 100vh;\n}");
+            zip.file("html/embed.html", "<!DOCTYPE html>\n<html>\n  <head>\n    <meta charset=\"UTF-8\">\n    <title>"+ $("[data-id=sitename]").val() +"</title>\n    <link rel=\"stylesheet\" href=\"../css/reset.css\">\n    <link rel=\"stylesheet\" href=\"../css/style.css\">\n  </head>\n  <body>\n    <webview id=\"webview\" src=\""+ $("[data-action=website]").val() +"\" partition=\"persist:applicationize\"></webview>\n  </body>\n</html>");
+            zip.file("js/background.js", "/**\n * Listens for the app launching then creates the window\n *\n * @see http://developer.chrome.com/apps/app.runtime.html\n * @see http://developer.chrome.com/apps/app.window.html\n */\nchrome.app.runtime.onLaunched.addListener(function () {\n    runApp();\n});\n\n/**\n * Listens for the app restarting then re-creates the window.\n *\n * @see http://developer.chrome.com/apps/app.runtime.html\n */\nchrome.app.runtime.onRestarted.addListener(function () {\n    runApp();\n});\n\n/**\n * Creates the window for the application.\n *\n * @see http://developer.chrome.com/apps/app.window.html\n */\nfunction runApp() {\n    // Creat a new Chrome app window\n    chrome.app.window.create('html/embed.html', {\"id\":\"embed\",\"frame\":{\"type\":\"chrome\"},\"innerBounds\":{\"width\":1180,\"height\":900}}, onWindowLoaded());\n}\n\n/**\n * Called before the contentWindow's onload event\n *\n * @see http://developer.chrome.com/apps/app.window.html\n */\nfunction onWindowLoaded(popup) {\n    return function (win) {\n        // On window loaded event\n        win.contentWindow.onload = function () {\n            // Get webview \n            var webview = win.contentWindow.document.getElementById('webview');\n\n            // Sign up for 'permissionrequest' event\n            webview.addEventListener('permissionrequest', function (e) {\n                // Allow all permission requests\n                e.request.allow();\n            });\n\n            // Sign up for 'newwindow' event\n            // Emitted when a target='_blank' link is clicked within the webview\n            webview.addEventListener('newwindow', function (e) {\n                // Popup?\n                if (e.initialWidth > 0 && e.initialHeight > 0) {\n                    // Open it in a popup window with a set width and height\n                    return chrome.app.window.create('html/embed.html', { frame: { type: 'chrome' }, innerBounds: { width: e.initialWidth, height: e.initialHeight } }, onWindowLoaded(e));\n                }\n\n                // Open the link in a new browser tab/window\n                win.contentWindow.open(e.targetUrl);\n            });\n\n            // Is this a popup window?\n            if (popup) {\n                // Override webview source with popup's target URL\n                webview.src = popup.targetUrl;\n            }\n        };\n    };\n}\n");
+            zip.file("manifest.json", "{\n   \"app\": {\n      \"background\": {\n         \"pages\": [ \"html/embed.html\" ],\n         \"scripts\": [ \"js/background.js\" ]\n      }\n   },\n   \"description\": \""+ $("[data-value=description]").val() +"\",\n   \"icons\": {\n      \"128\": \"img/128.png\",\n      \"16\" : \"img/16.png\",\n      \"32\" : \"img/32.png\",\n      \"64\" : \"img/64.png\"\n   },\n   \"manifest_version\": 2,\n   \"name\": \""+ $("[data-id=sitename]").val() +"\",\n   \"permissions\": [ \"webview\""+ listPermissions +", \"http://*/\", \"https://*/\" ],\n   \"version\": \""+ $("[data-value=version]").val() +"\"\n}\n");
+            
             // Export application
             var content = zip.generate({type:"blob"});
             saveAs(content, $("[data-id=sitename]").val().toLowerCase().split(" ").join("-") + "-chromewebview.zip");
@@ -755,15 +775,32 @@ $(document).ready(function() {
                 zip.file("assets/32.png", Img32.split('base64,')[1],{base64: true});
                 zip.file("assets/64.png", Img64.split('base64,')[1],{base64: true});
                 zip.file("assets/128.png", Img128.split('base64,')[1],{base64: true});
+                
+                if (document.getElementById("audiocapture").checked) {
+                  audioCapture = ", \"audioCapture\"";
+                } else {
+                  audioCapture = "";
+                }
+                if (document.getElementById("videocapture").checked) {
+                  videoCapture = ", \"videoCapture\"";
+                } else {
+                  videoCapture = "";
+                }
+                if (document.getElementById("storage").checked) {
+                  storagePerm = ", \"storage\", \"fileSystem\", \"unlimitedStorage\"";
+                } else {
+                  storagePerm = "";
+                }
+                listPermissions = audioCapture + videoCapture + storagePerm;
 
                 // For Chrome Application
                 zip.file("background.js", "/**\n * Listens for the app launching, then creates the window.\n *\n * @see http://developer.chrome.com/apps/app.runtime.html\n * @see http://developer.chrome.com/apps/app.window.html\n */\nchrome.app.runtime.onLaunched.addListener(function(launchData) {\n  chrome.app.window.create(\n    'index.html',\n    {\n      id: 'mainWindow',\n      innerBounds: {\n        'width': 800,\n        'height': 600\n      }\n    }\n  );\n});");
                 zip.file("css/style.css", "html, body {\n  margin: 0;\n  padding: 0;\n  width: 100%;\n  height: 100%;\n}\n\nwebview, iframe {\n  width: 100%;\n  height: 100%;\n  border: 0;\n}");
                 zip.file("index.html", "<!DOCTYPE html>\n<html>\n  <head>\n    <title>"+ $("[data-id=sitename]").val() +"</title>\n    <link rel=\"stylesheet\" href=\"css/style.css\" />\n  </head>\n  <body>\n    <iframe src=\"app/index.html\">\n      Your Chromebook does not support the iFrame html element.\n    </iframe>\n  </body>\n</html>");
                 if ( $(".offline-mode").is(":checked") ) {
-                  zip.file("manifest.json", '{\n  "manifest_version": 2,\n  "name": "'+ $("[data-id=sitename]").val() +'",\n  "short_name": "'+ $("[data-id=sitename]").val() +'",\n  "description": "'+ $("[data-value=description]").val() +'",\n  "version": "'+ $("[data-value=version]").val() +'",\n  "minimum_chrome_version": "38",\n  "offline_enabled": true,\n  "permissions": [ "storage", "fileSystem", "unlimitedStorage", "http://*/", "https://*/" ],\n  "icons": {\n    "16": "assets/16.png",\n    "32": "assets/32.png",\n    "64": "assets/64.png",\n    "128": "assets/128.png"\n  },\n\n  "app": {\n    "background": {\n      "scripts": ["background.js"]\n    }\n  }\n}\n');
+                  zip.file("manifest.json", '{\n  "manifest_version": 2,\n  "name": "'+ $("[data-id=sitename]").val() +'",\n  "short_name": "'+ $("[data-id=sitename]").val() +'",\n  "description": "'+ $("[data-value=description]").val() +'",\n  "version": "'+ $("[data-value=version]").val() +'",\n  "minimum_chrome_version": "38",\n  "offline_enabled": true,\n  "permissions": [ "http://*/", "https://*/"'+ listPermissions +' ],\n  "icons": {\n    "16": "assets/16.png",\n    "32": "assets/32.png",\n    "64": "assets/64.png",\n    "128": "assets/128.png"\n  },\n\n  "app": {\n    "background": {\n      "scripts": ["background.js"]\n    }\n  }\n}\n');
                 } else {
-                  zip.file("manifest.json", '{\n  "manifest_version": 2,\n  "name": "'+ $("[data-id=sitename]").val() +'",\n  "short_name": "'+ $("[data-id=sitename]").val() +'",\n  "description": "'+ $("[data-value=description]").val() +'",\n  "version": "'+ $("[data-value=version]").val() +'",\n  "minimum_chrome_version": "38",\n  "offline_enabled": false,\n  "permissions": [ "storage", "fileSystem", "unlimitedStorage", "http://*/", "https://*/" ],\n  "icons": {\n    "16": "assets/16.png",\n    "32": "assets/32.png",\n    "64": "assets/64.png",\n    "128": "assets/128.png"\n  },\n\n  "app": {\n    "background": {\n      "scripts": ["background.js"]\n    }\n  }\n}\n');
+                  zip.file("manifest.json", '{\n  "manifest_version": 2,\n  "name": "'+ $("[data-id=sitename]").val() +'",\n  "short_name": "'+ $("[data-id=sitename]").val() +'",\n  "description": "'+ $("[data-value=description]").val() +'",\n  "version": "'+ $("[data-value=version]").val() +'",\n  "minimum_chrome_version": "38",\n  "offline_enabled": false,\n  "permissions": [ "http://*/", "https://*/"'+ listPermissions +' ],\n  "icons": {\n    "16": "assets/16.png",\n    "32": "assets/32.png",\n    "64": "assets/64.png",\n    "128": "assets/128.png"\n  },\n\n  "app": {\n    "background": {\n      "scripts": ["background.js"]\n    }\n  }\n}\n');
                 }
 
                 // Export Chrome Application

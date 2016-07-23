@@ -174,7 +174,7 @@
             <div class="grid__col--12">
               <form class="form">
                 <input class="form__input " type="number" min="0.1" step="0.1" value="0.1" data-value="version">
-                <textarea class="form__input resetval" data-value="description" placeholder="Description" rows="7"></textarea>
+                <textarea class="form__input resetval" data-value="description" placeholder="Description" rows="7">A shortcut app generated via WebDGap.</textarea>
 
                 <span class="chromeappcheck">
                   <h4>
@@ -189,6 +189,21 @@
                     </label>
                   </p>
                 </span>
+
+                <div class="chromeappexport">
+                  <h4>
+                    Permissions:
+                  </h4>
+
+                  <div class="center">
+                    <input type="checkbox" id="audiocapture" data-target="permissions">
+                    <label for="audiocapture">audioCapture</label>
+                    <input type="checkbox" id="videocapture" data-target="permissions">
+                    <label for="videocapture">videoCapture</label>
+                    <input type="checkbox" id="storage" data-target="permissions">
+                    <label for="storage">fileSystem</label>
+                  </div>
+                </div>
 
                 <div class="center">
                   <input class="btn--default chromeappexport hide" type="submit" value="Confirm">
@@ -292,6 +307,6 @@
       -->
     </div>
 
-    <script src="js/webdgap.min.js"></script>
+    <script src="js/webdgap.js"></script>
   </body>
 </html>

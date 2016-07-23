@@ -40,7 +40,6 @@ a {
   background: rgba(255, 255, 255, 0.7);
 }
 
-
 /* Center content horizontally and vertically */
 .table {
   display: table;
@@ -100,7 +99,6 @@ a {
   height: 48px;
   display: inline-block;
 }
-
 
 /* Toggle Switch */
 .onoffswitch {
@@ -171,6 +169,11 @@ a {
   right: 0;
 }
 
+/* Label Styles */
+.chromeappexport label {
+  position: relative;
+  top: -20px;
+}
 
 /* Preloader */
 .spinner {
