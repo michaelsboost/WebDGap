@@ -52,6 +52,26 @@ a {
   display: table-cell;
   vertical-align: middle;
 }
+/* Adjust export chooser for mobile devices */
+@media all and (min-width:768px) {
+  .table {
+    padding-top: 0;
+  }
+  .cell {
+    display: table-cell;
+    height: auto;
+    margin-top: auto;
+  }
+}
+@media all and (max-width:768px) {
+  .table {
+    padding-top: calc(100vh / 2 - 96px);
+  }
+  .cell {
+    display: block;
+    height: 25vh;
+  }
+}
 
 /* Misc */
 .hide, .disabled {
