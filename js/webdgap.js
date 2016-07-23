@@ -128,6 +128,7 @@ var audioCapture, videoCapture, storagePerm,
             // Export application
             var content = zip.generate({type:"blob"});
             saveAs(content, $("[data-id=sitename]").val().toLowerCase().split(" ").join("-") + "-winsite.zip");
+            $(".preloader").addClass("hide");
             return false;
           });
           return false;
@@ -188,6 +189,7 @@ var audioCapture, videoCapture, storagePerm,
             // Export application
             var content = zip.generate({type:"blob"});
             saveAs(content, $("[data-id=sitename]").val().toLowerCase().split(" ").join("-") + "-macsite.zip");
+            $(".preloader").addClass("hide");
             return false;
           });
           return false;
@@ -223,6 +225,7 @@ var audioCapture, videoCapture, storagePerm,
             // Export application
             var content = zip.generate({type:"blob"});
             saveAs(content, $("[data-id=sitename]").val().toLowerCase().split(" ").join("-") + "-linsite.zip");
+            $(".preloader").addClass("hide");
             return false;
           });
           return false;
