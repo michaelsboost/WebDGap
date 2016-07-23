@@ -24,7 +24,7 @@ The zip example below **WILL NOT WORK!!!**
 **NOTE:** Larger zip files take a longer time loading and exporting!
 
 ### Version
-1.2.1
+1.2.2
 
 ### Tech
 
@@ -41,7 +41,6 @@ MIT
 ### Free Software, Hell Yeah!  
 
 - [kodeWeave](http://kodeweave.sourceforge.net/)  
-- [Koding](https://koding.com/R/mikethedj4)  
 - [AngularJS](http://angularjs.org)  
 - [jQuery](http://jquery.com)  
 - [Codemirror](http://codemirror.net/)  
