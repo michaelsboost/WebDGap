@@ -244,12 +244,14 @@ a {
   padding: 0 0 0 10px;
   font-size: 12px;
 }
+.author {
+  width: 208px;
+}
 .author a {
   padding: 0;
-  font-size: 12px;
 }
 .author, .author a {
-  font-size: 11px;
+  font-size: 12px;
   padding-top: 7px;
 }
 .foot .logo {

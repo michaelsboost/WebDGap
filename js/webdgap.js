@@ -1,93 +1,101 @@
-$(function() {
-  // Run Onload
-  $("html, body").animate({ scrollTop: 0 }, "slow");
-  $(".dialog").hide();
+// Run Onload
+$("html, body").animate({ scrollTop: 0 }, "slow");
+document.querySelector(".dialog").style.display = "none";
 
-  $(".export64").on("click", function() {
-    $(".64bit").removeClass("hide");
-    $(".32bit").addClass("hide");
-    $("html, body").animate({ scrollTop: $(".chosenbit").offset().top }, "slow");
-  });
-  $(".export32").on("click", function() {
-    $(".64bit").addClass("hide");
-    $(".32bit").removeClass("hide");
-    $("html, body").animate({ scrollTop: $(".chosenbit").offset().top }, "slow");
-  });
+document.querySelector(".export64").onclick = function() {
+  $(".64bit").removeClass("hide");
+  $(".32bit").addClass("hide");
+  $("html, body").animate({ scrollTop: $(".chosenbit").offset().top }, "slow");
+};
+document.querySelector(".export32").onclick = function() {
+  $(".64bit").addClass("hide");
+  $(".32bit").removeClass("hide");
+  $("html, body").animate({ scrollTop: $(".chosenbit").offset().top }, "slow");
+};
 
-  // Show Preloader
-  $(".export-as-win32-app, .export-as-win-app, .export-as-mac-app, .export-as-lin32-app, .export-as-lin-app").click(function() {
-    $(".preloader").removeClass("hide");
-  });
-
-  // Export App or Site?
-  $("[data-id=convertapp], [data-id=convertsite]").on("click", function() {
-    if ( $(this).attr("data-id").toLowerCase() === "convertapp" ) {
-      $(".maindesc").html("Convert any web application to a native Windows/Linux/Mac/Chrome application.");
-      $("[data-id=appspace]").removeClass("hide");
-    } else if ( $(this).attr("data-id").toLowerCase() === "convertsite" ) {
-      $(".maindesc").html("Convert any website to a native Windows/Linux/Mac/Chrome application.");
-      $("[data-id=webspace]").removeClass("hide");
-      $(".outputname").addClass("convertsite-picked");
-      $("[data-id=sitename]").addClass("convertsite-chosen");
-      $(".logoisloadedapp").addClass("hide");
-    }
-
-    $("body").removeClass("noscroll");
-    $(".wholedialog").fadeOut();
-  });
-
-  // Only show image loader if application has a name
-  $("[data-action=website]").on("keyup", function(e) {
-     if (this.value.toLowerCase().substring(0,8) === "https://") {
-      $(".export-as-chrome-app").addClass("hide");
-      alertify.message("https is not recommend.<br /><br /> If needed use <a href=\"https://bitly.com/shorten/\">Bitly</a> to set url to http.");
-    }
-
-    if (this.value.toLowerCase() === "") {
-      $(".checkimageloader, [data-action=applyvalues]").addClass("hide");
-    } else if ( (this.value.toLowerCase().substring(0,7) === "http://" ) || (this.value.toLowerCase().substring(0,8) === "https://") ) {
-      $("[data-action=applyvalues]").removeClass("hide");
-      $("html, body").animate({ scrollTop: $(this).offset().top }, "slow");
-      if (e.which == 13) {
-        $("[data-action=applyvalues]").click();
-      }
-    } else {
-      $("[data-action=applyvalues]").addClass("hide");
-    }
-  });
-  $("[data-id=sitename]").on("keyup", function() {
-    if ( $(this).hasClass("convertsite-chosen") ) {
-      if ( this.value === "" ) {
-        $("[data-action=website]").addClass("hide");
-      } else {
-        $("[data-action=website]").removeClass("hide");
-      }
-    } else {
-      if ( this.value === "" ) {
-        $(".checkimageloader").addClass("hide");
-      } else {
-        $(".checkimageloader").removeClass("hide");
-      }
-    }
-    $(".outputname").text(this.value);
-  });
-
-  // Show image loader of required values
-  $("[data-action=applyvalues]").click(function() {
-    $(".checkimageloader, .outputname").removeClass("hide");
-    $(".logoisloadedsite").addClass("hide");
-    $(".outputname").text($("[data-id=sitename]").val());
-  });
-
-  // Reload application
-  $("[data-action=reload]").click(function() {
-    location.reload(true);
-  });
+// Show Preloader
+$(".export-as-win32-app, .export-as-win-app, .export-as-mac-app, .export-as-lin32-app, .export-as-lin-app").click(function() {
+  $(document.body).append('<div class="fixedfill preloader"></div>');
+  $(".preloader").html('<div class="table"><div class="cell"><h1>Creating application!</h1><div class="spinner"><div class="bounce1"></div><div class="bounce2"></div><div class="bounce3"></div></div></div></div>');
 });
 
-var audioCapture, videoCapture, storagePerm, 
+// Export App or Site?
+$("[data-id=convertapp], [data-id=convertsite]").on("click", function() {
+  if ( $(this).attr("data-id").toLowerCase() === "convertapp" ) {
+    document.querySelector(".maindesc").textContent = "Convert any web application to a native Windows/Linux/Mac/Chrome application.";
+    $("[data-id=appspace]").removeClass("hide");
+  } else if ( $(this).attr("data-id").toLowerCase() === "convertsite" ) {
+    document.querySelector(".maindesc").textContent = "Convert any website to a native Windows/Linux/Mac/Chrome application.";
+    $("[data-id=webspace]").removeClass("hide");
+    $(".outputname").addClass("convertsite-picked");
+    $("[data-id=sitename]").addClass("convertsite-chosen");
+    $(".logoisloadedapp, [data-listen=site]").addClass("hide");
+  }
+
+  $("body").removeClass("noscroll");
+  $(".wholedialog").fadeOut();
+});
+
+// Only show image loader if application has a name
+document.querySelector("[data-action=website]").onkeyup = function(e) {
+   if (this.value.toLowerCase().substring(0,8) === "https://") {
+    $(".export-as-chrome-app").addClass("hide");
+    alertify.message("https is not recommend.<br /><br /> If needed use <a href=\"https://bitly.com/shorten/\">Bitly</a> to set url to http.");
+  }
+
+  if (!this.value) {
+    $(".checkimageloader, [data-action=applyvalues]").addClass("hide");
+    // alertify.message("Unable to perform operation as field is blank.");
+  } else if ( (this.value.toLowerCase().substring(0,7) === "http://" ) || (this.value.toLowerCase().substring(0,8) === "https://") ) {
+    $("[data-action=applyvalues]").removeClass("hide");
+    $("html, body").animate({ scrollTop: $(this).offset().top }, "slow");
+    if (e.which == 13) {
+      $("[data-action=applyvalues]").trigger("click");
+    }
+  } else {
+    $("[data-action=applyvalues]").addClass("hide");
+  }
+};
+document.querySelector("[data-id=sitename]").onkeyup = function(e) {
+  if (e.which == 13) {
+    if (!this.value) {
+      alertify.message("Unable to perform operation as field is blank.");
+    } else {
+      $("[data-action=website]").focus();
+    }
+  }
+  
+  if ( $(this).hasClass("convertsite-chosen") ) {
+    if (!this.value) {
+      $("[data-action=website]").addClass("hide");
+    } else {
+      $("[data-action=website]").removeClass("hide");
+    }
+  } else {
+    if (!this.value) {
+      $(".checkimageloader").addClass("hide");
+    } else {
+      $(".checkimageloader").removeClass("hide");
+    }
+  }
+  document.querySelector(".outputname").textContent = this.value;
+};
+
+// Show image loader of required values
+document.querySelector("[data-action=applyvalues]").addEventListener("click", function() {
+  $(".checkimageloader, .outputname").removeClass("hide");
+  $(".logoisloadedsite").addClass("hide");
+  document.querySelector(".outputname").textContent = document.querySelector("[data-id=sitename]").value;
+});
+
+// Reload application
+document.querySelector("[data-action=reload]").addEventListener("click", function() {
+  location.reload(true);
+});
+
+var audioCapture, videoCapture, storagePerm,
     setOffline, listPermissions,
-    loader = $(".load"),
+    loader = $("#load"),
     c16 = $(".n16"),
     c32 = $(".n32"),
     c64 = $(".n64"),
@@ -128,7 +136,7 @@ var audioCapture, videoCapture, storagePerm,
             // Export application
             var content = zip.generate({type:"blob"});
             saveAs(content, $("[data-id=sitename]").val().toLowerCase().split(" ").join("-") + "-winsite.zip");
-            $(".preloader").addClass("hide");
+            $(".preloader").remove();
             return false;
           });
           return false;
@@ -157,7 +165,7 @@ var audioCapture, videoCapture, storagePerm,
             // Export application
             var content = zip.generate({type:"blob"});
             saveAs(content, $("[data-id=sitename]").val().toLowerCase().split(" ").join("-") + "-win32site.zip");
-            $(".preloader").addClass("hide");
+            $(".preloader").remove();
             return false;
           });
         });
@@ -189,7 +197,7 @@ var audioCapture, videoCapture, storagePerm,
             // Export application
             var content = zip.generate({type:"blob"});
             saveAs(content, $("[data-id=sitename]").val().toLowerCase().split(" ").join("-") + "-macsite.zip");
-            $(".preloader").addClass("hide");
+            $(".preloader").remove();
             return false;
           });
           return false;
@@ -225,7 +233,7 @@ var audioCapture, videoCapture, storagePerm,
             // Export application
             var content = zip.generate({type:"blob"});
             saveAs(content, $("[data-id=sitename]").val().toLowerCase().split(" ").join("-") + "-linsite.zip");
-            $(".preloader").addClass("hide");
+            $(".preloader").remove();
             return false;
           });
           return false;
@@ -259,7 +267,7 @@ var audioCapture, videoCapture, storagePerm,
             // Export application
             var content = zip.generate({type:"blob"});
             saveAs(content, $("[data-id=sitename]").val().toLowerCase().split(" ").join("-") + "-lin32site.zip");
-            $(".preloader").addClass("hide");
+            $(".preloader").remove();
             return false;
           });
         });
@@ -331,7 +339,7 @@ var audioCapture, videoCapture, storagePerm,
             var content = zip.generate({type:"blob"});
             saveAs(content, $("[data-id=sitename]").val().toLowerCase().split(" ").join("-") + "-chromewebview.zip");
             $(".dialog").fadeOut();
-            $(".preloader").addClass("hide");
+            $(".preloader").remove();
           }
           return false;
         });
@@ -361,7 +369,7 @@ var audioCapture, videoCapture, storagePerm,
             var content = zip.generate({type:"blob"});
             saveAs(content, $("[data-id=sitename]").val().toLowerCase().split(" ").join("-") + "-chromeext-webview.zip");
             $(".dialog").fadeOut();
-            $(".preloader").addClass("hide");
+            $(".preloader").remove();
             return false;
           }
         });
@@ -532,7 +540,7 @@ $(document).ready(function() {
   // Show contents
   var $result = $(".result");
   loadFiles.on("change", function(evt) {
-    if ( ($("#file").val() === "") || ($("[data-id=sitename]").val() === "") ) {
+    if ( (!document.getElementByID("file").value) || (!document.querySelector("[data-id=sitename]").value) ) {
       // Do nothing
     } else {
       $(".check").removeClass("hide");
@@ -586,7 +594,7 @@ $(document).ready(function() {
                 // Export your application
                 var content = zip.generate({type:"blob"});
                 saveAs(content, theFile.name.substr(theFile.name.length - theFile.name.length, theFile.name.length - 4) + "-win.zip");
-                $(".preloader").addClass("hide");
+                $(".preloader").remove();
                 return false;
               });
             });
@@ -620,7 +628,7 @@ $(document).ready(function() {
                 // Export your application
                 var content = zip.generate({type:"blob"});
                 saveAs(content, theFile.name.substr(theFile.name.length - theFile.name.length, theFile.name.length - 4) + "-win32.zip");
-                $(".preloader").addClass("hide");
+                $(".preloader").remove();
                 return false;
               });
             });
@@ -658,7 +666,7 @@ $(document).ready(function() {
                 // Export your application
                 var content = zip.generate({type:"blob"});
                 saveAs(content, theFile.name.substr(theFile.name.length - theFile.name.length, theFile.name.length - 4) + "-lin.zip");
-                $(".preloader").addClass("hide");
+                $(".preloader").remove();
                 return false;
               });
             });
@@ -694,7 +702,7 @@ $(document).ready(function() {
                 // Export your application
                 var content = zip.generate({type:"blob"});
                 saveAs(content, theFile.name.substr(theFile.name.length - theFile.name.length, theFile.name.length - 4) + "-lin32.zip");
-                $(".preloader").addClass("hide");
+                $(".preloader").remove();
                 return false;
               });
             });
@@ -732,7 +740,7 @@ $(document).ready(function() {
                 // Export your application
                 var content = zip.generate({type:"blob"});
                 saveAs(content, theFile.name.substr(theFile.name.length - theFile.name.length, theFile.name.length - 4) + "-mac.zip");
-                $(".preloader").addClass("hide");
+                $(".preloader").remove();
                 return false;
               });
             });
@@ -814,7 +822,7 @@ $(document).ready(function() {
                 var content = zip.generate({type:"blob"});
                 saveAs(content, theFile.name.substr(theFile.name.length - theFile.name.length, theFile.name.length - 4) + "-chromeapp.zip");
                 $(".dialog").fadeOut();
-                $(".preloader").addClass("hide");
+                $(".preloader").remove();
               }
               return false;
             });
@@ -850,7 +858,7 @@ $(document).ready(function() {
                 var content = zip.generate({type:"blob"});
                 saveAs(content, theFile.name.substr(theFile.name.length - theFile.name.length, theFile.name.length - 4) + "-chrome-ext.zip");
                 $(".dialog").fadeOut();
-                $(".preloader").addClass("hide");
+                $(".preloader").remove();
                 return false;
               }
             });

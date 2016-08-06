@@ -24,7 +24,7 @@ The zip example below **WILL NOT WORK!!!**
 **NOTE:** Larger zip files take a longer time loading and exporting!
 
 ### Version
-1.2.2
+1.2.3
 
 ### Tech
 
@@ -38,18 +38,18 @@ WebDGap uses a number of open source projects to work properly:
 ### License
 MIT
 
-### Free Software, Hell Yeah!  
+### Free Software, Hell Yeah!
 
-- [kodeWeave](http://kodeweave.sourceforge.net/)  
-- [AngularJS](http://angularjs.org)  
-- [jQuery](http://jquery.com)  
-- [Codemirror](http://codemirror.net/)  
-- [io.js](https://iojs.org/en/index.html)  
-- [node.js](http://nodejs.org)  
-- [JSZip](https://stuk.github.io/jszip/)  
-- [Twitter Bootstrap](http://twitter.github.com/bootstrap/)  
+- [kodeWeave](http://kodeweave.sourceforge.net/)
+- [AngularJS](http://angularjs.org)
+- [jQuery](http://jquery.com)
+- [Codemirror](http://codemirror.net/)
+- [io.js](https://iojs.org/en/index.html)
+- [node.js](http://nodejs.org)
+- [JSZip](https://stuk.github.io/jszip/)
+- [Twitter Bootstrap](http://twitter.github.com/bootstrap/)
 - [Poly UI Kit](https://github.com/Guilh/Poly)
-- [CodePen](http://codepen.io/mikethedj4)  
+- [CodePen](http://codepen.io/mikethedj4)
 
 ### Author
 
