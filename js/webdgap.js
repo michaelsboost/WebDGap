@@ -32,6 +32,7 @@ $("[data-id=convertapp], [data-id=convertsite]").on("click", function() {
     $(".logoisloadedapp, [data-listen=site]").addClass("hide");
   }
 
+  $("[data-id=sitename]").focus();
   $("body").removeClass("noscroll");
   $(".wholedialog").fadeOut();
 });
@@ -57,25 +58,20 @@ document.querySelector("[data-action=website]").onkeyup = function(e) {
   }
 };
 document.querySelector("[data-id=sitename]").onkeyup = function(e) {
-  if (e.which == 13) {
-    if (!this.value) {
-      alertify.message("Unable to perform operation as field is blank.");
-    } else {
-      $("[data-action=website]").focus();
-    }
-  }
-  
   if ( $(this).hasClass("convertsite-chosen") ) {
     if (!this.value) {
       $("[data-action=website]").addClass("hide");
     } else {
-      $("[data-action=website]").removeClass("hide");
+      $("[data-action=website]").removeClass("hide").focus();
     }
   } else {
     if (!this.value) {
       $(".checkimageloader").addClass("hide");
     } else {
       $(".checkimageloader").removeClass("hide");
+      if (e.which == 13) {
+        $("#load").trigger("click");
+      }
     }
   }
   document.querySelector(".outputname").textContent = this.value;
@@ -87,6 +83,22 @@ document.querySelector("[data-action=applyvalues]").addEventListener("click", fu
   $(".logoisloadedsite").addClass("hide");
   document.querySelector(".outputname").textContent = document.querySelector("[data-id=sitename]").value;
 });
+
+// Trigger load zip from url from textbox
+document.getElementById("zipurl").onkeyup = function(e) {
+  if (!this.value) {
+    $(".loadzipurl").addClass("hide");
+  } else {
+    if ( (this.value.toLowerCase().substring(0,7) === "http://" ) || (this.value.toLowerCase().substring(0,8) === "https://") && (this.value.toLowerCase().substring(this.value.length - 4) === ".zip") ) {
+      $(".loadzipurl").removeClass("hide");
+      if (e.which == 13) {
+        $(".loadzipurl").trigger("click");
+      }
+    } else {
+      $(".loadzipurl").addClass("hide");
+    }
+  }
+};
 
 // Reload application
 document.querySelector("[data-action=reload]").addEventListener("click", function() {
@@ -537,16 +549,16 @@ $(document).ready(function() {
     }
   });
 
-  // Show contents
+  // Load a local zip file
   var $result = $(".result");
   loadFiles.on("change", function(evt) {
-    if ( (!document.getElementByID("file").value) || (!document.querySelector("[data-id=sitename]").value) ) {
+    if ( (!document.getElementById("file").value) || (!document.querySelector("[data-id=sitename]").value) ) {
       // Do nothing
     } else {
       $(".check").removeClass("hide");
 
       // remove content
-      $result.html("");
+      $result.empty();
       // show the results
       $(".result_block").removeClass("hide");
 
@@ -872,6 +884,381 @@ $(document).ready(function() {
         setTimeout(function() {
           $("html, body").animate({ scrollTop: $(".pickbits").offset().top }, "slow");
         }, 300);
+      }
+    }
+  });
+
+  // If a remote zip file 
+  $(".loadzipurl").on("click", function() {
+    if ( (!document.getElementById("zipurl").value) ) {
+      // Do nothing
+      alertify.error("Unable to perform operation as value is blank!");
+    } else {
+      if ( (document.getElementById("zipurl").value.toLowerCase().substring(0,7) === "http://" ) || (document.getElementById("zipurl").value.toLowerCase().substring(0,8) === "https://") && (document.getElementById("zipurl").value.toLowerCase().substring(document.getElementById("zipurl").value.length - 4) === ".zip") ) {
+        $(".check").removeClass("hide");
+  
+        // remove content
+        $result.empty();
+        // show the results
+        $(".result_block").removeClass("hide");
+  
+        // see http://www.html5rocks.com/en/tutorials/file/dndfiles/
+  
+        JSZipUtils.getBinaryContent(document.getElementById("zipurl").value, function(error, repoFiles) {
+          if(error) {
+            throw error // or handle err
+          }
+  
+          var webAppZipBinary = repoFiles;
+
+          // Download as Windows App
+          $(".export-as-win-app").on("click", function() {
+            alertify.prompt("Name your file", "",
+            function(evt, value) {
+              JSZipUtils.getBinaryContent("assets/YourWinApp.zip", function(err, data) {
+                if(err) {
+                  throw err // or handle err
+                }
+  
+                var zip = new JSZip();
+                zip.load(data);
+  
+                // Your Web Application
+                zip.folder("app/").load(webAppZipBinary);
+  
+                // Your Logo
+                var Img16 = c16[0].toDataURL("image/png");
+                var Img32 = c32[0].toDataURL("image/png");
+                var Img64 = c64[0].toDataURL("image/png");
+                var Img128 = canvas[0].toDataURL("image/png");
+                zip.file("app/icons/16.png", Img16.split('base64,')[1],{base64: true});
+                zip.file("app/icons/32.png", Img32.split('base64,')[1],{base64: true});
+                zip.file("app/icons/64.png", Img64.split('base64,')[1],{base64: true});
+                zip.file("app/icons/128.png", Img128.split('base64,')[1],{base64: true});
+  
+                // For 32bit Windows Application
+                zip.file("package.json", '{\n  "main"  : "index.html",\n  "name"  : "'+ $("[data-id=sitename]").val() +'",\n  "window": {\n      "toolbar" : false,\n      "icon"    : "app/icons/128.png",\n      "width"   : 1000,\n      "height"  : 600,\n      "position": "center"\n  }\n}');
+                zip.file("index.html", '<!doctype html>\n<html>\n <head>\n    <title>'+ $("[data-id=sitename]").val() +'</title>\n    <style>\n      iframe {\n        position: absolute;\n        top: 0;\n        left: 0;\n        width: 100%;\n        height: 100%;\n        overflow: visible;\n        border: 0;\n      }\n    </style>\n  </head>\n <body>\n    <iframe src="app/index.html"></iframe>\n  </body>\n</html>');
+                // zip.file("README", "If WebDGap was at all helpful for you. Would you consider donating to the project?\nhttps://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BSYGA2RB5ZJCC\n\n");
+  
+                // Export your application
+                var content = zip.generate({type:"blob"});
+                saveAs(content, value + "-win.zip");
+                $(".preloader").remove();
+                return false;
+              });
+            },
+            function() {
+              // User clicked cancel
+            }).set('basic', true);
+          });
+          $(".export-as-win32-app").on("click", function() {
+            alertify.prompt("Name your file", "",
+            function(evt, value) {
+              JSZipUtils.getBinaryContent("assets/YourWin32App.zip", function(err, data) {
+                if(err) {
+                  throw err // or handle err
+                }
+  
+                var zip = new JSZip();
+                zip.load(data);
+  
+                // Your Web Application
+                zip.folder("app/").load(webAppZipBinary);
+  
+                // Your Logo
+                var Img16 = c16[0].toDataURL("image/png");
+                var Img32 = c32[0].toDataURL("image/png");
+                var Img64 = c64[0].toDataURL("image/png");
+                var Img128 = canvas[0].toDataURL("image/png");
+                zip.file("app/icons/16.png", Img16.split('base64,')[1],{base64: true});
+                zip.file("app/icons/32.png", Img32.split('base64,')[1],{base64: true});
+                zip.file("app/icons/64.png", Img64.split('base64,')[1],{base64: true});
+                zip.file("app/icons/128.png", Img128.split('base64,')[1],{base64: true});
+  
+                // For 32bit Windows Application
+                zip.file("package.json", '{\n  "main"  : "index.html",\n  "name"  : "'+ $("[data-id=sitename]").val() +'",\n  "window": {\n      "toolbar" : false,\n      "icon"    : "app/icons/128.png",\n      "width"   : 1000,\n      "height"  : 600,\n      "position": "center"\n  }\n}');
+                zip.file("index.html", '<!doctype html>\n<html>\n <head>\n    <title>'+ $("[data-id=sitename]").val() +'</title>\n    <style>\n      iframe {\n        position: absolute;\n        top: 0;\n        left: 0;\n        width: 100%;\n        height: 100%;\n        overflow: visible;\n        border: 0;\n      }\n    </style>\n  </head>\n <body>\n    <iframe src="app/index.html"></iframe>\n  </body>\n</html>');
+                // zip.file("README", "If WebDGap was at all helpful for you. Would you consider donating to the project?\nhttps://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BSYGA2RB5ZJCC\n\n");
+  
+                // Export your application
+                var content = zip.generate({type:"blob"});
+                saveAs(content, value.split(" ") + "-win32.zip");
+                $(".preloader").remove();
+                return false;
+              });
+            },
+            function() {
+              // User clicked cancel
+            }).set('basic', true);
+          });
+
+          // Download as Linux App
+          $(".export-as-lin-app").on("click", function() {
+            alertify.prompt("Name your file", "",
+            function(evt, value) {
+              JSZipUtils.getBinaryContent("assets/YourLinApp.zip", function(err, data) {
+                if(err) {
+                  throw err // or handle err
+                }
+  
+                var zip = new JSZip();
+                var appName = zip.folder( $("[data-id=sitename]").val().replace(/ /g, "-")  );
+                appName.load(data);
+  
+                // Your Web Application
+                appName.folder("app/").load(webAppZipBinary);
+  
+                // Your Logo
+                var Img16 = c16[0].toDataURL("image/png");
+                var Img32 = c32[0].toDataURL("image/png");
+                var Img64 = c64[0].toDataURL("image/png");
+                var Img128 = canvas[0].toDataURL("image/png");
+                appName.file("app/icons/16.png", Img16.split('base64,')[1],{base64: true});
+                appName.file("app/icons/32.png", Img32.split('base64,')[1],{base64: true});
+                appName.file("app/icons/64.png", Img64.split('base64,')[1],{base64: true});
+                appName.file("app/icons/128.png", Img128.split('base64,')[1],{base64: true});
+  
+                // Files for exported app
+                appName.file("package.json", '{\n  "main"  : "app/index.html",\n  "name"  : "'+ $("[data-id=sitename]").val() +'",\n  "window": {\n      "toolbar" : false,\n      "icon"    : "app/icons/128.png",\n      "width"   : 1000,\n      "height"  : 600,\n      "position": "center"\n  }\n}');
+  
+                zip.file("make.sh", "if [ -d ${HOME}/"+ $("[data-id=sitename]").val().replace(/ /g, "-") +" ]; then\n  typeset LP_FILE=${HOME}/"+ $("[data-id=sitename]").val().replace(/ /g, "-") +"/"+ $("[data-id=sitename]").val().replace(/ /g, "-") +".desktop\n\n  # Remove the target file if any\n  rm -f ${LP_FILE}\n  printf \"%s[Desktop Entry]\\nName="+ $("[data-id=sitename]").val() +"\\nPath=${HOME}/"+ $("[data-id=sitename]").val().replace(/ /g, "-") +"\\nActions=sudo\\nExec=./"+ $("[data-id=sitename]").val().replace(/ /g, "-") +"/nw\\nIcon=${HOME}/"+ $("[data-id=sitename]").val().replace(/ /g, "-") +"/app/icons/128.png\\nTerminal=true\\nType=Application\\nStartupNotify=true > ${HOME}/"+ $("[data-id=sitename]").val().replace(/ /g, "-") +".desktop\" >> ${LP_FILE}\n\n  echo 'Your application and launcher are now located at ${HOME}/"+ $("[data-id=sitename]").val().replace(/ /g, "-") +"'\n  rm README.md\n  rm make.sh\n  cd ../\n  rmdir "+ $("[data-id=sitename]").val().replace(/ /g, "-") +"-linsite\n  cd ${HOME}/"+ $("[data-id=sitename]").val().replace(/ /g, "-") +"/\n  chmod 775 nw\nfi\n\nif [ ! -d ${HOME}/"+ $("[data-id=sitename]").val().replace(/ /g, "-") +" ]; then\n  mv "+ $("[data-id=sitename]").val().replace(/ /g, "-") +" ${HOME}\n\n  typeset LP_FILE=${HOME}/"+ $("[data-id=sitename]").val().replace(/ /g, "-") +"/"+ $("[data-id=sitename]").val().replace(/ /g, "-") +".desktop\n\n  # Remove the target file if any\n  rm -f ${LP_FILE}\n  printf \"%s[Desktop Entry]\\nName="+ $("[data-id=sitename]").val() +"\\nPath=${HOME}/"+ $("[data-id=sitename]").val().replace(/ /g, "-") +"\\nActions=sudo\\nExec=./"+ $("[data-id=sitename]").val().replace(/ /g, "-") +"/nw\\nIcon=${HOME}/"+ $("[data-id=sitename]").val().replace(/ /g, "-") +"/app/icons/128.png\\nTerminal=true\\nType=Application\\nStartupNotify=true > ${HOME}/"+ $("[data-id=sitename]").val().replace(/ /g, "-") +".desktop\" >> ${LP_FILE}\n\n  echo 'Your application and launcher are now located at ${HOME}/"+ $("[data-id=sitename]").val().replace(/ /g, "-") +"'\n  rm README.md\n  rm make.sh\n  cd ../\n  rmdir "+ $("[data-id=sitename]").val().replace(/ /g, "-") +"-linsite\n  cd ${HOME}/"+ $("[data-id=sitename]").val().replace(/ /g, "-") +"/\n  chmod 775 nw\nfi\n\n# For Windows OS\n#if EXIST ${HOME}/"+ $("[data-id=sitename]").val().replace(/ /g, "-") +" (\n  #echo Yes\n#) ELSE (\n  #echo No\n#)\n");
+                zip.file("README.md", "### Instructions\n 1. Extract the `"+ $("[data-id=sitename]").val().replace(/ /g, "-") +"-linsite.zip` folder anywhere on your computer except the home folder. \n 2. Open a terminal and then navigate to "+ $("[data-id=sitename]").val().replace(/ /g, "-") +"'s directory and `run the make.sh file`.\n\n  **example**:\n  cd Downloads/"+ $("[data-id=sitename]").val().replace(/ /g, "-") +"-linsite\n\n 3. This will move the "+ $("[data-id=sitename]").val().replace(/ /g, "-") +" sibling folder and it's descendants to your home directory and create an application launcher.\n");
+  
+                // Export your application
+                var content = zip.generate({type:"blob"});
+                saveAs(content, value.split(" ") + "-lin.zip");
+                $(".preloader").remove();
+                return false;
+              });
+            },
+            function() {
+              // User clicked cancel
+            }).set('basic', true);
+          });
+          $(".export-as-lin32-app").on("click", function() {
+            alertify.prompt("Name your file", "",
+            function(evt, value) {
+              JSZipUtils.getBinaryContent("assets/YourLin32App.zip", function(err, data) {
+                if(err) {
+                  throw err // or handle err
+                }
+  
+                var zip = new JSZip();
+                var appName = zip.folder( $("[data-id=sitename]").val().replace(/ /g, "-")  );
+                appName.load(data);
+  
+                // Your Web Application
+                appName.folder("app/").load(webAppZipBinary);
+  
+                // Your Logo
+                var Img16 = c16[0].toDataURL("image/png");
+                var Img32 = c32[0].toDataURL("image/png");
+                var Img64 = c64[0].toDataURL("image/png");
+                var Img128 = canvas[0].toDataURL("image/png");
+                appName.file("app/icons/16.png", Img16.split('base64,')[1],{base64: true});
+                appName.file("app/icons/32.png", Img32.split('base64,')[1],{base64: true});
+                appName.file("app/icons/64.png", Img64.split('base64,')[1],{base64: true});
+                appName.file("app/icons/128.png", Img128.split('base64,')[1],{base64: true});
+  
+                // Files for exported app
+                appName.file("package.json", '{\n  "main"  : "app/index.html",\n  "name"  : "'+ $("[data-id=sitename]").val() +'",\n  "window": {\n      "toolbar" : false,\n      "icon"    : "app/icons/128.png",\n      "width"   : 1000,\n      "height"  : 600,\n      "position": "center"\n  }\n}');
+  
+                zip.file("make.sh", "if [ -d ${HOME}/"+ $("[data-id=sitename]").val().replace(/ /g, "-") +" ]; then\n  typeset LP_FILE=${HOME}/"+ $("[data-id=sitename]").val().replace(/ /g, "-") +"/"+ $("[data-id=sitename]").val().replace(/ /g, "-") +".desktop\n\n  # Remove the target file if any\n  rm -f ${LP_FILE}\n  printf \"%s[Desktop Entry]\\nName="+ $("[data-id=sitename]").val() +"\\nPath=${HOME}/"+ $("[data-id=sitename]").val().replace(/ /g, "-") +"\\nActions=sudo\\nExec=./"+ $("[data-id=sitename]").val().replace(/ /g, "-") +"/nw\\nIcon=${HOME}/"+ $("[data-id=sitename]").val().replace(/ /g, "-") +"/app/icons/128.png\\nTerminal=true\\nType=Application\\nStartupNotify=true > ${HOME}/"+ $("[data-id=sitename]").val().replace(/ /g, "-") +".desktop\" >> ${LP_FILE}\n\n  echo 'Your application and launcher are now located at ${HOME}/"+ $("[data-id=sitename]").val().replace(/ /g, "-") +"'\n  rm README.md\n  rm make.sh\n  cd ../\n  rmdir "+ $("[data-id=sitename]").val().replace(/ /g, "-") +"-lin32site\n  cd ${HOME}/"+ $("[data-id=sitename]").val().replace(/ /g, "-") +"/\n  chmod 775 nw\nfi\n\nif [ ! -d ${HOME}/"+ $("[data-id=sitename]").val().replace(/ /g, "-") +" ]; then\n  mv "+ $("[data-id=sitename]").val().replace(/ /g, "-") +" ${HOME}\n\n  typeset LP_FILE=${HOME}/"+ $("[data-id=sitename]").val().replace(/ /g, "-") +"/"+ $("[data-id=sitename]").val().replace(/ /g, "-") +".desktop\n\n  # Remove the target file if any\n  rm -f ${LP_FILE}\n  printf \"%s[Desktop Entry]\\nName="+ $("[data-id=sitename]").val() +"\\nPath=${HOME}/"+ $("[data-id=sitename]").val().replace(/ /g, "-") +"\\nActions=sudo\\nExec=./"+ $("[data-id=sitename]").val().replace(/ /g, "-") +"/nw\\nIcon=${HOME}/"+ $("[data-id=sitename]").val().replace(/ /g, "-") +"/app/icons/128.png\\nTerminal=true\\nType=Application\\nStartupNotify=true > ${HOME}/"+ $("[data-id=sitename]").val().replace(/ /g, "-") +".desktop\" >> ${LP_FILE}\n\n  echo 'Your application and launcher are now located at ${HOME}/"+ $("[data-id=sitename]").val().replace(/ /g, "-") +"'\n  rm README.md\n  rm make.sh\n  cd ../\n  rmdir "+ $("[data-id=sitename]").val().replace(/ /g, "-") +"-lin32site\n  cd ${HOME}/"+ $("[data-id=sitename]").val().replace(/ /g, "-") +"/\n  chmod 775 nw\nfi\n\n# For Windows OS\n#if EXIST ${HOME}/"+ $("[data-id=sitename]").val().replace(/ /g, "-") +" (\n  #echo Yes\n#) ELSE (\n  #echo No\n#)\n");
+                zip.file("README.md", "### Instructions\n 1. Extract the `"+ $("[data-id=sitename]").val().replace(/ /g, "-") +"-lin32site.zip` folder anywhere on your computer except the home folder. \n 2. Open a terminal and then navigate to "+ $("[data-id=sitename]").val().replace(/ /g, "-") +"'s directory and `run the make.sh file`.\n\n  **example**:\n  cd Downloads/"+ $("[data-id=sitename]").val().replace(/ /g, "-") +"-lin32site\n\n 3. This will move the "+ $("[data-id=sitename]").val().replace(/ /g, "-") +" sibling folder and it's descendants to your home directory and create an application launcher.\n");
+  
+                // Export your application
+                var content = zip.generate({type:"blob"});
+                saveAs(content, value.split(" ") + "-lin32.zip");
+                $(".preloader").remove();
+                return false;
+              });
+            },
+            function() {
+              // User clicked cancel
+            }).set('basic', true);
+          });
+
+          // Download as Mac App
+          $(".export-as-mac-app").on("click", function() {
+            alertify.prompt("Name your file", "",
+            function(evt, value) {
+              JSZipUtils.getBinaryContent("assets/YourMacApp.zip", function(err, data) {
+                if(err) {
+                  throw err // or handle err
+                }
+  
+                var zip = new JSZip();
+                zip.load(data);
+  
+                // Your Web Application
+                zip.folder("data/content/app").load(webAppZipBinary);
+  
+                // Your Logo
+                var Img16 = c16[0].toDataURL("image/png");
+                var Img32 = c32[0].toDataURL("image/png");
+                var Img64 = c64[0].toDataURL("image/png");
+                var Img128 = canvas[0].toDataURL("image/png");
+                zip.file("data/content/app/icons/16.png", Img16.split('base64,')[1],{base64: true});
+                zip.file("data/content/app/icons/32.png", Img32.split('base64,')[1],{base64: true});
+                zip.file("data/content/app/icons/64.png", Img64.split('base64,')[1],{base64: true});
+                zip.file("data/content/app/icons/128.png", Img128.split('base64,')[1],{base64: true});
+  
+                // For Mac Application
+                zip.file("data/package.json", '{\n  "main"  : "content/index.html",\n  "name"  : "'+ $("[data-id=sitename]").val() +'",\n  "window": {\n    "toolbar"    : false\n  }\n}');
+                zip.file("data/content/index.html", '<!doctype html>\n<html>\n <head>\n    <title>'+ $("[data-id=sitename]").val() +'</title>\n    <style>\n      iframe {\n        position: absolute;\n        top: 0;\n        left: 0;\n        width: 100%;\n        height: 100%;\n        overflow: visible;\n        border: 0;\n      }\n    </style>\n  </head>\n <body>\n    <iframe src="app/index.html"></iframe>\n\n    <script src="js/main.js"></script>\n  </body>\n</html>');
+                zip.file("data/content/js/main.js", 'document.addEventListener("DOMContentLoaded", function() {\n  // Load library\n  var gui = require("nw.gui");\n\n  // Reference to window\n  var win = gui.Window.get();\n\n  // Create menu container\n  var Menu = new gui.Menu({\n    type: "menubar"\n  });\n\n  //initialize default mac menu\n  Menu.createMacBuiltin("'+ $("[data-id=sitename]").val() +'");\n\n  // Get the root menu from the default mac menu\n  var rootMenu = Menu.items[0].submenu;\n  var windowMenu = Menu.items[2].submenu;\n\n  // Append new item to root menu\n  windowMenu.insert(\n    new gui.MenuItem({\n      type: "normal",\n      label: "Toggle Fullscreen",\n      key: "F",\n      modifiers: "cmd",\n      click : function () {\n        win.toggleFullscreen();\n      }\n    })\n  );\n\n  windowMenu.insert(\n    new gui.MenuItem({\n      type: "normal",\n      label: "Reload App",\n      key: "r",\n      modifiers: "cmd",\n      click : function () {\n        win.reload();\n      }\n    })\n  );\n\n  // Remove About Node-Webkit\n  rootMenu.removeAt(0);\n\n  // Append Menu to Window\n  gui.Window.get().menu = Menu;\n});');
+                zip.file("run.sh", "open -a /Applications/"+ $("[data-id=sitename]").val().replace(/ /g, "") +".app/Contents/data/"+ $("[data-id=sitename]").val().replace(/ /g, "") +".app");
+                // zip.file("README", "If WebDGap was at all helpful for you. Would you consider donating to the project?\nhttps://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BSYGA2RB5ZJCC\n\n");
+  
+                // Export your application
+                var content = zip.generate({type:"blob"});
+                saveAs(content, value.split(" ") + "-mac.zip");
+                $(".preloader").remove();
+                return false;
+              });
+            },
+            function() {
+              // User clicked cancel
+            }).set('basic', true);
+          });
+
+          // Download for Chrome
+          $(".export-for-chrome").on("click", function() {
+            $(".pickchromes").toggleClass("hide");
+            $("html, body").animate({ scrollTop: $(".pickchromes").offset().top }, "slow");
+          });
+          $(".reset").on("click", function() {
+            $(".resetval").val("");
+          });
+          $(".chromeapp").on("click", function() {
+            $(".chromeappcheck").removeClass("hide");
+            $(".chromeappexport").removeClass("hide");
+            $(".chromepopexport").addClass("hide");
+            $(".dialog").fadeIn();
+            $("html, body").animate({ scrollTop: $(".dialog").offset().top }, "slow");
+          });
+          $(".chromepopup").on("click", function() {
+            $(".chromeappcheck").addClass("hide");
+            $(".chromeappexport").addClass("hide");
+            $(".chromepopexport").removeClass("hide");
+            $(".dialog").fadeIn();
+            $("html, body").animate({ scrollTop: $(".dialog").offset().top }, "slow");
+          });
+
+          // Export Chrome Application
+          $("input.chromeappexport").on("click", function() {
+            if ( !$("[data-value=description]").val() ) {
+              alertify.error("Unable to export: Description is blank!");
+            } else {
+              alertify.prompt("Name your file", "",
+              function(evt, value) {
+                $(".preloader").removeClass("hide");
+                var zip = new JSZip();
+  
+                // Your Web Application
+                zip.folder("html").folder("app").load(webAppZipBinary);
+  
+                // Your Logo
+                var Img16 = c16[0].toDataURL("image/png");
+                var Img32 = c32[0].toDataURL("image/png");
+                var Img64 = c64[0].toDataURL("image/png");
+                var Img128 = canvas[0].toDataURL("image/png");
+                zip.file("img/16.png", Img16.split('base64,')[1],{base64: true});
+                zip.file("img/32.png", Img32.split('base64,')[1],{base64: true});
+                zip.file("img/64.png", Img64.split('base64,')[1],{base64: true});
+                zip.file("img/128.png", Img128.split('base64,')[1],{base64: true});
+                
+                if (document.getElementById("audiocapture").checked) {
+                  audioCapture = ", \"audioCapture\"";
+                } else {
+                  audioCapture = "";
+                }
+                if (document.getElementById("videocapture").checked) {
+                  videoCapture = ", \"videoCapture\"";
+                } else {
+                  videoCapture = "";
+                }
+                if (document.getElementById("storage").checked) {
+                  storagePerm = ", \"storage\", \"fileSystem\", \"unlimitedStorage\"";
+                } else {
+                  storagePerm = "";
+                }
+                if ( $(".offline-mode").is(":checked") ) {
+                  setOffline = "\"offline_enabled\": true";
+                } else {
+                  setOffline = "\"offline_enabled\": false";
+                }
+                listPermissions = audioCapture + videoCapture + storagePerm;
+                
+                // Files for exported app
+                zip.file("css/reset.css", "/* http://meyerweb.com/eric/tools/css/reset/ \n   v2.0 | 20110126\n   License: none (public domain)\n*/\n\nhtml, body, div, span, applet, object, iframe,\nh1, h2, h3, h4, h5, h6, p, blockquote, pre,\na, abbr, acronym, address, big, cite, code,\ndel, dfn, em, img, ins, kbd, q, s, samp,\nsmall, strike, strong, sub, sup, tt, var,\nb, u, i, center,\ndl, dt, dd, ol, ul, li,\nfieldset, form, label, legend,\ntable, caption, tbody, tfoot, thead, tr, th, td,\narticle, aside, canvas, details, embed, \nfigure, figcaption, footer, header, hgroup, \nmenu, nav, output, ruby, section, summary,\ntime, mark, audio, video {\n	margin: 0;\n	padding: 0;\n	border: 0;\n	font-size: 100%;\n	font: inherit;\n	vertical-align: baseline;\n}\n/* HTML5 display-role reset for older browsers */\narticle, aside, details, figcaption, figure, \nfooter, header, hgroup, menu, nav, section {\n	display: block;\n}\nbody {\n	line-height: 1;\n}\nol, ul {\n	list-style: none;\n}\nblockquote, q {\n	quotes: none;\n}\nblockquote:before, blockquote:after,\nq:before, q:after {\n	content: '';\n	content: none;\n}\ntable {\n	border-collapse: collapse;\n	border-spacing: 0;\n}");
+                zip.file("css/style.css", "webview, iframe {\n    width: 100vw;\n    height: 100vh;\n    border: 0;\n}");
+                zip.file("html/embed.html", "<!DOCTYPE html>\n<html>\n  <head>\n    <meta charset=\"UTF-8\">\n    <title>"+ $("[data-id=sitename]").val() +"</title>\n    <link rel=\"stylesheet\" href=\"../css/reset.css\">\n    <link rel=\"stylesheet\" href=\"../css/style.css\">\n  </head>\n  <body>\n    <iframe src=\"app/index.html\">\n  </body>\n</html>");
+                zip.file("js/background.js", "/**\n * Listens for the app launching then creates the window\n *\n * @see http://developer.chrome.com/apps/app.runtime.html\n * @see http://developer.chrome.com/apps/app.window.html\n */\nchrome.app.runtime.onLaunched.addListener(function () {\n    runApp();\n});\n\n/**\n * Listens for the app restarting then re-creates the window.\n *\n * @see http://developer.chrome.com/apps/app.runtime.html\n */\nchrome.app.runtime.onRestarted.addListener(function () {\n    runApp();\n});\n\n/**\n * Creates the window for the application.\n *\n * @see http://developer.chrome.com/apps/app.window.html\n */\nfunction runApp() {\n    // Creat a new Chrome app window\n    chrome.app.window.create('html/embed.html', {\"id\":\"embed\",\"frame\":{\"type\":\"chrome\"},\"innerBounds\":{\"width\":1180,\"height\":900}}, onWindowLoaded());\n}\n\n/**\n * Called before the contentWindow's onload event\n *\n * @see http://developer.chrome.com/apps/app.window.html\n */\nfunction onWindowLoaded(popup) {\n    return function (win) {\n        // On window loaded event\n        win.contentWindow.onload = function () {\n            // Get webview \n            var webview = win.contentWindow.document.getElementById('webview');\n\n            // Sign up for 'permissionrequest' event\n            webview.addEventListener('permissionrequest', function (e) {\n                // Allow all permission requests\n                e.request.allow();\n            });\n\n            // Sign up for 'newwindow' event\n            // Emitted when a target='_blank' link is clicked within the webview\n            webview.addEventListener('newwindow', function (e) {\n                // Popup?\n                if (e.initialWidth > 0 && e.initialHeight > 0) {\n                    // Open it in a popup window with a set width and height\n                    return chrome.app.window.create('html/embed.html', { frame: { type: 'chrome' }, innerBounds: { width: e.initialWidth, height: e.initialHeight } }, onWindowLoaded(e));\n                }\n\n                // Open the link in a new browser tab/window\n                win.contentWindow.open(e.targetUrl);\n            });\n\n            // Is this a popup window?\n            if (popup) {\n                // Override webview source with popup's target URL\n                webview.src = popup.targetUrl;\n            }\n        };\n    };\n}\n");
+                zip.file("manifest.json", "{\n   \"app\": {\n      \"background\": {\n         \"pages\": [ \"html/embed.html\" ],\n         \"scripts\": [ \"js/background.js\" ]\n      }\n   },\n   \"description\": \""+ $("[data-value=description]").val() +"\",\n   \"icons\": {\n      \"128\": \"img/128.png\",\n      \"16\" : \"img/16.png\",\n      \"32\" : \"img/32.png\",\n      \"64\" : \"img/64.png\"\n   },\n   \"manifest_version\": 2,\n   \"name\": \""+ $("[data-id=sitename]").val() +"\",\n   "+ setOffline +",\n   \"permissions\": [ \"http://*/\", \"https://*/\""+ listPermissions +" ],\n   \"version\": \""+ $("[data-value=version]").val() +"\"\n}\n");
+  
+                // Export Chrome Application
+                var content = zip.generate({type:"blob"});
+                saveAs(content, value.split(" ") + "-chromeapp.zip");
+                $(".dialog").fadeOut();
+                $(".preloader").remove();
+              },
+              function() {
+                // User clicked cancel
+              }).set('basic', true);
+            }
+            return false;
+          });
+
+          // Export Chrome Popup Extension
+          $(".chromepopexport").on("click", function() {
+            if ( $("[data-value=description]").val() == "" ) {
+              alertify.error("Unable to export: Description is blank!");
+            } else {
+              alertify.prompt("Name your file", "",
+              function(evt, value) {
+                $(".preloader").removeClass("hide");
+                var zip = new JSZip();
+  
+                // Your Web App
+                zip.folder("app").load(webAppZipBinary);
+  
+                // Your Logo
+                var Img16 = c16[0].toDataURL("image/png");
+                var Img32 = c32[0].toDataURL("image/png");
+                var Img64 = c64[0].toDataURL("image/png");
+                var Img128 = canvas[0].toDataURL("image/png");
+                zip.file("assets/16.png", Img16.split('base64,')[1],{base64: true});
+                zip.file("assets/32.png", Img32.split('base64,')[1],{base64: true});
+                zip.file("assets/64.png", Img64.split('base64,')[1],{base64: true});
+                zip.file("assets/128.png", Img128.split('base64,')[1],{base64: true});
+  
+                // For Chrome Extension
+                zip.file("background.js", "/**\n * Listens for the app launching, then creates the window.\n *\n * @see http://developer.chrome.com/apps/app.runtime.html\n * @see http://developer.chrome.com/apps/app.window.html\n */\nchrome.app.runtime.onLaunched.addListener(function(launchData) {\n  chrome.app.window.create(\n    'index.html',\n    {\n      id: 'mainWindow',\n      innerBounds: {\n        'width': 800,\n        'height': 600\n      }\n    }\n  );\n});");
+                zip.file("css/style.css", "html, body {\n  margin: 0;\n  padding: 0;\n  width: 100%;\n  height: 100%;\n}\n\nbody {\n  min-width: 300px;\n  min-height: 420px;\n}\n\nwebview, iframe {\n  width: 100%;\n  height: 100%;\n  border: 0;\n}");
+                zip.file("index.html", "<!DOCTYPE html>\n<html>\n  <head>\n    <title>"+ $("[data-id=sitename]").val() +"</title>\n    <link rel=\"stylesheet\" href=\"css/style.css\" />\n  </head>\n  <body>\n    <iframe src=\"app/index.html\">\n      Your Chromebook does not support the iFrame html element.\n    </iframe>\n  </body>\n</html>");
+                zip.file("manifest.json", "{\n  \"manifest_version\": 2,\n  \"name\": \""+ $("[data-id=sitename]").val() +"\",\n  \"short_name\": \""+ $("[data-id=sitename]").val() +"\",\n  \"description\": \""+ $("[data-value=description]").val() +"\",\n  \"version\": \""+ $("[data-value=version]").val() +"\",\n  \"minimum_chrome_version\": \"38\",\n  \"permissions\": [ \"storage\", \"unlimitedStorage\", \"http://*/\", \"https://*/\" ],\n  \"icons\": {\n    \"16\": \"assets/16.png\",\n    \"32\": \"assets/32.png\",\n    \"64\": \"assets/64.png\",\n    \"128\": \"assets/128.png\"\n  },\n\n  \"browser_action\": {\n    \"default_icon\": \"assets/128.png\",\n    \"default_title\": \""+ $("[data-id=sitename]").val() +"\",\n    \"default_popup\": \"index.html\"\n  },\n  \n  \"content_security_policy\": \"script-src 'self' 'unsafe-eval'; object-src 'self'\"\n}");
+  
+                // Export Chrome Extension
+                var content = zip.generate({type:"blob"});
+                saveAs(content, value.split(" ") + "-chrome-ext.zip");
+                $(".dialog").fadeOut();
+                $(".preloader").remove();
+                return false;
+              },
+              function() {
+                // User clicked cancel
+              }).set('basic', true);
+            }
+          });
+        });
+
+        setTimeout(function() {
+          $("html, body").animate({ scrollTop: $(".pickbits").offset().top }, "slow");
+        }, 300);
+      } else {
+        alertify.error("Error! \"http://\" and \"https://\" urls are only supported!");
       }
     }
   });
