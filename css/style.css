@@ -101,9 +101,18 @@ a {
 .whitebg h4 {
   color: #999;
 }
-.chrome-border {
+.chrome-border, .phonegap-dialog {
   border-radius: 4em;
   padding: 2em;
+}
+.chrome-border div form div input,
+.phonegap-dialog div form div input {
+  width: auto;
+}
+.chrome-border div form div label,
+.phonegap-dialog div form div label {
+  position: relative;
+  top: -19px;
 }
 .preloader {
   background: #69EC93;

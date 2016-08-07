@@ -79,6 +79,25 @@
                 <canvas class="n16 hide" width="16" height="16"></canvas>
                 <canvas class="n32 hide" width="32" height="32"></canvas>
                 <canvas class="n64 hide" width="64" height="64"></canvas>
+                
+                <!-- Main Mobile Icon -->
+                <div class="imgorigholder hide"></div>
+
+                <!-- Android Icon -->
+                <canvas class="n96 hide" width="96" height="96"></canvas>
+                <canvas class="n72 hide" width="72" height="72"></canvas>
+                <canvas class="n48 hide" width="48" height="48"></canvas>
+                <canvas class="n36 hide" width="36" height="36"></canvas>
+                
+                <!-- iOS Icon -->
+                <canvas class="n144 hide" width="144" height="144"></canvas>
+                <canvas class="n57 hide" width="57" height="57"></canvas>
+                <canvas class="n114 hide" width="114" height="114"></canvas>
+                
+                <!-- Windows Phone Icon -->
+                <canvas class="n173 hide" width="173" height="173"></canvas>
+                <canvas class="n62 hide" width="62" height="62"></canvas>
+
                 <canvas class="holder call pointer" width="128" height="128"></canvas>
               </div>
             </div>
@@ -217,13 +236,58 @@
                   </div>
                 </div>
 
-                <div class="center">
-                  <input class="btn--default chromeappexport hide" type="submit" value="Confirm">
-                  <input class="btn--default chromepopexport hide" type="submit" value="Confirm">
+                <div class="center" style="padding-top: 45px;">
+                  <input class="btn--default chromeappexport hide" type="button" value="Confirm">
+                  <input class="btn--default chromepopexport hide" type="button" value="Confirm">
                   <input class="btn--warning reset" type="reset" value="Reset">
                 </div>
               </form>
             </div>
+          </div>
+        </div>
+
+        <!-- PhoneGap App Export Dialog -->
+        <div class="grid dialog whitebg panel--padded--centered phonegap-dialog hide">
+          <div class="grid__col--12">
+            <form class="form">
+              <input class="form__input" type="number" min="0.1" step="0.1" value="0.1" data-pgb="version" />
+              <input class="form__input" type="number" min="1" step="1" value="1" data-pgb="versionCode" />
+              <textarea class="form__input resetval" data-pgb="description" placeholder="Description" rows="7">A shortcut app generated via WebDGap.</textarea>
+              <input class="form__input" data-pgb="author" placeholder="Author" value="Author" />
+              <input class="form__input" data-pgb="authoremail" placeholder="admin@website.com" value="admin@website.com" />
+              <input class="form__input" data-pgb="authorlink" placeholder="http://website.com/" value="http://website.com/" />
+
+              <h4>
+                Intentions:
+              </h4>
+
+              <div class="center">
+                <input type="checkbox" id="tel" data-pgb="tel">
+                <label for="tel">Telephone</label>
+                <input type="checkbox" id="sms" data-pgb="sms">
+                <label for="sms">SMS</label>
+                <input type="checkbox" id="mailto" data-pgb="mailto">
+                <label for="mailto">Mail To</label>
+                <input type="checkbox" id="geo" data-pgb="geo">
+                <label for="geo">Geolocation</label>
+                <input type="checkbox" id="marketlinks" data-pgb="marketlinks">
+                <label for="marketlinks">Market Links</label>
+              </div>
+              
+              <h4>
+                Permissions:
+              </h4>
+
+              <div class="center">
+                <input type="checkbox" id="filestorage" data-pgb="filestorage">
+                <label for="filestorage">FileStorage</label>
+              </div>
+
+              <div class="center" style="padding-top: 45px;">
+                <input class="btn--default pgbappexport" type="button" value="Confirm">
+                <input class="btn--warning reset" type="reset" value="Reset">
+              </div>
+            </form>
           </div>
         </div>
 
