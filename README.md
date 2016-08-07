@@ -51,6 +51,10 @@ MIT
 - [Poly UI Kit](https://github.com/Guilh/Poly)
 - [CodePen](http://codepen.io/mikethedj4)
 
+### To-DO
+
+- Incorporate PhoneGap Build App Exportation
+
 ### Author
 
 - [michael schwartz](http://mikethedj4.github.io/)

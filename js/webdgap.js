@@ -24,12 +24,15 @@ $("[data-id=convertapp], [data-id=convertsite]").on("click", function() {
   if ( $(this).attr("data-id").toLowerCase() === "convertapp" ) {
     document.querySelector(".maindesc").textContent = "Convert any web application to a native Windows/Linux/Mac/Chrome application.";
     $("[data-id=appspace]").removeClass("hide");
+    document.querySelector(".export-for-pgb").href = "javascript:alertify.message('Coming soon')";
   } else if ( $(this).attr("data-id").toLowerCase() === "convertsite" ) {
     document.querySelector(".maindesc").textContent = "Convert any website to a native Windows/Linux/Mac/Chrome application.";
     $("[data-id=webspace]").removeClass("hide");
     $(".outputname").addClass("convertsite-picked");
     $("[data-id=sitename]").addClass("convertsite-chosen");
     $(".logoisloadedapp, [data-listen=site]").addClass("hide");
+    document.querySelector(".export-for-pgb").href = "https://gonative.io/";
+    document.querySelector(".export-for-pgb").target = "_blank";
   }
 
   $("[data-id=sitename]").focus();
@@ -62,7 +65,10 @@ document.querySelector("[data-id=sitename]").onkeyup = function(e) {
     if (!this.value) {
       $("[data-action=website]").addClass("hide");
     } else {
-      $("[data-action=website]").removeClass("hide").focus();
+      $("[data-action=website]").removeClass("hide");
+      if (e.which == 13) {
+        $("[data-action=website]").focus();
+      }
     }
   } else {
     if (!this.value) {
@@ -85,6 +91,7 @@ document.querySelector("[data-action=applyvalues]").addEventListener("click", fu
 });
 
 // Trigger load zip from url from textbox
+/*
 document.getElementById("zipurl").onkeyup = function(e) {
   if (!this.value) {
     $(".loadzipurl").addClass("hide");
@@ -99,6 +106,7 @@ document.getElementById("zipurl").onkeyup = function(e) {
     }
   }
 };
+*/
 
 // Reload application
 document.querySelector("[data-action=reload]").addEventListener("click", function() {
