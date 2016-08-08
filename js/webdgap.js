@@ -198,7 +198,7 @@ var audioCapture, videoCapture, storagePerm, setOffline, listPermissions,
             zip.file("resources/default_app/package.json", "{\n  \"name\": \""+ $("[data-id=sitename]").val() +"\",\n  \"productName\": \""+ $("[data-id=sitename]").val() +"\",\n  \"version\": \"1.0.0\",\n  \"main\": \"default_app.js\",\n  \"license\": \"MIT\"\n}\n");
             // Export application
             var content = zip.generate({type:"blob"});
-            saveAs(content, $("[data-id=sitename]").val().toLowerCase().replace(/ /g, "").join("-") + "-winsite.zip");
+            saveAs(content, $("[data-id=sitename]").val().replace(/ /g, "-").toLowerCase() + "-winsite.zip");
             $(".preloader").remove();
             return false;
           });
@@ -228,7 +228,7 @@ var audioCapture, videoCapture, storagePerm, setOffline, listPermissions,
             // zip.file("README", "If WebDGap was at all helpful for you. Would you consider donating to the project?\nhttps://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BSYGA2RB5ZJCC\n\n")
             // Export application
             var content = zip.generate({type:"blob"});
-            saveAs(content, $("[data-id=sitename]").val().toLowerCase().replace(/ /g, "").join("-") + "-win32site.zip");
+            saveAs(content, $("[data-id=sitename]").val().replace(/ /g, "-").toLowerCase() + "-win32site.zip");
             $(".preloader").remove();
             return false;
           });
@@ -257,11 +257,11 @@ var audioCapture, videoCapture, storagePerm, setOffline, listPermissions,
             zip.file("data/package.json", '{\n  "main"  : "content/index.html",\n  "name"  : "'+ $("[data-id=sitename]").val() +'",\n  "window": {\n    "toolbar"    : false\n  }\n}');
             zip.file("data/content/index.html", '<!doctype html>\n<html>\n <head>\n    <title>'+ $("[data-id=sitename]").val() +'</title>\n    <style>\n      iframe {\n        position: absolute;\n        top: 0;\n        left: 0;\n        width: 100%;\n        height: 100%;\n        overflow: visible;\n        border: 0;\n      }\n    </style>\n  </head>\n <body>\n    <iframe src="'+ $("[data-action=website]").val() +'"></iframe>\n\n    <script src="js/main.js"></script>\n  </body>\n</html>');
             zip.file("data/content/js/main.js", 'document.addEventListener("DOMContentLoaded", function() {\n  // Load library\n  var gui = require("nw.gui");\n\n  // Reference to window\n  var win = gui.Window.get();\n\n  // Create menu container\n  var Menu = new gui.Menu({\n    type: "menubar"\n  });\n\n  //initialize default mac menu\n  Menu.createMacBuiltin("'+ $("[data-id=sitename]").val() +'");\n\n  // Get the root menu from the default mac menu\n  var rootMenu = Menu.items[0].submenu;\n  var windowMenu = Menu.items[2].submenu;\n\n  // Append new item to root menu\n  windowMenu.insert(\n    new gui.MenuItem({\n      type: "normal",\n      label: "Toggle Fullscreen",\n      key: "F",\n      modifiers: "cmd",\n      click : function () {\n        win.toggleFullscreen();\n      }\n    })\n  );\n\n  windowMenu.insert(\n    new gui.MenuItem({\n      type: "normal",\n      label: "Reload App",\n      key: "r",\n      modifiers: "cmd",\n      click : function () {\n        win.reload();\n      }\n    })\n  );\n\n  // Remove About Node-Webkit\n  rootMenu.removeAt(0);\n\n  // Append Menu to Window\n  gui.Window.get().menu = Menu;\n});');
-            zip.file("run.sh", "open -a /Applications/"+ $("[data-id=sitename]").val() +".app/Contents/data/"+ $("[data-id=sitename]").val().replace(/ /g, "").join("") +".app");
+            zip.file("run.sh", "open -a /Applications/"+ $("[data-id=sitename]").val() +".app/Contents/data/"+ $("[data-id=sitename]").val().replace(/ /g, "") +".app");
             // zip.file("README", "If WebDGap was at all helpful for you. Would you consider donating to the project?\nhttps://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BSYGA2RB5ZJCC\n\n");
             // Export application
             var content = zip.generate({type:"blob"});
-            saveAs(content, $("[data-id=sitename]").val().toLowerCase().replace(/ /g, "").join("-") + "-macsite.zip");
+            saveAs(content, $("[data-id=sitename]").val().replace(/ /g, "-").toLowerCase() + "-macsite.zip");
             $(".preloader").remove();
             return false;
           });
@@ -298,7 +298,7 @@ var audioCapture, videoCapture, storagePerm, setOffline, listPermissions,
             zip.file("README.md", "### Instructions\n 1. Extract the `"+ $("[data-id=sitename]").val().replace(/ /g, "-") +"-linsite.zip` folder anywhere on your computer except the home folder. \n 2. Open a terminal and then navigate to "+ $("[data-id=sitename]").val().replace(/ /g, "-") +"'s directory and `run the make.sh file`.\n\n  **example**:\n  cd Downloads/"+ $("[data-id=sitename]").val().replace(/ /g, "-") +"-linsite\n\n 3. This will move the "+ $("[data-id=sitename]").val().replace(/ /g, "-") +" sibling folder and it's descendants to your home directory and create an application launcher.\n");
             // Export application
             var content = zip.generate({type:"blob"});
-            saveAs(content, $("[data-id=sitename]").val().toLowerCase().replace(/ /g, "").join("-") + "-linsite.zip");
+            saveAs(content, $("[data-id=sitename]").val().replace(/ /g, "-").toLowerCase() + "-linsite.zip");
             $(".preloader").remove();
             return false;
           });
@@ -333,7 +333,7 @@ var audioCapture, videoCapture, storagePerm, setOffline, listPermissions,
             zip.file("README.md", "### Instructions\n 1. Extract the `"+ $("[data-id=sitename]").val().replace(/ /g, "-") +"-lin32site.zip` folder anywhere on your computer except the home folder. \n 2. Open a terminal and then navigate to "+ $("[data-id=sitename]").val().replace(/ /g, "-") +"'s directory and `run the make.sh file`.\n\n  **example**:\n  cd Downloads/"+ $("[data-id=sitename]").val().replace(/ /g, "-") +"-lin32site\n\n 3. This will move the "+ $("[data-id=sitename]").val().replace(/ /g, "-") +" sibling folder and it's descendants to your home directory and create an application launcher.\n");
             // Export application
             var content = zip.generate({type:"blob"});
-            saveAs(content, $("[data-id=sitename]").val().toLowerCase().replace(/ /g, "").join("-") + "-lin32site.zip");
+            saveAs(content, $("[data-id=sitename]").val().replace(/ /g, "-").toLowerCase() + "-lin32site.zip");
             $(".preloader").remove();
             return false;
           });
@@ -398,7 +398,7 @@ var audioCapture, videoCapture, storagePerm, setOffline, listPermissions,
             
             // Export application
             var content = zip.generate({type:"blob"});
-            saveAs(content, $("[data-id=sitename]").val().toLowerCase().replace(/ /g, "").join("-") + "-chromewebview.zip");
+            saveAs(content, $("[data-id=sitename]").val().replace(/ /g, "-").toLowerCase() + "-chromewebview.zip");
             $(".chrome-border").fadeOut();
             $("html, body").animate({ scrollTop: $(".chosenbit").offset().top }, "slow");
             $(".preloader").remove();
@@ -431,7 +431,7 @@ var audioCapture, videoCapture, storagePerm, setOffline, listPermissions,
             zip.file("manifest.json", "{\n  \"manifest_version\": 2,\n  \"name\": \""+ $("[data-id=sitename]").val() +"\",\n  \"short_name\": \""+ $("[data-id=sitename]").val() +"\",\n  \"description\": \""+ $("[data-value=description]").val() +"\",\n  \"version\": \""+ $("[data-value=version]").val() +"\",\n  \"minimum_chrome_version\": \"38\",\n  \"permissions\": [ \"storage\", \"unlimitedStorage\", \"http://*/\", \"https://*/\" ],\n  \"icons\": {\n    \"16\": \"assets/16.png\",\n    \"32\": \"assets/32.png\",\n    \"64\": \"assets/64.png\",\n    \"128\": \"assets/128.png\"\n  },\n\n  \"browser_action\": {\n    \"default_icon\": \"assets/128.png\",\n    \"default_title\": \""+ $("[data-id=sitename]").val() +"\",\n    \"default_popup\": \"index.html\"\n  },\n  \n  \"content_security_policy\": \"script-src 'self' 'unsafe-eval'; object-src 'self'\"\n}");
             // Export application
             var content = zip.generate({type:"blob"});
-            saveAs(content, $("[data-id=sitename]").val().toLowerCase().replace(/ /g, "").join("-") + "-chromeext-webview.zip");
+            saveAs(content, $("[data-id=sitename]").val().replace(/ /g, "-").toLowerCase() + "-chromeext-webview.zip");
             $(".chrome-border").fadeOut();
             $("html, body").animate({ scrollTop: $(".chosenbit").offset().top }, "slow");
             $(".preloader").remove();
