@@ -34,6 +34,7 @@ WebDGap uses a number of open source projects to work properly:
 * [jQuery](http://jquery.com/) - duh
 * [JSZip](https://stuk.github.io/jszip/) - package zip files in javascript
 * [node-webkit](http://nwjs.io/) - run web apps as desktop apps
+* [AlertifyJS](http://alertifyjs.com/) - For the awesome and stylish alert notification dialogs
 
 ### License
 MIT
