@@ -39,6 +39,15 @@ WebDGap uses a number of open source projects to work properly:
 ### License
 MIT
 
+### Availability
+
+*(Desktop version of WebDGap is deprecated)*  
+[Windows 64](https://sourceforge.net/projects/webdgap/files/v1.2.4/WebDGap-win.zip/download)  
+[Windows 32](https://sourceforge.net/projects/webdgap/files/v1.2.4/WebDGap-win32.zip/download)  
+[Mac](https://sourceforge.net/projects/webdgap/files/v1.2.4/WebDGap-mac.zip/download)  
+[Linux 64](https://sourceforge.net/projects/webdgap/files/v1.2.4/WebDGap-lin.zip/download)  
+[Linux 32](https://sourceforge.net/projects/webdgap/files/v1.2.4/WebDGap-lin32.zip/download) 
+
 ### Free Software, Hell Yeah!
 
 - [kodeWeave](http://kodeweave.sourceforge.net/)
