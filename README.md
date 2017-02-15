@@ -24,7 +24,7 @@ The zip example below **WILL NOT WORK!!!**
 **NOTE:** Larger zip files take a longer time loading and exporting!
 
 ### Version
-1.2.4
+1.2.5
 
 ### Tech
 
