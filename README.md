@@ -63,7 +63,7 @@ MIT
 
 ### Author
 
-- [michael schwartz](http://mikethedj4.github.io/)
+- [michael schwartz](http://mikethedj4.github.io/) and with [tom gibson's](http://www.tomgibsonconsulting.com/) help on making WebDGap available for Mobile users :)
 
 ### Development
 
