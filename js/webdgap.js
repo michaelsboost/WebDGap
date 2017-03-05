@@ -202,25 +202,51 @@ var audioCapture, videoCapture, storagePerm, setOffline, listPermissions,
     c144 = $(".n144"),
     c57  = $(".n57"),
     c114 = $(".n114"),
-    c173 = $(".n173"),
-    c62  = $(".n62"),
-    canvas = $(".holder"),
-    holder = document.getElementById("imageloader"),
-    loadFiles = $("#file, .load"),
-    ctx16    = c16[0].getContext("2d"),
-    ctx32    = c32[0].getContext("2d"),
-    ctx64    = c64[0].getContext("2d"),
-    ctx96    = c96[0].getContext("2d"),
-    ctx72    = c72[0].getContext("2d"),
-    ctx48    = c48[0].getContext("2d"),
-    ctx36    = c36[0].getContext("2d"),
-    ctx144   = c144[0].getContext("2d"),
-    ctx57    = c57[0].getContext("2d"),
-    ctx114   = c114[0].getContext("2d"),
-    ctx173   = c173[0].getContext("2d"),
-    ctx62    = c62[0].getContext("2d"),
-    ctx      = canvas[0].getContext("2d"),
-    executeApp = function(file) {
+    c159 = $(".n159"),
+    c99  = $(".n99"),
+    c30   = $(".n30"),
+    c44   = $(".n44"),
+    c106  = $(".n106"),
+    c70   = $(".n70"),
+    c71   = $(".n71"),
+    c170  = $(".n170"),
+    c150  = $(".n150"),
+    c360  = $(".n360"),
+    c310  = $(".n310"),
+    c50   = $(".n50"),
+    c120  = $(".n120"),
+    cImgWinWide1 = $(".nwinwide1"),
+    cImgWinWide2 = $(".nwinwide2"),
+    canvas      = $(".holder"),
+    holder      = document.getElementById("imageloader"),
+    loadFiles   = $("#file, .load"),
+    ctx16       = c16[0].getContext("2d"),
+    ctx32       = c32[0].getContext("2d"),
+    ctx64       = c64[0].getContext("2d"),
+    ctx96       = c96[0].getContext("2d"),
+    ctx72       = c72[0].getContext("2d"),
+    ctx48       = c48[0].getContext("2d"),
+    ctx36       = c36[0].getContext("2d"),
+    ctx144      = c144[0].getContext("2d"),
+    ctx57       = c57[0].getContext("2d"),
+    ctx114      = c114[0].getContext("2d"),
+    ctx159      = c159[0].getContext("2d"),
+    ctx99       = c99[0].getContext("2d"),
+    ctx30       = c30[0].getContext("2d"),
+    ctx44       = c44[0].getContext("2d"),
+    ctx106      = c106[0].getContext("2d"),
+    ctx70       = c70[0].getContext("2d"),
+    ctx71       = c71[0].getContext("2d"),
+    ctx170      = c170[0].getContext("2d"),
+    ctx150      = c150[0].getContext("2d"),
+    ctx360      = c360[0].getContext("2d"),
+    ctx310      = c310[0].getContext("2d"),
+    ctx50       = c50[0].getContext("2d"),
+    ctx120      = c120[0].getContext("2d"),
+    ctxWinWide1 = cImgWinWide1[0].getContext("2d"),
+    ctxWinWide2 = cImgWinWide2[0].getContext("2d"),
+    ctx         = canvas[0].getContext("2d"),
+    executeApp  = function(file) {
       $(".chromeappcheck").addClass("hide");
 
       var reader = new FileReader();
@@ -508,8 +534,24 @@ function displayPreview(file) {
     var img144  = new Image();
     var img57   = new Image();
     var img114  = new Image();
-    var img173  = new Image();
-    var img62   = new Image();
+    var img159  = new Image();
+    var img99   = new Image();
+    
+    // PhoneGap Windows Icon
+    var img30       = new Image();
+    var img44       = new Image();
+    var img106      = new Image();
+    var img70       = new Image();
+    var img71       = new Image();
+    var img170      = new Image();
+    var img150      = new Image();
+    var img360      = new Image();
+    var img310      = new Image();
+    var img50       = new Image();
+    var img120      = new Image();
+    var imgWinWide1 = new Image();
+    var imgWinWide2 = new Image();
+    
     img.src   = e.target.result;
     img16.src = e.target.result;
     img32.src = e.target.result;
@@ -542,8 +584,24 @@ function displayPreview(file) {
     img144.src   = e.target.result;
     img57.src    = e.target.result;
     img114.src   = e.target.result;
-    img173.src   = e.target.result;
-    img62.src    = e.target.result;
+    img159.src   = e.target.result;
+    img99.src    = e.target.result;
+    
+    // PhoneGap Windows Icon
+    img30.src       = e.target.result;
+    img44.src       = e.target.result;
+    img106.src      = e.target.result;
+    img70.src       = e.target.result;
+    img71.src       = e.target.result;
+    img170.src      = e.target.result;
+    img150.src      = e.target.result;
+    img360.src      = e.target.result;
+    img310.src      = e.target.result;
+    img50.src       = e.target.result;
+    img120.src      = e.target.result;
+    imgWinWide1.src = e.target.result;
+    imgWinWide2.src = e.target.result;
+
     img96.onload = function() {
       // x, y, width, height
       ctx96.clearRect(0, 0, 96, 96);
@@ -579,15 +637,82 @@ function displayPreview(file) {
       ctx114.clearRect(0, 0, 114, 114);
       ctx114.drawImage(img64, 0, 0, 114, 114);
     }
-    img173.onload = function() {
+    img159.onload = function() {
       // x, y, width, height
-      ctx173.clearRect(0, 0, 173, 173);
-      ctx173.drawImage(img64, 0, 0, 173, 173);
+      ctx159.clearRect(0, 0, 159, 159);
+      ctx159.drawImage(img159, 0, 0, 159, 159);
     }
-    img62.onload = function() {
+    img99.onload = function() {
       // x, y, width, height
-      ctx64.clearRect(0, 0, 62, 62);
-      ctx64.drawImage(img64, 0, 0, 62, 62);
+      ctx99.clearRect(0, 0, 99, 99);
+      ctx99.drawImage(img99, 0, 0, 99, 99);
+    }
+
+    // PhoneGap Windows Icon
+    img30.onload = function() {
+      // x, y, width, height
+      ctx30.clearRect(0, 0, 30, 30);
+      ctx30.drawImage(img30, 0, 0, 30, 30);
+    }
+    img44.onload = function() {
+      // x, y, width, height
+      ctx44.clearRect(0, 0, 44, 44);
+      ctx44.drawImage(img44, 0, 0, 44, 44);
+    }
+    img106.onload = function() {
+      // x, y, width, height
+      ctx106.clearRect(0, 0, 106, 106);
+      ctx106.drawImage(img106, 0, 0, 106, 106);
+    }
+    img70.onload = function() {
+      // x, y, width, height
+      ctx70.clearRect(0, 0, 70, 70);
+      ctx70.drawImage(img70, 0, 0, 70, 70);
+    }
+    img71.onload = function() {
+      // x, y, width, height
+      ctx71.clearRect(0, 0, 71, 71);
+      ctx71.drawImage(img71, 0, 0, 71, 71);
+    }
+    img170.onload = function() {
+      // x, y, width, height
+      ctx170.clearRect(0, 0, 170, 170);
+      ctx170.drawImage(img170, 0, 0, 170, 170);
+    }
+    img150.onload = function() {
+      // x, y, width, height
+      ctx150.clearRect(0, 0, 150, 150);
+      ctx150.drawImage(img150, 0, 0, 150, 150);
+    }
+    img360.onload = function() {
+      // x, y, width, height
+      ctx360.clearRect(0, 0, 360, 360);
+      ctx360.drawImage(img360, 0, 0, 360, 360);
+    }
+    img310.onload = function() {
+      // x, y, width, height
+      ctx310.clearRect(0, 0, 310, 310);
+      ctx310.drawImage(img310, 0, 0, 310, 310);
+    }
+    img50.onload = function() {
+      // x, y, width, height
+      ctx50.clearRect(0, 0, 50, 50);
+      ctx50.drawImage(img50, 0, 0, 50, 50);
+    }
+    img120.onload = function() {
+      // x, y, width, height
+      ctx120.clearRect(0, 0, 120, 120);
+      ctx120.drawImage(img120, 0, 0, 120, 120);
+    }
+    imgWinWide1.onload = function() {
+      // x, y, width, height
+      ctxWinWide1.clearRect(0, 0, 310, 150);
+      ctxWinWide1.drawImage(imgWinWide1, 0, 0, 310, 150);
+    }
+    imgWinWide2.onload = function() {
+      // x, y, width, height
+      ctxWinWide2.clearRect(0, 0, 744, 360);
+      ctxWinWide2.drawImage(imgWinWide2, 0, 0, 744, 360);
     }
     
     var imgorigholder = $(".imgorigholder");
@@ -981,6 +1106,7 @@ $(document).ready(function() {
                 zip.file("html/embed.html", "<!DOCTYPE html>\n<html>\n  <head>\n    <meta charset=\"UTF-8\">\n    <title>"+ $("[data-id=sitename]").val() +"</title>\n    <link rel=\"stylesheet\" href=\"../css/reset.css\">\n    <link rel=\"stylesheet\" href=\"../css/style.css\">\n  </head>\n  <body>\n    <iframe src=\"app/index.html\">\n  </body>\n</html>");
                 zip.file("js/background.js", "/**\n * Listens for the app launching then creates the window\n *\n * @see http://developer.chrome.com/apps/app.runtime.html\n * @see http://developer.chrome.com/apps/app.window.html\n */\nchrome.app.runtime.onLaunched.addListener(function () {\n    runApp();\n});\n\n/**\n * Listens for the app restarting then re-creates the window.\n *\n * @see http://developer.chrome.com/apps/app.runtime.html\n */\nchrome.app.runtime.onRestarted.addListener(function () {\n    runApp();\n});\n\n/**\n * Creates the window for the application.\n *\n * @see http://developer.chrome.com/apps/app.window.html\n */\nfunction runApp() {\n    // Creat a new Chrome app window\n    chrome.app.window.create('html/embed.html', {\"id\":\"embed\",\"frame\":{\"type\":\"chrome\"},\"innerBounds\":{\"width\":1180,\"height\":900}}, onWindowLoaded());\n}\n\n/**\n * Called before the contentWindow's onload event\n *\n * @see http://developer.chrome.com/apps/app.window.html\n */\nfunction onWindowLoaded(popup) {\n    return function (win) {\n        // On window loaded event\n        win.contentWindow.onload = function () {\n            // Get webview \n            var webview = win.contentWindow.document.getElementById('webview');\n\n            // Sign up for 'permissionrequest' event\n            webview.addEventListener('permissionrequest', function (e) {\n                // Allow all permission requests\n                e.request.allow();\n            });\n\n            // Sign up for 'newwindow' event\n            // Emitted when a target='_blank' link is clicked within the webview\n            webview.addEventListener('newwindow', function (e) {\n                // Popup?\n                if (e.initialWidth > 0 && e.initialHeight > 0) {\n                    // Open it in a popup window with a set width and height\n                    return chrome.app.window.create('html/embed.html', { frame: { type: 'chrome' }, innerBounds: { width: e.initialWidth, height: e.initialHeight } }, onWindowLoaded(e));\n                }\n\n                // Open the link in a new browser tab/window\n                win.contentWindow.open(e.targetUrl);\n            });\n\n            // Is this a popup window?\n            if (popup) {\n                // Override webview source with popup's target URL\n                webview.src = popup.targetUrl;\n            }\n        };\n    };\n}\n");
                 zip.file("manifest.json", "{\n   \"app\": {\n      \"background\": {\n         \"pages\": [ \"html/embed.html\" ],\n         \"scripts\": [ \"js/background.js\" ]\n      }\n   },\n   \"description\": \""+ $("[data-value=description]").val() +"\",\n   \"icons\": {\n      \"128\": \"img/128.png\",\n      \"16\" : \"img/16.png\",\n      \"32\" : \"img/32.png\",\n      \"64\" : \"img/64.png\"\n   },\n   \"manifest_version\": 2,\n   \"name\": \""+ $("[data-id=sitename]").val() +"\",\n   "+ setOffline +",\n   \"permissions\": [ \"http://*/\", \"https://*/\""+ listPermissions +" ],\n   \"version\": \""+ $("[data-value=version]").val() +"\"\n}\n");
+                // zip.file("README", "If WebDGap was at all helpful for you. Would you consider donating to the project?\nhttps://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BSYGA2RB5ZJCC\n\n");
 
                 // Export Chrome Application
                 var content = zip.generate({type:"blob"});
@@ -1019,6 +1145,7 @@ $(document).ready(function() {
                 zip.file("css/style.css", "html, body {\n  margin: 0;\n  padding: 0;\n  width: 100%;\n  height: 100%;\n}\n\nbody {\n  min-width: 300px;\n  min-height: 420px;\n}\n\nwebview, iframe {\n  width: 100%;\n  height: 100%;\n  border: 0;\n}");
                 zip.file("index.html", "<!DOCTYPE html>\n<html>\n  <head>\n    <title>"+ $("[data-id=sitename]").val() +"</title>\n    <link rel=\"stylesheet\" href=\"css/style.css\" />\n  </head>\n  <body>\n    <iframe src=\"app/index.html\">\n      Your Chromebook does not support the iFrame html element.\n    </iframe>\n  </body>\n</html>");
                 zip.file("manifest.json", "{\n  \"manifest_version\": 2,\n  \"name\": \""+ $("[data-id=sitename]").val() +"\",\n  \"short_name\": \""+ $("[data-id=sitename]").val() +"\",\n  \"description\": \""+ $("[data-value=description]").val() +"\",\n  \"version\": \""+ $("[data-value=version]").val() +"\",\n  \"minimum_chrome_version\": \"38\",\n  \"permissions\": [ \"storage\", \"unlimitedStorage\", \"http://*/\", \"https://*/\" ],\n  \"icons\": {\n    \"16\": \"assets/16.png\",\n    \"32\": \"assets/32.png\",\n    \"64\": \"assets/64.png\",\n    \"128\": \"assets/128.png\"\n  },\n\n  \"browser_action\": {\n    \"default_icon\": \"assets/128.png\",\n    \"default_title\": \""+ $("[data-id=sitename]").val() +"\",\n    \"default_popup\": \"index.html\"\n  },\n  \n  \"content_security_policy\": \"script-src 'self' 'unsafe-eval'; object-src 'self'\"\n}");
+                // zip.file("README", "If WebDGap was at all helpful for you. Would you consider donating to the project?\nhttps://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BSYGA2RB5ZJCC\n\n");
 
                 // Export Chrome Extension
                 var content = zip.generate({type:"blob"});
@@ -1058,8 +1185,24 @@ $(document).ready(function() {
                 var Img144   = c144[0].toDataURL("image/png");
                 var Img57    = c57[0].toDataURL("image/png");
                 var Img114   = c114[0].toDataURL("image/png");
-                var Img173   = c173[0].toDataURL("image/png");
-                var Img62    = c62[0].toDataURL("image/png");
+                var Img159   = c159[0].toDataURL("image/png");
+                var Img99    = c99[0].toDataURL("image/png");
+
+                // PhoneGap Windows Icon
+                var Img30    = c30[0].toDataURL("image/png");
+                var Img44    = c44[0].toDataURL("image/png");
+                var Img106   = c106[0].toDataURL("image/png");
+                var Img70    = c70[0].toDataURL("image/png");
+                var Img71    = c71[0].toDataURL("image/png");
+                var Img170   = c170[0].toDataURL("image/png");
+                var Img150   = c150[0].toDataURL("image/png");
+                var Img360   = c360[0].toDataURL("image/png");
+                var Img310   = c310[0].toDataURL("image/png");
+                var Img50    = c50[0].toDataURL("image/png");
+                var Img120   = c120[0].toDataURL("image/png");
+                var ImgWinWide1 = cImgWinWide1[0].toDataURL("image/png");
+                var ImgWinWide2 = cImgWinWide2[0].toDataURL("image/png");
+                
                 
                 // Main Icon
                 zip.file("logo.png", $(".imgorigholder > img").attr("src").split("base64,")[1],{base64: true});
@@ -1074,10 +1217,23 @@ $(document).ready(function() {
                 zip.file("res/icon/ios/icon-72-2x.png", Img144.split('base64,')[1],{base64: true});
                 zip.file("res/icon/ios/icon-57.png", Img57.split('base64,')[1],{base64: true});
                 zip.file("res/icon/ios/icon-57-2x.png", Img114.split('base64,')[1],{base64: true});
-                // Windows Phone Icon
-                zip.file("res/icon/windows-phone/icon-173-tile.png", Img173.split('base64,')[1],{base64: true});
-                zip.file("res/icon/windows-phone/icon-62-tile.png", Img62.split('base64,')[1],{base64: true});
-                zip.file("res/icon/windows-phone/icon-48.png", Img48.split('base64,')[1],{base64: true});
+                // Windows Phone 8 Icon
+                zip.file("res/icon/wp8/ApplicationIcon.png", Img159.split('base64,')[1],{base64: true});
+                zip.file("res/icon/wp8/Background.png", Img99.split('base64,')[1],{base64: true});
+                // PhoneGap Windows Icon
+                zip.file("res/icon/windows/Square30x30Logo.scale-100.png", Img30.split('base64,')[1],{base64: true});
+                zip.file("res/icon/windows/Square44x44Logo.scale-100.png", Img44.split('base64,')[1],{base64: true});
+                zip.file("res/icon/windows/Square44x44Logo.scale-240.png", Img106.split('base64,')[1],{base64: true});
+                zip.file("res/icon/windows/Square70x70Logo.scale-100.png", Img70.split('base64,')[1],{base64: true});
+                zip.file("res/icon/windows/Square71x71Logo.scale-100.png", Img71.split('base64,')[1],{base64: true});
+                zip.file("res/icon/windows/Square71x71Logo.scale-240.png", Img170.split('base64,')[1],{base64: true});
+                zip.file("res/icon/windows/Square150x150Logo.scale-100.png", Img150.split('base64,')[1],{base64: true});
+                zip.file("res/icon/windows/Square150x150Logo.scale-240.png", Img360.split('base64,')[1],{base64: true});
+                zip.file("res/icon/windows/Square310x310Logo.scale-100.png", Img310.split('base64,')[1],{base64: true});
+                zip.file("res/icon/windows/StoreLogo.scale-100.png", Img50.split('base64,')[1],{base64: true});
+                zip.file("res/icon/windows/StoreLogo.scale-240.png", Img120.split('base64,')[1],{base64: true});
+                zip.file("res/icon/windows/Wide310x150Logo.scale-100.png", ImgWinWide1.split('base64,')[1],{base64: true});
+                zip.file("res/icon/windows/Wide310x150Logo.scale-240.png", ImgWinWide2.split('base64,')[1],{base64: true});
 
                 // If an intention or permission is checked add it into config.xml
                 
@@ -1122,7 +1278,7 @@ $(document).ready(function() {
                 }
 
                 // Files for exported app
-                zip.file("config.xml", "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<widget xmlns = \"http://www.w3.org/ns/widgets\"\n  xmlns:gap   = \"http://phonegap.com/ns/1.0\"\n  id          = \"com.webdgap."+ document.querySelector("[data-id=sitename]").value.replace(/ /g, '').toLowerCase() +"\"\n  version     = \""+ $("[data-pgb=version]").val() +"\"\n  versionCode = \""+ $("[data-pgb=versionCode]").val() +"\">\n  <name>"+ $("[data-id=sitename]").val() +"</name>\n  <description>\n    "+ $("[data-pgb=description]").val() +"\n  </description>\n  <author email=\""+ $("[data-pgb=authoremail]").val() +"\" href=\""+ $("[data-pgb=authorlink]").val() +"\">\n    "+ $("[data-pgb=author]").val() +"\n  </author>\n\n  <content src=\"index.html\" />\n\n  <icon src=\"icon.png\" gap:role=\"default\" />\n  <icon gap:platform=\"android\" gap:qualifier=\"ldpi\" src=\"res/icon/android/icon-36-ldpi.png\" />\n  <icon gap:platform=\"android\" gap:qualifier=\"mdpi\" src=\"res/icon/android/icon-48-mdpi.png\" />\n  <icon gap:platform=\"android\" gap:qualifier=\"hdpi\" src=\"res/icon/android/icon-72-hdpi.png\" />\n  <icon gap:platform=\"android\" gap:qualifier=\"xhdpi\" src=\"res/icon/android/icon-96-xhdpi.png\" />\n  <icon gap:platform=\"android\" src=\"res/icon/android/icon-96-xhdpi.png\" />\n  <icon gap:platform=\"blackberry\" src=\"res/icon/blackberry/icon-80.png\" />\n  <icon gap:platform=\"blackberry\" gap:state=\"hover\" src=\"res/icon/blackberry/icon-80.png\" />\n  <icon gap:platform=\"ios\" height=\"57\" src=\"res/icon/ios/icon-57.png\" width=\"57\" />\n  <icon gap:platform=\"ios\" height=\"72\" src=\"res/icon/ios/icon-72.png\" width=\"72\" />\n  <icon gap:platform=\"ios\" height=\"114\" src=\"res/icon/ios/icon-57-2x.png\" width=\"114\" />\n  <icon gap:platform=\"ios\" height=\"144\" src=\"res/icon/ios/icon-72-2x.png\" width=\"144\" />\n  <icon gap:platform=\"webos\" src=\"res/icon/webos/icon-64.png\" />\n  <icon gap:platform=\"winphone\" src=\"res/icon/windows-phone/icon-48.png\" />\n  <icon gap:platform=\"winphone\" gap:role=\"background\" src=\"res/icon/windows-phone/icon-173-tile.png\" />\n\n  <preference name=\"permissions\" value=\"none\"/>\n  <preference name=\"orientation\" value=\"default\"/>\n  <preference name=\"target-device\" value=\"universal\"/>\n  <preference name=\"webviewbounce\" value=\"false\"/>\n  <preference name=\"prerendered-icon\" value=\"true\"/>\n  <preference name=\"stay-in-webview\" value=\"false\"/>\n  <preference name=\"ios-statusbarstyle\" value=\"black-opaque\"/>\n\n  <gap:plugin name=\"cordova-plugin-inappbrowser\" source=\"npm\"/>\n  <gap:plugin name=\"cordova-plugin-network-information\" source=\"npm\"/>\n\n  <access origin=\"*\"/>\n  <gap:plugin name=\"cordova-plugin-whitelist\" source=\"npm\"/>\n\n  <preference name=\"phonegap-version\" value=\"cli-6.5.0\" />\n  <preference name=\"android-minSdkVersion\" value=\"7\" />\n  <preference name=\"android-targetSdkVersion\" value=\"19\" />"+ filestorageIntent +"\n\n  <allow-intent href=\"http://*/*\"/>\n  <allow-intent href=\"https://*/*\"/>\n  <allow-intent href=\"tel:*\"/>\n  <allow-intent href=\"sms:*\"/>\n  <allow-intent href=\"mailto:*\"/>\n  <allow-intent href=\"geo:*\"/>"+ listIntentions +"\n</widget>");
+                zip.file("config.xml", "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<widget xmlns = \"http://www.w3.org/ns/widgets\"\n  xmlns:gap   = \"http://phonegap.com/ns/1.0\"\n  id          = \"com.webdgap."+ document.querySelector("[data-id=sitename]").value.replace(/ /g, '').toLowerCase() +"\"\n  version     = \""+ $("[data-pgb=version]").val() +"\"\n  versionCode = \""+ $("[data-pgb=versionCode]").val() +"\">\n  <name>"+ $("[data-id=sitename]").val() +"</name>\n  <description>\n    "+ $("[data-pgb=description]").val() +"\n  </description>\n  <author email=\""+ $("[data-pgb=authoremail]").val() +"\" href=\""+ $("[data-pgb=authorlink]").val() +"\">\n    "+ $("[data-pgb=author]").val() +"\n  </author>\n\n  <content src=\"index.html\" />\n\n  <icon src=\"icon.png\" gap:role=\"default\" />\n  <icon gap:platform=\"android\" gap:qualifier=\"ldpi\" src=\"res/icon/android/icon-36-ldpi.png\" />\n  <icon gap:platform=\"android\" gap:qualifier=\"mdpi\" src=\"res/icon/android/icon-48-mdpi.png\" />\n  <icon gap:platform=\"android\" gap:qualifier=\"hdpi\" src=\"res/icon/android/icon-72-hdpi.png\" />\n  <icon gap:platform=\"android\" gap:qualifier=\"xhdpi\" src=\"res/icon/android/icon-96-xhdpi.png\" />\n  <icon gap:platform=\"android\" src=\"res/icon/android/icon-96-xhdpi.png\" />\n  <icon gap:platform=\"blackberry\" src=\"res/icon/blackberry/icon-80.png\" />\n  <icon gap:platform=\"blackberry\" gap:state=\"hover\" src=\"res/icon/blackberry/icon-80.png\" />\n  <icon gap:platform=\"ios\" height=\"57\" src=\"res/icon/ios/icon-57.png\" width=\"57\" />\n  <icon gap:platform=\"ios\" height=\"72\" src=\"res/icon/ios/icon-72.png\" width=\"72\" />\n  <icon gap:platform=\"ios\" height=\"114\" src=\"res/icon/ios/icon-57-2x.png\" width=\"114\" />\n  <icon gap:platform=\"ios\" height=\"144\" src=\"res/icon/ios/icon-72-2x.png\" width=\"144\" />\n  <icon gap:platform=\"webos\" src=\"res/icon/webos/icon-64.png\" />\n  <icon gap:platform=\"wp8\" src=\"www/res/icon/wp8/ApplicationIcon.png\" />\n  <icon gap:platform=\"wp8\" src=\"www/res/icon/wp8/Background.png\" />\n\n  <icon gap:platform=\"windows\" src=\"www/res/icon/windows/Square150x150Logo.scale-100.png\" />\n  <icon gap:platform=\"windows\" src=\"www/res/icon/windows/Square30x30Logo.scale-100.png\" />\n  <icon gap:platform=\"windows\" src=\"www/res/icon/windows/StoreLogo.scale-100.png\" />\n  <icon gap:platform=\"windows\" src=\"www/res/icon/windows/StoreLogo.scale-240.png\" />\n  <icon gap:platform=\"windows\" src=\"www/res/icon/windows/Square44x44Logo.scale-100.png\" />\n  <icon gap:platform=\"windows\" src=\"www/res/icon/windows/Square44x44Logo.scale-240.png\" />\n  <icon gap:platform=\"windows\" src=\"www/res/icon/windows/Square70x70Logo.scale-100.png\" />\n  <icon gap:platform=\"windows\" src=\"www/res/icon/windows/Square71x71Logo.scale-100.png\" />\n  <icon gap:platform=\"windows\" src=\"www/res/icon/windows/Square71x71Logo.scale-240.png\" />\n  <icon gap:platform=\"windows\" src=\"www/res/icon/windows/Square150x150Logo.scale-240.png\" />\n  <icon gap:platform=\"windows\" src=\"www/res/icon/windows/Square310x310Logo.scale-100.png\" />\n  <icon gap:platform=\"windows\" src=\"www/res/icon/windows/Wide310x150Logo.scale-100.png\" />\n  <icon gap:platform=\"windows\" src=\"www/res/icon/windows/Wide310x150Logo.scale-240.png\" />\n\n  <preference name=\"permissions\" value=\"none\"/>\n  <preference name=\"orientation\" value=\"default\"/>\n  <preference name=\"target-device\" value=\"universal\"/>\n  <preference name=\"webviewbounce\" value=\"false\"/>\n  <preference name=\"prerendered-icon\" value=\"true\"/>\n  <preference name=\"stay-in-webview\" value=\"false\"/>\n  <preference name=\"ios-statusbarstyle\" value=\"black-opaque\"/>\n\n  <gap:plugin name=\"cordova-plugin-inappbrowser\" source=\"npm\"/>\n  <gap:plugin name=\"cordova-plugin-network-information\" source=\"npm\"/>\n\n  <access origin=\"*\"/>\n  <gap:plugin name=\"cordova-plugin-whitelist\" source=\"npm\"/>\n\n  <preference name=\"phonegap-version\" value=\"cli-6.5.0\" />\n  <preference name=\"android-minSdkVersion\" value=\"7\" />\n  <preference name=\"android-targetSdkVersion\" value=\"19\" />"+ filestorageIntent +"\n\n  <allow-intent href=\"http://*/*\"/>\n  <allow-intent href=\"https://*/*\"/>\n  <allow-intent href=\"tel:*\"/>\n  <allow-intent href=\"sms:*\"/>\n  <allow-intent href=\"mailto:*\"/>\n  <allow-intent href=\"geo:*\"/>"+ listIntentions +"\n</widget>");
                 zip.file("README.md", "# Thank you for using WebDGap!\n\nIntro to your PhoneGap Build Export\n-------------\n\n### File Structure\n\n**NOTICE:** This export is just a template. Structure it however you like for PhoneGap Build!\n\n - www\n  - (your application source code)\n - res/icon\n   - (your logo is located here for windows phone, ios, and android)\n - logo.png\n - config.xml\n\n**DON'T FORGET** to add `<script src=\"cordova.js\"></script>` or `<script src=\"phonegap.js\"></script>` into your `index.html` file  (which should be located in the `www` directory)\n\nDonate To The Project!\n-------------\n\nIf WebDGap was at all helpful for you. [Would you consider donating to the project?](https://www.paypal.com/us/cgi-bin/webscr?cmd=_flow&SESSION=JryIEtO_GiYnqlvRfV6BGnO6bAxR3JtIQif2j1z1eFYuoLkYf_XZOY6QbWe&dispatch=5885d80a13c0db1f8e263663d3faee8dcce3e160f5b9538489e17951d2c62172)");
 
                 // Export Chrome Application
@@ -1500,8 +1656,23 @@ $(document).ready(function() {
               var Img144   = c144[0].toDataURL("image/png");
               var Img57    = c57[0].toDataURL("image/png");
               var Img114   = c114[0].toDataURL("image/png");
-              var Img173   = c173[0].toDataURL("image/png");
-              var Img62    = c62[0].toDataURL("image/png");
+              var Img159   = c159[0].toDataURL("image/png");
+              var Img99    = c99[0].toDataURL("image/png");
+
+              // PhoneGap Windows Icon
+              var Img30 = c30[0].toDataURL("image/png");
+              var Img44 = c44[0].toDataURL("image/png");
+              var Img106 = c106[0].toDataURL("image/png");
+              var Img70 = c70[0].toDataURL("image/png");
+              var Img71 = c71[0].toDataURL("image/png");
+              var Img170 = c170[0].toDataURL("image/png");
+              var Img150 = c150[0].toDataURL("image/png");
+              var Img360 = c360[0].toDataURL("image/png");
+              var Img310 = c310[0].toDataURL("image/png");
+              var Img50 = c50[0].toDataURL("image/png");
+              var Img120 = c120[0].toDataURL("image/png");
+              var ImgWinWide1 = cImgWinWide1[0].toDataURL("image/png");
+              var ImgWinWide2 = cImgWinWide2[0].toDataURL("image/png");
               
               // Main Icon
               zip.file("logo.png", $(".imgorigholder > img").attr("src").split("base64,")[1],{base64: true});
@@ -1516,10 +1687,23 @@ $(document).ready(function() {
               zip.file("res/icon/ios/icon-72-2x.png", Img144.split('base64,')[1],{base64: true});
               zip.file("res/icon/ios/icon-57.png", Img57.split('base64,')[1],{base64: true});
               zip.file("res/icon/ios/icon-57-2x.png", Img114.split('base64,')[1],{base64: true});
-              // Windows Phone Icon
-              zip.file("res/icon/windows-phone/icon-173-tile.png", Img173.split('base64,')[1],{base64: true});
-              zip.file("res/icon/windows-phone/icon-62-tile.png", Img62.split('base64,')[1],{base64: true});
-              zip.file("res/icon/windows-phone/icon-48.png", Img48.split('base64,')[1],{base64: true});
+              // Windows Phone 8 Icon
+              zip.file("res/icon/wp8/ApplicationIcon.png", Img159.split('base64,')[1],{base64: true});
+              zip.file("res/icon/wp8/Background.png", Img99.split('base64,')[1],{base64: true});
+              // PhoneGap Windows Icon
+              zip.file("res/icon/windows/Square30x30Logo.scale-100.png", Img30.split('base64,')[1],{base64: true});
+              zip.file("res/icon/windows/Square44x44Logo.scale-100.png", Img44.split('base64,')[1],{base64: true});
+              zip.file("res/icon/windows/Square44x44Logo.scale-240.png", Img106.split('base64,')[1],{base64: true});
+              zip.file("res/icon/windows/Square70x70Logo.scale-100.png", Img70.split('base64,')[1],{base64: true});
+              zip.file("res/icon/windows/Square71x71Logo.scale-100.png", Img71.split('base64,')[1],{base64: true});
+              zip.file("res/icon/windows/Square71x71Logo.scale-240.png", Img170.split('base64,')[1],{base64: true});
+              zip.file("res/icon/windows/Square150x150Logo.scale-100.png", Img150.split('base64,')[1],{base64: true});
+              zip.file("res/icon/windows/Square150x150Logo.scale-240.png", Img360.split('base64,')[1],{base64: true});
+              zip.file("res/icon/windows/Square310x310Logo.scale-100.png", Img310.split('base64,')[1],{base64: true});
+              zip.file("res/icon/windows/StoreLogo.scale-100.png", Img50.split('base64,')[1],{base64: true});
+              zip.file("res/icon/windows/StoreLogo.scale-240.png", Img120.split('base64,')[1],{base64: true});
+              zip.file("res/icon/windows/Wide310x150Logo.scale-100.png", ImgWinWide1.split('base64,')[1],{base64: true});
+              zip.file("res/icon/windows/Wide310x150Logo.scale-240.png", ImgWinWide2.split('base64,')[1],{base64: true});
 
               // If an intention or permission is checked add it into config.xml
               
@@ -1564,7 +1748,7 @@ $(document).ready(function() {
               }
 
               // Files for exported app
-              zip.file("config.xml", "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<widget xmlns = \"http://www.w3.org/ns/widgets\"\n  xmlns:gap   = \"http://phonegap.com/ns/1.0\"\n  id          = \"com.webdgap."+ document.querySelector("[data-id=sitename]").value.replace(/ /g, '').toLowerCase() +"\"\n  version     = \""+ $("[data-pgb=version]").val() +"\"\n  versionCode = \""+ $("[data-pgb=versionCode]").val() +"\">\n  <name>"+ $("[data-id=sitename]").val() +"</name>\n  <description>\n    "+ $("[data-pgb=description]").val() +"\n  </description>\n  <author email=\""+ $("[data-pgb=authoremail]").val() +"\" href=\""+ $("[data-pgb=authorlink]").val() +"\">\n    "+ $("[data-pgb=author]").val() +"\n  </author>\n\n  <content src=\"index.html\" />\n\n  <icon src=\"icon.png\" gap:role=\"default\" />\n  <icon gap:platform=\"android\" gap:qualifier=\"ldpi\" src=\"res/icon/android/icon-36-ldpi.png\" />\n  <icon gap:platform=\"android\" gap:qualifier=\"mdpi\" src=\"res/icon/android/icon-48-mdpi.png\" />\n  <icon gap:platform=\"android\" gap:qualifier=\"hdpi\" src=\"res/icon/android/icon-72-hdpi.png\" />\n  <icon gap:platform=\"android\" gap:qualifier=\"xhdpi\" src=\"res/icon/android/icon-96-xhdpi.png\" />\n  <icon gap:platform=\"android\" src=\"res/icon/android/icon-96-xhdpi.png\" />\n  <icon gap:platform=\"blackberry\" src=\"res/icon/blackberry/icon-80.png\" />\n  <icon gap:platform=\"blackberry\" gap:state=\"hover\" src=\"res/icon/blackberry/icon-80.png\" />\n  <icon gap:platform=\"ios\" height=\"57\" src=\"res/icon/ios/icon-57.png\" width=\"57\" />\n  <icon gap:platform=\"ios\" height=\"72\" src=\"res/icon/ios/icon-72.png\" width=\"72\" />\n  <icon gap:platform=\"ios\" height=\"114\" src=\"res/icon/ios/icon-57-2x.png\" width=\"114\" />\n  <icon gap:platform=\"ios\" height=\"144\" src=\"res/icon/ios/icon-72-2x.png\" width=\"144\" />\n  <icon gap:platform=\"webos\" src=\"res/icon/webos/icon-64.png\" />\n  <icon gap:platform=\"winphone\" src=\"res/icon/windows-phone/icon-48.png\" />\n  <icon gap:platform=\"winphone\" gap:role=\"background\" src=\"res/icon/windows-phone/icon-173-tile.png\" />\n\n  <preference name=\"permissions\" value=\"none\"/>\n  <preference name=\"orientation\" value=\"default\"/>\n  <preference name=\"target-device\" value=\"universal\"/>\n  <preference name=\"webviewbounce\" value=\"false\"/>\n  <preference name=\"prerendered-icon\" value=\"true\"/>\n  <preference name=\"stay-in-webview\" value=\"false\"/>\n  <preference name=\"ios-statusbarstyle\" value=\"black-opaque\"/>\n\n  <gap:plugin name=\"cordova-plugin-inappbrowser\" source=\"npm\"/>\n  <gap:plugin name=\"cordova-plugin-network-information\" source=\"npm\"/>\n\n  <access origin=\"*\"/>\n  <gap:plugin name=\"cordova-plugin-whitelist\" source=\"npm\"/>\n\n  <preference name=\"phonegap-version\" value=\"cli-6.5.0\" />\n  <preference name=\"android-minSdkVersion\" value=\"7\" />\n  <preference name=\"android-targetSdkVersion\" value=\"19\" />"+ filestorageIntent +"\n\n  <allow-intent href=\"http://*/*\"/>\n  <allow-intent href=\"https://*/*\"/>\n  <allow-intent href=\"tel:*\"/>\n  <allow-intent href=\"sms:*\"/>\n  <allow-intent href=\"mailto:*\"/>\n  <allow-intent href=\"geo:*\"/>"+ listIntentions +"\n</widget>");
+              zip.file("config.xml", "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<widget xmlns = \"http://www.w3.org/ns/widgets\"\n  xmlns:gap   = \"http://phonegap.com/ns/1.0\"\n  id          = \"com.webdgap."+ document.querySelector("[data-id=sitename]").value.replace(/ /g, '').toLowerCase() +"\"\n  version     = \""+ $("[data-pgb=version]").val() +"\"\n  versionCode = \""+ $("[data-pgb=versionCode]").val() +"\">\n  <name>"+ $("[data-id=sitename]").val() +"</name>\n  <description>\n    "+ $("[data-pgb=description]").val() +"\n  </description>\n  <author email=\""+ $("[data-pgb=authoremail]").val() +"\" href=\""+ $("[data-pgb=authorlink]").val() +"\">\n    "+ $("[data-pgb=author]").val() +"\n  </author>\n\n  <content src=\"index.html\" />\n\n  <icon src=\"icon.png\" gap:role=\"default\" />\n  <icon gap:platform=\"android\" gap:qualifier=\"ldpi\" src=\"res/icon/android/icon-36-ldpi.png\" />\n  <icon gap:platform=\"android\" gap:qualifier=\"mdpi\" src=\"res/icon/android/icon-48-mdpi.png\" />\n  <icon gap:platform=\"android\" gap:qualifier=\"hdpi\" src=\"res/icon/android/icon-72-hdpi.png\" />\n  <icon gap:platform=\"android\" gap:qualifier=\"xhdpi\" src=\"res/icon/android/icon-96-xhdpi.png\" />\n  <icon gap:platform=\"android\" src=\"res/icon/android/icon-96-xhdpi.png\" />\n  <icon gap:platform=\"blackberry\" src=\"res/icon/blackberry/icon-80.png\" />\n  <icon gap:platform=\"blackberry\" gap:state=\"hover\" src=\"res/icon/blackberry/icon-80.png\" />\n  <icon gap:platform=\"ios\" height=\"57\" src=\"res/icon/ios/icon-57.png\" width=\"57\" />\n  <icon gap:platform=\"ios\" height=\"72\" src=\"res/icon/ios/icon-72.png\" width=\"72\" />\n  <icon gap:platform=\"ios\" height=\"114\" src=\"res/icon/ios/icon-57-2x.png\" width=\"114\" />\n  <icon gap:platform=\"ios\" height=\"144\" src=\"res/icon/ios/icon-72-2x.png\" width=\"144\" />\n  <icon gap:platform=\"webos\" src=\"res/icon/webos/icon-64.png\" />\n  <icon gap:platform=\"wp8\" src=\"www/res/icon/wp8/ApplicationIcon.png\" />\n  <icon gap:platform=\"wp8\" src=\"www/res/icon/wp8/Background.png\" />\n\n  <preference name=\"permissions\" value=\"none\"/>\n  <preference name=\"orientation\" value=\"default\"/>\n  <preference name=\"target-device\" value=\"universal\"/>\n  <preference name=\"webviewbounce\" value=\"false\"/>\n  <preference name=\"prerendered-icon\" value=\"true\"/>\n  <preference name=\"stay-in-webview\" value=\"false\"/>\n  <preference name=\"ios-statusbarstyle\" value=\"black-opaque\"/>\n\n  <gap:plugin name=\"cordova-plugin-inappbrowser\" source=\"npm\"/>\n  <gap:plugin name=\"cordova-plugin-network-information\" source=\"npm\"/>\n\n  <access origin=\"*\"/>\n  <gap:plugin name=\"cordova-plugin-whitelist\" source=\"npm\"/>\n\n  <preference name=\"phonegap-version\" value=\"cli-6.5.0\" />\n  <preference name=\"android-minSdkVersion\" value=\"7\" />\n  <preference name=\"android-targetSdkVersion\" value=\"19\" />"+ filestorageIntent +"\n\n  <allow-intent href=\"http://*/*\"/>\n  <allow-intent href=\"https://*/*\"/>\n  <allow-intent href=\"tel:*\"/>\n  <allow-intent href=\"sms:*\"/>\n  <allow-intent href=\"mailto:*\"/>\n  <allow-intent href=\"geo:*\"/>"+ listIntentions +"\n</widget>");
               zip.file("README.md", "# Thank you for using WebDGap!\n\nIntro to your PhoneGap Build Export\n-------------\n\n### File Structure\n\n**NOTICE:** This export is just a template. Structure it however you like for PhoneGap Build!\n\n - www\n  - (your application source code)\n - res/icon\n   - (your logo is located here for windows phone, ios, and android)\n - logo.png\n - config.xml\n\n**DON'T FORGET** to add `<script src=\"cordova.js\"></script>` or `<script src=\"phonegap.js\"></script>` into your `index.html` file  (which should be located in the `www` directory)\n\nDonate To The Project!\n-------------\n\nIf WebDGap was at all helpful for you. [Would you consider donating to the project?](https://www.paypal.com/us/cgi-bin/webscr?cmd=_flow&SESSION=JryIEtO_GiYnqlvRfV6BGnO6bAxR3JtIQif2j1z1eFYuoLkYf_XZOY6QbWe&dispatch=5885d80a13c0db1f8e263663d3faee8dcce3e160f5b9538489e17951d2c62172)");
 
               // Export Chrome Application
