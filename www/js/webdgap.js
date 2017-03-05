@@ -1,3 +1,316 @@
+// After finding out I could build plugins over 100MB I stopped using code below that was
+// downloading platform asset zips from online.  This function just fixes the modified WebDGap
+// code to go back to the original file paths with assets/ prefix
+function GetLocalUrlForPlatformZip(fileName){
+	return "assets/" + fileName;
+}
+
+/*
+var PlatformSupportZipBaseUrl = "http://tomgibsonconsulting.com/webdgap-platform-zips/";
+
+function PlatformSupportZipInfo(platformName, fileName, fileSizeMb) {
+	this.platformName = platformName;
+	this.fileName = fileName;
+	this.fileSizeMb = fileSizeMb;
+	
+	this.GetZipUrl = function() {
+		return PlatformSupportZipBaseUrl + this.fileName;
+	};
+}
+
+// List of platform support file infos
+var PlatformSupportZips = [
+	new PlatformSupportZipInfo('Linux 32bit', 'YourLin32App.zip', 41),
+	new PlatformSupportZipInfo('Linux 64bit', 'YourLinApp.zip', 50),
+	new PlatformSupportZipInfo('Mac OS', 'YourMacApp.zip', 34),
+	new PlatformSupportZipInfo('Windows 32bit', 'YourWin32App.zip', 36),
+	new PlatformSupportZipInfo('Windows 64bit', 'YourWinApp.zip', 53)
+];
+
+var strLocalPlatformZipBaseUrl = "";  // set later
+
+function GetLocalUrlForPlatformZip(fileName){
+	return strLocalPlatformZipBaseUrl + fileName;
+}
+
+function CheckHavePlatformSupportZip( info, cb ){
+	window.resolveLocalFileSystemURL(cordova.file.dataDirectory, function(dir) {
+		//alert('1');
+		dir.getFile(info.fileName, { create: false, exclusive: false }, function (entry) {
+			cb(true);
+			
+		}, function (error) {
+			cb(false);
+		});
+	},
+	function(err){
+		cb(false);
+	});
+}
+
+function DownloadPlatformSupportZip( info, successCb, failCb ) {
+	$('#PlatformSupportZipDownloadInfoOverlay').show();
+	
+	//alert('Dl: '+info.fileName);
+	$('#PlatformSupportDlStatus').text('Downloading: '+info.fileName);
+	//successCb();
+	
+	$('#PlatformSupportName').text(info.platformName);
+	$('#PlatformSupportPkgSize').text(info.fileSizeMb);
+	
+	window.requestFileSystem(window.TEMPORARY, 0, function (fs) {
+		console.log('file system open: ' + fs.name);
+
+		// Make sure you add the domain name to the Content-Security-Policy <meta> element.
+		var url = info.GetZipUrl();
+		
+		// Parameters passed to getFile create a new file or return the file if it already exists.
+		fs.root.getFile(info.fileName+'.tmp', { create: true, exclusive: false }, function (fileEntry) {
+			//download(fileEntry, url, true);
+			var fileURL = fileEntry.toURL();
+	
+			var fileTransfer = new FileTransfer();
+			var uri = encodeURI(url);
+
+			fileTransfer.onprogress = function(progressEvent) {
+				//alert('onprog');
+				if (progressEvent.lengthComputable) {
+					var strPercent = (progressEvent.loaded / progressEvent.total * 100).toString()+'%';
+					$('#PlatformSupportDlProgress').css('width', strPercent);
+				} else {
+					var strPercent = ( ((progressEvent.loaded/1024) / (info.fileSizeMb*1024)) * 100).toString()+'%';
+					$('#PlatformSupportDlProgress').css('width', strPercent);
+				}
+			};
+			
+			fileTransfer.download(
+				uri,
+				fileURL,
+				function(entry) {
+					console.log("download complete: " + entry.toURL());
+					//alert('download complete');
+
+					window.resolveLocalFileSystemURL(cordova.file.dataDirectory, function(parentEntry){
+						if( strLocalPlatformZipBaseUrl.length == 0 ) {
+							strLocalPlatformZipBaseUrl = parentEntry.toURL();
+						}
+						//alert('parentEntry: '+parentEntry);
+
+						// move the file to a new directory and rename it
+						entry.moveTo(parentEntry, info.fileName,
+						function(){
+							successCb();
+						},
+						function(){
+							if( typeof(failCb) === "function" ) { failCb(); }
+						});
+					});
+				},
+				function(error) {
+					console.log("download error source " + error.source);
+					console.log("download error target " + error.target);
+					console.log("download error code" + error.code);
+					alert('download error: ' + error.code );
+					if( typeof(failCb) === "function" ) { failCb(); }
+				},
+				false
+			);
+		},
+		function(){
+			alert('error create file');
+			if( typeof(failCb) === "function" ) { failCb(); }
+		});
+
+	},
+	function(){
+		alert('error requesting filesystem');
+		if( typeof(failCb) === "function" ) { failCb(); }
+	});
+}
+
+// Check if local file exists
+// Download HTTP file to local file
+// Rename local file
+
+
+function PreAppStartSetup(successCb, failCb) {
+	
+	setTimeout(function(){
+	
+	window.resolveLocalFileSystemURL(cordova.file.dataDirectory, function(parentEntry){
+		if( strLocalPlatformZipBaseUrl.length == 0 ) {
+			strLocalPlatformZipBaseUrl = parentEntry.toURL();
+		}
+	});
+	
+	var curPlatformIndex = -1;
+	var setupNextPlatformZip = function(){
+		curPlatformIndex = curPlatformIndex+1;
+		if( curPlatformIndex >= PlatformSupportZips.length ) {
+			successCb();
+			return;
+		}
+		
+		var info = PlatformSupportZips[curPlatformIndex];
+		CheckHavePlatformSupportZip(info, function(haveDownloaded){
+			if( !haveDownloaded ) {
+				DownloadPlatformSupportZip(info, function(){
+					setupNextPlatformZip();
+				},
+				function(){
+					if( typeof(failCb === "function") ) {
+						failCb();
+					}
+				});
+			}
+			else {
+				setupNextPlatformZip();
+			}
+		});
+	};
+	
+	setupNextPlatformZip();
+	
+	}, 1000);
+	
+}
+
+var onPreAppSetupDone = function(){
+	//$('#PlatformSupportZipDownloadInfoOverlay').css('z-index', '-9999');
+	setTimeout(function(){
+		$('#PlatformSupportZipDownloadInfoOverlay').hide();
+	}, 1000);
+};
+
+document.addEventListener('deviceready', function(){
+
+	PreAppStartSetup(onPreAppSetupDone, onPreAppSetupDone);
+	
+}, false);
+*/
+
+function saveFile (fileData, fileName) {
+	
+	var maxWriteChunkSize = 5*1024*1024;
+	var lastWriteChunkSize = 0;
+	var totalBytes = fileData.size;
+	var bytesWritten = 0;
+	var writeMoreFileBytes = function(){
+		//alert('Start of writeMoreFileBytes()');
+		var saveDir = (device.platform.toLowerCase() === "android") ? cordova.file.externalRootDirectory : cordova.file.dataDirectory;
+		//alert("device.platform="+device.platform+" , saveDir="+saveDir);
+		window.resolveLocalFileSystemURL( saveDir, function(dir) {
+			//alert('1');
+			dir.getFile(fileName, { create: bytesWritten == 0 ? true : false, exclusive: false }, function (entry) {
+				//alert('2');
+				entry.createWriter(function (writer) {
+					//alert('3');
+					writer.onwriteend = function (evt) {
+						//alert('7');
+						bytesWritten += lastWriteChunkSize;
+						//alert('bytesWritten = '+bytesWritten);
+						if( bytesWritten < totalBytes ) {
+							writeMoreFileBytes();
+						}
+						else {
+							alert('All done saving generated app file.');
+						}
+					};
+					try
+					{
+						if( bytesWritten > 0 ) {
+							// If we are appending data to file, go to the end of the file.
+							try {
+								writer.seek(bytesWritten);
+							}
+							catch (e) {
+								console.log("file doesn't exist!");
+							}
+						}
+						//alert('4');
+						
+						var blobChunkSize = maxWriteChunkSize > (totalBytes-bytesWritten) ? totalBytes-bytesWritten : maxWriteChunkSize;
+						var blobChunk = fileData.slice(bytesWritten, bytesWritten+blobChunkSize);
+						
+						//alert('5');
+						
+						// Write to the file
+						lastWriteChunkSize = blobChunkSize; 
+						writer.write(blobChunk);
+						
+						//alert('6');
+					}
+					catch(ex){
+						alert('write() exception: '+ex);
+					}
+				}, function (error) {
+					alert("Error: Could not create file writer, " + error.code);
+				});
+				
+			}, function (error) {
+				alert("Error: Could not getFile, " + error.code);
+			});
+		},
+		function(err){
+			alert('Error: '+err);
+		});
+	};
+	writeMoreFileBytes();
+}
+
+/*
+var myFileUrl = "";
+function saveFile (fileData, fileName) {
+    // Get access to the file system
+	alert('1');
+    window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function (fileSystem) {
+		alert('2');
+		window.resolveLocalFileSystemURL(cordova.file.externalRootDirectory, function(dir) {
+		alert('2.1 - '+dir +' ... '+dir.getFile);
+        // Create the file.
+        //fileSystem.root
+		try
+		{
+			dir.getFile(fileName, { create: true, exclusive: false }, function (entry) {
+				alert('3');
+				// After you save the file, you can access it with this URL
+				myFileUrl = entry.toURL();
+				alert('4');
+				entry.createWriter(function (writer) {
+					alert('6');
+				   writer.onwriteend = function (evt) {
+						alert("Successfully saved file to " + myFileUrl);
+					};
+					try
+					{
+					// Write to the file
+					writer.write(fileData);
+					}
+					catch(ex){
+						alert('write() exception: '+ex);
+					}
+					alert('7');
+				}, function (error) {
+					alert("Error: Could not create file writer, " + error.code);
+				});
+				alert('5');
+			}, function (error) {
+				alert("Error: Could not create file, " + error.code);
+			});
+		}
+		catch(ex){
+			alert('ex: '+ex);
+		}
+		
+		}, function(err){
+			alert('Error: '+err);
+		});
+    }, function (evt) {
+        alert("Error: Could not access file system, " + evt.target.error.code);
+    });
+}
+*/
+
 // Run Onload
 $("html, body").animate({ scrollTop: 0 }, "slow");
 document.querySelector(".dialog").style.display = "none";
@@ -276,7 +589,7 @@ var audioCapture, videoCapture, storagePerm, setOffline, listPermissions,
             zip.file("resources/default_app/package.json", "{\n  \"name\": \""+ $("[data-id=sitename]").val() +"\",\n  \"productName\": \""+ $("[data-id=sitename]").val() +"\",\n  \"version\": \"1.0.0\",\n  \"main\": \"default_app.js\",\n  \"license\": \"MIT\"\n}\n");
             // Export application
             var content = zip.generate({type:"blob"});
-            saveAs(content, $("[data-id=sitename]").val().replace(/ /g, "-").toLowerCase() + "-winsite.zip");
+            saveFile(content, $("[data-id=sitename]").val().replace(/ /g, "-").toLowerCase() + "-winsite.zip");
             $(".preloader").remove();
             return false;
           });
@@ -306,7 +619,7 @@ var audioCapture, videoCapture, storagePerm, setOffline, listPermissions,
             // zip.file("README", "If WebDGap was at all helpful for you. Would you consider donating to the project?\nhttps://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BSYGA2RB5ZJCC\n\n")
             // Export application
             var content = zip.generate({type:"blob"});
-            saveAs(content, $("[data-id=sitename]").val().replace(/ /g, "-").toLowerCase() + "-win32site.zip");
+            saveFile(content, $("[data-id=sitename]").val().replace(/ /g, "-").toLowerCase() + "-win32site.zip");
             $(".preloader").remove();
             return false;
           });
@@ -339,7 +652,7 @@ var audioCapture, videoCapture, storagePerm, setOffline, listPermissions,
             // zip.file("README", "If WebDGap was at all helpful for you. Would you consider donating to the project?\nhttps://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BSYGA2RB5ZJCC\n\n");
             // Export application
             var content = zip.generate({type:"blob"});
-            saveAs(content, $("[data-id=sitename]").val().replace(/ /g, "-").toLowerCase() + "-macsite.zip");
+            saveFile(content, $("[data-id=sitename]").val().replace(/ /g, "-").toLowerCase() + "-macsite.zip");
             $(".preloader").remove();
             return false;
           });
@@ -376,7 +689,7 @@ var audioCapture, videoCapture, storagePerm, setOffline, listPermissions,
             zip.file("README.md", "### Instructions\n 1. Extract the `"+ $("[data-id=sitename]").val().replace(/ /g, "-") +"-linsite.zip` folder anywhere on your computer except the home folder. \n 2. Open a terminal and then navigate to "+ $("[data-id=sitename]").val().replace(/ /g, "-") +"'s directory and `run the make.sh file`.\n\n  **example**:\n  cd Downloads/"+ $("[data-id=sitename]").val().replace(/ /g, "-") +"-linsite\n\n 3. This will move the "+ $("[data-id=sitename]").val().replace(/ /g, "-") +" sibling folder and it's descendants to your home directory and create an application launcher.\n");
             // Export application
             var content = zip.generate({type:"blob"});
-            saveAs(content, $("[data-id=sitename]").val().replace(/ /g, "-").toLowerCase() + "-linsite.zip");
+            saveFile(content, $("[data-id=sitename]").val().replace(/ /g, "-").toLowerCase() + "-linsite.zip");
             $(".preloader").remove();
             return false;
           });
@@ -411,7 +724,7 @@ var audioCapture, videoCapture, storagePerm, setOffline, listPermissions,
             zip.file("README.md", "### Instructions\n 1. Extract the `"+ $("[data-id=sitename]").val().replace(/ /g, "-") +"-lin32site.zip` folder anywhere on your computer except the home folder. \n 2. Open a terminal and then navigate to "+ $("[data-id=sitename]").val().replace(/ /g, "-") +"'s directory and `run the make.sh file`.\n\n  **example**:\n  cd Downloads/"+ $("[data-id=sitename]").val().replace(/ /g, "-") +"-lin32site\n\n 3. This will move the "+ $("[data-id=sitename]").val().replace(/ /g, "-") +" sibling folder and it's descendants to your home directory and create an application launcher.\n");
             // Export application
             var content = zip.generate({type:"blob"});
-            saveAs(content, $("[data-id=sitename]").val().replace(/ /g, "-").toLowerCase() + "-lin32site.zip");
+            saveFile(content, $("[data-id=sitename]").val().replace(/ /g, "-").toLowerCase() + "-lin32site.zip");
             $(".preloader").remove();
             return false;
           });
@@ -475,7 +788,7 @@ var audioCapture, videoCapture, storagePerm, setOffline, listPermissions,
             
             // Export application
             var content = zip.generate({type:"blob"});
-            saveAs(content, $("[data-id=sitename]").val().replace(/ /g, "-").toLowerCase() + "-chromewebview.zip");
+            saveFile(content, $("[data-id=sitename]").val().replace(/ /g, "-").toLowerCase() + "-chromewebview.zip");
             $(".chrome-border").fadeOut();
             $("html, body").animate({ scrollTop: $(".chosenbit").offset().top }, "slow");
             $(".preloader").remove();
@@ -507,7 +820,7 @@ var audioCapture, videoCapture, storagePerm, setOffline, listPermissions,
             zip.file("manifest.json", "{\n  \"manifest_version\": 2,\n  \"name\": \""+ $("[data-id=sitename]").val() +"\",\n  \"short_name\": \""+ $("[data-id=sitename]").val() +"\",\n  \"description\": \""+ $("[data-value=description]").val() +"\",\n  \"version\": \""+ $("[data-value=version]").val() +"\",\n  \"minimum_chrome_version\": \"38\",\n  \"permissions\": [ \"storage\", \"unlimitedStorage\", \"http://*/\", \"https://*/\" ],\n  \"icons\": {\n    \"16\": \"assets/16.png\",\n    \"32\": \"assets/32.png\",\n    \"64\": \"assets/64.png\",\n    \"128\": \"assets/128.png\"\n  },\n\n  \"browser_action\": {\n    \"default_icon\": \"assets/128.png\",\n    \"default_title\": \""+ $("[data-id=sitename]").val() +"\",\n    \"default_popup\": \"index.html\"\n  },\n  \n  \"content_security_policy\": \"script-src 'self' 'unsafe-eval'; object-src 'self'\"\n}");
             // Export application
             var content = zip.generate({type:"blob"});
-            saveAs(content, $("[data-id=sitename]").val().replace(/ /g, "-").toLowerCase() + "-chromeext-webview.zip");
+            saveFile(content, $("[data-id=sitename]").val().replace(/ /g, "-").toLowerCase() + "-chromeext-webview.zip");
             $(".chrome-border").fadeOut();
             $("html, body").animate({ scrollTop: $(".chosenbit").offset().top }, "slow");
             $(".preloader").remove();
@@ -884,7 +1197,7 @@ $(document).ready(function() {
 
                 // Export your application
                 var content = zip.generate({type:"blob"});
-                saveAs(content, theFile.name.substr(theFile.name.length - theFile.name.length, theFile.name.length - 4) + "-win.zip");
+                saveFile(content, theFile.name.substr(theFile.name.length - theFile.name.length, theFile.name.length - 4) + "-win.zip");
                 $(".preloader").remove();
                 return false;
               });
@@ -919,7 +1232,7 @@ $(document).ready(function() {
 
                 // Export your application
                 var content = zip.generate({type:"blob"});
-                saveAs(content, theFile.name.substr(theFile.name.length - theFile.name.length, theFile.name.length - 4) + "-win32.zip");
+                saveFile(content, theFile.name.substr(theFile.name.length - theFile.name.length, theFile.name.length - 4) + "-win32.zip");
                 $(".preloader").remove();
                 return false;
               });
@@ -958,7 +1271,7 @@ $(document).ready(function() {
 
                 // Export your application
                 var content = zip.generate({type:"blob"});
-                saveAs(content, theFile.name.substr(theFile.name.length - theFile.name.length, theFile.name.length - 4) + "-lin.zip");
+                saveFile(content, theFile.name.substr(theFile.name.length - theFile.name.length, theFile.name.length - 4) + "-lin.zip");
                 $(".preloader").remove();
                 return false;
               });
@@ -995,7 +1308,7 @@ $(document).ready(function() {
 
                 // Export your application
                 var content = zip.generate({type:"blob"});
-                saveAs(content, theFile.name.substr(theFile.name.length - theFile.name.length, theFile.name.length - 4) + "-lin32.zip");
+                saveFile(content, theFile.name.substr(theFile.name.length - theFile.name.length, theFile.name.length - 4) + "-lin32.zip");
                 $(".preloader").remove();
                 return false;
               });
@@ -1034,7 +1347,7 @@ $(document).ready(function() {
 
                 // Export your application
                 var content = zip.generate({type:"blob"});
-                saveAs(content, theFile.name.substr(theFile.name.length - theFile.name.length, theFile.name.length - 4) + "-mac.zip");
+                saveFile(content, theFile.name.substr(theFile.name.length - theFile.name.length, theFile.name.length - 4) + "-mac.zip");
                 $(".preloader").remove();
                 return false;
               });
@@ -1110,7 +1423,7 @@ $(document).ready(function() {
 
                 // Export Chrome Application
                 var content = zip.generate({type:"blob"});
-                saveAs(content, theFile.name.substr(theFile.name.length - theFile.name.length, theFile.name.length - 4) + "-chromeapp.zip");
+                saveFile(content, theFile.name.substr(theFile.name.length - theFile.name.length, theFile.name.length - 4) + "-chromeapp.zip");
                 $(".chrome-border").fadeOut();
                 $("html, body").animate({ scrollTop: $(".chosenbit").offset().top }, "slow");
                 $(".preloader").remove();
@@ -1149,7 +1462,7 @@ $(document).ready(function() {
 
                 // Export Chrome Extension
                 var content = zip.generate({type:"blob"});
-                saveAs(content, theFile.name.substr(theFile.name.length - theFile.name.length, theFile.name.length - 4) + "-chrome-ext.zip");
+                saveFile(content, theFile.name.substr(theFile.name.length - theFile.name.length, theFile.name.length - 4) + "-chrome-ext.zip");
                 $(".chrome-border").fadeOut();
                 $("html, body").animate({ scrollTop: $(".chosenbit").offset().top }, "slow");
                 $(".preloader").remove();
@@ -1283,7 +1596,7 @@ $(document).ready(function() {
 
                 // Export Chrome Application
                 var content = zip.generate({type:"blob"});
-                saveAs(content, document.querySelector("[data-id=sitename]").value.replace(/ /g, '').toLowerCase() + "-pgb.zip");
+                saveFile(content, document.querySelector("[data-id=sitename]").value.replace(/ /g, '').toLowerCase() + "-pgb.zip");
                 $(".phonegap-dialog").fadeOut();
                 $("html, body").animate({ scrollTop: $(".chosenbit").offset().top }, "slow");
                 $(".preloader").remove();
@@ -1358,7 +1671,7 @@ $(document).ready(function() {
 
               // Export your application
               var content = zip.generate({type:"blob"});
-              saveAs(content, document.querySelector("[data-id=sitename]").value.replace(/ /g, '').toLowerCase() + "-win.zip");
+              saveFile(content, document.querySelector("[data-id=sitename]").value.replace(/ /g, '').toLowerCase() + "-win.zip");
               $(".preloader").remove();
               return false;
             });
@@ -1393,7 +1706,7 @@ $(document).ready(function() {
 
               // Export your application
               var content = zip.generate({type:"blob"});
-              saveAs(content, document.querySelector("[data-id=sitename]").value.replace(/ /g, '').toLowerCase() + "-win32.zip");
+              saveFile(content, document.querySelector("[data-id=sitename]").value.replace(/ /g, '').toLowerCase() + "-win32.zip");
               $(".preloader").remove();
               return false;
             });
@@ -1432,7 +1745,7 @@ $(document).ready(function() {
 
               // Export your application
               var content = zip.generate({type:"blob"});
-              saveAs(content, document.querySelector("[data-id=sitename]").value.replace(/ /g, '').toLowerCase() + "-lin.zip");
+              saveFile(content, document.querySelector("[data-id=sitename]").value.replace(/ /g, '').toLowerCase() + "-lin.zip");
               $(".preloader").remove();
               return false;
             });
@@ -1469,7 +1782,7 @@ $(document).ready(function() {
 
               // Export your application
               var content = zip.generate({type:"blob"});
-              saveAs(content, document.querySelector("[data-id=sitename]").value.replace(/ /g, '').toLowerCase() + "-lin32.zip");
+              saveFile(content, document.querySelector("[data-id=sitename]").value.replace(/ /g, '').toLowerCase() + "-lin32.zip");
               $(".preloader").remove();
               return false;
             });
@@ -1508,7 +1821,7 @@ $(document).ready(function() {
 
               // Export your application
               var content = zip.generate({type:"blob"});
-              saveAs(content, document.querySelector("[data-id=sitename]").value.replace(/ /g, '').toLowerCase() + "-mac.zip");
+              saveFile(content, document.querySelector("[data-id=sitename]").value.replace(/ /g, '').toLowerCase() + "-mac.zip");
               $(".preloader").remove();
               return false;
             });
@@ -1583,7 +1896,7 @@ $(document).ready(function() {
 
               // Export Chrome Application
               var content = zip.generate({type:"blob"});
-              saveAs(content, document.querySelector("[data-id=sitename]").value.replace(/ /g, '').toLowerCase() + "-chromeapp.zip");
+              saveFile(content, document.querySelector("[data-id=sitename]").value.replace(/ /g, '').toLowerCase() + "-chromeapp.zip");
               $(".chrome-border").fadeOut();
               $("html, body").animate({ scrollTop: $(".chosenbit").offset().top }, "slow");
               $(".preloader").remove();
@@ -1621,7 +1934,7 @@ $(document).ready(function() {
 
               // Export Chrome Extension
               var content = zip.generate({type:"blob"});
-              saveAs(content, document.querySelector("[data-id=sitename]").value.replace(/ /g, '').toLowerCase() + "-chrome-ext.zip");
+              saveFile(content, document.querySelector("[data-id=sitename]").value.replace(/ /g, '').toLowerCase() + "-chrome-ext.zip");
               $(".chrome-border").fadeOut();
               $("html, body").animate({ scrollTop: $(".chosenbit").offset().top }, "slow");
               $(".preloader").remove();
@@ -1753,7 +2066,7 @@ $(document).ready(function() {
 
               // Export Chrome Application
               var content = zip.generate({type:"blob"});
-              saveAs(content, document.querySelector("[data-id=sitename]").value.replace(/ /g, '').toLowerCase() + "-pgb.zip");
+              saveFile(content, document.querySelector("[data-id=sitename]").value.replace(/ /g, '').toLowerCase() + "-pgb.zip");
               $(".phonegap-dialog").fadeOut();
               $("html, body").animate({ scrollTop: $(".chosenbit").offset().top }, "slow");
               $(".preloader").remove();

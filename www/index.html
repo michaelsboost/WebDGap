@@ -3,21 +3,20 @@
   <head>
     <title>WebDGap</title>
     <meta charset="utf-8">
-    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1">
-    <meta name="description" content="Convert any web application to a native Windows, Linux, or Mac OS X desktop application.">
-    <meta name="author" content="Michael Schwartz">
-    <meta http-equiv="X-UA-Compatible" content="IE=9" />
-    <!-- Chrome, Firefox OS and Opera -->
-    <meta name="theme-color" content="#cfe7eb">
-    <!-- Windows Phone -->
-    <meta name="msapplication-navbutton-color" content="#cfe7eb">
-    <!-- iOS Safari -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="Michael Schwartz">
-    <link rel="apple-touch-icon" href="imgs/icon.png">
-    <link rel="icon" type="image/vnd.microsoft.icon" href="favicon.ico">
-    <link rel="SHORTCUT ICON" href="favicon.ico">
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+    <!-- Good default declaration:
+    * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+    * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+    * Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+        * Enable inline JS: add 'unsafe-inline' to default-src
+        * Enable eval(): add 'unsafe-eval' to default-src
+    * Create your own at http://cspisawesome.com
+    -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
     <link rel="stylesheet" href="libraries/polyui/polyui.css">
     <link rel="stylesheet" href="libraries/font-awesome/font-awesome.css" />
     <link rel="stylesheet" href="libraries/font-awesome/macset.css" />
@@ -99,24 +98,9 @@
                 <canvas class="n57 hide" width="57" height="57"></canvas>
                 <canvas class="n114 hide" width="114" height="114"></canvas>
                 
-                <!-- PhoneGap Windows Icon -->
-                <canvas class="n30 hide" width="30" height="30"></canvas>
-                <canvas class="n44 hide" width="44" height="44"></canvas>
-                <canvas class="n106 hide" width="106" height="106"></canvas>
-                <canvas class="n70 hide" width="70" height="70"></canvas>
-                <canvas class="n71 hide" width="71" height="71"></canvas>
-                <canvas class="n170 hide" width="170" height="170"></canvas>
-                <canvas class="n150 hide" width="150" height="150"></canvas>
-                <canvas class="n360 hide" width="360" height="360"></canvas>
-                <canvas class="n310 hide" width="310" height="310"></canvas>
-                <canvas class="n50 hide" width="50" height="50"></canvas>
-                <canvas class="n120 hide" width="120" height="120"></canvas>
-                <canvas class="nwinwide1 hide" width="310" height="150"></canvas>
-                <canvas class="nwinwide2 hide" width="744" height="360"></canvas>
-                
-                <!-- Windows Phone 8 Icon -->
-                <canvas class="n159 hide" width="159" height="159"></canvas>
-                <canvas class="n99 hide" width="99" height="99"></canvas>
+                <!-- Windows Phone Icon -->
+                <canvas class="n173 hide" width="173" height="173"></canvas>
+                <canvas class="n62 hide" width="62" height="62"></canvas>
 
                 <canvas class="holder call pointer" width="128" height="128"></canvas>
               </div>
@@ -353,6 +337,7 @@
       </div>
     </div>
     
+    <script src="cordova.js"></script>
     <script src="libraries/fancybox/js/core.js"></script>
     <script src="libraries/fancybox/js/fullscreen.js"></script>
     <script src="libraries/fancybox/js/guestures.js"></script>
@@ -361,8 +346,5 @@
     <script src="libraries/fancybox/js/thumbs.js"></script>
     <script src="libraries/fancybox/js/jquery.fancybox.min.js"></script>
     <script src="js/webdgap.min.js"></script>
-    
-    <!-- Go to www.addthis.com/dashboard to customize your tools -->
-    <script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-58bb8f9cfb49b5de"></script> 
   </body>
 </html>
