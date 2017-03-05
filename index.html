@@ -23,6 +23,11 @@
     <link rel="stylesheet" href="libraries/font-awesome/macset.css" />
     <link rel="stylesheet" href="libraries/alertifyjs/css/alertify.min.css" />
     <link rel="stylesheet" href="libraries/alertifyjs/css/themes/default.min.css" />
+    <link rel="stylesheet" href="libraries/fancybox/css/core.css" />
+    <link rel="stylesheet" href="libraries/fancybox/css/fullscreen.css" />
+    <link rel="stylesheet" href="libraries/fancybox/css/slideshow.css" />
+    <link rel="stylesheet" href="libraries/fancybox/css/thumbs.css" />
+    <link rel="stylesheet" href="libraries/fancybox/css/jquery.fancybox.min.css" />
     <link rel="stylesheet" href="css/style.min.css" />
     <script src="libraries/jquery/jquery.js"></script>
     <script src="libraries/prefixfree/prefixfree.min.js"></script>
@@ -333,45 +338,13 @@
       </div>
     </div>
     
-    <!-- Walkthrough Navigation Dialog -->
-    <input type="radio" id="close-walkthrough" class="hide" name="walkthrough-group">
-
-    <label for="close-walkthrough" class="walkthrough-dialogbg pointer"></label>
-    <div class="walkthrough-dialog">
-      <input type="radio" id="tab1" class="hide" name="walkthrough-group" checked>
-      <!-- <input type="radio" id="tab2" class="hide" name="walkthrough-group"> -->
-      <!-- <input type="radio" id="tab3" class="hide" name="walkthrough-group"> -->
-
-      <div class="walkthrough-menu">
-        <!-- <label for="tab1">Using WebDGap</label> -->
-        <label for="tab1">How To Use WebDGap</label>
-        <!-- <label for="tab2">Exportation</label> -->
-        <!-- <label for="tab3">Feed</label> -->
-        <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BSYGA2RB5ZJCC" target="_blank">
-          <label>Donate</label>
-        </a>
-
-        <label for="close-walkthrough" class="walkthrough-close">
-          <span class="fa fa-times-circle-o"></span>
-        </label>
-      </div>
-
-      <!-- Tab Content -->
-      <div id="walkthrough" class="walkthrough-content">
-        <iframe width="100%" height="360" src="https://www.youtube.com/embed/-AszZcClVXA" frameborder="0" allowfullscreen></iframe>
-      </div>
-      <!--
-      <div id="exportation" class="walkthrough-content">
-        <iframe width="100%" height="360" src="https://www.youtube.com/embed/-AszZcClVXA" frameborder="0" allowfullscreen></iframe>
-      </div>
-      <div id="feed" class="walkthrough-content">
-        <a class="twitter-timeline" href="https://twitter.com/kodeweave_app">Tweets by kodeweave_app</a>
-        <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-        <style>.walkthrough-content iframe[id*="twitter-widget"] {float: none; width: 100%!important;}</style>
-      </div>
-      -->
-    </div>
-
-    <script src="js/webdgap.min.js"></script>
+    <script src="libraries/fancybox/js/core.js"></script>
+    <script src="libraries/fancybox/js/fullscreen.js"></script>
+    <script src="libraries/fancybox/js/guestures.js"></script>
+    <script src="libraries/fancybox/js/media.js"></script>
+    <script src="libraries/fancybox/js/slideshow.js"></script>
+    <script src="libraries/fancybox/js/thumbs.js"></script>
+    <script src="libraries/fancybox/js/jquery.fancybox.min.js"></script>
+    <script src="js/webdgap.js"></script>
   </body>
 </html>
