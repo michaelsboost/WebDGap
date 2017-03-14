@@ -48,6 +48,8 @@ MIT
 [Linux 64](https://sourceforge.net/projects/webdgap/files/v1.2.4/WebDGap-lin.zip/download)  
 [Linux 32](https://sourceforge.net/projects/webdgap/files/v1.2.4/WebDGap-lin32.zip/download) 
 
+For command line use you can use [nativefier](https://github.com/jiahaog/nativefier) to convert any website to a desktop app. (**NOTE**: nativefier uses an Electron wrapper. WebDGap uses a NW.js wrapper. Difference is Electron runs on 64bit processors while NW.js runs on 64bits and 32bit processors)
+
 ### Free Software, Hell Yeah!
 
 - [kodeWeave](http://kodeweave.sourceforge.net/)
