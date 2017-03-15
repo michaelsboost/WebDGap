@@ -52,6 +52,7 @@ function saveFile(content, fileName, onDone){
       },
       function(reason){
         if( typeof(onDone) === "function" ) onDone(false);
+        alert('File Save Aborted');
       });
     }
     else{

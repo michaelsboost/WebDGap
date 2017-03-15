@@ -68,7 +68,7 @@ function handleCallback(cb, args) {
 var FileBrowser = function(defaultFolder){
 
 	var _this = this;
-	this._onFileSelected = null;
+	this._onOk = null;
 	this._default_fileName = "";
 	this.lastFileSelected = null;
 
@@ -94,28 +94,17 @@ var FileBrowser = function(defaultFolder){
 
 	//create file chooser dialog parameters
 	file_Browser_params = {
-		directory_browser: false, //this is file browser. Default is false
-		new_file_btn: true, //show new file button. Default is true
+		directory_browser: true, //this is file browser. Default is false
+		new_file_btn: false,
 		new_folder_btn: true, //shoe new folder button. Default is true
-		ok_btn: false,
+		ok_btn: true,
 		initial_folder: lastFolderSelected, //initial folder when dialog is displayed
-		default_fileName: _this._default_fileName,
-		custom_title: "Save your generated App",
-		confirm_selected_file: true,
-		confirm_selected_file_prompt: "Are you sure this is the file you want to save your app to?  If it previously existed, it will overwrite old contents.",
+		custom_title: "Choose folder to save your app",
 		//callback function when file is selected
-		on_file_select: function (fileEntry) {
-			try
-			{
-				handleCallback(_this._onFileSelected, fileEntry);
-			}
-			catch(ex){}
-			return false; //close dialog when any file is selected (tapped)
-		},
 		on_cancel_file_select: function() {
 			try
 			{
-				handleCallback(_this._onCancelFileSelect);
+				handleCallback(_this._onCancelFileBrowse);
 			}
 			catch(ex){}
 		},
@@ -127,16 +116,21 @@ var FileBrowser = function(defaultFolder){
 		on_ok: function (dirEntry) {
 			//save the last folder path
 			lastFolderSelected = dirEntry;
+			try
+			{
+				handleCallback(_this._onOk, dirEntry);
+			}
+			catch(ex){}
+			return false; //close dialog when any file is selected (tapped)
 		}
 	};
 
-	this.Show = function(defaultFileName, onFileSelected, onCancelFileSelect){
-		this._onFileSelected = onFileSelected;
-		this._onCancelFileSelect = onCancelFileSelect;
+	this.Show = function(defaultFileName, onOk, onCancelFileBrowse){
+		this._onOk = onOk;
+		this._onCancelFileBrowse = onCancelFileBrowse;
 		this._default_fileName = defaultFileName;
 		$('#browseBtn').click();
 	};
-
 };
 
 document.addEventListener("deviceready", function () {
@@ -235,16 +229,22 @@ function pgSaveFile(fileData, defaultFileName, onSuccess, onError, onProgress) {
 		};
 
 		if( typeof(file) === "object" && typeof(file.nativeURL) === "string" ) {
-			// File param is cordova file data entry object returned from dirReader.readEntries()
-			var strDirUrl = file.nativeURL;
-			strDirUrl = strDirUrl.substring( 0, strDirUrl.lastIndexOf('/')+1 );
-			window.resolveLocalFileSystemURL(strDirUrl, function (dir) {
+			if( !file.isDirectory ){
+				// File param is cordova file data entry object returned from dirReader.readEntries()
+				var strDirUrl = file.nativeURL;
+				strDirUrl = strDirUrl.substring( 0, strDirUrl.lastIndexOf('/')+1 );
+				window.resolveLocalFileSystemURL(strDirUrl, function (dir) {
+					afterGotDir(dir);
+				},
+				function (error) {
+					DebugMsg("Error: Failed to resolve directory URL from FileBrowser, " + error.code);
+					handleCallback(onError, error.code);
+				});
+			}
+			else{
+				dir = file;
 				afterGotDir(dir);
-			},
-			function (error) {
-				DebugMsg("Error: Failed to resolve directory URL from FileBrowser, " + error.code);
-				handleCallback(onError, error.code);
-			});
+			}
 
 		}
 		else {
@@ -256,10 +256,8 @@ function pgSaveFile(fileData, defaultFileName, onSuccess, onError, onProgress) {
 	//if( cordova.platformId === "android" ) {
 	// I guess this file browser can always show if PhoneGap environment for now (maybe iOS tho will change this to have conditionals)
 		var fb = new FileBrowser();
-		fb.Show(defaultFileName, function(fileEntry){
-			// fileEntry properties possibly of interest: name , fullPath, nativeURL
-			fileName = fileEntry.name;
-			startSave(fileEntry);
+		fb.Show(defaultFileName, function(dirEntry){
+			startSave(dirEntry);
 		},
 		function(){
 			handleCallback(onError, 1);
