@@ -223,76 +223,7 @@ a {
 
 /* Preloader */
 .loading {
-  position: relative;
-  margin: -10px auto 20px auto;
-  width: 100px;
-  height: 100px;
-  border-radius: 100%;
-  animation: spin 0.6s infinite linear;
-  overflow: hidden;
-}
-
-.red {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 50%;
-  bottom: 50%;
-  background: #d64f4f;
-}
-
-.blue {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  right: 0;
-  bottom: 50%;
-  background: #1c89e3;
-}
-
-.yellow {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  right: 0;
-  bottom: 0;
-  background: #d9e31c;
-}
-
-.green {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  right: 50%;
-  bottom: 0;
-  background: #27b825;
-}
-
-.red, .blue, .yellow, .green {
-  animation: wid 3s infinite linear;
-}
-
-@keyframes wid {
-  0% {
-    margin: 0;
-    border-radius: 0;
-  }
-  50% {
-    margin: 26%;
-    border-radius: 100%;
-  }
-  100% {
-    margin: 0;
-    border-radius: 0;
-  }
-}
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(359deg);
-  }
+  height: 50%;
 }
 
 /* Footer */
