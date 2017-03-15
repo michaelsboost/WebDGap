@@ -1,61 +1,71 @@
-function saveFile (fileData, fileName) {
-  var maxWriteChunkSize = 5*1024*1024;
-  var lastWriteChunkSize = 0;
-  var totalBytes = fileData.size;
-  var bytesWritten = 0;
-  var writeMoreFileBytes = function(){
-    //alert('Start of writeMoreFileBytes()');
-    var saveDir = (device.platform.toLowerCase() === "android") ? cordova.file.externalRootDirectory : cordova.file.dataDirectory;
-    //alert("device.platform="+device.platform+" , saveDir="+saveDir);
-    window.resolveLocalFileSystemURL( saveDir, function(dir) {
-      dir.getFile(fileName, { create: bytesWritten == 0 ? true : false, exclusive: false }, function (entry) {
-        entry.createWriter(function (writer) {
-          writer.onwriteend = function (evt) {
-            bytesWritten += lastWriteChunkSize;
-            //alert('bytesWritten = '+bytesWritten);
-            if( bytesWritten < totalBytes ) {
-              writeMoreFileBytes();
-            }
-            else {
-              alert('All done saving generated app file.');
-            }
-          };
-          try
-          {
-            if( bytesWritten > 0 ) {
-              // If we are appending data to file, go to the end of the file.
-              try {
-                writer.seek(bytesWritten);
-              }
-              catch (e) {
-                console.log("file doesn't exist!");
-              }
-            }
+// Uncomment next line to disable new PhoneGap related code
+//DisableInjectingPhoneGapCode = true;
+var phoneGapJsFiles = ['cordova.js', 'js/jquery.mobile-1.4.5.min.js', 'js/phonegap-related.min.js'];
 
-            var blobChunkSize = maxWriteChunkSize > (totalBytes-bytesWritten) ? totalBytes-bytesWritten : maxWriteChunkSize;
-            var blobChunk = fileData.slice(bytesWritten, bytesWritten+blobChunkSize);
-
-            // Write to the file
-            lastWriteChunkSize = blobChunkSize; 
-            writer.write(blobChunk);
-          }
-          catch(ex){
-            alert('write() exception: '+ex);
-          }
-        }, function (error) {
-          alert("Error: Could not create file writer, " + error.code);
-        });
-
-      }, function (error) {
-        alert("Error: Could not getFile, " + error.code);
-      });
-    },
-                                     function(err){
-      alert('Error: '+err);
-    });
-  };
-  writeMoreFileBytes();
+// If debugging, may have uncommented tags in index.html to load PhoneGap files so visible to Chrome
+// In that case, auto skip loading PhoneGap related JS files here
+if( typeof(PhoneGapRelatedJsLoaded) === "boolean" && PhoneGapRelatedJsLoaded ) {
+  DisableInjectingPhoneGapCode = true;
 }
+else{
+  DisableInjectingPhoneGapCode = false;
+}
+
+// If currently running via PhoneGap, load related js code
+if( !DisableInjectingPhoneGapCode ) {
+  (function(){
+    var bIsPhoneGap = false;
+    // Alternate check to consider instead:
+    //  document.URL.indexOf( 'http://' ) === -1 && document.URL.indexOf( 'https://' ) === -1
+    if (navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|IEMobile)/)) {
+      bIsPhoneGap = true;
+    }
+
+    if (bIsPhoneGap) {
+      // Load PhoneGap specific javascript files
+      if( !DisableInjectingPhoneGapCode )
+      var $head = $("head");
+      phoneGapJsFiles.forEach(function (jsFile) {
+        try // put here in case of exception due to conflict like if js file already added via html file
+        {
+          var s = document.createElement("script");
+          s.type = "text/javascript";
+          s.src = jsFile;
+          $head.append(s);
+        }
+        catch(ex){
+        }
+      });
+    }
+  })();
+}
+
+
+function saveFile(content, fileName, onDone){
+  try
+  {
+    if( typeof(pgSaveFile) === "function" ){
+      // Assume PhoneGap environment where we use pgSaveFile() underlying function
+      return pgSaveFile(content, fileName, function(fileEntry){
+        alert('File saved to: '+fileEntry.fullPath);
+        if( typeof(onDone) === "function" ) onDone(true);
+      },
+      function(reason){
+        if( typeof(onDone) === "function" ) onDone(false);
+      });
+    }
+    else{
+      saveAs(content, fileName);
+      if( typeof(onDone) === "function" ) onDone(true);
+    }
+  }
+  catch(ex){
+    if( typeof(onDone) === "function" ) onDone(false);
+  }
+}
+
+
+
 
 // Run Onload
 $("html, body").animate({ scrollTop: 0 }, "slow");
@@ -335,8 +345,9 @@ var audioCapture, videoCapture, storagePerm, setOffline, listPermissions,
             zip.file("resources/default_app/package.json", "{\n  \"name\": \""+ $("[data-id=sitename]").val() +"\",\n  \"productName\": \""+ $("[data-id=sitename]").val() +"\",\n  \"version\": \"1.0.0\",\n  \"main\": \"default_app.js\",\n  \"license\": \"MIT\"\n}\n");
             // Export application
             var content = zip.generate({type:"blob"});
-            saveFile(content, $("[data-id=sitename]").val().replace(/ /g, "-").toLowerCase() + "-winsite.zip");
-            $(".preloader").remove();
+            saveFile(content, $("[data-id=sitename]").val().replace(/ /g, "-").toLowerCase() + "-winsite.zip", function(){
+              $(".preloader").remove();
+            });
             return false;
           });
           return false;
@@ -365,8 +376,9 @@ var audioCapture, videoCapture, storagePerm, setOffline, listPermissions,
             // zip.file("README", "If WebDGap was at all helpful for you. Would you consider donating to the project?\nhttps://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BSYGA2RB5ZJCC\n\n")
             // Export application
             var content = zip.generate({type:"blob"});
-            saveFile(content, $("[data-id=sitename]").val().replace(/ /g, "-").toLowerCase() + "-win32site.zip");
-            $(".preloader").remove();
+            saveFile(content, $("[data-id=sitename]").val().replace(/ /g, "-").toLowerCase() + "-win32site.zip", function(){
+              $(".preloader").remove();
+            });
             return false;
           });
         });
@@ -398,8 +410,9 @@ var audioCapture, videoCapture, storagePerm, setOffline, listPermissions,
             // zip.file("README", "If WebDGap was at all helpful for you. Would you consider donating to the project?\nhttps://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BSYGA2RB5ZJCC\n\n");
             // Export application
             var content = zip.generate({type:"blob"});
-            saveFile(content, $("[data-id=sitename]").val().replace(/ /g, "-").toLowerCase() + "-macsite.zip");
-            $(".preloader").remove();
+            saveFile(content, $("[data-id=sitename]").val().replace(/ /g, "-").toLowerCase() + "-macsite.zip", function(){
+              $(".preloader").remove();
+            });
             return false;
           });
           return false;
@@ -435,8 +448,9 @@ var audioCapture, videoCapture, storagePerm, setOffline, listPermissions,
             zip.file("README.md", "### Instructions\n 1. Extract the `"+ $("[data-id=sitename]").val().replace(/ /g, "-") +"-linsite.zip` folder anywhere on your computer except the home folder. \n 2. Open a terminal and then navigate to "+ $("[data-id=sitename]").val().replace(/ /g, "-") +"'s directory and `run the make.sh file`.\n\n  **example**:\n  cd Downloads/"+ $("[data-id=sitename]").val().replace(/ /g, "-") +"-linsite\n\n 3. This will move the "+ $("[data-id=sitename]").val().replace(/ /g, "-") +" sibling folder and it's descendants to your home directory and create an application launcher.\n");
             // Export application
             var content = zip.generate({type:"blob"});
-            saveFile(content, $("[data-id=sitename]").val().replace(/ /g, "-").toLowerCase() + "-linsite.zip");
-            $(".preloader").remove();
+            saveFile(content, $("[data-id=sitename]").val().replace(/ /g, "-").toLowerCase() + "-linsite.zip", function(){
+              $(".preloader").remove();
+            });
             return false;
           });
           return false;
@@ -470,8 +484,9 @@ var audioCapture, videoCapture, storagePerm, setOffline, listPermissions,
             zip.file("README.md", "### Instructions\n 1. Extract the `"+ $("[data-id=sitename]").val().replace(/ /g, "-") +"-lin32site.zip` folder anywhere on your computer except the home folder. \n 2. Open a terminal and then navigate to "+ $("[data-id=sitename]").val().replace(/ /g, "-") +"'s directory and `run the make.sh file`.\n\n  **example**:\n  cd Downloads/"+ $("[data-id=sitename]").val().replace(/ /g, "-") +"-lin32site\n\n 3. This will move the "+ $("[data-id=sitename]").val().replace(/ /g, "-") +" sibling folder and it's descendants to your home directory and create an application launcher.\n");
             // Export application
             var content = zip.generate({type:"blob"});
-            saveFile(content, $("[data-id=sitename]").val().replace(/ /g, "-").toLowerCase() + "-lin32site.zip");
-            $(".preloader").remove();
+            saveFile(content, $("[data-id=sitename]").val().replace(/ /g, "-").toLowerCase() + "-lin32site.zip", function(){
+              $(".preloader").remove();
+            });
             return false;
           });
         });
@@ -534,10 +549,11 @@ var audioCapture, videoCapture, storagePerm, setOffline, listPermissions,
             
             // Export application
             var content = zip.generate({type:"blob"});
-            saveFile(content, $("[data-id=sitename]").val().replace(/ /g, "-").toLowerCase() + "-chromewebview.zip");
-            $(".chrome-border").fadeOut();
-            $("html, body").animate({ scrollTop: $(".chosenbit").offset().top }, "slow");
-            $(".preloader").remove();
+            saveFile(content, $("[data-id=sitename]").val().replace(/ /g, "-").toLowerCase() + "-chromewebview.zip", function(){
+              $(".chrome-border").fadeOut();
+              $("html, body").animate({ scrollTop: $(".chosenbit").offset().top }, "slow");
+              $(".preloader").remove();
+            });
           }
           return false;
         });
@@ -566,10 +582,11 @@ var audioCapture, videoCapture, storagePerm, setOffline, listPermissions,
             zip.file("manifest.json", "{\n  \"manifest_version\": 2,\n  \"name\": \""+ $("[data-id=sitename]").val() +"\",\n  \"short_name\": \""+ $("[data-id=sitename]").val() +"\",\n  \"description\": \""+ $("[data-value=description]").val() +"\",\n  \"version\": \""+ $("[data-value=version]").val() +"\",\n  \"minimum_chrome_version\": \"38\",\n  \"permissions\": [ \"storage\", \"unlimitedStorage\", \"http://*/\", \"https://*/\" ],\n  \"icons\": {\n    \"16\": \"assets/16.png\",\n    \"32\": \"assets/32.png\",\n    \"64\": \"assets/64.png\",\n    \"128\": \"assets/128.png\"\n  },\n\n  \"browser_action\": {\n    \"default_icon\": \"assets/128.png\",\n    \"default_title\": \""+ $("[data-id=sitename]").val() +"\",\n    \"default_popup\": \"index.html\"\n  },\n  \n  \"content_security_policy\": \"script-src 'self' 'unsafe-eval'; object-src 'self'\"\n}");
             // Export application
             var content = zip.generate({type:"blob"});
-            saveFile(content, $("[data-id=sitename]").val().replace(/ /g, "-").toLowerCase() + "-chromeext-webview.zip");
-            $(".chrome-border").fadeOut();
-            $("html, body").animate({ scrollTop: $(".chosenbit").offset().top }, "slow");
-            $(".preloader").remove();
+            saveFile(content, $("[data-id=sitename]").val().replace(/ /g, "-").toLowerCase() + "-chromeext-webview.zip", function(){
+              $(".chrome-border").fadeOut();
+              $("html, body").animate({ scrollTop: $(".chosenbit").offset().top }, "slow");
+              $(".preloader").remove();
+            });
             return false;
           }
         });
@@ -943,8 +960,9 @@ $(document).ready(function() {
 
                 // Export your application
                 var content = zip.generate({type:"blob"});
-                saveFile(content, document.querySelector("[data-id=sitename]").value.replace(/ /g, '').toLowerCase() + "-win.zip");
-                $(".preloader").remove();
+                saveFile(content, document.querySelector("[data-id=sitename]").value.replace(/ /g, '').toLowerCase() + "-win.zip", function(){
+                  $(".preloader").remove();
+                });
                 return false;
               });
             });
@@ -978,8 +996,9 @@ $(document).ready(function() {
 
                 // Export your application
                 var content = zip.generate({type:"blob"});
-                saveFile(content, document.querySelector("[data-id=sitename]").value.replace(/ /g, '').toLowerCase() + "-win32.zip");
-                $(".preloader").remove();
+                saveFile(content, document.querySelector("[data-id=sitename]").value.replace(/ /g, '').toLowerCase() + "-win32.zip", function(){
+                  $(".preloader").remove();
+                });
                 return false;
               });
             });
@@ -1017,8 +1036,9 @@ $(document).ready(function() {
 
                 // Export your application
                 var content = zip.generate({type:"blob"});
-                saveFile(content, document.querySelector("[data-id=sitename]").value.replace(/ /g, '').toLowerCase() + "-lin.zip");
-                $(".preloader").remove();
+                saveFile(content, document.querySelector("[data-id=sitename]").value.replace(/ /g, '').toLowerCase() + "-lin.zip", function(){
+                  $(".preloader").remove();
+                });
                 return false;
               });
             });
@@ -1054,8 +1074,9 @@ $(document).ready(function() {
 
                 // Export your application
                 var content = zip.generate({type:"blob"});
-                saveFile(content, document.querySelector("[data-id=sitename]").value.replace(/ /g, '').toLowerCase() + "-lin32.zip");
-                $(".preloader").remove();
+                saveFile(content, document.querySelector("[data-id=sitename]").value.replace(/ /g, '').toLowerCase() + "-lin32.zip", function(){
+                  $(".preloader").remove();
+                });
                 return false;
               });
             });
@@ -1093,8 +1114,9 @@ $(document).ready(function() {
 
                 // Export your application
                 var content = zip.generate({type:"blob"});
-                saveFile(content, document.querySelector("[data-id=sitename]").value.replace(/ /g, '').toLowerCase() + "-mac.zip");
-                $(".preloader").remove();
+                saveFile(content, document.querySelector("[data-id=sitename]").value.replace(/ /g, '').toLowerCase() + "-mac.zip", function(){
+                  $(".preloader").remove();
+                });
                 return false;
               });
             });
@@ -1169,10 +1191,11 @@ $(document).ready(function() {
 
                 // Export Chrome Application
                 var content = zip.generate({type:"blob"});
-                saveFile(content, document.querySelector("[data-id=sitename]").value.replace(/ /g, '').toLowerCase() + "-chromeapp.zip");
-                $(".chrome-border").fadeOut();
-                $("html, body").animate({ scrollTop: $(".chosenbit").offset().top }, "slow");
-                $(".preloader").remove();
+                saveFile(content, document.querySelector("[data-id=sitename]").value.replace(/ /g, '').toLowerCase() + "-chromeapp.zip", function(){
+                  $(".chrome-border").fadeOut();
+                  $("html, body").animate({ scrollTop: $(".chosenbit").offset().top }, "slow");
+                  $(".preloader").remove();
+                });
               }
               return false;
             });
@@ -1208,10 +1231,11 @@ $(document).ready(function() {
 
                 // Export Chrome Extension
                 var content = zip.generate({type:"blob"});
-                saveFile(content, document.querySelector("[data-id=sitename]").value.replace(/ /g, '').toLowerCase() + "-chrome-ext.zip");
-                $(".chrome-border").fadeOut();
-                $("html, body").animate({ scrollTop: $(".chosenbit").offset().top }, "slow");
-                $(".preloader").remove();
+                saveFile(content, document.querySelector("[data-id=sitename]").value.replace(/ /g, '').toLowerCase() + "-chrome-ext.zip", function(){
+                  $(".chrome-border").fadeOut();
+                  $("html, body").animate({ scrollTop: $(".chosenbit").offset().top }, "slow");
+                  $(".preloader").remove();
+                });
                 return false;
               }
             });
@@ -1342,10 +1366,11 @@ $(document).ready(function() {
 
                 // Export Chrome Application
                 var content = zip.generate({type:"blob"});
-                saveFile(content, document.querySelector("[data-id=sitename]").value.replace(/ /g, '').toLowerCase() + "-pgb.zip");
-                $(".phonegap-dialog").fadeOut();
-                $("html, body").animate({ scrollTop: $(".chosenbit").offset().top }, "slow");
-                $(".preloader").remove();
+                saveFile(content, document.querySelector("[data-id=sitename]").value.replace(/ /g, '').toLowerCase() + "-pgb.zip", function(){
+                  $(".phonegap-dialog").fadeOut();
+                  $("html, body").animate({ scrollTop: $(".chosenbit").offset().top }, "slow");
+                  $(".preloader").remove();
+                });
               }
               return false;
             });
@@ -1417,8 +1442,9 @@ $(document).ready(function() {
 
               // Export your application
               var content = zip.generate({type:"blob"});
-              saveFile(content, document.querySelector("[data-id=sitename]").value.replace(/ /g, '').toLowerCase() + "-win.zip");
-              $(".preloader").remove();
+              saveFile(content, document.querySelector("[data-id=sitename]").value.replace(/ /g, '').toLowerCase() + "-win.zip", function(){
+                $(".preloader").remove();
+              });
               return false;
             });
           });
@@ -1452,8 +1478,9 @@ $(document).ready(function() {
 
               // Export your application
               var content = zip.generate({type:"blob"});
-              saveFile(content, document.querySelector("[data-id=sitename]").value.replace(/ /g, '').toLowerCase() + "-win32.zip");
-              $(".preloader").remove();
+              saveFile(content, document.querySelector("[data-id=sitename]").value.replace(/ /g, '').toLowerCase() + "-win32.zip", function(){
+                $(".preloader").remove();
+              });
               return false;
             });
           });
@@ -1491,8 +1518,9 @@ $(document).ready(function() {
 
               // Export your application
               var content = zip.generate({type:"blob"});
-              saveFile(content, document.querySelector("[data-id=sitename]").value.replace(/ /g, '').toLowerCase() + "-lin.zip");
-              $(".preloader").remove();
+              saveFile(content, document.querySelector("[data-id=sitename]").value.replace(/ /g, '').toLowerCase() + "-lin.zip", function(){
+                $(".preloader").remove();
+              });
               return false;
             });
           });
@@ -1528,8 +1556,9 @@ $(document).ready(function() {
 
               // Export your application
               var content = zip.generate({type:"blob"});
-              saveFile(content, document.querySelector("[data-id=sitename]").value.replace(/ /g, '').toLowerCase() + "-lin32.zip");
-              $(".preloader").remove();
+              saveFile(content, document.querySelector("[data-id=sitename]").value.replace(/ /g, '').toLowerCase() + "-lin32.zip", function(){
+                $(".preloader").remove();
+              });
               return false;
             });
           });
@@ -1567,8 +1596,9 @@ $(document).ready(function() {
 
               // Export your application
               var content = zip.generate({type:"blob"});
-              saveFile(content, document.querySelector("[data-id=sitename]").value.replace(/ /g, '').toLowerCase() + "-mac.zip");
-              $(".preloader").remove();
+              saveFile(content, document.querySelector("[data-id=sitename]").value.replace(/ /g, '').toLowerCase() + "-mac.zip", function(){
+                $(".preloader").remove();
+              });
               return false;
             });
           });
@@ -1642,10 +1672,11 @@ $(document).ready(function() {
 
               // Export Chrome Application
               var content = zip.generate({type:"blob"});
-              saveFile(content, document.querySelector("[data-id=sitename]").value.replace(/ /g, '').toLowerCase() + "-chromeapp.zip");
-              $(".chrome-border").fadeOut();
-              $("html, body").animate({ scrollTop: $(".chosenbit").offset().top }, "slow");
-              $(".preloader").remove();
+              saveFile(content, document.querySelector("[data-id=sitename]").value.replace(/ /g, '').toLowerCase() + "-chromeapp.zip", function(){
+                $(".chrome-border").fadeOut();
+                $("html, body").animate({ scrollTop: $(".chosenbit").offset().top }, "slow");
+                $(".preloader").remove();
+              });
             }
             return false;
           });
@@ -1680,10 +1711,11 @@ $(document).ready(function() {
 
               // Export Chrome Extension
               var content = zip.generate({type:"blob"});
-              saveFile(content, document.querySelector("[data-id=sitename]").value.replace(/ /g, '').toLowerCase() + "-chrome-ext.zip");
-              $(".chrome-border").fadeOut();
-              $("html, body").animate({ scrollTop: $(".chosenbit").offset().top }, "slow");
-              $(".preloader").remove();
+              saveFile(content, document.querySelector("[data-id=sitename]").value.replace(/ /g, '').toLowerCase() + "-chrome-ext.zip", function(){
+                $(".chrome-border").fadeOut();
+                $("html, body").animate({ scrollTop: $(".chosenbit").offset().top }, "slow");
+                $(".preloader").remove();
+              });
             }
           });
 
@@ -1812,10 +1844,11 @@ $(document).ready(function() {
 
               // Export Chrome Application
               var content = zip.generate({type:"blob"});
-              saveFile(content, document.querySelector("[data-id=sitename]").value.replace(/ /g, '').toLowerCase() + "-pgb.zip");
-              $(".phonegap-dialog").fadeOut();
-              $("html, body").animate({ scrollTop: $(".chosenbit").offset().top }, "slow");
-              $(".preloader").remove();
+              saveFile(content, document.querySelector("[data-id=sitename]").value.replace(/ /g, '').toLowerCase() + "-pgb.zip", function(){
+                $(".phonegap-dialog").fadeOut();
+                $("html, body").animate({ scrollTop: $(".chosenbit").offset().top }, "slow");
+                $(".preloader").remove();
+              });
             }
             return false;
           });
