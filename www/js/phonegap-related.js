@@ -18,17 +18,6 @@ function onEnvReady() {
 	setTimeout(function() {
 		/*
 		DebugMsg("Running test code");
-		if( cordova.platformId === "android" ) {
-			var fb = new FileBrowser();
-			fb.Show("MyApp.zip", function(fileEntry){
-
-				console.log("FileBrowser- File Selected:");
-				console.log(fileEntry);
-			},
-			function(){
-				console.log("FileBrowser- File select canceled");
-			});
-		}
 		*/
 	}, 1000);
 	
@@ -56,103 +45,6 @@ function handleCallback(cb, args) {
 		}
 	}
 }
-
-
-// Note: currently designed with big limitations due to leveraging fileBrowser.html lib
-//	I found online.  Basically assume any new instance creation of a new FileChooser()
-//	invalidates any existing ones.  (it will overwrite important state shared w/ fileBrowser.html)
-//
-// Public methods & properties:
-//	FileBrowser(defaultFolder)   - defaultFolder is optional and expected to be a Cordova directory entry
-//	Show(defaultFileName, onFileSelected)  - onFileSelected has one arg of a Cordova file entry
-var FileBrowser = function(defaultFolder){
-
-	var _this = this;
-	this._onOk = null;
-	this._default_fileName = "";
-	this.lastFileSelected = null;
-
-	//check if last selected folder was set
-    if (typeof defaultFolder !== 'undefined') {
-		lastFolderSelected = defaultFolder;
-	}
-
-	// Setup needed <a> DOM helper element if not already
-	/*  Note:  this wasn't working and for some reason the browseBtn element had to be in the HTML (jquery mobile just adjust it upon loading)
-
-	if( true || $('#browseBtn').length === 0 ){
-		// style="display:none"
-		var browseLink = $('#browseBtn');//$('<a href="fileBrowser.html" id="browseBtn" data-role="button" data-inline="true" style="position:fixed;z-index:999;">Browse</a>');
-		browseLink.click(function(){
-			//check if last selected folder was set
-			if (typeof lastFolderSelected == 'undefined')
-				lastFolderSelected = null;
-		});
-		//$('body').append(browseLink);
-	}
-	*/
-
-	//create file chooser dialog parameters
-	file_Browser_params = {
-		directory_browser: false, //this is file browser. Default is false
-		new_file_btn: false,
-		new_folder_btn: true, //shoe new folder button. Default is true
-		ok_btn: true,
-		del_file_btn: true,
-		rename_file_btn: true,
-		initial_folder: lastFolderSelected, //initial folder when dialog is displayed
-		custom_title: "Choose folder to save your app",
-		//callback function when file is selected
-		on_cancel_file_select: function() {
-			try
-			{
-				handleCallback(_this._onCancelFileBrowse);
-			}
-			catch(ex){}
-		},
-		//callback function when folder is selected
-		on_folder_select: function (dirEntry) {
-			//don't do anything
-		},
-		//callback function when OK button is clicked
-		on_ok: function (dirEntry) {
-			//save the last folder path
-			lastFolderSelected = dirEntry;
-			try
-			{
-				handleCallback(_this._onOk, dirEntry);
-			}
-			catch(ex){}
-			return false; //close dialog when any file is selected (tapped)
-		}
-	};
-
-	this.Show = function(defaultFileName, onOk, onCancelFileBrowse){
-		this._onOk = onOk;
-		this._onCancelFileBrowse = onCancelFileBrowse;
-		this._default_fileName = defaultFileName;
-		$('#browseBtn').click();
-	};
-};
-
-document.addEventListener("deviceready", function () {
-
-	// Figure out default FileBrowser folder ahead of time since callback method required and
-	// possibly aync delay could complicate doing something like new FileChooser().Show();
-	
-	// cordova.file.externalRootDirectory is null if no external storage present
-	var saveDir = cordova.file.externalRootDirectory != null ?
-		cordova.file.externalRootDirectory : cordova.file.externalDataDirectory;
-	lastFolderSelected = null;
-	window.resolveLocalFileSystemURL(saveDir, function (dir) {
-		lastFolderSelected = dir;
-	},
-	function (err) {
-		DebugMsg('failed to get resolve saveDir: ' + saveDir);;
-	});
-
-}, false);
-
 
 
 // function pgSaveFile(...)
@@ -255,24 +147,29 @@ function pgSaveFile(fileData, defaultFileName, onSuccess, onError, onProgress) {
 		}
 	};
 
-	//if( cordova.platformId === "android" ) {
-	// I guess this file browser can always show if PhoneGap environment for now (maybe iOS tho will change this to have conditionals)
 
-		// Allow changing filename
-		fileName = prompt("Enter File Name", defaultFileName);
+	// This sets the parent directory of the webdgap folder we will save to
+	var saveParentDir = cordova.file.externalRootDirectory != null ?
+		cordova.file.externalRootDirectory : cordova.file.externalDataDirectory;
+
+	// Allow changing filename
+	fileName = prompt("Enter File Name", defaultFileName);
+
+	var afterGotParentDir = function(dir){
 		
-		var fb = new FileBrowser();
-		fb.Show(defaultFileName, function(dirEntry){
-			startSave(dirEntry);
+		dir.getDirectory('WebDGap', { create: true }, function(dir){
+			startSave(dir);
 		},
 		function(){
+			DebugMsg('failed to get webdgap dir');
 			handleCallback(onError, 1);
-			DebugMsg("File select canceled, pgSaveFile calling error callback");
 		});
-	/*
-	}
-	else {
-		startSave(defaultFileName);
-	}
-	*/
+	};
+
+
+	window.resolveLocalFileSystemURL(saveParentDir, afterGotParentDir,
+	function (err) {
+		DebugMsg('failed to resolve parent dir');
+		handleCallback(onError, 1);
+	});
 }

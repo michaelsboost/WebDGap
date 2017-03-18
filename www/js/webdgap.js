@@ -1,6 +1,6 @@
 // Uncomment next line to disable new PhoneGap related code
 //DisableInjectingPhoneGapCode = true;
-var phoneGapJsFiles = ['cordova.js', 'js/jquery.mobile-1.4.5.min.js', 'js/phonegap-related.min.js', 'js/fileBrowser.min.js'];
+var phoneGapJsFiles = ['cordova.js', 'js/phonegap-related.min.js'];
 
 // If debugging, may have uncommented tags in index.html to load PhoneGap files so visible to Chrome
 // In that case, auto skip loading PhoneGap related JS files here
