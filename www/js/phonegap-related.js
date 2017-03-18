@@ -94,10 +94,12 @@ var FileBrowser = function(defaultFolder){
 
 	//create file chooser dialog parameters
 	file_Browser_params = {
-		directory_browser: true, //this is file browser. Default is false
+		directory_browser: false, //this is file browser. Default is false
 		new_file_btn: false,
 		new_folder_btn: true, //shoe new folder button. Default is true
 		ok_btn: true,
+		del_file_btn: true,
+		rename_file_btn: true,
 		initial_folder: lastFolderSelected, //initial folder when dialog is displayed
 		custom_title: "Choose folder to save your app",
 		//callback function when file is selected
@@ -255,6 +257,10 @@ function pgSaveFile(fileData, defaultFileName, onSuccess, onError, onProgress) {
 
 	//if( cordova.platformId === "android" ) {
 	// I guess this file browser can always show if PhoneGap environment for now (maybe iOS tho will change this to have conditionals)
+
+		// Allow changing filename
+		fileName = prompt("Enter File Name", defaultFileName);
+		
 		var fb = new FileBrowser();
 		fb.Show(defaultFileName, function(dirEntry){
 			startSave(dirEntry);
