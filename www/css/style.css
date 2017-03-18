@@ -64,10 +64,10 @@ a {
   }
 }
 @media all and (max-width:768px) {
-  .table {
+  .grid.table {
     padding-top: calc(100vh / 2 - 96px);
   }
-  .cell {
+  .grid .cell {
     display: block;
     height: 25vh;
   }
@@ -109,14 +109,31 @@ a {
 .phonegap-dialog div form div input {
   width: auto;
 }
+@media all and (min-width:768px) {
+  .table {
+    padding-top: 0;
+  }
+  .cell {
+    display: table-cell;
+    height: auto;
+    margin-top: auto;
+  }
+}
+@media all and (max-width:768px) {
+  .chrome-border div form div input[type=button],
+  .phonegap-dialog div form div input[type=button],
+  .chrome-border div form div input[type=reset],
+  .phonegap-dialog div form div input[type=reset] {
+    width: 100%;
+  }
+}
 .chrome-border div form div label,
 .phonegap-dialog div form div label {
   position: relative;
   top: -19px;
 }
 .preloader {
-  background: #69EC93;
-  background: rgba(122, 255, 164, 0.68);
+  background: #ebfff1;
 }
 .bold {
   font-weight: bold;
@@ -205,32 +222,8 @@ a {
 }
 
 /* Preloader */
-.spinner {
-  margin: 30px auto 0;
-  width: 70px;
-  text-align: center;
-}
-.spinner > div {
-  width: 18px;
-  height: 18px;
-  background: #4EA269;
-  border-radius: 100%;
-  display: inline-block;
-  animation: sk-bouncedelay 1.4s infinite ease-in-out both;
-}
-.spinner .bounce1 {
-  animation-delay: -0.32s;
-}
-.spinner .bounce2 {
-  animation-delay: -0.16s;
-}
-@keyframes sk-bouncedelay {
-  0%, 80%, 100% {
-    transform: scale(0);
-  }
-  40% {
-    transform: scale(1);
-  }
+.loading {
+  height: 50%;
 }
 
 /* Footer */
@@ -271,7 +264,6 @@ a {
   background-repeat: no-repeat;
   background-size: auto 100%;
   color: #adadad;
-  z-index: 1;
 }
 .foot .logotxt {
   padding: 0 0 0 50px;
