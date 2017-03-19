@@ -1,3 +1,36 @@
+var checkStatus = function() {
+  if (navigator.onLine) {
+    location.reload();
+  } else {
+    $(".hasConnection").fadeOut();
+    $(".connection-indicator").fadeIn();
+  }
+}
+if (navigator.onLine) {
+  $(".hasConnection").show();
+  $(".connection-indicator").hide();
+
+  // Show Lightbox Video Onload
+  $.fancybox.open({
+    youtube : {
+        controls : 0,
+        showinfo : 0
+    },
+    src  : 'https://www.youtube.com/embed/-AszZcClVXA', // Source of the content
+    type : 'iframe', // Content type: image|inline|ajax|iframe|html (optional)
+  });
+} else {
+  $(".hasConnection").hide();
+  $(".connection-indicator").show();
+}
+
+window.addEventListener("online", function() {
+  checkStatus();
+});
+window.addEventListener("offline", function() {
+  checkStatus();
+});
+
 function isPhoneGapEnv() {
   // Alternate check to consider instead:
   //  document.URL.indexOf( 'http://' ) === -1 && document.URL.indexOf( 'https://' ) === -1
@@ -156,16 +189,6 @@ $(".chromepopexport").click(function() {
     $(document.body).append('<div class="fixedfill preloader"></div>');
     $(".preloader").html("<div class=\"table\"><div class=\"cell\">\n  <h1>Creating application!</h1>\n  <img class=\"loading\" src=\"imgs/preloader.svg\">\n  \n<h1>\n    <a class=\"share\" href=\"javascript:void(0)\" onclick=\"window.plugins.socialsharing.share('I #converted a #web #app to a #Chrome popup #extension using #WebDGap!', null, null, 'https://mikethedj4.github.io/WebDGap/')\">Share</a>\n    <a class=\"donate\" href=\"https://cash.me/$mschwar4\" target=\"_blank\" onclick=\"window.open('https://cash.me/$mschwar4', '_system')\">Donate</a>\n    <a target=\"_blank\" href=\"https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=BSYGA2RB5ZJCC\">\n      <i class=\"fa fa-cc-paypal\"></i>\n    </a>\n  </h1>\n</div></div>");
   }
-});
-
-// Show Lightbox Video Onload
-$.fancybox.open({
-  youtube : {
-      controls : 0,
-      showinfo : 0
-  },
-  src  : 'https://www.youtube.com/embed/-AszZcClVXA', // Source of the content
-  type : 'iframe', // Content type: image|inline|ajax|iframe|html (optional)
 });
 
 // Only show image loader if application has a name
