@@ -1,7 +1,7 @@
 # WebDGap
 Convert any website, or web application to a native Windows, Linux, Mac, or Chrome desktop application.
 
-![](https://mikethedj4.github.io/WebDGap/imgs/screenshot.png)
+![](https://raw.githubusercontent.com/mikethedj4/WebDGap/master/WebDGap/imgs/screenshot.png)
 
 ### Converting a Web Application to a native Desktop Application.
 
