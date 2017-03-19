@@ -225,6 +225,16 @@ a {
 .loading {
   height: 50%;
 }
+.share, .donate {
+  display: inline-block;
+  background: #656a6e;
+  color: #ebfff1;
+  padding: 5px 6px;
+  font-size: 24px;
+  position: relative;
+  top: -6px;
+  border-radius: 4px;
+}
 
 /* Footer */
 .foot {
