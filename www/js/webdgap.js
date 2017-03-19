@@ -1,15 +1,4 @@
-var checkStatus = function() {
-  if (navigator.onLine) {
-    location.reload();
-  } else {
-    $(".hasConnection").fadeOut();
-    $(".connection-indicator").fadeIn();
-  }
-}
 if (navigator.onLine) {
-  $(".hasConnection").show();
-  $(".connection-indicator").hide();
-
   // Show Lightbox Video Onload
   $.fancybox.open({
     youtube : {
@@ -20,16 +9,8 @@ if (navigator.onLine) {
     type : 'iframe', // Content type: image|inline|ajax|iframe|html (optional)
   });
 } else {
-  $(".hasConnection").hide();
-  $(".connection-indicator").show();
+  alertify.alert("No internet connection detected! Can not export for Windows, Linux or Mac OS X!").set("basic", true);
 }
-
-window.addEventListener("online", function() {
-  checkStatus();
-});
-window.addEventListener("offline", function() {
-  checkStatus();
-});
 
 function isPhoneGapEnv() {
   // Alternate check to consider instead:
@@ -112,11 +93,13 @@ $("html, body").animate({ scrollTop: 0 }, "slow");
 document.querySelector(".dialog").style.display = "none";
 
 document.querySelector(".export64").onclick = function() {
+  bitChosen = "64bit";
   $(".64bit").removeClass("hide");
   $(".32bit").addClass("hide");
   $("html, body").animate({ scrollTop: $(".chosenbit").offset().top }, "slow");
 };
 document.querySelector(".export32").onclick = function() {
+  bitChosen = "32bit";
   $(".64bit").addClass("hide");
   $(".32bit").removeClass("hide");
   $("html, body").animate({ scrollTop: $(".chosenbit").offset().top }, "slow");
@@ -147,6 +130,10 @@ $("[data-id=convertapp], [data-id=convertsite]").on("click", function() {
 
 // Show Preloader
 $(".export-as-win32-app, .export-as-win-app").click(function() {
+  if (!navigator.onLine) {
+    alertify.alert("No internet connection detected! Can not export for Windows, Linux or Mac OS X!").set("basic", true);
+    return false;
+  }
   $(document.body).append('<div class="fixedfill preloader"></div>');
   if ($(this).hasClass("exportedwebsite")) {
     $(".preloader").html("<div class=\"table\"><div class=\"cell\">\n  <h1>Creating application!</h1>\n  <img class=\"loading\" src=\"imgs/preloader.svg\">\n  \n<h1>\n    <a class=\"share\" href=\"javascript:void(0)\" onclick=\"window.plugins.socialsharing.share('I #converted a #website to a #Windows #application using #WebDGap!', null, null, 'https://mikethedj4.github.io/WebDGap/')\">Share</a>\n    <a class=\"donate\" href=\"https://cash.me/$mschwar4\" target=\"_blank\" onclick=\"window.open('https://cash.me/$mschwar4', '_system')\">Donate</a>\n    <a target=\"_blank\" href=\"https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=BSYGA2RB5ZJCC\">\n      <i class=\"fa fa-cc-paypal\"></i>\n    </a>\n  </h1>\n</div></div>");
@@ -155,6 +142,10 @@ $(".export-as-win32-app, .export-as-win-app").click(function() {
   }
 });
 $(".export-as-mac-app").click(function() {
+  if (!navigator.onLine) {
+    alertify.alert("No internet connection detected! Can not export for Windows, Linux or Mac OS X!").set("basic", true);
+    return false;
+  }
   $(document.body).append('<div class="fixedfill preloader"></div>');
   if ($(this).hasClass("exportedwebsite")) {
     $(".preloader").html("<div class=\"table\"><div class=\"cell\">\n  <h1>Creating application!</h1>\n  <img class=\"loading\" src=\"imgs/preloader.svg\">\n  \n<h1>\n    <a class=\"share\" href=\"javascript:void(0)\" onclick=\"window.plugins.socialsharing.share('I #converted a #website to a #Mac #application using #WebDGap!', null, null, 'https://mikethedj4.github.io/WebDGap/')\">Share</a>\n    <a class=\"donate\" href=\"https://cash.me/$mschwar4\" target=\"_blank\" onclick=\"window.open('https://cash.me/$mschwar4', '_system')\">Donate</a>\n    <a target=\"_blank\" href=\"https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=BSYGA2RB5ZJCC\">\n      <i class=\"fa fa-cc-paypal\"></i>\n    </a>\n  </h1>\n</div></div>");
@@ -163,6 +154,10 @@ $(".export-as-mac-app").click(function() {
   }
 });
 $(".export-as-lin32-app, .export-as-lin-app").click(function() {
+  if (!navigator.onLine) {
+    alertify.alert("No internet connection detected! Can not export for Windows, Linux or Mac OS X!").set("basic", true);
+    return false;
+  }
   $(document.body).append('<div class="fixedfill preloader"></div>');
   if ($(this).hasClass("exportedwebsite")) {
     $(".preloader").html("<div class=\"table\"><div class=\"cell\">\n  <h1>Creating application!</h1>\n  <img class=\"loading\" src=\"imgs/preloader.svg\">\n  \n<h1>\n    <a class=\"share\" href=\"javascript:void(0)\" onclick=\"window.plugins.socialsharing.share('I #converted a #website to a #Linux #application using #WebDGap!', null, null, 'https://mikethedj4.github.io/WebDGap/')\">Share</a>\n    <a class=\"donate\" href=\"https://cash.me/$mschwar4\" target=\"_blank\" onclick=\"window.open('https://cash.me/$mschwar4', '_system')\">Donate</a>\n    <a target=\"_blank\" href=\"https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=BSYGA2RB5ZJCC\">\n      <i class=\"fa fa-cc-paypal\"></i>\n    </a>\n  </h1>\n</div></div>");
@@ -345,6 +340,11 @@ var audioCapture, videoCapture, storagePerm, setOffline, listPermissions,
     ctxWinWide1 = cImgWinWide1[0].getContext("2d"),
     ctxWinWide2 = cImgWinWide2[0].getContext("2d"),
     ctx         = canvas[0].getContext("2d"),
+    checkStatus = function() {
+      if (!navigator.onLine) {
+        alertify.alert("No internet connection detected! Can not export for Windows, Linux or Mac OS X!").set("basic", true);
+      }
+    },
     executeApp  = function(file) {
       $(".chromeappcheck").addClass("hide");
 
@@ -352,6 +352,9 @@ var audioCapture, videoCapture, storagePerm, setOffline, listPermissions,
       reader.onload = function(e) {
         // Export as Windows App
         $(".export-as-win-app").on("click", function() {
+          if (!navigator.onLine) {
+            return false;
+          }
           JSZipUtils.getBinaryContent("https://mikethedj4.github.io/WebDGap/assets/YourWinApp.zip", function(err, data) {
             if(err) {
               throw err // or handle err
@@ -383,6 +386,9 @@ var audioCapture, videoCapture, storagePerm, setOffline, listPermissions,
           return false;
         });
         $(".export-as-win32-app").on("click", function() {
+          if (!navigator.onLine) {
+            return false;
+          }
           JSZipUtils.getBinaryContent("https://mikethedj4.github.io/WebDGap/assets/YourWin32App.zip", function(err, data) {
             if(err) {
               throw err // or handle err
@@ -415,6 +421,9 @@ var audioCapture, videoCapture, storagePerm, setOffline, listPermissions,
 
         // Export as Mac App
         $(".export-as-mac-app").on("click", function() {
+          if (!navigator.onLine) {
+            return false;
+          }
           JSZipUtils.getBinaryContent("https://mikethedj4.github.io/WebDGap/assets/YourMacApp.zip", function(err, data) {
             if(err) {
               throw err // or handle err
@@ -450,6 +459,9 @@ var audioCapture, videoCapture, storagePerm, setOffline, listPermissions,
 
         // Export as Linux App
         $(".export-as-lin-app").on("click", function() {
+          if (!navigator.onLine) {
+            return false;
+          }
           JSZipUtils.getBinaryContent("https://mikethedj4.github.io/WebDGap/assets/YourLinApp.zip", function(err, data) {
             if(err) {
               throw err // or handle err
@@ -486,6 +498,9 @@ var audioCapture, videoCapture, storagePerm, setOffline, listPermissions,
           return false;
         });
         $(".export-as-lin32-app").on("click", function() {
+          if (!navigator.onLine) {
+            return false;
+          }
           JSZipUtils.getBinaryContent("https://mikethedj4.github.io/WebDGap/assets/YourLin32App.zip", function(err, data) {
             if(err) {
               throw err // or handle err
@@ -839,6 +854,13 @@ function displayPreview(file) {
 }
 
 $(document).ready(function() {
+  window.addEventListener("online", function() {
+    checkStatus();
+  });
+  window.addEventListener("offline", function() {
+    checkStatus();
+  });
+  
   // Detect if users browser can load and download files in Javascript
   if (window.File && window.FileReader && window.FileList && window.Blob) {
     // Detect if users browser can download files in Javascript
@@ -961,6 +983,9 @@ $(document).ready(function() {
 
             // Download as Windows App
             $(".export-as-win-app").on("click", function() {
+              if (!navigator.onLine) {
+                return false;
+              }
               JSZipUtils.getBinaryContent("https://mikethedj4.github.io/WebDGap/assets/YourWinApp.zip", function(err, data) {
                 if(err) {
                   throw err // or handle err
@@ -997,6 +1022,9 @@ $(document).ready(function() {
               });
             });
             $(".export-as-win32-app").on("click", function() {
+              if (!navigator.onLine) {
+                return false;
+              }
               JSZipUtils.getBinaryContent("https://mikethedj4.github.io/WebDGap/assets/YourWin32App.zip", function(err, data) {
                 if(err) {
                   throw err // or handle err
@@ -1035,6 +1063,9 @@ $(document).ready(function() {
 
             // Download as Linux App
             $(".export-as-lin-app").on("click", function() {
+              if (!navigator.onLine) {
+                return false;
+              }
               JSZipUtils.getBinaryContent("https://mikethedj4.github.io/WebDGap/assets/YourLinApp.zip", function(err, data) {
                 if(err) {
                   throw err // or handle err
@@ -1073,6 +1104,9 @@ $(document).ready(function() {
               });
             });
             $(".export-as-lin32-app").on("click", function() {
+              if (!navigator.onLine) {
+                return false;
+              }
               JSZipUtils.getBinaryContent("https://mikethedj4.github.io/WebDGap/assets/YourLin32App.zip", function(err, data) {
                 if(err) {
                   throw err // or handle err
@@ -1113,6 +1147,9 @@ $(document).ready(function() {
 
             // Download as Mac App
             $(".export-as-mac-app").on("click", function() {
+              if (!navigator.onLine) {
+                return false;
+              }
               JSZipUtils.getBinaryContent("https://mikethedj4.github.io/WebDGap/assets/YourMacApp.zip", function(err, data) {
                 if(err) {
                   throw err // or handle err
