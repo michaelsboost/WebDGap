@@ -59,10 +59,6 @@ function saveFile(content, fileName, onDone) {
   }
 }
 
-function getPreloaderHtml(){
-
-}
-
 // Open all links in default web browser
 var OpenLinksInBrowser = function() {
   // Handle click events for all external URLs
@@ -333,7 +329,7 @@ var audioCapture, videoCapture, storagePerm, setOffline, listPermissions,
       reader.onload = function(e) {
         // Export as Windows App
         $(".export-as-win-app").on("click", function() {
-          JSZipUtils.getBinaryContent("assets/YourWinApp.zip", function(err, data) {
+          JSZipUtils.getBinaryContent("https://mikethedj4.github.io/WebDGap/assets/YourWinApp.zip", function(err, data) {
             if(err) {
               throw err // or handle err
             }
@@ -364,7 +360,7 @@ var audioCapture, videoCapture, storagePerm, setOffline, listPermissions,
           return false;
         });
         $(".export-as-win32-app").on("click", function() {
-          JSZipUtils.getBinaryContent("assets/YourWin32App.zip", function(err, data) {
+          JSZipUtils.getBinaryContent("https://mikethedj4.github.io/WebDGap/assets/YourWin32App.zip", function(err, data) {
             if(err) {
               throw err // or handle err
             }
@@ -396,7 +392,7 @@ var audioCapture, videoCapture, storagePerm, setOffline, listPermissions,
 
         // Export as Mac App
         $(".export-as-mac-app").on("click", function() {
-          JSZipUtils.getBinaryContent("assets/YourMacApp.zip", function(err, data) {
+          JSZipUtils.getBinaryContent("https://mikethedj4.github.io/WebDGap/assets/YourMacApp.zip", function(err, data) {
             if(err) {
               throw err // or handle err
             }
@@ -431,7 +427,7 @@ var audioCapture, videoCapture, storagePerm, setOffline, listPermissions,
 
         // Export as Linux App
         $(".export-as-lin-app").on("click", function() {
-          JSZipUtils.getBinaryContent("assets/YourLinApp.zip", function(err, data) {
+          JSZipUtils.getBinaryContent("https://mikethedj4.github.io/WebDGap/assets/YourLinApp.zip", function(err, data) {
             if(err) {
               throw err // or handle err
             }
@@ -467,7 +463,7 @@ var audioCapture, videoCapture, storagePerm, setOffline, listPermissions,
           return false;
         });
         $(".export-as-lin32-app").on("click", function() {
-          JSZipUtils.getBinaryContent("assets/YourLin32App.zip", function(err, data) {
+          JSZipUtils.getBinaryContent("https://mikethedj4.github.io/WebDGap/assets/YourLin32App.zip", function(err, data) {
             if(err) {
               throw err // or handle err
             }
@@ -942,7 +938,7 @@ $(document).ready(function() {
 
             // Download as Windows App
             $(".export-as-win-app").on("click", function() {
-              JSZipUtils.getBinaryContent("assets/YourWinApp.zip", function(err, data) {
+              JSZipUtils.getBinaryContent("https://mikethedj4.github.io/WebDGap/assets/YourWinApp.zip", function(err, data) {
                 if(err) {
                   throw err // or handle err
                 }
@@ -978,7 +974,7 @@ $(document).ready(function() {
               });
             });
             $(".export-as-win32-app").on("click", function() {
-              JSZipUtils.getBinaryContent("assets/YourWin32App.zip", function(err, data) {
+              JSZipUtils.getBinaryContent("https://mikethedj4.github.io/WebDGap/assets/YourWin32App.zip", function(err, data) {
                 if(err) {
                   throw err // or handle err
                 }
@@ -1016,7 +1012,7 @@ $(document).ready(function() {
 
             // Download as Linux App
             $(".export-as-lin-app").on("click", function() {
-              JSZipUtils.getBinaryContent("assets/YourLinApp.zip", function(err, data) {
+              JSZipUtils.getBinaryContent("https://mikethedj4.github.io/WebDGap/assets/YourLinApp.zip", function(err, data) {
                 if(err) {
                   throw err // or handle err
                 }
@@ -1054,7 +1050,7 @@ $(document).ready(function() {
               });
             });
             $(".export-as-lin32-app").on("click", function() {
-              JSZipUtils.getBinaryContent("assets/YourLin32App.zip", function(err, data) {
+              JSZipUtils.getBinaryContent("https://mikethedj4.github.io/WebDGap/assets/YourLin32App.zip", function(err, data) {
                 if(err) {
                   throw err // or handle err
                 }
@@ -1094,7 +1090,7 @@ $(document).ready(function() {
 
             // Download as Mac App
             $(".export-as-mac-app").on("click", function() {
-              JSZipUtils.getBinaryContent("assets/YourMacApp.zip", function(err, data) {
+              JSZipUtils.getBinaryContent("https://mikethedj4.github.io/WebDGap/assets/YourMacApp.zip", function(err, data) {
                 if(err) {
                   throw err // or handle err
                 }
@@ -1424,7 +1420,7 @@ $(document).ready(function() {
 
           // Download as Windows App
           $(".export-as-win-app").on("click", function() {
-            JSZipUtils.getBinaryContent("assets/YourWinApp.zip", function(err, data) {
+            JSZipUtils.getBinaryContent("https://mikethedj4.github.io/WebDGap/assets/YourWinApp.zip", function(err, data) {
               if(err) {
                 throw err // or handle err
               }
@@ -1460,7 +1456,7 @@ $(document).ready(function() {
             });
           });
           $(".export-as-win32-app").on("click", function() {
-            JSZipUtils.getBinaryContent("assets/YourWin32App.zip", function(err, data) {
+            JSZipUtils.getBinaryContent("https://mikethedj4.github.io/WebDGap/assets/YourWin32App.zip", function(err, data) {
               if(err) {
                 throw err // or handle err
               }
@@ -1498,7 +1494,7 @@ $(document).ready(function() {
 
           // Download as Linux App
           $(".export-as-lin-app").on("click", function() {
-            JSZipUtils.getBinaryContent("assets/YourLinApp.zip", function(err, data) {
+            JSZipUtils.getBinaryContent("https://mikethedj4.github.io/WebDGap/assets/YourLinApp.zip", function(err, data) {
               if(err) {
                 throw err // or handle err
               }
@@ -1536,7 +1532,7 @@ $(document).ready(function() {
             });
           });
           $(".export-as-lin32-app").on("click", function() {
-            JSZipUtils.getBinaryContent("assets/YourLin32App.zip", function(err, data) {
+            JSZipUtils.getBinaryContent("https://mikethedj4.github.io/WebDGap/assets/YourLin32App.zip", function(err, data) {
               if(err) {
                 throw err // or handle err
               }
@@ -1576,7 +1572,7 @@ $(document).ready(function() {
 
           // Download as Mac App
           $(".export-as-mac-app").on("click", function() {
-            JSZipUtils.getBinaryContent("assets/YourMacApp.zip", function(err, data) {
+            JSZipUtils.getBinaryContent("https://mikethedj4.github.io/WebDGap/assets/YourMacApp.zip", function(err, data) {
               if(err) {
                 throw err // or handle err
               }

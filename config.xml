@@ -51,6 +51,8 @@
 
   <gap:plugin name="cordova-plugin-inappbrowser" source="npm"/>
   <gap:plugin name="cordova-plugin-network-information" source="npm"/>
+  <gap:plugin name="cordova-plugin-file" source="npm"/>
+  <gap:plugin name="cordova-plugin-file-transfer" source="npm"/>
 
   <access origin="*"/>
   <gap:plugin name="cordova-plugin-whitelist" source="npm"/>
@@ -59,8 +61,6 @@
   <preference name="android-minSdkVersion" value="7" />
   <preference name="android-targetSdkVersion" value="19" />
 
-  <gap:plugin name="org.apache.cordova.file"/>
-  <gap:plugin name="org.apache.cordova.file-transfer"/>
   <preference name="AndroidPersistentFileLocation" value="Compatibility" />
 
   <allow-intent href="http://*/*"/>
