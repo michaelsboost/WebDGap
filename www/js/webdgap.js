@@ -27,12 +27,11 @@ document.addEventListener("deviceready", function(){
       });
     }
 
-    window.addEventListener("blur", function() {
-      player.pauseVideo();
-    });
-    document.addEventListener("pause", function(e) {
-      player.pauseVideo();
-    }, false);
+    function onPlayerReady() {
+      document.addEventListener("pause", function(e) {
+        player.pauseVideo();
+      }, false);
+    }
   } else {
     alertify.alert("No internet connection detected! Can not export for Windows, Linux or Mac OS X!").set("basic", true);
   }
