@@ -29,7 +29,6 @@ document.addEventListener("deviceready", function(){
 
     document.addEventListener("pause", function(e) {
       player.pauseVideo();
-      document.body.innerHTML = "hello world";
     }, false);
   } else {
     alertify.alert("No internet connection detected! Can not export for Windows, Linux or Mac OS X!").set("basic", true);
