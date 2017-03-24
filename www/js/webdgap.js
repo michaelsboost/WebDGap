@@ -1,16 +1,40 @@
-if (navigator.onLine) {
-  // Show Lightbox Video Onload
-  $.fancybox.open({
-    youtube : {
-        controls : 0,
-        showinfo : 0
-    },
-    src  : 'https://www.youtube.com/embed/-AszZcClVXA', // Source of the content
-    type : 'iframe', // Content type: image|inline|ajax|iframe|html (optional)
-  });
-} else {
-  alertify.alert("No internet connection detected! Can not export for Windows, Linux or Mac OS X!").set("basic", true);
-}
+document.addEventListener("deviceready", function(){
+  if (navigator.onLine) {
+    // Show Lightbox Video Onload
+    $.fancybox.open({
+      youtube : {
+          controls : 0,
+          showinfo : 0
+      },
+      src  : 'https://www.youtube.com/embed/-AszZcClVXA?enablejsapi=1', // Source of the content
+      type : 'iframe', // Content type: image|inline|ajax|iframe|html (optional)
+    });
+
+    // Inject YouTube API script
+    var tag = document.createElement('script');
+    tag.src = "//www.youtube.com/player_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    var player;
+    function onYouTubePlayerAPIReady(e) {
+      // create the global player from the specific iframe (#video)
+      player = new YT.Player($(".fancybox-iframe").attr("id"), {
+        events: {
+          // call this function when player is ready to use
+          'onReady': onPlayerReady
+        }
+      });
+    }
+
+    document.addEventListener("pause", function(e) {
+      player.pauseVideo();
+      document.body.innerHTML = "hello world";
+    }, false);
+  } else {
+    alertify.alert("No internet connection detected! Can not export for Windows, Linux or Mac OS X!").set("basic", true);
+  }
+});
 
 function isPhoneGapEnv() {
   // Alternate check to consider instead:
