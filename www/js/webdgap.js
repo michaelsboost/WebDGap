@@ -27,6 +27,9 @@ document.addEventListener("deviceready", function(){
       });
     }
 
+    window.addEventListener("blur", function() {
+      player.pauseVideo();
+    });
     document.addEventListener("pause", function(e) {
       player.pauseVideo();
     }, false);
