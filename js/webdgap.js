@@ -40,25 +40,25 @@ $("[data-id=convertapp], [data-id=convertsite]").on("click", function() {
 $(".export-as-win32-app, .export-as-win-app").click(function() {
   $(document.body).append('<div class="fixedfill preloader"></div>');
   if ($(this).hasClass("exportedwebsite")) {
-    $(".preloader").html("<div class=\"table\"><div class=\"cell\">\n  <h1>Creating application!</h1>\n  <img class=\"loading\" src=\"imgs/preloader.svg\">\n  \n<h1>\n    <a class=\"share-facebook\" target=\"_blank\" href=\"https://www.facebook.com/sharer/sharer.php?u=I%20%23converted%20a%20%23website%20to%20a%20%23Windows%20%23application%20using%20%23WebDGap!%20https%3A//mikethedj4.github.io/WebDGap\">\n      <i class=\"fa fa-facebook-square\"></i>\n    </a>\n    <a class=\"share-twitter\" target=\"_blank\" href=\"https://twitter.com/home?status=I%20%23converted%20a%20%23website%20to%20a%20%23Windows%20%23application%20using%20%23WebDGap!%20https%3A//mikethedj4.github.io/WebDGap/\">\n      <i class=\"fa fa-twitter-square\"></i>\n    </a>\n    <a class=\"share-gplus\" target=\"_blank\" href=\"https://plus.google.com/share?url=http%3A//mikethedj4.github.io/WebDGap/\">\n      <i class=\"fa fa-google-plus-square\"></i>\n    </a>\n    <a class=\"share-linkedin-square\" target=\"_blank\" href=\"https://www.linkedin.com/shareArticle?mini=true&url=https%3A//mikethedj4.github.io/WebDGap/&title=WebDGap&summary=I%20%23converted%20a%20%23website%20to%20a%20%23Windows%20%23application%20using%20%23WebDGap!&source=\">\n      <i class=\"fa fa-linkedin-square\"></i>\n    </a>\n    <a target=\"_blank\" href=\"https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=BSYGA2RB5ZJCC\">\n      <i class=\"fa fa-cc-paypal\"></i>\n    </a>\n  </h1>\n</div></div>");
+    $(".preloader").html("<div class=\"table\"><div class=\"cell\">\n  <h1>Creating application!</h1>\n  <img class=\"loading\" src=\"../imgs/preloader.svg\">\n  \n<h1>\n    <a class=\"share-facebook\" target=\"_blank\" href=\"https://www.facebook.com/sharer/sharer.php?u=I%20%23converted%20a%20%23website%20to%20a%20%23Windows%20%23application%20using%20%23WebDGap!%20https%3A//mikethedj4.github.io/WebDGap\">\n      <i class=\"fa fa-facebook-square\"></i>\n    </a>\n    <a class=\"share-twitter\" target=\"_blank\" href=\"https://twitter.com/home?status=I%20%23converted%20a%20%23website%20to%20a%20%23Windows%20%23application%20using%20%23WebDGap!%20https%3A//mikethedj4.github.io/WebDGap/\">\n      <i class=\"fa fa-twitter-square\"></i>\n    </a>\n    <a class=\"share-gplus\" target=\"_blank\" href=\"https://plus.google.com/share?url=http%3A//mikethedj4.github.io/WebDGap/\">\n      <i class=\"fa fa-google-plus-square\"></i>\n    </a>\n    <a class=\"share-linkedin-square\" target=\"_blank\" href=\"https://www.linkedin.com/shareArticle?mini=true&url=https%3A//mikethedj4.github.io/WebDGap/&title=WebDGap&summary=I%20%23converted%20a%20%23website%20to%20a%20%23Windows%20%23application%20using%20%23WebDGap!&source=\">\n      <i class=\"fa fa-linkedin-square\"></i>\n    </a>\n    <a target=\"_blank\" href=\"https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=BSYGA2RB5ZJCC\">\n      <i class=\"fa fa-cc-paypal\"></i>\n    </a>\n  </h1>\n</div></div>");
   } else if ($(this).hasClass("exportedwebapp")) {
-    $(".preloader").html("<div class=\"table\"><div class=\"cell\">\n  <h1>Creating application!</h1>\n  <img class=\"loading\" src=\"imgs/preloader.svg\">\n  \n<h1>\n    <a class=\"share-facebook\" target=\"_blank\" href=\"https://www.facebook.com/sharer/sharer.php?u=I%20%23converted%20a%20%23web%20%23application%20to%20a%20%23Windows%20%23app%20using%20%23WebDGap!%20https%3A//mikethedj4.github.io/WebDGap\">\n      <i class=\"fa fa-facebook-square\"></i>\n    </a>\n    <a class=\"share-twitter\" target=\"_blank\" href=\"https://twitter.com/home?status=I%20%23converted%20a%20%23web%20%23application%20to%20a%20%23Windows%20%23app%20using%20%23WebDGap!%20https%3A//mikethedj4.github.io/WebDGap/\">\n      <i class=\"fa fa-twitter-square\"></i>\n    </a>\n    <a class=\"share-gplus\" target=\"_blank\" href=\"https://plus.google.com/share?url=http%3A//mikethedj4.github.io/WebDGap/\">\n      <i class=\"fa fa-google-plus-square\"></i>\n    </a>\n    <a class=\"share-linkedin-square\" target=\"_blank\" href=\"https://www.linkedin.com/shareArticle?mini=true&url=https%3A//mikethedj4.github.io/WebDGap/&title=WebDGap&summary=I%20%23converted%20a%20%23web%20%23application%20to%20a%20%23Windows%20%23app%20using%20%23WebDGap!&source=\">\n      <i class=\"fa fa-linkedin-square\"></i>\n    </a>\n    <a target=\"_blank\" href=\"https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=BSYGA2RB5ZJCC\">\n      <i class=\"fa fa-cc-paypal\"></i>\n    </a>\n  </h1>\n</div></div>");
+    $(".preloader").html("<div class=\"table\"><div class=\"cell\">\n  <h1>Creating application!</h1>\n  <img class=\"loading\" src=\"../imgs/preloader.svg\">\n  \n<h1>\n    <a class=\"share-facebook\" target=\"_blank\" href=\"https://www.facebook.com/sharer/sharer.php?u=I%20%23converted%20a%20%23web%20%23application%20to%20a%20%23Windows%20%23app%20using%20%23WebDGap!%20https%3A//mikethedj4.github.io/WebDGap\">\n      <i class=\"fa fa-facebook-square\"></i>\n    </a>\n    <a class=\"share-twitter\" target=\"_blank\" href=\"https://twitter.com/home?status=I%20%23converted%20a%20%23web%20%23application%20to%20a%20%23Windows%20%23app%20using%20%23WebDGap!%20https%3A//mikethedj4.github.io/WebDGap/\">\n      <i class=\"fa fa-twitter-square\"></i>\n    </a>\n    <a class=\"share-gplus\" target=\"_blank\" href=\"https://plus.google.com/share?url=http%3A//mikethedj4.github.io/WebDGap/\">\n      <i class=\"fa fa-google-plus-square\"></i>\n    </a>\n    <a class=\"share-linkedin-square\" target=\"_blank\" href=\"https://www.linkedin.com/shareArticle?mini=true&url=https%3A//mikethedj4.github.io/WebDGap/&title=WebDGap&summary=I%20%23converted%20a%20%23web%20%23application%20to%20a%20%23Windows%20%23app%20using%20%23WebDGap!&source=\">\n      <i class=\"fa fa-linkedin-square\"></i>\n    </a>\n    <a target=\"_blank\" href=\"https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=BSYGA2RB5ZJCC\">\n      <i class=\"fa fa-cc-paypal\"></i>\n    </a>\n  </h1>\n</div></div>");
   }
 });
 $(".export-as-mac-app").click(function() {
   $(document.body).append('<div class="fixedfill preloader"></div>');
   if ($(this).hasClass("exportedwebsite")) {
-    $(".preloader").html("<div class=\"table\"><div class=\"cell\">\n  <h1>Creating application!</h1>\n  <img class=\"loading\" src=\"imgs/preloader.svg\">\n  \n<h1>\n    <a class=\"share-facebook\" target=\"_blank\" href=\"https://www.facebook.com/sharer/sharer.php?u=I%20%23converted%20a%20%23website%20to%20a%20%23Mac%20%23application%20using%20%23WebDGap!%20https%3A//mikethedj4.github.io/WebDGap\">\n      <i class=\"fa fa-facebook-square\"></i>\n    </a>\n    <a class=\"share-twitter\" target=\"_blank\" href=\"https://twitter.com/home?status=I%20%23converted%20a%20%23website%20to%20a%20%23Mac%20%23application%20using%20%23WebDGap!%20https%3A//mikethedj4.github.io/WebDGap/\">\n      <i class=\"fa fa-twitter-square\"></i>\n    </a>\n    <a class=\"share-gplus\" target=\"_blank\" href=\"https://plus.google.com/share?url=http%3A//mikethedj4.github.io/WebDGap/\">\n      <i class=\"fa fa-google-plus-square\"></i>\n    </a>\n    <a class=\"share-linkedin-square\" target=\"_blank\" href=\"https://www.linkedin.com/shareArticle?mini=true&url=https%3A//mikethedj4.github.io/WebDGap/&title=WebDGap&summary=I%20%23converted%20a%20%23website%20to%20a%20%23Mac%20%23application%20using%20%23WebDGap!&source=\">\n      <i class=\"fa fa-linkedin-square\"></i>\n    </a>\n    <a target=\"_blank\" href=\"https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=BSYGA2RB5ZJCC\">\n      <i class=\"fa fa-cc-paypal\"></i>\n    </a>\n  </h1>\n</div></div>");
+    $(".preloader").html("<div class=\"table\"><div class=\"cell\">\n  <h1>Creating application!</h1>\n  <img class=\"loading\" src=\"../imgs/preloader.svg\">\n  \n<h1>\n    <a class=\"share-facebook\" target=\"_blank\" href=\"https://www.facebook.com/sharer/sharer.php?u=I%20%23converted%20a%20%23website%20to%20a%20%23Mac%20%23application%20using%20%23WebDGap!%20https%3A//mikethedj4.github.io/WebDGap\">\n      <i class=\"fa fa-facebook-square\"></i>\n    </a>\n    <a class=\"share-twitter\" target=\"_blank\" href=\"https://twitter.com/home?status=I%20%23converted%20a%20%23website%20to%20a%20%23Mac%20%23application%20using%20%23WebDGap!%20https%3A//mikethedj4.github.io/WebDGap/\">\n      <i class=\"fa fa-twitter-square\"></i>\n    </a>\n    <a class=\"share-gplus\" target=\"_blank\" href=\"https://plus.google.com/share?url=http%3A//mikethedj4.github.io/WebDGap/\">\n      <i class=\"fa fa-google-plus-square\"></i>\n    </a>\n    <a class=\"share-linkedin-square\" target=\"_blank\" href=\"https://www.linkedin.com/shareArticle?mini=true&url=https%3A//mikethedj4.github.io/WebDGap/&title=WebDGap&summary=I%20%23converted%20a%20%23website%20to%20a%20%23Mac%20%23application%20using%20%23WebDGap!&source=\">\n      <i class=\"fa fa-linkedin-square\"></i>\n    </a>\n    <a target=\"_blank\" href=\"https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=BSYGA2RB5ZJCC\">\n      <i class=\"fa fa-cc-paypal\"></i>\n    </a>\n  </h1>\n</div></div>");
   } else if ($(this).hasClass("exportedwebapp")) {
-    $(".preloader").html("<div class=\"table\"><div class=\"cell\">\n  <h1>Creating application!</h1>\n  <img class=\"loading\" src=\"imgs/preloader.svg\">\n  \n<h1>\n    <a class=\"share-facebook\" target=\"_blank\" href=\"https://www.facebook.com/sharer/sharer.php?u=I%20%23converted%20a%20%23web%20%23application%20to%20a%20%23Mac%20%23app%20using%20%23WebDGap!%20https%3A//mikethedj4.github.io/WebDGap\">\n      <i class=\"fa fa-facebook-square\"></i>\n    </a>\n    <a class=\"share-twitter\" target=\"_blank\" href=\"https://twitter.com/home?status=I%20%23converted%20a%20%23web%20%23application%20to%20a%20%23Mac%20%23app%20using%20%23WebDGap!%20https%3A//mikethedj4.github.io/WebDGap/\">\n      <i class=\"fa fa-twitter-square\"></i>\n    </a>\n    <a class=\"share-gplus\" target=\"_blank\" href=\"https://plus.google.com/share?url=http%3A//mikethedj4.github.io/WebDGap/\">\n      <i class=\"fa fa-google-plus-square\"></i>\n    </a>\n    <a class=\"share-linkedin-square\" target=\"_blank\" href=\"https://www.linkedin.com/shareArticle?mini=true&url=https%3A//mikethedj4.github.io/WebDGap/&title=WebDGap&summary=I%20%23converted%20a%20%23web%20%23application%20to%20a%20%23Mac%20%23app%20using%20%23WebDGap!&source=\">\n      <i class=\"fa fa-linkedin-square\"></i>\n    </a>\n    <a target=\"_blank\" href=\"https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=BSYGA2RB5ZJCC\">\n      <i class=\"fa fa-cc-paypal\"></i>\n    </a>\n  </h1>\n</div></div>");
+    $(".preloader").html("<div class=\"table\"><div class=\"cell\">\n  <h1>Creating application!</h1>\n  <img class=\"loading\" src=\"../imgs/preloader.svg\">\n  \n<h1>\n    <a class=\"share-facebook\" target=\"_blank\" href=\"https://www.facebook.com/sharer/sharer.php?u=I%20%23converted%20a%20%23web%20%23application%20to%20a%20%23Mac%20%23app%20using%20%23WebDGap!%20https%3A//mikethedj4.github.io/WebDGap\">\n      <i class=\"fa fa-facebook-square\"></i>\n    </a>\n    <a class=\"share-twitter\" target=\"_blank\" href=\"https://twitter.com/home?status=I%20%23converted%20a%20%23web%20%23application%20to%20a%20%23Mac%20%23app%20using%20%23WebDGap!%20https%3A//mikethedj4.github.io/WebDGap/\">\n      <i class=\"fa fa-twitter-square\"></i>\n    </a>\n    <a class=\"share-gplus\" target=\"_blank\" href=\"https://plus.google.com/share?url=http%3A//mikethedj4.github.io/WebDGap/\">\n      <i class=\"fa fa-google-plus-square\"></i>\n    </a>\n    <a class=\"share-linkedin-square\" target=\"_blank\" href=\"https://www.linkedin.com/shareArticle?mini=true&url=https%3A//mikethedj4.github.io/WebDGap/&title=WebDGap&summary=I%20%23converted%20a%20%23web%20%23application%20to%20a%20%23Mac%20%23app%20using%20%23WebDGap!&source=\">\n      <i class=\"fa fa-linkedin-square\"></i>\n    </a>\n    <a target=\"_blank\" href=\"https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=BSYGA2RB5ZJCC\">\n      <i class=\"fa fa-cc-paypal\"></i>\n    </a>\n  </h1>\n</div></div>");
   }
 });
 $(".export-as-lin32-app, .export-as-lin-app").click(function() {
   $(document.body).append('<div class="fixedfill preloader"></div>');
   if ($(this).hasClass("exportedwebsite")) {
-    $(".preloader").html("<div class=\"table\"><div class=\"cell\">\n  <h1>Creating application!</h1>\n  <img class=\"loading\" src=\"imgs/preloader.svg\">\n  \n<h1>\n    <a class=\"share-facebook\" target=\"_blank\" href=\"https://www.facebook.com/sharer/sharer.php?u=I%20%23converted%20a%20%23website%20to%20a%20%23Linux%20%23application%20using%20%23WebDGap!%20https%3A//mikethedj4.github.io/WebDGap\">\n      <i class=\"fa fa-facebook-square\"></i>\n    </a>\n    <a class=\"share-twitter\" target=\"_blank\" href=\"https://twitter.com/home?status=I%20%23converted%20a%20%23website%20to%20a%20%23Linux%20%23application%20using%20%23WebDGap!%20https%3A//mikethedj4.github.io/WebDGap/\">\n      <i class=\"fa fa-twitter-square\"></i>\n    </a>\n    <a class=\"share-gplus\" target=\"_blank\" href=\"https://plus.google.com/share?url=http%3A//mikethedj4.github.io/WebDGap/\">\n      <i class=\"fa fa-google-plus-square\"></i>\n    </a>\n    <a class=\"share-linkedin-square\" target=\"_blank\" href=\"https://www.linkedin.com/shareArticle?mini=true&url=https%3A//mikethedj4.github.io/WebDGap/&title=WebDGap&summary=I%20%23converted%20a%20%23website%20to%20a%20%23Linux%20%23application%20using%20%23WebDGap!&source=\">\n      <i class=\"fa fa-linkedin-square\"></i>\n    </a>\n    <a target=\"_blank\" href=\"https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=BSYGA2RB5ZJCC\">\n      <i class=\"fa fa-cc-paypal\"></i>\n    </a>\n  </h1>\n</div></div>");
+    $(".preloader").html("<div class=\"table\"><div class=\"cell\">\n  <h1>Creating application!</h1>\n  <img class=\"loading\" src=\"../imgs/preloader.svg\">\n  \n<h1>\n    <a class=\"share-facebook\" target=\"_blank\" href=\"https://www.facebook.com/sharer/sharer.php?u=I%20%23converted%20a%20%23website%20to%20a%20%23Linux%20%23application%20using%20%23WebDGap!%20https%3A//mikethedj4.github.io/WebDGap\">\n      <i class=\"fa fa-facebook-square\"></i>\n    </a>\n    <a class=\"share-twitter\" target=\"_blank\" href=\"https://twitter.com/home?status=I%20%23converted%20a%20%23website%20to%20a%20%23Linux%20%23application%20using%20%23WebDGap!%20https%3A//mikethedj4.github.io/WebDGap/\">\n      <i class=\"fa fa-twitter-square\"></i>\n    </a>\n    <a class=\"share-gplus\" target=\"_blank\" href=\"https://plus.google.com/share?url=http%3A//mikethedj4.github.io/WebDGap/\">\n      <i class=\"fa fa-google-plus-square\"></i>\n    </a>\n    <a class=\"share-linkedin-square\" target=\"_blank\" href=\"https://www.linkedin.com/shareArticle?mini=true&url=https%3A//mikethedj4.github.io/WebDGap/&title=WebDGap&summary=I%20%23converted%20a%20%23website%20to%20a%20%23Linux%20%23application%20using%20%23WebDGap!&source=\">\n      <i class=\"fa fa-linkedin-square\"></i>\n    </a>\n    <a target=\"_blank\" href=\"https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=BSYGA2RB5ZJCC\">\n      <i class=\"fa fa-cc-paypal\"></i>\n    </a>\n  </h1>\n</div></div>");
   } else if ($(this).hasClass("exportedwebapp")) {
-    $(".preloader").html("<div class=\"table\"><div class=\"cell\">\n  <h1>Creating application!</h1>\n  <img class=\"loading\" src=\"imgs/preloader.svg\">\n  \n<h1>\n    <a class=\"share-facebook\" target=\"_blank\" href=\"https://www.facebook.com/sharer/sharer.php?u=I%20%23converted%20a%20%23web%20%23application%20to%20a%20%23Linux%20%23app%20using%20%23WebDGap!%20https%3A//mikethedj4.github.io/WebDGap\">\n      <i class=\"fa fa-facebook-square\"></i>\n    </a>\n    <a class=\"share-twitter\" target=\"_blank\" href=\"https://twitter.com/home?status=I%20%23converted%20a%20%23web%20%23application%20to%20a%20%23Linux%20%23app%20using%20%23WebDGap!%20https%3A//mikethedj4.github.io/WebDGap/\">\n      <i class=\"fa fa-twitter-square\"></i>\n    </a>\n    <a class=\"share-gplus\" target=\"_blank\" href=\"https://plus.google.com/share?url=http%3A//mikethedj4.github.io/WebDGap/\">\n      <i class=\"fa fa-google-plus-square\"></i>\n    </a>\n    <a class=\"share-linkedin-square\" target=\"_blank\" href=\"https://www.linkedin.com/shareArticle?mini=true&url=https%3A//mikethedj4.github.io/WebDGap/&title=WebDGap&summary=I%20%23converted%20a%20%23web%20%23application%20to%20a%20%23Linux%20%23app%20using%20%23WebDGap!&source=\">\n      <i class=\"fa fa-linkedin-square\"></i>\n    </a>\n    <a target=\"_blank\" href=\"https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=BSYGA2RB5ZJCC\">\n      <i class=\"fa fa-cc-paypal\"></i>\n    </a>\n  </h1>\n</div></div>");
+    $(".preloader").html("<div class=\"table\"><div class=\"cell\">\n  <h1>Creating application!</h1>\n  <img class=\"loading\" src=\"../imgs/preloader.svg\">\n  \n<h1>\n    <a class=\"share-facebook\" target=\"_blank\" href=\"https://www.facebook.com/sharer/sharer.php?u=I%20%23converted%20a%20%23web%20%23application%20to%20a%20%23Linux%20%23app%20using%20%23WebDGap!%20https%3A//mikethedj4.github.io/WebDGap\">\n      <i class=\"fa fa-facebook-square\"></i>\n    </a>\n    <a class=\"share-twitter\" target=\"_blank\" href=\"https://twitter.com/home?status=I%20%23converted%20a%20%23web%20%23application%20to%20a%20%23Linux%20%23app%20using%20%23WebDGap!%20https%3A//mikethedj4.github.io/WebDGap/\">\n      <i class=\"fa fa-twitter-square\"></i>\n    </a>\n    <a class=\"share-gplus\" target=\"_blank\" href=\"https://plus.google.com/share?url=http%3A//mikethedj4.github.io/WebDGap/\">\n      <i class=\"fa fa-google-plus-square\"></i>\n    </a>\n    <a class=\"share-linkedin-square\" target=\"_blank\" href=\"https://www.linkedin.com/shareArticle?mini=true&url=https%3A//mikethedj4.github.io/WebDGap/&title=WebDGap&summary=I%20%23converted%20a%20%23web%20%23application%20to%20a%20%23Linux%20%23app%20using%20%23WebDGap!&source=\">\n      <i class=\"fa fa-linkedin-square\"></i>\n    </a>\n    <a target=\"_blank\" href=\"https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=BSYGA2RB5ZJCC\">\n      <i class=\"fa fa-cc-paypal\"></i>\n    </a>\n  </h1>\n</div></div>");
   }
 });
 $(".pgbappexport").click(function() {
@@ -66,19 +66,19 @@ $(".pgbappexport").click(function() {
     // alert code is where code exports
   } else {
     $(document.body).append('<div class="fixedfill preloader"></div>');
-    $(".preloader").html("<div class=\"table\"><div class=\"cell\">\n  <h1>Creating application!</h1>\n  <img class=\"loading\" src=\"imgs/preloader.svg\">\n  \n<h1>\n    <a class=\"share-facebook\" target=\"_blank\" href=\"https://www.facebook.com/sharer/sharer.php?u=I%20%23converted%20a%20%23web%20%23application%20to%20a%20%23PhoneGap%20%23app%20using%20%23WebDGap!%20https%3A//mikethedj4.github.io/WebDGap\">\n      <i class=\"fa fa-facebook-square\"></i>\n    </a>\n    <a class=\"share-twitter\" target=\"_blank\" href=\"https://twitter.com/home?status=I%20%23converted%20a%20%23web%20%23application%20to%20a%20%23PhoneGap%20%23app%20using%20%23WebDGap!%20https%3A//mikethedj4.github.io/WebDGap/\">\n      <i class=\"fa fa-twitter-square\"></i>\n    </a>\n    <a class=\"share-gplus\" target=\"_blank\" href=\"https://plus.google.com/share?url=http%3A//mikethedj4.github.io/WebDGap/\">\n      <i class=\"fa fa-google-plus-square\"></i>\n    </a>\n    <a class=\"share-linkedin-square\" target=\"_blank\" href=\"https://www.linkedin.com/shareArticle?mini=true&url=https%3A//mikethedj4.github.io/WebDGap/&title=WebDGap&summary=I%20%23converted%20a%20%23web%20%23application%20to%20a%20%23PhoneGap%20%23app%20using%20%23WebDGap!&source=\">\n      <i class=\"fa fa-linkedin-square\"></i>\n    </a>\n    <a target=\"_blank\" href=\"https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=BSYGA2RB5ZJCC\">\n      <i class=\"fa fa-cc-paypal\"></i>\n    </a>\n  </h1>\n</div></div>");
+    $(".preloader").html("<div class=\"table\"><div class=\"cell\">\n  <h1>Creating application!</h1>\n  <img class=\"loading\" src=\"../imgs/preloader.svg\">\n  \n<h1>\n    <a class=\"share-facebook\" target=\"_blank\" href=\"https://www.facebook.com/sharer/sharer.php?u=I%20%23converted%20a%20%23web%20%23application%20to%20a%20%23PhoneGap%20%23app%20using%20%23WebDGap!%20https%3A//mikethedj4.github.io/WebDGap\">\n      <i class=\"fa fa-facebook-square\"></i>\n    </a>\n    <a class=\"share-twitter\" target=\"_blank\" href=\"https://twitter.com/home?status=I%20%23converted%20a%20%23web%20%23application%20to%20a%20%23PhoneGap%20%23app%20using%20%23WebDGap!%20https%3A//mikethedj4.github.io/WebDGap/\">\n      <i class=\"fa fa-twitter-square\"></i>\n    </a>\n    <a class=\"share-gplus\" target=\"_blank\" href=\"https://plus.google.com/share?url=http%3A//mikethedj4.github.io/WebDGap/\">\n      <i class=\"fa fa-google-plus-square\"></i>\n    </a>\n    <a class=\"share-linkedin-square\" target=\"_blank\" href=\"https://www.linkedin.com/shareArticle?mini=true&url=https%3A//mikethedj4.github.io/WebDGap/&title=WebDGap&summary=I%20%23converted%20a%20%23web%20%23application%20to%20a%20%23PhoneGap%20%23app%20using%20%23WebDGap!&source=\">\n      <i class=\"fa fa-linkedin-square\"></i>\n    </a>\n    <a target=\"_blank\" href=\"https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=BSYGA2RB5ZJCC\">\n      <i class=\"fa fa-cc-paypal\"></i>\n    </a>\n  </h1>\n</div></div>");
   }
 });
 $("input.chromeappexport").click(function() {
   if ( document.querySelector("[data-value=description]").value ) {
     $(document.body).append('<div class="fixedfill preloader"></div>');
-    $(".preloader").html("<div class=\"table\"><div class=\"cell\">\n  <h1>Creating application!</h1>\n  <img class=\"loading\" src=\"imgs/preloader.svg\">\n  \n<h1>\n    <a class=\"share-facebook\" target=\"_blank\" href=\"https://www.facebook.com/sharer/sharer.php?u=I%20%23converted%20a%20%23web%20%23application%20to%20a%20%23Chrome%20%23app%20using%20%23WebDGap!%20https%3A//mikethedj4.github.io/WebDGap\">\n      <i class=\"fa fa-facebook-square\"></i>\n    </a>\n    <a class=\"share-twitter\" target=\"_blank\" href=\"https://twitter.com/home?status=I%20%23converted%20a%20%23web%20%23application%20to%20a%20%23Chrome%20%23app%20using%20%23WebDGap!%20https%3A//mikethedj4.github.io/WebDGap/\">\n      <i class=\"fa fa-twitter-square\"></i>\n    </a>\n    <a class=\"share-gplus\" target=\"_blank\" href=\"https://plus.google.com/share?url=http%3A//mikethedj4.github.io/WebDGap/\">\n      <i class=\"fa fa-google-plus-square\"></i>\n    </a>\n    <a class=\"share-linkedin-square\" target=\"_blank\" href=\"https://www.linkedin.com/shareArticle?mini=true&url=https%3A//mikethedj4.github.io/WebDGap/&title=WebDGap&summary=I%20%23converted%20a%20%23web%20%23application%20to%20a%20%23Chrome%20%23app%20using%20%23WebDGap!&source=\">\n      <i class=\"fa fa-linkedin-square\"></i>\n    </a>\n    <a target=\"_blank\" href=\"https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=BSYGA2RB5ZJCC\">\n      <i class=\"fa fa-cc-paypal\"></i>\n    </a>\n  </h1>\n</div></div>");
+    $(".preloader").html("<div class=\"table\"><div class=\"cell\">\n  <h1>Creating application!</h1>\n  <img class=\"loading\" src=\"../imgs/preloader.svg\">\n  \n<h1>\n    <a class=\"share-facebook\" target=\"_blank\" href=\"https://www.facebook.com/sharer/sharer.php?u=I%20%23converted%20a%20%23web%20%23application%20to%20a%20%23Chrome%20%23app%20using%20%23WebDGap!%20https%3A//mikethedj4.github.io/WebDGap\">\n      <i class=\"fa fa-facebook-square\"></i>\n    </a>\n    <a class=\"share-twitter\" target=\"_blank\" href=\"https://twitter.com/home?status=I%20%23converted%20a%20%23web%20%23application%20to%20a%20%23Chrome%20%23app%20using%20%23WebDGap!%20https%3A//mikethedj4.github.io/WebDGap/\">\n      <i class=\"fa fa-twitter-square\"></i>\n    </a>\n    <a class=\"share-gplus\" target=\"_blank\" href=\"https://plus.google.com/share?url=http%3A//mikethedj4.github.io/WebDGap/\">\n      <i class=\"fa fa-google-plus-square\"></i>\n    </a>\n    <a class=\"share-linkedin-square\" target=\"_blank\" href=\"https://www.linkedin.com/shareArticle?mini=true&url=https%3A//mikethedj4.github.io/WebDGap/&title=WebDGap&summary=I%20%23converted%20a%20%23web%20%23application%20to%20a%20%23Chrome%20%23app%20using%20%23WebDGap!&source=\">\n      <i class=\"fa fa-linkedin-square\"></i>\n    </a>\n    <a target=\"_blank\" href=\"https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=BSYGA2RB5ZJCC\">\n      <i class=\"fa fa-cc-paypal\"></i>\n    </a>\n  </h1>\n</div></div>");
   }
 });
 $(".chromepopexport").click(function() {
   if ( document.querySelector("[data-value=description]").value ) {
     $(document.body).append('<div class="fixedfill preloader"></div>');
-    $(".preloader").html("<div class=\"table\"><div class=\"cell\">\n  <h1>Creating application!</h1>\n  <img class=\"loading\" src=\"imgs/preloader.svg\">\n  \n<h1>\n    <a class=\"share-facebook\" target=\"_blank\" href=\"https://www.facebook.com/sharer/sharer.php?u=I%20%23converted%20a%20%23web%20%23application%20to%20a%20%23Chrome%20%23extension%20using%20%23WebDGap!%20https%3A//mikethedj4.github.io/WebDGap\">\n      <i class=\"fa fa-facebook-square\"></i>\n    </a>\n    <a class=\"share-twitter\" target=\"_blank\" href=\"https://twitter.com/home?status=I%20%23converted%20a%20%23web%20%23application%20to%20a%20%23Chrome%20%23extension%20using%20%23WebDGap!%20https%3A//mikethedj4.github.io/WebDGap/\">\n      <i class=\"fa fa-twitter-square\"></i>\n    </a>\n    <a class=\"share-gplus\" target=\"_blank\" href=\"https://plus.google.com/share?url=http%3A//mikethedj4.github.io/WebDGap/\">\n      <i class=\"fa fa-google-plus-square\"></i>\n    </a>\n    <a class=\"share-linkedin-square\" target=\"_blank\" href=\"https://www.linkedin.com/shareArticle?mini=true&url=https%3A//mikethedj4.github.io/WebDGap/&title=WebDGap&summary=I%20%23converted%20a%20%23web%20%23application%20to%20a%20%23Chrome%20%23extension%20using%20%23WebDGap!&source=\">\n      <i class=\"fa fa-linkedin-square\"></i>\n    </a>\n    <a target=\"_blank\" href=\"https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=BSYGA2RB5ZJCC\">\n      <i class=\"fa fa-cc-paypal\"></i>\n    </a>\n  </h1>\n</div></div>");
+    $(".preloader").html("<div class=\"table\"><div class=\"cell\">\n  <h1>Creating application!</h1>\n  <img class=\"loading\" src=\"../imgs/preloader.svg\">\n  \n<h1>\n    <a class=\"share-facebook\" target=\"_blank\" href=\"https://www.facebook.com/sharer/sharer.php?u=I%20%23converted%20a%20%23web%20%23application%20to%20a%20%23Chrome%20%23extension%20using%20%23WebDGap!%20https%3A//mikethedj4.github.io/WebDGap\">\n      <i class=\"fa fa-facebook-square\"></i>\n    </a>\n    <a class=\"share-twitter\" target=\"_blank\" href=\"https://twitter.com/home?status=I%20%23converted%20a%20%23web%20%23application%20to%20a%20%23Chrome%20%23extension%20using%20%23WebDGap!%20https%3A//mikethedj4.github.io/WebDGap/\">\n      <i class=\"fa fa-twitter-square\"></i>\n    </a>\n    <a class=\"share-gplus\" target=\"_blank\" href=\"https://plus.google.com/share?url=http%3A//mikethedj4.github.io/WebDGap/\">\n      <i class=\"fa fa-google-plus-square\"></i>\n    </a>\n    <a class=\"share-linkedin-square\" target=\"_blank\" href=\"https://www.linkedin.com/shareArticle?mini=true&url=https%3A//mikethedj4.github.io/WebDGap/&title=WebDGap&summary=I%20%23converted%20a%20%23web%20%23application%20to%20a%20%23Chrome%20%23extension%20using%20%23WebDGap!&source=\">\n      <i class=\"fa fa-linkedin-square\"></i>\n    </a>\n    <a target=\"_blank\" href=\"https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=BSYGA2RB5ZJCC\">\n      <i class=\"fa fa-cc-paypal\"></i>\n    </a>\n  </h1>\n</div></div>");
   }
 });
 
@@ -253,7 +253,7 @@ var audioCapture, videoCapture, storagePerm, setOffline, listPermissions,
       reader.onload = function(e) {
         // Export as Windows App
         $(".export-as-win-app").on("click", function() {
-          JSZipUtils.getBinaryContent("assets/YourWinApp.zip", function(err, data) {
+          JSZipUtils.getBinaryContent("../assets/YourWinApp.zip", function(err, data) {
             if(err) {
               throw err // or handle err
             }
@@ -283,7 +283,7 @@ var audioCapture, videoCapture, storagePerm, setOffline, listPermissions,
           return false;
         });
         $(".export-as-win32-app").on("click", function() {
-          JSZipUtils.getBinaryContent("assets/YourWin32App.zip", function(err, data) {
+          JSZipUtils.getBinaryContent("../assets/YourWin32App.zip", function(err, data) {
             if(err) {
               throw err // or handle err
             }
@@ -314,7 +314,7 @@ var audioCapture, videoCapture, storagePerm, setOffline, listPermissions,
 
         // Export as Mac App
         $(".export-as-mac-app").on("click", function() {
-          JSZipUtils.getBinaryContent("assets/YourMacApp.zip", function(err, data) {
+          JSZipUtils.getBinaryContent("../assets/YourMacApp.zip", function(err, data) {
             if(err) {
               throw err // or handle err
             }
@@ -348,7 +348,7 @@ var audioCapture, videoCapture, storagePerm, setOffline, listPermissions,
 
         // Export as Linux App
         $(".export-as-lin-app").on("click", function() {
-          JSZipUtils.getBinaryContent("assets/YourLinApp.zip", function(err, data) {
+          JSZipUtils.getBinaryContent("../assets/YourLinApp.zip", function(err, data) {
             if(err) {
               throw err // or handle err
             }
@@ -383,7 +383,7 @@ var audioCapture, videoCapture, storagePerm, setOffline, listPermissions,
           return false;
         });
         $(".export-as-lin32-app").on("click", function() {
-          JSZipUtils.getBinaryContent("assets/YourLin32App.zip", function(err, data) {
+          JSZipUtils.getBinaryContent("../assets/YourLin32App.zip", function(err, data) {
             if(err) {
               throw err // or handle err
             }
@@ -855,7 +855,7 @@ $(document).ready(function() {
 
             // Download as Windows App
             $(".export-as-win-app").on("click", function() {
-              JSZipUtils.getBinaryContent("assets/YourWinApp.zip", function(err, data) {
+              JSZipUtils.getBinaryContent("../assets/YourWinApp.zip", function(err, data) {
                 if(err) {
                   throw err // or handle err
                 }
@@ -890,7 +890,7 @@ $(document).ready(function() {
               });
             });
             $(".export-as-win32-app").on("click", function() {
-              JSZipUtils.getBinaryContent("assets/YourWin32App.zip", function(err, data) {
+              JSZipUtils.getBinaryContent("../assets/YourWin32App.zip", function(err, data) {
                 if(err) {
                   throw err // or handle err
                 }
@@ -927,7 +927,7 @@ $(document).ready(function() {
 
             // Download as Linux App
             $(".export-as-lin-app").on("click", function() {
-              JSZipUtils.getBinaryContent("assets/YourLinApp.zip", function(err, data) {
+              JSZipUtils.getBinaryContent("../assets/YourLinApp.zip", function(err, data) {
                 if(err) {
                   throw err // or handle err
                 }
@@ -964,7 +964,7 @@ $(document).ready(function() {
               });
             });
             $(".export-as-lin32-app").on("click", function() {
-              JSZipUtils.getBinaryContent("assets/YourLin32App.zip", function(err, data) {
+              JSZipUtils.getBinaryContent("../assets/YourLin32App.zip", function(err, data) {
                 if(err) {
                   throw err // or handle err
                 }
@@ -1003,7 +1003,7 @@ $(document).ready(function() {
 
             // Download as Mac App
             $(".export-as-mac-app").on("click", function() {
-              JSZipUtils.getBinaryContent("assets/YourMacApp.zip", function(err, data) {
+              JSZipUtils.getBinaryContent("../assets/YourMacApp.zip", function(err, data) {
                 if(err) {
                   throw err // or handle err
                 }
@@ -1329,7 +1329,7 @@ $(document).ready(function() {
 
           // Download as Windows App
           $(".export-as-win-app").on("click", function() {
-            JSZipUtils.getBinaryContent("assets/YourWinApp.zip", function(err, data) {
+            JSZipUtils.getBinaryContent("../assets/YourWinApp.zip", function(err, data) {
               if(err) {
                 throw err // or handle err
               }
@@ -1364,7 +1364,7 @@ $(document).ready(function() {
             });
           });
           $(".export-as-win32-app").on("click", function() {
-            JSZipUtils.getBinaryContent("assets/YourWin32App.zip", function(err, data) {
+            JSZipUtils.getBinaryContent("../assets/YourWin32App.zip", function(err, data) {
               if(err) {
                 throw err // or handle err
               }
@@ -1401,7 +1401,7 @@ $(document).ready(function() {
 
           // Download as Linux App
           $(".export-as-lin-app").on("click", function() {
-            JSZipUtils.getBinaryContent("assets/YourLinApp.zip", function(err, data) {
+            JSZipUtils.getBinaryContent("../assets/YourLinApp.zip", function(err, data) {
               if(err) {
                 throw err // or handle err
               }
@@ -1438,7 +1438,7 @@ $(document).ready(function() {
             });
           });
           $(".export-as-lin32-app").on("click", function() {
-            JSZipUtils.getBinaryContent("assets/YourLin32App.zip", function(err, data) {
+            JSZipUtils.getBinaryContent("../assets/YourLin32App.zip", function(err, data) {
               if(err) {
                 throw err // or handle err
               }
@@ -1477,7 +1477,7 @@ $(document).ready(function() {
 
           // Download as Mac App
           $(".export-as-mac-app").on("click", function() {
-            JSZipUtils.getBinaryContent("assets/YourMacApp.zip", function(err, data) {
+            JSZipUtils.getBinaryContent("../assets/YourMacApp.zip", function(err, data) {
               if(err) {
                 throw err // or handle err
               }
