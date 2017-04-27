@@ -8,6 +8,7 @@
     <meta name="author" content="Michael Schwartz">
     <meta http-equiv="X-UA-Compatible" content="IE=9" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-play-app" content="app-id=com.michael.webdgap">
     <!-- Chrome, Firefox OS and Opera -->
     <meta name="theme-color" content="#cfe7eb">
     <!-- Windows Phone -->
@@ -16,7 +17,6 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Michael Schwartz">
-    <meta name="google-play-app" content="app-id=com.michael.webdgap">
     <link rel="apple-touch-icon" href="../imgs/icon.png">
     <link rel="icon" type="image/vnd.microsoft.icon" href="../favicon.ico">
     <link rel="SHORTCUT ICON" href="../favicon.ico">
@@ -366,7 +366,14 @@
     <script src="../js/webdgap.min.js"></script>
     <script src="../js/jquery.smartbanner.js"></script>
     <script>
-      $().smartbanner();
+      $.smartbanner({
+        title: 'WebDGap', // What the title of the app should be in the banner (defaults to <title>)
+        author: 'Michael Schwartz', // What the author of the app should be in the banner (defaults to <meta name="author"> or hostname)
+        price: 'FREE', // Price of the app
+        appStoreLanguage: 'EN-US', // Language code for App Store
+        inGooglePlay: 'In Google Play', // Text of price for Android
+        icon: null, // The URL of the icon (defaults to <meta name="apple-touch-icon">)
+      });
       
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
