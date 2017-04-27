@@ -16,6 +16,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Michael Schwartz">
+    <meta name="google-play-app" content="app-id=com.michael.webdgap">
     <link rel="apple-touch-icon" href="imgs/icon.png">
     <link rel="icon" type="image/vnd.microsoft.icon" href="favicon.ico">
     <link rel="shortcut icon" href="assets/images/icon.svg" type="image/x-icon">
@@ -34,6 +35,7 @@
     <link rel="stylesheet" href="assets/mobirise3-blocks-plugin/css/style.css">
     <link rel="stylesheet" href="assets/mobirise-gallery/style.css">
     <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
+    <link rel="stylesheet" href="css/jquery.smartbanner.css" type="text/css" media="screen">
   </head>
   <body>
     <script>
@@ -444,9 +446,13 @@
     <script src="assets/mobirise-gallery/player.min.js"></script>
     <script src="assets/mobirise-gallery/script.js"></script>
     <input name="animation" type="hidden">
+
+    <script src="js/jquery.smartbanner.js"></script>
     <script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-58bb8f9cfb49b5de"></script> 
     
     <script>
+      $().smartbanner();
+     
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
