@@ -1,24 +1,38 @@
-document.addEventListener("deviceready", function(){
-  if (navigator.onLine) {
-    // Show Lightbox Video Onload
+if (navigator.onLine) {
+  // Show Lightbox Video Onload
+  var playGuide = function() {
     $.fancybox.open({
       youtube : {
-          controls : 0,
-          showinfo : 0
+        controls : 0,
+        showinfo : 0
       },
-      src  : 'https://www.youtube.com/embed/-AszZcClVXA?enablejsapi=1', // Source of the content
+      src  : 'https://www.youtube.com/embed/-AszZcClVXA', // Source of the content
       type : 'iframe', // Content type: image|inline|ajax|iframe|html (optional)
+      opts : {
+        // Promote T-Shirt
+        beforeClose: function() {
+          alertify.message("<div class=\"grid\"><div class=\"centered grid__col--12 tc\"><h2>Help keep this free!</h2><a href=\"https://snaptee.co/t/rjezt/?r=fb&teeId=rjezt\" target=\"_blank\"><img src=\"imgs/model-600x600.jpg\" width=\"100%\"></a><a class=\"btn--success\" href=\"https://snaptee.co/t/rjezt/?r=fb&teeId=rjezt\" target=\"_blank\" style=\"width: 100%;\">Buy Now</a></div></div>");
+        }
+      }
     });
+  };
 
-    $(document).on('onComplete.fb', function( e, instance, slide ) {
-      document.addEventListener("pause", function(e) {
-        $.fancybox.close();
-      });
+  // Watch How To Video
+  alertify.message("<div class=\"grid\"><div class=\"centered grid__col--12 tc\"><h2>Instructional Guide!</h2><a class=\"pointer\" href=\"javascript:playGuide()\"><img src=\"imgs/playvideo.svg\" width=\"50%\"></a><a class=\"btn--success\" href=\"javascript:playGuide()\" style=\"width: 100%;\">Watch Video</a></div></div>");
+
+  // Promote T-Shirt
+  setTimeout(function() {
+    alertify.message("<div class=\"grid\"><div class=\"centered grid__col--12 tc\"><h2>Help keep this free!</h2><a href=\"https://snaptee.co/t/vjezt/?r=fb&teeId=vjezt\" target=\"_blank\"><img src=\"imgs/model-1-600x600.jpg\" width=\"100%\"></a><a class=\"btn--success\" href=\"https://snaptee.co/t/vjezt/?r=fb&teeId=vjezt\" target=\"_blank\" style=\"width: 100%;\">Buy Now</a></div></div>");
+  }, 5000);
+
+  $(document).on('onComplete.fb', function( e, instance, slide ) {
+    document.addEventListener("pause", function(e) {
+      $.fancybox.close();
     });
-  } else {
-    alertify.alert("No internet connection detected! Can not export for Windows, Linux or Mac OS X!").set("basic", true);
-  }
-});
+  });
+} else {
+  alertify.alert("No internet connection detected! Can not export for Windows, Linux or Mac OS X!").set("basic", true);
+}
 
 function isPhoneGapEnv() {
   // Alternate check to consider instead:

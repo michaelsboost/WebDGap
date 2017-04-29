@@ -314,3 +314,9 @@ a {
 .wfill {
   width: 100%;
 }
+.nostyle {
+  border: 0;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+}
