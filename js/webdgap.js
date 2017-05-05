@@ -1,3 +1,10 @@
+// Version: 1.2.5
+// WebDGap, copyright (c) by Michael Schwartz and others
+// Distributed under an MIT license: https://github.com/mikethedj4/WebDGap/blob/gh-pages/LICENSE
+
+// This is WebDGap (https://mikethedj4.github.io/WebDGap/), Easily create multi-platform desktop apps.
+// implemented in JavaScript!
+
 // Run Onload
 $("html, body").animate({ scrollTop: 0 }, "slow");
 document.querySelector(".dialog").style.display = "none";

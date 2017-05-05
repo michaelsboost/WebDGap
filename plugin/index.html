@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>WebDGapJS: Easily convert websites to multi-platform desktop apps with 1 line of code!</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Convert any web application to a native Windows, Linux, or Mac OS X desktop application.">
+    <meta name="author" content="Michael Schwartz">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="assets/images/logo.png" type="image/x-icon">
+    <meta name="description" content="">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Franklin:400,400i,600,600i">
+    <link rel="stylesheet" href="assets/tether/tether.min.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/dropdown/css/style.css">
+    <link rel="stylesheet" href="assets/theme/css/style.css">
+    <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
+    <style>
+      select.dropdown {
+       cursor: pointer;
+      }
+      select, select option, input {
+        background: transparent;
+      }
+      
+      select.dropdown, input {
+       -webkit-appearance: none;  /*REMOVES DEFAULT CHROME & SAFARI STYLE*/
+       -moz-appearance: none;  /*REMOVES DEFAULT FIREFOX STYLE*/
+       border: 0 !important;  /*REMOVES BORDER*/
+
+       color: #fff;
+       -webkit-border-radius: 5px;
+       border-radius: 5px;
+       font-size: 14px;
+       padding: 0;
+       width: 15%;
+      }
+    </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        document.querySelector("[data-action=download]").onclick = function() {
+          webdgap(""+osexport.value+"", ""+appname.value+"", ""+appimg.value+"", ""+appurl.value+"");
+        };
+      });
+    </script>
+  </head>
+  <body>
+    <section class="menu1" id="menu1-0">
+      <nav class="navbar navbar-dropdown navbar-fixed-top">
+        <div class="container-fluid">
+          <div class="mbr-table">
+            <div class="mbr-table-cell logo">
+              <div class="navbar-brand"><span class="navbar-logo"><img src="assets/images/icon.svg" alt="WebDGap"></span><a class="navbar-caption" href="https://mikethedj4.github.io/WebDGap/">WebDGap</a></div>
+            </div>
+            <div class="mbr-table-cell text">
+              <button class="navbar-toggler pull-xs-right hidden-md-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
+                <div class="hamburger-icon"></div>
+              </button>
+              <ul class="nav-dropdown collapse pull-xs-right nav navbar-nav show-buttons navbar-toggleable-sm" id="exCollapsingNavbar">
+                <li class="nav-item"><a class="nav-link link" href="https://cash.me/$mschwar4" target="_blank">DONATE</a></li>
+                <li class="nav-item"><a class="nav-link link" href="https://github.com/mikethedj4/WebDGap" target="_blank">CONTRIBUTE</a></li>
+                <li class="nav-item dropdown"><a class="nav-link link dropdown-toggle" href="index.html#testimonials1-0" data-toggle="dropdown-submenu" aria-expanded="false">DOWNLOAD</a>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="https://sourceforge.net/projects/webdgap/files/v1.2.5%20%28requires%20wifi%29/WebDGap-win.zip/download" target="_blank">WINDOWS</a>
+                    <a class="dropdown-item" href="https://sourceforge.net/projects/webdgap/files/v1.2.5%20%28requires%20wifi%29/WebDGap-win32.zip/download" target="_blank">WINDOWS 32BIT</a>
+                    <a class="dropdown-item" href="https://sourceforge.net/projects/webdgap/files/v1.2.5%20%28requires%20wifi%29/WebDGap-mac.zip/download" target="_blank">MAC</a>
+                    <a class="dropdown-item" href="https://sourceforge.net/projects/webdgap/files/v1.2.5%20%28requires%20wifi%29/WebDGap-lin.zip/download" target="_blank">LINUX</a>
+                    <a class="dropdown-item" href="https://sourceforge.net/projects/webdgap/files/v1.2.5%20%28requires%20wifi%29/WebDGap-lin32.zip/download" target="_blank">LINUX I832</a>
+                    <a class="dropdown-item" href="https://chrome.google.com/webstore/detail/webdgap/aommkjnlphiacgajemkmbnfebfbfjfhn" target="_blank">CHROME</a>
+                    <a class="dropdown-item" href="https://play.google.com/store/apps/details?id=com.michael.webdgap" target="_blank">ANDROID</a>
+                  </div>
+                </li>
+                <li class="nav-item nav-btn"><a class="nav-link btn btn-primary btn-lg btn" href="https://mikethedj4.github.io/WebDGap/js/webdgapjs.js" target="_blank">Download Plugin</a></li>
+              </ul>
+              <button hidden="" class="navbar-toggler navbar-close" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
+                <div class="close-icon"></div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </section>
+    <section class="mbr-section mbr-section-hero mbr-section-full header5 mbr-after-navbar" id="header5-1" style="background-image: linear-gradient(to right top, rgb(8, 74, 110), rgb(36, 163, 131)); background-color: rgb(8, 74, 110); background-position: initial initial; background-repeat: initial initial;">
+      <div class="mbr-table-cell">
+        <div class="container">
+          <div class="row heading">
+            <div class="col-md-10 col-md-offset-1 text-xs-center">
+              <h1 class="mbr-section-title display-1 heading-title">WebDGapJS</h1>
+              <p class="mbr-section-subtitle sub-2 heading-text">Exporting a website as a desktop application has never been easier!</p>
+              <div class="mbr-section-subtitle sub-2 heading-text">
+                webdgap("<select id="osexport"><option>win</option><option>win32</option><option>mac</option><option>lin</option><option>lin32</option><option selected>chrome</option><option>chromeext</option></select>", "<input id="appname" type="text" value="WebDGap">", "<input id="appimg" type="text" value="https://mikethedj4.github.io/WebDGap/assets/images/icon.svg">", "<input id="appurl" type="text" value="https://mikethedj4.github.io/WebDGap/app/">");
+              </div>
+              <div class="mbr-section-btn">
+                <a class="btn btn-lg btn-success" data-action="download">Test Out</a>
+                <a class="btn btn-lg btn-primary" href="https://mikethedj4.github.io/WebDGap/js/webdgapjs.js" target="_blank">Download Plugin</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <script src="assets/web/assets/jquery/jquery.min.js"></script>
+    <script src="assets/tether/tether.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/smooth-scroll/smooth-scroll.js"></script>
+    <script src="assets/dropdown/js/script.min.js"></script>
+    <script src="assets/touch-swipe/jquery.touch-swipe.min.js"></script>
+    <script src="assets/theme/js/script.js"></script>
+    <script src="../js/webdgapjs.js"></script>
+  </body>
+</html>
