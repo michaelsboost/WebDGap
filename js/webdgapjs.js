@@ -253,7 +253,7 @@ function webdgap(os, YourName, AppImg, url) {
       saveAs(content, YourName.replace(/ /g, "-").toLowerCase() + "-chromeext.zip");
       endExportMSG();
     } else {
-      alert("WebDGapJS: The operating system you've chosen is not supported. Please review the API from http://webdgap.sf.net/");
+      alert("Oops something went wrong. Maybe wrong argument for operating system? Are you using a valid image url? - https://mikethedj4.github.io/WebDGap/plugin/");
     }
     return false;
   }
