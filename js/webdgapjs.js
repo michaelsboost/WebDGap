@@ -6,6 +6,13 @@
 // implemented in JavaScript!
 
 function webdgap(os, YourName, AppImg, url) {
+  // Detect if users browser can load and download files in Javascript
+  if (window.File && window.FileReader && window.FileList && window.Blob) {
+    // Detect if users browser can download files in Javascript
+  } else {
+    alert("The File APIs are not fully supported in this browser.");
+  }
+  
   var endExportMSG = function() {
     console.log("WebDGap built your "+ os +" application");
   };
