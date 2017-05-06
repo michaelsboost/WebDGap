@@ -1,29 +1,10 @@
-# WebDGap
-Convert any website, or web application to a native Windows, Linux, Mac, or Chrome desktop application.
+# WebDGap Chrome Extension
+Easily create websites as multi-platform desktop apps!
 
 ![](https://raw.githubusercontent.com/mikethedj4/WebDGap/gh-pages/imgs/screenshot.png)
 
-### Converting a Web Application to a native Desktop Application.
+# [Watch The How To Guide!](https://www.youtube.com/watch?v=-AszZcClVXA)
 
- 1. WebDGap requires you to add your application's name first.
- 2. Load your application's logo second.
- 3. Lastly load in your application's source encased in a zip file.
- 
-**IMPORTANT!!!** *(your zip file must look something like this, when exporting it as a desktop/chrome application, or extension)*
-
- - index.html
- - css/style.css
- - js/jquery.js
- - js/script.js
- 
-The zip example below **WILL NOT WORK!!!**
-
- - AppName/index.html
- - AppName/css/style.css
- - AppName/js/jquery.js
- - AppName/js/script.js
- 
-**NOTE:** Larger zip files take a longer time loading and exporting!
 
 ### Version
 1.2.5
@@ -36,7 +17,7 @@ WebDGap uses a number of open source projects to work properly:
 * [jQuery](http://jquery.com/) - duh
 * [JSZip](https://stuk.github.io/jszip/) - package zip files in javascript
 * [node-webkit](http://nwjs.io/) - run web apps as desktop apps
-* [AlertifyJS](http://alertifyjs.com/) - For the awesome and stylish alert notification dialogs
+* [WebDGapJS](https://github.com/mikethedj4/WebDGap/plugin) - Allows you to convert the website as a desktop application
 
 ### License
 MIT
@@ -44,11 +25,15 @@ MIT
 ### Availability
 
 *(Desktop version of WebDGap is deprecated)*  
-[Windows 64](https://sourceforge.net/projects/webdgap/files/v1.2.4/WebDGap-win.zip/download)  
-[Windows 32](https://sourceforge.net/projects/webdgap/files/v1.2.4/WebDGap-win32.zip/download)  
-[Mac](https://sourceforge.net/projects/webdgap/files/v1.2.4/WebDGap-mac.zip/download)  
-[Linux 64](https://sourceforge.net/projects/webdgap/files/v1.2.4/WebDGap-lin.zip/download)  
-[Linux 32](https://sourceforge.net/projects/webdgap/files/v1.2.4/WebDGap-lin32.zip/download) 
+[Windows 64](https://sourceforge.net/projects/webdgap/files/v1.2.5%20%28requires%20wifi%29/WebDGap-win.zip/download) *(deprecated)*  
+[Windows 32](https://sourceforge.net/projects/webdgap/files/v1.2.5%20%28requires%20wifi%29/WebDGap-win32.zip/download) *(deprecated)*  
+[Mac](https://sourceforge.net/projects/webdgap/files/v1.2.5%20%28requires%20wifi%29/WebDGap-mac.zip/download) *(deprecated)*  
+[Linux 64](https://sourceforge.net/projects/webdgap/files/v1.2.5%20%28requires%20wifi%29/WebDGap-lin.zip/download) *(deprecated)*  
+[Linux 32](https://sourceforge.net/projects/webdgap/files/v1.2.5%20%28requires%20wifi%29/WebDGap-lin32.zip/download) *(deprecated)*  
+[Chrome](https://chrome.google.com/webstore/detail/webdgap/aommkjnlphiacgajemkmbnfebfbfjfhn)  
+[Chrome Extension](https://chrome.google.com/webstore/detail/webdgap/odpmjbmeopdfhcikkhpeaemfbmghpobk)  
+[Android](https://play.google.com/store/apps/details?id=com.michael.webdgap)  
+[JS Plugin](https://mikethedj4.github.io/WebDGap/plugin/)  *(aka [WebDGapJS](https://mikethedj4.github.io/WebDGap/plugin/))*
 
 For command line use you can use [nativefier](https://github.com/jiahaog/nativefier) to convert any website to a desktop app. (**NOTE**: nativefier uses an Electron wrapper. WebDGap uses a NW.js wrapper. Difference is Electron runs on 64bit processors while NW.js runs on 64bits and 32bit processors)
 
