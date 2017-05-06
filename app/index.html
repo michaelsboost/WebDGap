@@ -1,387 +1,88 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>WebDGap</title>
     <meta charset="utf-8">
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1">
-    <meta name="description" content="Convert any web application to a native Windows, Linux, or Mac OS X desktop application.">
-    <meta name="author" content="Michael Schwartz">
-    <meta http-equiv="X-UA-Compatible" content="IE=9" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="google-play-app" content="app-id=com.michael.webdgap">
-    <!-- Chrome, Firefox OS and Opera -->
-    <meta name="theme-color" content="#cfe7eb">
-    <!-- Windows Phone -->
-    <meta name="msapplication-navbutton-color" content="#cfe7eb">
-    <!-- iOS Safari -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="Michael Schwartz">
-    <link rel="apple-touch-icon" href="../imgs/icon.png">
-    <link rel="icon" type="image/vnd.microsoft.icon" href="../favicon.ico">
-    <link rel="SHORTCUT ICON" href="../favicon.ico">
-    <link rel="stylesheet" href="../libraries/polyui/polyui.css">
-    <link rel="stylesheet" href="../libraries/font-awesome/font-awesome.css" />
-    <link rel="stylesheet" href="../libraries/font-awesome/macset.css" />
-    <link rel="stylesheet" href="../libraries/alertifyjs/css/alertify.min.css" />
-    <link rel="stylesheet" href="../libraries/alertifyjs/css/themes/default.min.css" />
-    <link rel="stylesheet" href="../libraries/fancybox/css/core.css" />
-    <link rel="stylesheet" href="../libraries/fancybox/css/fullscreen.css" />
-    <link rel="stylesheet" href="../libraries/fancybox/css/slideshow.css" />
-    <link rel="stylesheet" href="../libraries/fancybox/css/thumbs.css" />
-    <link rel="stylesheet" href="../libraries/fancybox/css/jquery.fancybox.min.css" />
-    <link rel="stylesheet" href="../css/style.min.css" />
-    <link rel="stylesheet" href="../css/jquery.smartbanner.css" type="text/css" media="screen">
-    <script src="../libraries/jquery/jquery.js"></script>
-    <!-- <script src="../libraries/prefixfree/prefixfree.min.js"></script> -->
-    <script src="../libraries/alertifyjs/alertify.min.js"></script>
-    <script src="../dist/jszip.min.js"></script>
-    <script src="../dist/jszip-utils.js"></script>
-    <script src="../dist/FileSaver.js"></script>
+    <link rel="shortcut icon" href="assets/images/logo.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Arvo:400,400i,700,700i">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i">
+    <link rel="stylesheet" href="assets/et-line-font-plugin/style.css">
+    <link rel="stylesheet" href="assets/bootstrap-material-design-font/css/material.css">
+    <link rel="stylesheet" href="assets/tether/tether.min.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/socicon/css/socicon.min.css">
+    <link rel="stylesheet" href="assets/colorm-icons/style.css">
+    <!--<link rel="stylesheet" href="assets/animate.css/animate.min.css">-->
+    <link rel="stylesheet" href="assets/theme/css/style.css">
+    <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
+    <script src="dist/jszip.min.js"></script>
+    <script src="dist/jszip-utils.js"></script>
+    <script src="dist/FileSaver.js"></script>
+    <style>
+      select.dropdown {
+       cursor: pointer;
+      }
+      select, select option, input {
+        background: transparent;
+      }
+      
+      input {
+       -webkit-appearance: none;  /*REMOVES DEFAULT CHROME & SAFARI STYLE*/
+       -moz-appearance: none;  /*REMOVES DEFAULT FIREFOX STYLE*/
+       border: 0!important;  /*REMOVES BORDER*/
+
+       color: #fff;
+       padding: 17px 0;
+       width: 100%;
+      }
+    </style>
   </head>
   <body>
-    <!-- Image to show on facebook preview -->
-    <img class="hide" src="../imgs/logo.png">
+    <section class="mbr-section mbr-section-hero mbr-section-full header3" id="header3-0" style="background-image: url(assets/images/mbr-2000x1333.jpg);">
+        <div class="mbr-overlay" style="opacity: 0.8; background-color: rgb(0, 66, 72);"></div>
+        <div class="mbr-table-cell">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-12 col-lg-10 col-lg-offset-1 text-xs-center">
+                    <!-- <p class="mbr-section-subtitle lead subtitle">WebDGap: Easily convert websites to multi-platform desktop apps!</p><br> -->
 
-    <div class="wholedialog fixedfill">
-      <div class="grid table">
-        <div class="cell">
-        	<button class="btn--success" data-id="convertapp">Convert App</button>
-        </div>
-        <div class="cell">
-        	<button class="btn--default" data-id="convertsite">Convert Site</button>
-        </div>
-      </div>
-    </div>
+                        <div class="mbr-section-title display-4">
+                          <select id="osexport">
+                            <option>win</option>
+                            <option>win32</option>
+                            <option>mac</option>
+                            <option>lin</option>
+                            <option>lin32</option>
+                            <option selected>chrome</option>
+                            <option>chromeext</option>
+                          </select><br>
 
-    <!-- <div class="pagefill" id="top"> -->
-    <div class="pagefill" style="position: static;">
-      <div class="grid">
-        <header class="grid__col--12 panel--padded--centered" role="banner">
-          <span class="sitelogo">
-            <b class="srt">WebDGap</b>
-          </span>
-        </header>
-      </div>
+                          <input id="appname" type="text" value="WebDGap"><br>
+                          <input id="appimg" type="text" value="https://mikethedj4.github.io/WebDGap/assets/images/icon.svg"><br>
+                          <input id="appurl" type="text" value="https://mikethedj4.github.io/WebDGap/app/">
+                        </div>
 
-      <div class="grid">
-        <div class="grid__col--12 panel--padded--centered">
-          <h1 class="headline-primary--grouped">
-            <a title="Export for tablets and smart phones" href="http://build.phonegap.com/" target="_blank"><em>PhoneGap</em></a>
-             for your <u>Desktop</u> applications.
-          </h1>
-          <h2 class="headline-secondary--grouped maindesc">Convert any web application to a native Windows/Linux/Mac/Chrome application.</h2>
-        </div>
-      </div>
-
-      <div class="grid">
-        <div class="grid__col--12 center">
-          <div class="checkimageloader hide">
-            <h1 class="outputname hide"></h1>
-            <div id="imageloader" class="iblock roundit">
-              <label for="load">
-                <img class="call loadavatar pointer" src="../assets/loadlogo-rounded.svg" alt="Avatar" width="135" height="135">
-              </label>
-
-              <div class="fill logo hide" align="center">
-                <canvas class="n16 hide" width="16" height="16"></canvas>
-                <canvas class="n32 hide" width="32" height="32"></canvas>
-                <canvas class="n64 hide" width="64" height="64"></canvas>
-                
-                <!-- Main Mobile Icon -->
-                <div class="imgorigholder hide"></div>
-
-                <!-- Android Icon -->
-                <canvas class="n96 hide" width="96" height="96"></canvas>
-                <canvas class="n72 hide" width="72" height="72"></canvas>
-                <canvas class="n48 hide" width="48" height="48"></canvas>
-                <canvas class="n36 hide" width="36" height="36"></canvas>
-                
-                <!-- iOS Icon -->
-                <canvas class="n144 hide" width="144" height="144"></canvas>
-                <canvas class="n57 hide" width="57" height="57"></canvas>
-                <canvas class="n114 hide" width="114" height="114"></canvas>
-                
-                <!-- PhoneGap Windows Icon -->
-                <canvas class="n30 hide" width="30" height="30"></canvas>
-                <canvas class="n44 hide" width="44" height="44"></canvas>
-                <canvas class="n106 hide" width="106" height="106"></canvas>
-                <canvas class="n70 hide" width="70" height="70"></canvas>
-                <canvas class="n71 hide" width="71" height="71"></canvas>
-                <canvas class="n170 hide" width="170" height="170"></canvas>
-                <canvas class="n150 hide" width="150" height="150"></canvas>
-                <canvas class="n360 hide" width="360" height="360"></canvas>
-                <canvas class="n310 hide" width="310" height="310"></canvas>
-                <canvas class="n50 hide" width="50" height="50"></canvas>
-                <canvas class="n120 hide" width="120" height="120"></canvas>
-                <canvas class="nwinwide1 hide" width="310" height="150"></canvas>
-                <canvas class="nwinwide2 hide" width="744" height="360"></canvas>
-                
-                <!-- Windows Phone 8 Icon -->
-                <canvas class="n159 hide" width="159" height="159"></canvas>
-                <canvas class="n99 hide" width="99" height="99"></canvas>
-
-                <canvas class="holder call pointer" width="128" height="128"></canvas>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="grid logoisloadedsite">
-        <div class="grid__col--12">
-          <label class="form__label--hidden" for="name">Application Name:</label>
-          <input class="form__input" type="text" id="name" placeholder="Application Name" data-id="sitename">
-        </div>
-        <div class="grid__col--8">
-          <label class="form__label--hidden hide" for="website">http://website.com/</label>
-          <input class="form__input hide" type="text" id="website" placeholder="http://website.com/" data-action="website">
-        </div>
-        <div class="grid__col--3">
-          <button class="btn--default hide" data-action="applyvalues">Apply</button>
-        </div>
-      </div>
-      <div class="grid logoisloadedapp hide">
-        <div class="grid__col--12 center">
-          <button class="btn--info loadzip pointa hide">
-            <label for="file" class="pointa">
-              Load zip file
-            </label>
-          </button>
-          <!--
-          <label class="form__label--hidden" for="zipurl">http://</label> 
-          <input class="form__input" type="text" id="zipurl" placeholder="http://">
-          <button class="btn--info loadzipurl pointa hide">
-            Load zip from URL
-          </button>
-          -->
-
-          <div class="result_block hide">
-            <div class="result"></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="pickbits check hide">
-        <div class="grid">
-          <div class="grid__col--12 panel--padded--centered">
-            <h2 class="headline-secondary--grouped export4text">Are you exporting for a 32bit or for a 64bit processor?</h2>
-          </div>
-        </div>
-
-        <div class="grid center">
-          <div class="grid__col--6">
-            <button class="btn--success export64">64bit</button>
-          </div>
-          <div class="grid__col--6">
-            <button class="btn--default export32">32bit</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="chosenbit check hide">
-        <div class="grid">
-          <div class="grid__col--12 panel--padded--centered">
-            <button class="btn--error btnexport export-as-win-app 64bit hide">
-              <i class="msicon-windows"></i>
-            </button>
-            <button class="btn--error btnexport export-as-win32-app 32bit hide">
-              <i class="msicon-windows"></i>
-            </button>
-            <button class="btn--default btnexport export-as-mac-app">
-              <i class="msicon-osx"></i>
-            </button>
-            <button class="btn--success btnexport export-as-lin-app 64bit hide">
-              <i class="msicon-tux"></i>
-            </button>
-            <button class="btn--success btnexport export-as-lin32-app 32bit hide">
-              <i class="msicon-tux"></i>
-            </button>
-            <button class="btn--info btnexport export-for-chrome">
-              <i class="msicon-chrome"></i>
-            </button>
-            <a class="btn--success btnexport export-for-pgb" style="padding: 9px 38px; font-size: 42px;">
-              <i class="fa fa-mobile" style="transform: scale(1.3);"></i>
-            </a>
-          </div>
-        </div>
-
-        <!-- Chrome Export Pick -->
-        <div class="pickchromes hide">
-          <div class="grid">
-            <div class="grid__col--12 panel--padded--centered">
-              <h2 class="headline-secondary--grouped export4text">Chrome Application, or Popup Extension?</h2>
-            </div>
-          </div>
-
-          <div class="grid center">
-            <div class="grid__col--6">
-              <button class="btn--default chromeapp">Application</button>
-            </div>
-            <div class="grid__col--6">
-              <button class="btn--default chromepopup">Popup</button>
-            </div>
-          </div>
-
-          <!-- Chrome Export dialog -->
-          <div class="grid dialog whitebg panel--padded--centered chrome-border">
-            <div class="grid__col--12">
-              <form class="form">
-                <input class="form__input " type="number" min="0.1" step="0.1" value="0.1" data-value="version">
-                <textarea class="form__input resetval" data-value="description" placeholder="Description" rows="7">A shortcut app generated via WebDGap.</textarea>
-
-                <span class="chromeappcheck">
-                  <h4>
-                    Offline:
-                  </h4>
-
-                  <p class="onoffswitch">
-                    <input type="checkbox" name="onoffswitch" class="offline-mode" id="myonoffswitch" checked>
-                    <label class="onoffswitch-label" for="myonoffswitch">
-                      <span class="onoffswitch-inner"></span>
-                      <span class="onoffswitch-switch"></span>
-                    </label>
-                  </p>
-                </span>
-
-                <div class="chromeappexport">
-                  <h4>
-                    Permissions:
-                  </h4>
-
-                  <div class="center">
-                    <input type="checkbox" id="audiocapture" data-target="permissions">
-                    <label for="audiocapture">audioCapture</label>
-                    <input type="checkbox" id="videocapture" data-target="permissions">
-                    <label for="videocapture">videoCapture</label>
-                    <input type="checkbox" id="storage" data-target="permissions">
-                    <label for="storage">fileSystem</label>
-                  </div>
+                        <div class="mbr-section-btn" style="text-align: center;">
+                          <a class="btn btn-lg btn-success" href="javascript:void(0);" data-action="download">download</a>
+                        </div>
+                    </div>
                 </div>
-
-                <div class="center" style="padding-top: 45px;">
-                  <input class="btn--default chromeappexport hide" type="button" value="Confirm">
-                  <input class="btn--default chromepopexport hide" type="button" value="Confirm">
-                  <input class="btn--warning reset" type="reset" value="Reset">
-                </div>
-              </form>
             </div>
-          </div>
         </div>
+    </section>
 
-        <!-- PhoneGap App Export Dialog -->
-        <div class="grid dialog whitebg panel--padded--centered phonegap-dialog hide">
-          <div class="grid__col--12">
-            <form class="form">
-              <input class="form__input" type="number" min="0.1" step="0.1" value="0.1" data-pgb="version" />
-              <input class="form__input" type="number" min="1" step="1" value="1" data-pgb="versionCode" />
-              <textarea class="form__input resetval" data-pgb="description" placeholder="Description" rows="7">A shortcut app generated via WebDGap.</textarea>
-              <input class="form__input" data-pgb="author" placeholder="Author" value="Author" />
-              <input class="form__input" data-pgb="authoremail" placeholder="admin@website.com" value="admin@website.com" />
-              <input class="form__input" data-pgb="authorlink" placeholder="http://website.com/" value="http://website.com/" />
+    <script src="assets/web/assets/jquery/jquery.min.js"></script>
+    <script src="assets/tether/tether.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <!--<script src="assets/smooth-scroll/SmoothScroll.js"></script>-->
+    <script src="assets/viewportChecker/jquery.viewportchecker.js"></script>
+    <script src="assets/theme/js/script.js"></script>
 
-              <h4>
-                Intentions:
-              </h4>
-
-              <div class="center">
-                <input type="checkbox" id="tel" data-pgb="tel">
-                <label for="tel">Telephone</label>
-                <input type="checkbox" id="sms" data-pgb="sms">
-                <label for="sms">SMS</label>
-                <input type="checkbox" id="mailto" data-pgb="mailto">
-                <label for="mailto">Mail To</label>
-                <input type="checkbox" id="geo" data-pgb="geo">
-                <label for="geo">Geolocation</label>
-                <input type="checkbox" id="marketlinks" data-pgb="marketlinks">
-                <label for="marketlinks">Market Links</label>
-              </div>
-              
-              <h4>
-                Permissions:
-              </h4>
-
-              <div class="center">
-                <input type="checkbox" id="filestorage" data-pgb="filestorage">
-                <label for="filestorage">FileStorage</label>
-              </div>
-
-              <div class="center" style="padding-top: 45px;">
-                <input class="btn--default pgbappexport" type="button" value="Confirm">
-                <input class="btn--warning reset" type="reset" value="Reset">
-              </div>
-            </form>
-          </div>
-        </div>
-
-        <div class="grid" data-listen="site">
-          <div class="grid__col--12 panel--padded--centered">
-            <h1 class="headline-primary--grouped note export4text">
-              Note: Your browser will process the zip file, <u>don't choose a file too big!</u>
-            </h1>
-          </div>
-        </div>
-      </div>
-
-      <div class="hide">
-        <input type="file" id="load" accept="image/*" />
-      </div>
-
-      <div class="hide">
-        <input type="file" id="file" name="file" accept="application/zip,application/x-zip,application/x-zip-compressed" />
-      </div>
-
-      <div class="error_block alert alert-danger tc hide">
-        You will need a recent browser to use this demo :(
-
-        <p>
-          We recommend <a href="http://google.com/chrome" target="_blank">Google Chrome</a> or <a href="https://www.mozilla.org/en-US/firefox/new/" target="_blank">Mozilla Firefox</a>
-        </p>
-      </div>
-
-      <div class="foot hide" data-action="displayfooter">
-        <a class="logo fl">
-          <span class="logotxt">WebDGap</span>
-        </a>
-
-        <div class="footlinks fr">
-          <a data-action="reload">Home</a>
-          <a href="https://github.com/mikethedj4/WebDGap" target="_blank">Github</a>
-          <a href="https://cash.me/$mschwar4" target="_blank">Donate</a>
-
-          <div class="author">
-            Made by <a href="http://mikethedj4.github.io/" target="_blank">Michael</a> with love and caffeine.
-          </div>
-        </div>
-      </div>
-    </div>
+    <input name="animation" type="hidden">
     
-    <script src="../libraries/fancybox/js/core.js"></script>
-    <script src="../libraries/fancybox/js/fullscreen.js"></script>
-    <script src="../libraries/fancybox/js/guestures.js"></script>
-    <script src="../libraries/fancybox/js/media.js"></script>
-    <script src="../libraries/fancybox/js/slideshow.js"></script>
-    <script src="../libraries/fancybox/js/thumbs.js"></script>
-    <script src="../libraries/fancybox/js/jquery.fancybox.min.js"></script>
-    <script src="../js/webdgap.min.js"></script>
-    <script src="../js/jquery.smartbanner.js"></script>
-    <script>
-      $.smartbanner({
-        title: 'WebDGap', // What the title of the app should be in the banner (defaults to <title>)
-        author: 'Michael Schwartz', // What the author of the app should be in the banner (defaults to <meta name="author"> or hostname)
-        price: 'FREE', // Price of the app
-        appStoreLanguage: 'EN-US', // Language code for App Store
-        inGooglePlay: 'In Google Play', // Text of price for Android
-        icon: null, // The URL of the icon (defaults to <meta name="apple-touch-icon">)
-      });
-      
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-      ga('create', 'UA-75970821-2', 'auto');
-      ga('send', 'pageview');
-    </script>
+    <script src="js/webdgapjs-mod.js"></script>
+    <script src="js/extension.js"></script>
   </body>
 </html>

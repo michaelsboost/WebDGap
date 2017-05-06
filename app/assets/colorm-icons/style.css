@@ -1,0 +1,69 @@
+@font-face {
+  font-family: 'cm-icon';
+  src:  url('fonts/cm-icon.eot?kcv6p8');
+  src:  url('fonts/cm-icon.eot?kcv6p8#iefix') format('embedded-opentype'),
+    url('fonts/cm-icon.ttf?kcv6p8') format('truetype'),
+    url('fonts/cm-icon.woff?kcv6p8') format('woff'),
+    url('fonts/cm-icon.svg?kcv6p8#cm-icon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="cm-icon-"], [class*=" cm-icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'cm-icon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.cm-icon-smallarrow-up:before {
+  content: "\e908";
+}
+.cm-icon-smallarrow-left:before {
+  content: "\e909";
+}
+.cm-icon-smallarrow-right:before {
+  content: "\e90a";
+}
+.cm-icon-smallarrow-down:before {
+  content: "\e90b";
+}
+.cm-icon-clock:before {
+  content: "\e90d";
+}
+.cm-icon-paperplane:before {
+  content: "\e90c";
+}
+.cm-icon-axe:before {
+  content: "\e904";
+}
+.cm-icon-cloud:before {
+  content: "\e905";
+}
+.cm-icon-note:before {
+  content: "\e906";
+}
+.cm-icon-rocket:before {
+  content: "\e907";
+}
+.cm-icon-arrowdown:before {
+  content: "\e900";
+}
+.cm-icon-arrowright:before {
+  content: "\e901";
+}
+.cm-icon-arrowup:before {
+  content: "\e902";
+}
+.cm-icon-arrowleft:before {
+  content: "\e903";
+}
+
