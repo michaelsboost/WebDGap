@@ -1,5 +1,5 @@
 # WebDGap
-Convert any website, or web application to a native Windows, Linux, Mac, or Chrome desktop application.
+Easily create websites as multi-platform desktop apps!
 
 ![](https://raw.githubusercontent.com/mikethedj4/WebDGap/gh-pages/imgs/screenshot.png)
 
@@ -44,11 +44,15 @@ MIT
 ### Availability
 
 *(Desktop version of WebDGap is deprecated)*  
-[Windows 64](https://sourceforge.net/projects/webdgap/files/v1.2.4/WebDGap-win.zip/download)  
-[Windows 32](https://sourceforge.net/projects/webdgap/files/v1.2.4/WebDGap-win32.zip/download)  
-[Mac](https://sourceforge.net/projects/webdgap/files/v1.2.4/WebDGap-mac.zip/download)  
-[Linux 64](https://sourceforge.net/projects/webdgap/files/v1.2.4/WebDGap-lin.zip/download)  
-[Linux 32](https://sourceforge.net/projects/webdgap/files/v1.2.4/WebDGap-lin32.zip/download) 
+[Windows 64](https://sourceforge.net/projects/webdgap/files/v1.2.5%20%28requires%20wifi%29/WebDGap-win.zip/download) *(deprecated)*  
+[Windows 32](https://sourceforge.net/projects/webdgap/files/v1.2.5%20%28requires%20wifi%29/WebDGap-win32.zip/download) *(deprecated)*  
+[Mac](https://sourceforge.net/projects/webdgap/files/v1.2.5%20%28requires%20wifi%29/WebDGap-mac.zip/download) *(deprecated)*  
+[Linux 64](https://sourceforge.net/projects/webdgap/files/v1.2.5%20%28requires%20wifi%29/WebDGap-lin.zip/download) *(deprecated)*  
+[Linux 32](https://sourceforge.net/projects/webdgap/files/v1.2.5%20%28requires%20wifi%29/WebDGap-lin32.zip/download) *(deprecated)*  
+[Chrome](https://chrome.google.com/webstore/detail/webdgap/aommkjnlphiacgajemkmbnfebfbfjfhn)  
+[Chrome Extension](https://chrome.google.com/webstore/detail/webdgap/odpmjbmeopdfhcikkhpeaemfbmghpobk)  
+[Android](https://play.google.com/store/apps/details?id=com.michael.webdgap)  
+[JS Plugin](https://mikethedj4.github.io/WebDGap/plugin/)  *(aka [WebDGapJS](https://mikethedj4.github.io/WebDGap/plugin/))*
 
 For command line use you can use [nativefier](https://github.com/jiahaog/nativefier) to convert any website to a desktop app. (**NOTE**: nativefier uses an Electron wrapper. WebDGap uses a NW.js wrapper. Difference is Electron runs on 64bit processors while NW.js runs on 64bits and 32bit processors)
 
