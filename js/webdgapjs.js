@@ -66,6 +66,21 @@ function webdgap(os, YourName, AppImg, url) {
   embedImage(AppImg, "32");
   embedImage(AppImg, "64");
   embedImage(AppImg, "128");
+  // Android Icons
+  embedImage(AppImg, "96");
+  embedImage(AppImg, "72");
+  embedImage(AppImg, "48");
+  embedImage(AppImg, "36");
+  // iOS Icons
+  embedImage(AppImg, "72");
+  embedImage(AppImg, "144");
+  embedImage(AppImg, "57");
+  embedImage(AppImg, "114");
+  // Win Phone 8 Icon
+  embedImage(AppImg, "159");
+  embedImage(AppImg, "99");
+  // Blackberry Icons
+  embedImage(AppImg, "80");
 
   // Load Scripts
   function WebDGapLoadScripts() {
@@ -258,6 +273,37 @@ function webdgap(os, YourName, AppImg, url) {
       // Export application
       var content = zip.generate({type:"blob"});
       saveAs(content, YourName.replace(/ /g, "-").toLowerCase() + "-chromeext.zip");
+      endExportMSG();
+    } else if (os === "phonegap") {
+      var zip = new JSZip();
+
+      // Android Icon
+      zip.file("res/icon/android/icon-96-xhdpi.png", document.querySelector("[data-webdgapsize=f96]").src.split('base64,')[1],{base64: true});
+      zip.file("res/icon/android/icon-72-hdpi.png", document.querySelector("[data-webdgapsize=f72]").src.split('base64,')[1],{base64: true});
+      zip.file("res/icon/android/icon-48-mdpi.png", document.querySelector("[data-webdgapsize=f48]").src.split('base64,')[1],{base64: true});
+      zip.file("res/icon/android/icon-36-ldpi.png", document.querySelector("[data-webdgapsize=f36]").src.split('base64,')[1],{base64: true});
+      // iOS Icon
+      zip.file("res/icon/ios/icon-72.png", document.querySelector("[data-webdgapsize=f72]").src.split('base64,')[1],{base64: true});
+      zip.file("res/icon/ios/icon-72-2x.png", document.querySelector("[data-webdgapsize=f144]").src.split('base64,')[1],{base64: true});
+      zip.file("res/icon/ios/icon-57.png", document.querySelector("[data-webdgapsize=f57]").src.split('base64,')[1],{base64: true});
+      zip.file("res/icon/ios/icon-57-2x.png", document.querySelector("[data-webdgapsize=f114]").src.split('base64,')[1],{base64: true});
+      // Win Phone 8 Icon
+      zip.file("res/icon/wp8/ApplicationIcon.png", document.querySelector("[data-webdgapsize=f159]").src.split('base64,')[1],{base64: true});
+      zip.file("res/icon/wp8/Background.png", document.querySelector("[data-webdgapsize=f99]").src.split('base64,')[1],{base64: true});
+      // Blackberry Icon
+      zip.file("res/icon/blackberry/icon-80.png", document.querySelector("[data-webdgapsize=f80]").src.split('base64,')[1],{base64: true});
+      // WebOS Icon
+      zip.file("res/icon/webos/icon-64.png", document.querySelector("[data-webdgapsize=f64]").src.split('base64,')[1],{base64: true});
+      // Default Icon
+      zip.file("assets/logo.png", document.querySelector("[data-webdgapimgload=webdgapimg]").src.split("base64,")[1],{base64: true});
+      
+      // Files for exported app
+      zip.file("config.xml", "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<widget xmlns = \"http://www.w3.org/ns/widgets\"\n  xmlns:gap   = \"http://phonegap.com/ns/1.0\"\n  id          = \"com.webdgap."+ YourName.replace(/ /g, '').toLowerCase() +"\"\n  version     = \"0.1\"\n  versionCode = \"1\">\n  <name>"+ YourName +"</name>\n  <description>\n    A shortcut app generated via WebDGap.\n  </description>\n  <author email=\"admin@website.com\" href=\""+ url +"\">\n    John Smith\n  </author>\n\n  <content src=\"index.html\" />\n\n  <icon src=\"icon.png\" gap:role=\"default\" />\n  <icon gap:platform=\"android\" gap:qualifier=\"ldpi\" src=\"res/icon/android/icon-36-ldpi.png\" />\n  <icon gap:platform=\"android\" gap:qualifier=\"mdpi\" src=\"res/icon/android/icon-48-mdpi.png\" />\n  <icon gap:platform=\"android\" gap:qualifier=\"hdpi\" src=\"res/icon/android/icon-72-hdpi.png\" />\n  <icon gap:platform=\"android\" gap:qualifier=\"xhdpi\" src=\"res/icon/android/icon-96-xhdpi.png\" />\n  <icon gap:platform=\"android\" src=\"res/icon/android/icon-96-xhdpi.png\" />\n  <icon gap:platform=\"blackberry\" src=\"res/icon/blackberry/icon-80.png\" />\n  <icon gap:platform=\"blackberry\" gap:state=\"hover\" src=\"res/icon/blackberry/icon-80.png\" />\n  <icon gap:platform=\"ios\" height=\"57\" src=\"res/icon/ios/icon-57.png\" width=\"57\" />\n  <icon gap:platform=\"ios\" height=\"72\" src=\"res/icon/ios/icon-72.png\" width=\"72\" />\n  <icon gap:platform=\"ios\" height=\"114\" src=\"res/icon/ios/icon-57-2x.png\" width=\"114\" />\n  <icon gap:platform=\"ios\" height=\"144\" src=\"res/icon/ios/icon-72-2x.png\" width=\"144\" />\n  <icon gap:platform=\"webos\" src=\"res/icon/webos/icon-64.png\" />\n  <icon gap:platform=\"wp8\" src=\"www/res/icon/wp8/ApplicationIcon.png\" />\n  <icon gap:platform=\"wp8\" src=\"www/res/icon/wp8/Background.png\" />\n\n  <preference name=\"permissions\" value=\"none\"/>\n  <preference name=\"orientation\" value=\"default\"/>\n  <preference name=\"target-device\" value=\"universal\"/>\n  <preference name=\"webviewbounce\" value=\"false\"/>\n  <preference name=\"prerendered-icon\" value=\"true\"/>\n  <preference name=\"stay-in-webview\" value=\"false\"/>\n  <preference name=\"ios-statusbarstyle\" value=\"black-opaque\"/>\n\n  <gap:plugin name=\"cordova-plugin-inappbrowser\" source=\"npm\"/>\n  <gap:plugin name=\"cordova-plugin-network-information\" source=\"npm\"/>\n\n  <access origin=\"*\"/>\n  <gap:plugin name=\"cordova-plugin-whitelist\" source=\"npm\"/>\n\n  <preference name=\"phonegap-version\" value=\"cli-6.5.0\" />\n  <preference name=\"android-minSdkVersion\" value=\"7\" />\n  <preference name=\"android-targetSdkVersion\" value=\"19\" />\n\n  <gap:plugin name=\"cordova-plugin-file\" source=\"npm\"/>\n  <gap:plugin name=\"cordova-plugin-file-transfer\" source=\"npm\"/>\n  <preference name=\"AndroidPersistentFileLocation\" value=\"Compatibility\" />\n\n  <allow-intent href=\"http://*/*\"/>\n  <allow-intent href=\"https://*/*\"/>\n  <allow-intent href=\"tel:*\"/>\n  <allow-intent href=\"sms:*\"/>\n  <allow-intent href=\"mailto:*\"/>\n  <allow-intent href=\"geo:*\"/>\n  <allow-intent href=\"tel:*\"/>\n  <allow-intent href=\"sms:*\"/>\n  <allow-intent href=\"mailto:*\"/>\n  <allow-intent href=\"geo:*\"/>\n  <platform name=\"android\">\n    <allow-intent href=\"market:*\"/>\n  </platform>\n  <platform name=\"ios\">\n    <allow-intent href=\"itms:*\"/>\n    <allow-intent href=\"itms-apps:*\"/>\n  </platform>\n</widget>");
+      zip.file("www/index.html", "<!-- no content; just redirect user -->\n<script>\n  window.location.href = "+ url +";\n</script>");
+
+      // Export application
+      var content = zip.generate({type:"blob"});
+      saveAs(content, YourName.replace(/ /g, "-").toLowerCase() + "-pgb.zip");
       endExportMSG();
     } else {
       alert("Oops something went wrong. Maybe wrong argument for operating system? Are you using a valid image url? - https://mikethedj4.github.io/WebDGap/plugin/");
