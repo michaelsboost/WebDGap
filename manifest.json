@@ -3,7 +3,7 @@
   "name": "WebDGap",
   "short_name": "WebDGap",
   "description": "Easily create multi-platform desktop apps!",
-  "version": "1.2.5",
+  "version": "1.2.6",
   "minimum_chrome_version": "38",
   "permissions": [ "tabs", "storage", "unlimitedStorage", "http://*/", "https://*/" ],
   "icons": {
