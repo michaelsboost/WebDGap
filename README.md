@@ -82,6 +82,4 @@ You can submit a pull request or simply share the project :)
 
 Of course WebDGap is free and open source, so you can always fork the project and have fun :)
 
-If WebDGap was at all helpful for you. [Would you consider donating to the project?](https://cash.me/$mschwar4)
-
-[You can donate via PayPal too!](https://www.paypal.me/mikethedj4)
+If WebDGap was at all helpful for you. You can show your appreciation by [Donating via SquareCash](https://cash.me/$mschwar4) and/or [PayPal](https://www.paypal.me/mikethedj4)
