@@ -30,7 +30,8 @@
     <link rel="stylesheet" href="../libraries/fancybox/css/slideshow.css" />
     <link rel="stylesheet" href="../libraries/fancybox/css/thumbs.css" />
     <link rel="stylesheet" href="../libraries/fancybox/css/jquery.fancybox.min.css" />
-    <link rel="stylesheet" href="../css/style.min.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link href="../css/flag-icon.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/jquery.smartbanner.css" type="text/css" media="screen">
     <script src="../libraries/jquery/jquery.js"></script>
     <!-- <script src="../libraries/prefixfree/prefixfree.min.js"></script> -->
@@ -46,17 +47,25 @@
     <div class="wholedialog fixedfill">
       <div class="grid table">
         <div class="cell">
-        	<button class="btn--success" data-id="convertapp">Convert App</button>
+        	<button class="btn--success" data-id="convertapp" data-language="convertapp">Convert App</button>
         </div>
         <div class="cell">
-        	<button class="btn--default" data-id="convertsite">Convert Site</button>
+        	<button class="btn--default" data-id="convertsite" data-language="convertsite">Convert Site</button>
         </div>
       </div>
     </div>
+    
+    <span class="fr" style='height: 20px; margin: 2px 4px'>
+      <img src="../assets/flags/4x3/us.svg" data-set="language" style='height: 20px; margin: 5px 2px -4px 0;'>
+      <select id="setlanguage">
+        <option value="eng" data-imagesrc="../assets/flags/4x3/us.svg">English</option>
+        <option value="es" data-imagesrc="../assets/flags/4x3/es.svg">Español</option>
+      </select>
+    </span>
 
     <!-- <div class="pagefill" id="top"> -->
     <div class="pagefill" style="position: static;">
-      <div class="grid">
+      <div class="grid center">
         <header class="grid__col--12 panel--padded--centered" role="banner">
           <span class="sitelogo">
             <b class="srt">WebDGap</b>
@@ -65,12 +74,12 @@
       </div>
 
       <div class="grid">
-        <div class="grid__col--12 panel--padded--centered">
-          <h1 class="headline-primary--grouped">
+        <div class="grid__col--12 panel--padded--centered" style="padding-top: 1em;">
+          <h1 class="headline-primary--grouped" data-language="dataDescriptionH1">
             <a title="Export for tablets and smart phones" href="http://build.phonegap.com/" target="_blank"><em>PhoneGap</em></a>
              for your <u>Desktop</u> applications.
           </h1>
-          <h2 class="headline-secondary--grouped maindesc">Convert any web application to a native Windows/Linux/Mac/Chrome application.</h2>
+          <h2 class="headline-secondary--grouped maindesc" data-language="dataDescriptionH2">Convert any web application to a native Windows/Linux/Mac/Chrome application.</h2>
         </div>
       </div>
 
@@ -130,28 +139,26 @@
 
       <div class="grid logoisloadedsite">
         <div class="grid__col--12">
-          <label class="form__label--hidden" for="name">Application Name:</label>
-          <input class="form__input" type="text" id="name" placeholder="Application Name" data-id="sitename">
+          <input class="form__input" type="text" id="name" placeholder="Application Name" data-id="sitename" data-language="appname">
         </div>
         <div class="grid__col--8">
-          <label class="form__label--hidden hide" for="website">http://website.com/</label>
           <input class="form__input hide" type="text" id="website" placeholder="http://website.com/" data-action="website">
         </div>
         <div class="grid__col--3">
-          <button class="btn--default hide" data-action="applyvalues">Apply</button>
+          <button class="btn--default hide" data-action="applyvalues" data-language="applyvalues">Apply</button>
         </div>
       </div>
       <div class="grid logoisloadedapp hide">
         <div class="grid__col--12 center">
           <button class="btn--info loadzip pointa hide">
-            <label for="file" class="pointa">
+            <label for="file" class="pointa" data-language="loadZipFile">
               Load zip file
             </label>
           </button>
           <!--
           <label class="form__label--hidden" for="zipurl">http://</label> 
           <input class="form__input" type="text" id="zipurl" placeholder="http://">
-          <button class="btn--info loadzipurl pointa hide">
+          <button class="btn--info loadzipurl pointa hide" data-language="loadZipFileURL">
             Load zip from URL
           </button>
           -->
@@ -165,16 +172,16 @@
       <div class="pickbits check hide">
         <div class="grid">
           <div class="grid__col--12 panel--padded--centered">
-            <h2 class="headline-secondary--grouped export4text">Are you exporting for a 32bit or for a 64bit processor?</h2>
+            <h2 class="headline-secondary--grouped export4text" data-language="processorQues">Are you exporting for a 32bit or for a 64bit processor?</h2>
           </div>
         </div>
 
         <div class="grid center">
           <div class="grid__col--6">
-            <button class="btn--success export64">64bit</button>
+            <button class="btn--success export64" data-language="d64bit">64bit</button>
           </div>
           <div class="grid__col--6">
-            <button class="btn--default export32">32bit</button>
+            <button class="btn--default export32" data-language="d32bit">32bit</button>
           </div>
         </div>
       </div>
@@ -210,16 +217,16 @@
         <div class="pickchromes hide">
           <div class="grid">
             <div class="grid__col--12 panel--padded--centered">
-              <h2 class="headline-secondary--grouped export4text">Chrome Application, or Popup Extension?</h2>
+              <h2 class="headline-secondary--grouped export4text" data-language="dchromeExpChoic">Chrome Application, or Popup Extension?</h2>
             </div>
           </div>
 
           <div class="grid center">
             <div class="grid__col--6">
-              <button class="btn--default chromeapp">Application</button>
+              <button class="btn--default chromeapp" data-language="dapp">Application</button>
             </div>
             <div class="grid__col--6">
-              <button class="btn--default chromepopup">Popup</button>
+              <button class="btn--default chromepopup" data-language="dpopup">Popup</button>
             </div>
           </div>
 
@@ -228,10 +235,10 @@
             <div class="grid__col--12">
               <form class="form">
                 <input class="form__input " type="number" min="0.1" step="0.1" value="0.1" data-value="version">
-                <textarea class="form__input resetval" data-value="description" placeholder="Description" rows="7">A shortcut app generated via WebDGap.</textarea>
+                <textarea class="form__input resetval" data-value="description" placeholder="Description" rows="7" data-language="ddescr" data-language="ddescrval">A shortcut app generated via WebDGap.</textarea>
 
                 <span class="chromeappcheck">
-                  <h4>
+                  <h4 data-language="doffline">
                     Offline:
                   </h4>
 
@@ -245,24 +252,24 @@
                 </span>
 
                 <div class="chromeappexport">
-                  <h4>
+                  <h4 data-language="dpermissions">
                     Permissions:
                   </h4>
 
                   <div class="center">
                     <input type="checkbox" id="audiocapture" data-target="permissions">
-                    <label for="audiocapture">audioCapture</label>
+                    <label for="audiocapture" data-language="daudioCapture">audioCapture</label>
                     <input type="checkbox" id="videocapture" data-target="permissions">
-                    <label for="videocapture">videoCapture</label>
+                    <label for="videocapture" data-language="dvideoCapture">videoCapture</label>
                     <input type="checkbox" id="storage" data-target="permissions">
-                    <label for="storage">fileSystem</label>
+                    <label for="storage" data-language="dfileSystem">fileSystem</label>
                   </div>
                 </div>
 
                 <div class="center" style="padding-top: 45px;">
-                  <input class="btn--default chromeappexport hide" type="button" value="Confirm">
-                  <input class="btn--default chromepopexport hide" type="button" value="Confirm">
-                  <input class="btn--warning reset" type="reset" value="Reset">
+                  <input class="btn--default chromeappexport hide" type="button" value="Confirm" data-language="dconfirm">
+                  <input class="btn--default chromepopexport hide" type="button" value="Confirm" data-language="dconfirm">
+                  <input class="btn--warning reset" type="reset" value="Reset" data-language="dreset">
                 </div>
               </form>
             </div>
@@ -275,35 +282,35 @@
             <form class="form">
               <input class="form__input" type="number" min="0.1" step="0.1" value="0.1" data-pgb="version" />
               <input class="form__input" type="number" min="1" step="1" value="1" data-pgb="versionCode" />
-              <textarea class="form__input resetval" data-pgb="description" placeholder="Description" rows="7">A shortcut app generated via WebDGap.</textarea>
-              <input class="form__input" data-pgb="author" placeholder="Author" value="Author" />
+              <textarea class="form__input resetval" data-pgb="description" placeholder="Description" rows="7" data-language="ddescr" data-language="ddescrval">A shortcut app generated via WebDGap.</textarea>
+              <input class="form__input" data-pgb="author" placeholder="Author" value="Author" data-language="dauthour" />
               <input class="form__input" data-pgb="authoremail" placeholder="admin@website.com" value="admin@website.com" />
               <input class="form__input" data-pgb="authorlink" placeholder="http://website.com/" value="http://website.com/" />
 
-              <h4>
+              <h4 data-language="dintentions">
                 Intentions:
               </h4>
 
               <div class="center">
                 <input type="checkbox" id="tel" data-pgb="tel">
-                <label for="tel">Telephone</label>
+                <label for="tel" data-language="dtel">Telephone</label>
                 <input type="checkbox" id="sms" data-pgb="sms">
-                <label for="sms">SMS</label>
+                <label for="sms" data-language="dsms">SMS</label>
                 <input type="checkbox" id="mailto" data-pgb="mailto">
-                <label for="mailto">Mail To</label>
+                <label for="mailto" data-language="dmailto">Mail To</label>
                 <input type="checkbox" id="geo" data-pgb="geo">
-                <label for="geo">Geolocation</label>
+                <label for="geo" data-language="dgeo">Geolocation</label>
                 <input type="checkbox" id="marketlinks" data-pgb="marketlinks">
-                <label for="marketlinks">Market Links</label>
+                <label for="marketlinks" data-language="dmarketlinks">Market Links</label>
               </div>
               
-              <h4>
+              <h4 data-language="dpermissions">
                 Permissions:
               </h4>
 
               <div class="center">
                 <input type="checkbox" id="filestorage" data-pgb="filestorage">
-                <label for="filestorage">FileStorage</label>
+                <label for="filestorage" data-language="dfilestorage">FileStorage</label>
               </div>
 
               <div class="center" style="padding-top: 45px;">
@@ -316,7 +323,7 @@
 
         <div class="grid" data-listen="site">
           <div class="grid__col--12 panel--padded--centered">
-            <h1 class="headline-primary--grouped note export4text">
+            <h1 class="headline-primary--grouped note export4text" data-language="dzipnote">
               Note: Your browser will process the zip file, <u>don't choose a file too big!</u>
             </h1>
           </div>
@@ -332,9 +339,9 @@
       </div>
 
       <div class="error_block alert alert-danger tc hide">
-        You will need a recent browser to use this demo :(
+        <span data-language="browsernote">You will need a recent browser to use this demo :(</span>
 
-        <p>
+        <p data-language="updatebrowser">
           We recommend <a href="http://google.com/chrome" target="_blank">Google Chrome</a> or <a href="https://www.mozilla.org/en-US/firefox/new/" target="_blank">Mozilla Firefox</a>
         </p>
       </div>
@@ -345,12 +352,12 @@
         </a>
 
         <div class="footlinks fr">
-          <a data-action="reload">Home</a>
-          <a href="https://github.com/mikethedj4/WebDGap" target="_blank">Github</a>
-          <a href="https://cash.me/$mschwar4" target="_blank">Donate</a>
+          <a data-action="reload" data-language="home">Home</a>
+          <a href="https://github.com/mikethedj4/WebDGap" target="_blank" data-language="github">Github</a>
+          <a href="https://cash.me/$mschwar4" target="_blank" data-language="donate">Donate</a>
 
-          <div class="author">
-            Made by <a href="http://mikethedj4.github.io/" target="_blank">Michael</a> with love and caffeine.
+          <div class="author" data-language="author">
+            Made by <a href="http://mikethedj4.github.io/" target="_blank">Michael</a> with <span class="fa fa-heart" style="color: #f66;"></span> and <span class="fa fa-coffee" style="color: #52bab3;"></span>.
           </div>
         </div>
       </div>
@@ -363,7 +370,7 @@
     <script src="../libraries/fancybox/js/slideshow.js"></script>
     <script src="../libraries/fancybox/js/thumbs.js"></script>
     <script src="../libraries/fancybox/js/jquery.fancybox.min.js"></script>
-    <script src="../js/webdgap.min.js"></script>
+    <script src="../js/webdgap.js"></script>
     <script src="../js/jquery.smartbanner.js"></script>
     <script>
       $.smartbanner({

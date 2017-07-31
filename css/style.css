@@ -15,6 +15,9 @@ a, .pointer {
 a {
   text-decoration: none;
 }
+textarea {
+  resize: vertical;
+}
 
 /* Alignment */
 .center {
@@ -183,13 +186,13 @@ a {
   box-sizing: border-box;
 }
 .onoffswitch-inner:before {
-  content: "Yes";
+  content: " ";
   padding-left: 10px;
   background-color: #34A7C1;
   color: #fff;
 }
 .onoffswitch-inner:after {
-  content: "No";
+  content: " ";
   padding-right: 10px;
   background-color: #eee;
   color: #999;
