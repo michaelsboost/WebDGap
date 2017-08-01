@@ -79,7 +79,12 @@ if (window.location.hash) {
 
 $('[data-callLang]').on('click', function() {
   //change flag to selected language
-  $("[data-language=setflag]").attr('src', this.src);
+  $("[data-language=setflag]").attr('src', $(this).find('img').attr('src'));
+  
+  if ($(this).attr('data-callLang') === "eng") {
+    window.location.href = window.location.toString().split(/\?|#/)[0];
+    return false;
+  }
   
   window.location.hash = $(this).attr('data-callLang')
   location.reload(true);
