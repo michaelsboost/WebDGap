@@ -1,5 +1,7 @@
 var language = {
   es: {
+    appTitle: "WebDGap: ¡Crea fácilmente aplicaciones de escritorio multiplataforma!",
+    appdescrip: "Convierta cualquier aplicación web en una aplicación de escritorio nativa para Windows, Linux o Mac OS X.",
     setflag: "assets/flags/4x3/es.svg",
     ldwnload: "DESCARGAR",
     ldwnloadc: "CROMADA",
@@ -43,6 +45,8 @@ if (window.location.hash) {
   }
   else if (location.hash.substring(1) === "es") {
     $("[data-language=setflag]").attr('src', language.es.setflag);
+    document.title = language.es.appTitle;
+    $("meta[name-description]").attr('content', language.es.appdescrip);
     $("[data-language=ldwnload]").text(language.es.ldwnload);
     $("[data-language=ldwnloadc]").text(language.es.ldwnloadc);
     $("[data-language=ldwnloadce]").text(language.es.ldwnloadce);
