@@ -52,6 +52,7 @@ if (window.location.hash) {
     $("[data-language=ldonatesc]").text(language.es.ldonatesc);
     $("[data-language=lcontribute]").text(language.es.lcontribute);
     $("[data-language=lrun]").text(language.es.lrun);
+    $("[data-language=lrun]").attr("href", "app/" + location.hash);
     $("[data-language=intro]").text(language.es.intro);
     $("[data-language=playvid]").text(language.es.playvid);
     $("[data-language=vidURL1]").attr('href', language.es.vidURL1);
