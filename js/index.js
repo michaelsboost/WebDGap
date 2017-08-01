@@ -1,6 +1,6 @@
 var language = {
   es: {
-    setflag: "../assets/flags/4x3/es.svg",
+    setflag: "assets/flags/4x3/es.svg",
     ldwnload: "DESCARGAR",
     ldwnloadc: "CROMADA",
     ldwnloadce: "EXTENSIÓN CROMADA",
