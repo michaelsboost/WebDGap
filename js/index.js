@@ -4,8 +4,14 @@ var language = {
     appdescrip: "Convierta cualquier aplicación web en una aplicación de escritorio nativa para Windows, Linux o Mac OS X.",
     setflag: "assets/flags/4x3/es.svg",
     ldwnload: "DESCARGAR",
+    ldwnloadwin: "WINDOWS",
+    ldwnloadwin32: "WINDOWS 32BIT",
+    ldwnloadmac: "MAC",
+    ldwnloadlin: "LINUX I832",
+    ldwnloadlin64: "LINUX",
     ldwnloadc: "CROMADA",
     ldwnloadce: "EXTENSIÓN CROMADA",
+    ldwnloada: "ANDROID",
     ldwnloadjp: "PLUGIN JAVASCRIPT",
     ldonate: "DONAR",
     ldonatepp: "DONAR CON PAYPAL",
@@ -29,10 +35,14 @@ var language = {
     revh1: "LO QUE DICEN NUESTROS FANTÁSTICOS USUARIOS",
     revh2: "¡Forme su futuro proyecto de escritorio con WebDGap!",
     rev1: "\"En primer lugar manos fuera a ustedes por su esfuerzo y agradable, super herramienta. Buen trabajo WebDGap equipo! Gran esfuerzo y experiencia super de interfaz de usuario. Increíblemente fácil! \"",
+    rev1name: "Mark C.",
     rev2: "\"Es una aplicación muy sorprendente que me hace hacer aplicaciones de escritorio en 3 minutos (que por lo general se tarda más de 2 horas al menos de mí si lo hice desde cero). Espero tener una biblioteca muy grande y plugins para esta APP gracias de nuevo por tu bonita aplicación \"",
+    rev2name: "Sarah Y.",
     rev3: "\"A primera vista, se ve como una buena herramienta innovadora. Me gusta el gran enfoque y el tiempo que se dio a la respuesta diseño claro. La aplicación me da más control sobre qué plataformas quiero exportar. Estaré usando esta herramienta para proyectos más serios. Saludos.\"",
+    rev3name: "Jon E.",
     userbio: "Usuario",
-    featurelink: "¡Destaca tu aplicación aquí!",
+    madewwebdgap: "Hecho con WebDGap",
+    submitapp: "¡Presente el suyo hoy!",
     madeby: "Hecho con <span class=\"fa fa-heart\" style=\"color: #f66;\"></span> y <span class=\"fa fa-coffee\" style=\"color: #52bab3;\"></span> por <a href=\"http://mikethedj4.github.io/\" target=\"_blank\">Michael</a> y otros."
   }
 };
@@ -48,8 +58,14 @@ if (window.location.hash) {
     document.title = language.es.appTitle;
     $("meta[name-description]").attr('content', language.es.appdescrip);
     $("[data-language=ldwnload]").text(language.es.ldwnload);
+    $("[data-language=ldwnloadwin]").text(language.es.ldwnloadwin);
+    $("[data-language=ldwnloadwin32]").text(language.es.ldwnloadwin32);
+    $("[data-language=ldwnloadmac]").text(language.es.ldwnloadmac);
+    $("[data-language=ldwnloadlin]").text(language.es.ldwnloadlin);
+    $("[data-language=ldwnloadlin64]").text(language.es.ldwnloadlin64);
     $("[data-language=ldwnloadc]").text(language.es.ldwnloadc);
     $("[data-language=ldwnloadce]").text(language.es.ldwnloadce);
+    $("[data-language=ldwnloada]").text(language.es.ldwnloada);
     $("[data-language=ldwnloadjp]").text(language.es.ldwnloadjp);
     $("[data-language=ldonate]").text(language.es.ldonate);
     $("[data-language=ldonatepp]").text(language.es.ldonatepp);
@@ -77,7 +93,8 @@ if (window.location.hash) {
     $("[data-language=rev2]").text(language.es.rev2);
     $("[data-language=rev3]").text(language.es.rev3);
     $("[data-language=userbio]").text(language.es.userbio);
-    $("[data-language=featurelink]").text(language.es.featurelink);
+    $("[data-language=madewwebdgap]").text(language.es.madewwebdgap);
+    $("[data-language=submitapp]").text(language.es.submitapp);
     $("[data-language=madeby]").html(language.es.madeby);
   }
 }

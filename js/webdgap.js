@@ -5,200 +5,161 @@
 // This is WebDGap (https://mikethedj4.github.io/WebDGap/), Easily create multi-platform desktop apps.
 // implemented in JavaScript!
 
-var language = {
-  eng: {
-    dyes: "Yes",
-    dno: "No",
-    instructionalGuide: "Instructional Guide!",
-    donateAlert: "Help keep this free!",
-    buyBtn: "buy now",
-    convertapp: "Convert App",
-    convertsite: "Convert Site",
-    appname: "Application Name",
-    mainDesc: "Convert any web application to a native Windows/Linux/Mac/Chrome application.",
-    mainSiteDesc: "Convert any website to a native Windows/Linux/Mac/Chrome application.",
-    dataDescriptionH1: "<a title=\"Export for tablets and smart phones\" href=\"http://build.phonegap.com/\" target=\"_blank\"><em>PhoneGap</em></a> for your <u>Desktop</u> applications.",
-    dataDescriptionH2: "Convert any web application to a native Windows/Linux/Mac/Chrome application.",
-    applyvalues: "Apply",
-    loadZipFile: "Load zip file",
-    loadZipFileURL: "Load zip from URL",
-    processorQues: "Are you exporting for a 32bit or for a 64bit processor?",
-    d64bit: "64bit",
-    d32bit: "32bit",
-    dchromeExpChoic: "Chrome Application, or Popup Extension?",
-    dapp: "Application",
-    dpopup: "Popup",
-    ddescr: "Description",
-    ddescrval: "A shortcut app generated via WebDGap.",
-    doffline: "Offline",
-    dpermissions: "Permissions",
-    daudioCapture: "audioCapture",
-    dvideoCapture: "videoCapture",
-    dfileSystem: "fileSystem",
-    dconfirm: "Confirm",
-    dreset: "Reset",
-    dtel: "Telephone",
-    dsms: "SMS",
-    dmailto: "Mail To",
-    dgeo: "Geolocation",
-    dmarketlinks: "Market Links",
-    dfilestorage: "FileStorage",
-    dauthour: "Author",
-    dintentions: "Intentions",
-    dzipnote: "Note: Your browser will process the zip file, <u>don't choose a file too big!</u>",
-    browsernote: "You will need a recent browser to use this demo :(",
-    updatebrowser: "We recommend <a href=\"http://google.com/chrome\" target=\"_blank\">Google Chrome</a> or <a href=\"https://www.mozilla.org/en-US/firefox/new/\" target=\"_blank\">Mozilla Firefox</a>",
-    home: "Home",
-    github: "Github",
-    donate: "Donate",
-    author: "Made by <a href=\"http://mikethedj4.github.io/\" target=\"_blank\">Michael</a> with <span class=\"fa fa-heart\" style=\"color: #f66;\"></span> and <span class=\"fa fa-coffee\" style=\"color: #52bab3;\"></span>.",
-    httpsNoRecommend: "https is not recommend.<br /><br /> If needed use <a href=\"https://bitly.com/shorten/\">Bitly</a> to set url to http.",
-    noFileApi: "The File APIs are not fully supported in this browser.",
-    errorReading: "Error reading",
-    blankDescription: "Unable to export: Description is blank!",
-    unableToExportFields: "Unable to export: All fields must have a value!",
-    dvalueisblank: "Unable to perform operation as value is blank!",
-    urlExportError: "Error! \"http://\" and \"https://\" urls are only supported!"
-  },
-  es: {
-    dyes: "Sí",
-    dno: "No",
-    instructionalGuide: "Guía de Instrucción!",
-    donateAlert: "¡Ayuda a mantener esto gratis!",
-    buyBtn: "compra ahora",
-    convertapp: "Convertir la Aplicación",
-    convertsite: "Convertir Sitio",
-    appname: "Nombre de la aplicación",
-    mainDesc: "Convierta cualquier aplicación web en una aplicación nativa de Windows/Linux/Mac/Chrome.",
-    mainSiteDesc: "Convierta cualquier sitio web en una aplicación nativa de Windows/Linux/Mac/Chrome.",
-    dataDescriptionH1: "<a title=\"Exportación de tabletas y teléfonos inteligentes\" href=\"http://build.phonegap.com/\" target=\"_blank\"><em>PhoneGap</em></a> para sus aplicaciones <u>Desktop</u>.",
-    dataDescriptionH2: "Convierta cualquier aplicación web en una aplicación nativa de Windows/Linux/Mac/Chrome.",
-    applyvalues: "Aplicar",
-    loadZipFile: "Cargar archivo zip",
-    loadZipFileURL: "Cargar zip desde url",
-    processorQues: "¿Está exportando para un procesador de 32bit o para un procesador de 64bit?",
-    d64bit: "64bit",
-    d32bit: "32bit",
-    dchromeExpChoic: "Aplicación de Chrome o extensión de Popup?",
-    dapp: "Aplicación",
-    dpopup: "Popup",
-    ddescr: "Descripción",
-    ddescrval: "Una aplicación de acceso directo generada por WebDGap.",
-    doffline: "Desconectado",
-    dpermissions: "Permisos",
-    daudioCapture: "audioCapture",
-    dvideoCapture: "videoCapture",
-    dfileSystem: "fileSystem",
-    dconfirm: "Confirmar",
-    dreset: "Reiniciar",
-    dtel: "Teléfono",
-    dsms: "SMS",
-    dmailto: "Correo a",
-    dgeo: "Geolocalización",
-    dmarketlinks: "Enlaces del mercado",
-    dfilestorage: "Almacenamiento de archivos",
-    dauthour: "Autor",
-    dintentions: "Intenciones",
-    dzipnote: "Nota: Su navegador procesará el archivo zip, <u>no elija un archivo demasiado grande!</u>",
-    browsernote: "Necesitarás un navegador reciente para usar esta demo :(",
-    updatebrowser: "Recomendamos <a href=\"http://google.com/chrome\" target=\"_blank\">Google Chrome</a> o <a href=\"https://www.mozilla.org/en-US/firefox/new/\" target=\"_blank\">Mozilla Firefox</a>",
-    home: "Casa",
-    github: "Github",
-    donate: "Donar",
-    author: "Hecho por <a href=\"http://mikethedj4.github.io/\" target=\"_blank\">Michael</a> con <span class=\"fa fa-heart\" style=\"color: #f66;\"></span> y <span class=\"fa fa-coffee\" style=\"color: #52bab3;\"></span>.",
-    httpsNoRecommend: "https no es recomendable.<br /><br /> Si es necesario, utilice <a href=\"https://bitly.com/shorten/\">Bitly</a> para establecer url a http.",
-    noFileAPI: "Las API de archivos no son totalmente compatibles con este navegador.",
-    errorReading: "Error de lectura",
-    blankDescription: "No se puede exportar: la descripción está en blanco!",
-    unableToExportFields: "No se puede exportar: todos los campos deben tener un valor!",
-    dvalueisblank: "¡No se puede realizar la operación porque el valor está en blanco!",
-    urlExportError: "¡Error! Las urls \"http://\" y \"https://\" solo son compatibles!"
-  }
-};
-
-// Run Onload
-$("html, body").animate({ scrollTop: 0 }, "slow");
-document.querySelector(".dialog").style.display = "none";
-
-document.querySelector(".export64").onclick = function() {
-  $(".64bit").removeClass("hide");
-  $(".32bit").addClass("hide");
-  $("html, body").animate({ scrollTop: $(".chosenbit").offset().top }, "slow");
-};
-document.querySelector(".export32").onclick = function() {
-  $(".64bit").addClass("hide");
-  $(".32bit").removeClass("hide");
-  $("html, body").animate({ scrollTop: $(".chosenbit").offset().top }, "slow");
-};
-
-function initforEnglish() {
-  $(document.body).append('<style>.onoffswitch-inner:before {content: "'+ language.eng.dyes +'";}.onoffswitch-inner:after {content: "'+ language.eng.dno +'";}</style>');
-  $("#setlanguage option[value=eng]").attr("selected", true);
-  $('[data-set=language]').attr('src', $("#setlanguage option:selected").attr('data-imagesrc'));
-  
-  $("[data-id=convertapp], [data-id=convertsite]").on("click", function() {
-    if ( $(this).attr("data-id").toLowerCase() === "convertapp" ) {
-      document.querySelector(".maindesc").textContent = language.eng.mainDesc;
-      $("[data-id=appspace]").removeClass("hide");
-      $(".export-for-pgb").addClass("export-pgbapp");
-      $(".export-as-win32-app, .export-as-win-app, .export-as-mac-app, .export-as-lin32-app, .export-as-lin-app").addClass("exportedwebapp");
-    } else if ( $(this).attr("data-id").toLowerCase() === "convertsite" ) {
-      document.querySelector(".maindesc").textContent = language.eng.mainSiteDesc;
-      $("[data-id=webspace]").removeClass("hide");
-      $(".outputname").addClass("convertsite-picked");
-      $("[data-id=sitename]").addClass("convertsite-chosen");
-      $(".logoisloadedapp, [data-listen=site]").addClass("hide");
-      document.querySelector(".export-for-pgb").href = "https://gonative.io/";
-      document.querySelector(".export-for-pgb").target = "_blank";
-      $(".export-as-win32-app, .export-as-win-app, .export-as-mac-app, .export-as-lin32-app, .export-as-lin-app").addClass("exportedwebsite");
-    }
-
-    $("[data-id=sitename]").focus();
-    $("body").removeClass("noscroll");
-    $(".wholedialog").fadeOut();
-  });
-    
-  // Show Lightbox Video Onload
-  var playGuide = function() {
-    $.fancybox.open({
-      youtube : {
-        controls : 0,
-        showinfo : 0
+// Set Application Language Onload
+var blankDescription, noFileAPI, errorReading,
+    dvalueisblank, unableToExportFields, urlExportError,
+    dyes, dno, mainDesc, mainSiteDesc,
+    instructionalGuide, donateAlert, buyBtn, httpsNoRecommend,
+    language = {
+      eng: {
+        dyes: "Yes",
+        dno: "No",
+        instructionalGuide: "Instructional Guide!",
+        donateAlert: "Help keep this free!",
+        buyBtn: "buy now",
+        convertapp: "Convert App",
+        convertsite: "Convert Site",
+        appname: "Application Name",
+        mainDesc: "Convert any web application to a native Windows/Linux/Mac/Chrome application.",
+        mainSiteDesc: "Convert any website to a native Windows/Linux/Mac/Chrome application.",
+        dataDescriptionH1: "<a title=\"Export for tablets and smart phones\" href=\"http://build.phonegap.com/\" target=\"_blank\"><em>PhoneGap</em></a> for your <u>Desktop</u> applications.",
+        dataDescriptionH2: "Convert any web application to a native Windows/Linux/Mac/Chrome application.",
+        applyvalues: "Apply",
+        loadZipFile: "Load zip file",
+        loadZipFileURL: "Load zip from URL",
+        processorQues: "Are you exporting for a 32bit or for a 64bit processor?",
+        d64bit: "64bit",
+        d32bit: "32bit",
+        dchromeExpChoic: "Chrome Application, or Popup Extension?",
+        dapp: "Application",
+        dpopup: "Popup",
+        ddescr: "Description",
+        ddescrval: "A shortcut app generated via WebDGap.",
+        doffline: "Offline",
+        dpermissions: "Permissions",
+        daudioCapture: "audioCapture",
+        dvideoCapture: "videoCapture",
+        dfileSystem: "fileSystem",
+        dconfirm: "Confirm",
+        dreset: "Reset",
+        dtel: "Telephone",
+        dsms: "SMS",
+        dmailto: "Mail To",
+        dgeo: "Geolocation",
+        dmarketlinks: "Market Links",
+        dfilestorage: "FileStorage",
+        dauthour: "Author",
+        dintentions: "Intentions",
+        dzipnote: "Note: Your browser will process the zip file, <u>don't choose a file too big!</u>",
+        browsernote: "You will need a recent browser to use this demo :(",
+        updatebrowser: "We recommend <a href=\"http://google.com/chrome\" target=\"_blank\">Google Chrome</a> or <a href=\"https://www.mozilla.org/en-US/firefox/new/\" target=\"_blank\">Mozilla Firefox</a>",
+        home: "Home",
+        github: "Github",
+        donate: "Donate",
+        author: "Made by <a href=\"http://mikethedj4.github.io/\" target=\"_blank\">Michael</a> with <span class=\"fa fa-heart\" style=\"color: #f66;\"></span> and <span class=\"fa fa-coffee\" style=\"color: #52bab3;\"></span>.",
+        httpsNoRecommend: "https is not recommend.<br /><br /> If needed use <a href=\"https://bitly.com/shorten/\">Bitly</a> to set url to http.",
+        noFileApi: "The File APIs are not fully supported in this browser.",
+        errorReading: "Error reading",
+        blankDescription: "Unable to export: Description is blank!",
+        unableToExportFields: "Unable to export: All fields must have a value!",
+        dvalueisblank: "Unable to perform operation as value is blank!",
+        urlExportError: "Error! \"http://\" and \"https://\" urls are only supported!"
       },
-      src  : 'https://www.youtube.com/embed/-AszZcClVXA', // Source of the content
-      type : 'iframe', // Content type: image|inline|ajax|iframe|html (optional)
-      opts : {
-        // Promote T-Shirt
-        beforeClose: function() {
-          alertify.message("<div class=\"grid\"><div class=\"centered grid__col--12 tc\"><h2>"+ language.eng.donateAlert +"</h2><a href=\"https://snaptee.co/t/rjezt/?r=fb&teeId=rjezt\" target=\"_blank\"><img src=\"../assets/images/model-600x600.jpg\" width=\"100%\"></a><a class=\"btn--success\" href=\"https://snaptee.co/t/rjezt/?r=fb&teeId=rjezt\" target=\"_blank\" style=\"width: 100%;\">"+ language.eng.buyBtn +"</a></div></div>");
-        }
+      es: {
+        dyes: "Sí",
+        dno: "No",
+        instructionalGuide: "Guía de Instrucción!",
+        donateAlert: "¡Ayuda a mantener esto gratis!",
+        buyBtn: "compra ahora",
+        convertapp: "Convertir la Aplicación",
+        convertsite: "Convertir Sitio",
+        appname: "Nombre de la aplicación",
+        mainDesc: "Convierta cualquier aplicación web en una aplicación nativa de Windows/Linux/Mac/Chrome.",
+        mainSiteDesc: "Convierta cualquier sitio web en una aplicación nativa de Windows/Linux/Mac/Chrome.",
+        dataDescriptionH1: "<a title=\"Exportación de tabletas y teléfonos inteligentes\" href=\"http://build.phonegap.com/\" target=\"_blank\"><em>PhoneGap</em></a> para sus aplicaciones <u>Desktop</u>.",
+        dataDescriptionH2: "Convierta cualquier aplicación web en una aplicación nativa de Windows/Linux/Mac/Chrome.",
+        applyvalues: "Aplicar",
+        loadZipFile: "Cargar archivo zip",
+        loadZipFileURL: "Cargar zip desde url",
+        processorQues: "¿Está exportando para un procesador de 32bit o para un procesador de 64bit?",
+        d64bit: "64bit",
+        d32bit: "32bit",
+        dchromeExpChoic: "Aplicación de Chrome o extensión de Popup?",
+        dapp: "Aplicación",
+        dpopup: "Popup",
+        ddescr: "Descripción",
+        ddescrval: "Una aplicación de acceso directo generada por WebDGap.",
+        doffline: "Desconectado",
+        dpermissions: "Permisos",
+        daudioCapture: "audioCapture",
+        dvideoCapture: "videoCapture",
+        dfileSystem: "fileSystem",
+        dconfirm: "Confirmar",
+        dreset: "Reiniciar",
+        dtel: "Teléfono",
+        dsms: "SMS",
+        dmailto: "Correo a",
+        dgeo: "Geolocalización",
+        dmarketlinks: "Enlaces del mercado",
+        dfilestorage: "Almacenamiento de archivos",
+        dauthour: "Autor",
+        dintentions: "Intenciones",
+        dzipnote: "Nota: Su navegador procesará el archivo zip, <u>no elija un archivo demasiado grande!</u>",
+        browsernote: "Necesitarás un navegador reciente para usar esta demo :(",
+        updatebrowser: "Recomendamos <a href=\"http://google.com/chrome\" target=\"_blank\">Google Chrome</a> o <a href=\"https://www.mozilla.org/en-US/firefox/new/\" target=\"_blank\">Mozilla Firefox</a>",
+        home: "Casa",
+        github: "Github",
+        donate: "Donar",
+        author: "Hecho por <a href=\"http://mikethedj4.github.io/\" target=\"_blank\">Michael</a> con <span class=\"fa fa-heart\" style=\"color: #f66;\"></span> y <span class=\"fa fa-coffee\" style=\"color: #52bab3;\"></span>.",
+        httpsNoRecommend: "https no es recomendable.<br /><br /> Si es necesario, utilice <a href=\"https://bitly.com/shorten/\">Bitly</a> para establecer url a http.",
+        noFileAPI: "Las API de archivos no son totalmente compatibles con este navegador.",
+        errorReading: "Error de lectura",
+        blankDescription: "No se puede exportar: la descripción está en blanco!",
+        unableToExportFields: "No se puede exportar: todos los campos deben tener un valor!",
+        dvalueisblank: "¡No se puede realizar la operación porque el valor está en blanco!",
+        urlExportError: "¡Error! Las urls \"http://\" y \"https://\" solo son compatibles!"
       }
-    });
-  };
-
-  // Watch How To Video
-  alertify.message("<div class=\"grid\"><div class=\"centered grid__col--12 tc\"><h2>"+ language.eng.instructionalGuide +"</h2><a class=\"pointer\" onclick=\"playGuide()\"><img src=\"../imgs/playvideo.svg\" width=\"50%\"></a></div></div>");
-
-  // Promote T-Shirt
-  setTimeout(function() {
-    alertify.message("<div class=\"grid\"><div class=\"centered grid__col--12 tc\"><h2>"+ language.eng.donateAlert +"</h2><a href=\"https://snaptee.co/t/vjezt/?r=fb&teeId=vjezt\" target=\"_blank\"><img src=\"../assets/images/model-1-600x600.jpg\" width=\"100%\"></a><a class=\"btn--success\" href=\"https://snaptee.co/t/vjezt/?r=fb&teeId=vjezt\" target=\"_blank\" style=\"width: 100%;\">"+ language.eng.buyBtn +"</a></div></div>");
-  }, 5000);
-  
-  document.querySelector("[data-action=website]").onkeyup = function(e) {
-    if (this.value.toLowerCase().substring(0,8) === "https://") {
-      alertify.message(language.eng.httpsNoRecommend);
-    }
-  };
-}
+    };
 
 // Export App or Site?
 if (window.location.hash) {
   if (location.hash.substring(1) === "eng") {
-    initforEnglish();
+    blankDescription = language.eng.blankDescription;
+    noFileAPI = language.eng.noFileAPI;
+    errorReading = language.eng.errorReading;
+    dvalueisblank = language.eng.dvalueisblank;
+    unableToExportFields = language.eng.unableToExportFields;
+    urlExportError = language.eng.urlExportError;
+    dyes = language.eng.dyes;
+    dno = language.eng.dno;
+    mainDesc = language.eng.mainDesc;
+    mainSiteDesc = language.eng.mainSiteDesc;
+    instructionalGuide = language.eng.instructionalGuide;
+    donateAlert = language.eng.donateAlert;
+    buyBtn = language.eng.buyBtn;
+    httpsNoRecommend = language.eng.httpsNoRecommend;
   } 
   else if (location.hash.substring(1) === "es") {
-    $("#setlanguage option[value=es]").attr("selected", true);
-    $('[data-set=language]').attr('src', $("#setlanguage option:selected").attr('data-imagesrc'));
+    blankDescription = language.es.blankDescription;
+    noFileAPI = language.es.noFileAPI;
+    errorReading = language.es.errorReading;
+    dvalueisblank = language.es.dvalueisblank;
+    unableToExportFields = language.es.unableToExportFields;
+    urlExportError = language.es.urlExportError;
+    dyes = language.es.dyes;
+    dno = language.es.dno;
+    mainDesc = language.es.mainDesc;
+    mainSiteDesc = language.es.mainSiteDesc;
+    instructionalGuide = language.es.instructionalGuide;
+    donateAlert = language.es.donateAlert;
+    buyBtn = language.es.buyBtn;
+    httpsNoRecommend = language.es.httpsNoRecommend;
+    
+    setTimeout(function() {
+      $("#setlanguage option[value=es]").prop("selected", true);
+      $('[data-set=language]').attr('src', $("#setlanguage option:selected").attr('data-imagesrc'));
+    }, 150);
+    
     $('[data-language=convertapp]').text(language.es.convertapp);
     $('[data-language=convertsite]').text(language.es.convertsite);
     $('[data-language=appname]').attr('placeholder', language.es.appname);
@@ -238,67 +199,96 @@ if (window.location.hash) {
     $('[data-language=github]').text(language.es.github);
     $('[data-language=donate]').text(language.es.donate);
     $('[data-language=author]').html(language.es.author);
-
-    $(document.body).append('<style>.onoffswitch-inner:before {content: "'+ language.es.dyes +'";}.onoffswitch-inner:after {content: "'+ language.es.dno +'";}</style>');
-    
-    $("[data-id=convertapp], [data-id=convertsite]").on("click", function() {
-      if ( $(this).attr("data-id").toLowerCase() === "convertapp" ) {
-        document.querySelector(".maindesc").textContent = language.es.mainDesc;
-        $("[data-id=appspace]").removeClass("hide");
-        $(".export-for-pgb").addClass("export-pgbapp");
-        $(".export-as-win32-app, .export-as-win-app, .export-as-mac-app, .export-as-lin32-app, .export-as-lin-app").addClass("exportedwebapp");
-      } else if ( $(this).attr("data-id").toLowerCase() === "convertsite" ) {
-        document.querySelector(".maindesc").textContent = language.es.mainSiteDesc;
-        $("[data-id=webspace]").removeClass("hide");
-        $(".outputname").addClass("convertsite-picked");
-        $("[data-id=sitename]").addClass("convertsite-chosen");
-        $(".logoisloadedapp, [data-listen=site]").addClass("hide");
-        document.querySelector(".export-for-pgb").href = "https://gonative.io/";
-        document.querySelector(".export-for-pgb").target = "_blank";
-        $(".export-as-win32-app, .export-as-win-app, .export-as-mac-app, .export-as-lin32-app, .export-as-lin-app").addClass("exportedwebsite");
-      }
-
-      $("[data-id=sitename]").focus();
-      $("body").removeClass("noscroll");
-      $(".wholedialog").fadeOut();
-    });
-    
-    // Show Lightbox Video Onload
-    var playGuide = function() {
-      $.fancybox.open({
-        youtube : {
-          controls : 0,
-          showinfo : 0
-        },
-        src  : 'https://www.youtube.com/embed/-AszZcClVXA', // Source of the content
-        type : 'iframe', // Content type: image|inline|ajax|iframe|html (optional)
-        opts : {
-          // Promote T-Shirt
-          beforeClose: function() {
-            alertify.message("<div class=\"grid\"><div class=\"centered grid__col--12 tc\"><h2>"+ language.es.donateAlert +"</h2><a href=\"https://snaptee.co/t/rjezt/?r=fb&teeId=rjezt\" target=\"_blank\"><img src=\"../assets/images/model-600x600.jpg\" width=\"100%\"></a><a class=\"btn--success\" href=\"https://snaptee.co/t/rjezt/?r=fb&teeId=rjezt\" target=\"_blank\" style=\"width: 100%;\">"+ language.es.buyBtn +"</a></div></div>");
-          }
-        }
-      });
-    };
-
-    // Watch How To Video
-    alertify.message("<div class=\"grid\"><div class=\"centered grid__col--12 tc\"><h2>"+ language.es.instructionalGuide +"</h2><a class=\"pointer\" onclick=\"playGuide()\"><img src=\"../imgs/playvideo.svg\" width=\"50%\"></a></div></div>");
-
-    // Promote T-Shirt
-    setTimeout(function() {
-      alertify.message("<div class=\"grid\"><div class=\"centered grid__col--12 tc\"><h2>"+ language.es.donateAlert +"</h2><a href=\"https://snaptee.co/t/vjezt/?r=fb&teeId=vjezt\" target=\"_blank\"><img src=\"../assets/images/model-1-600x600.jpg\" width=\"100%\"></a><a class=\"btn--success\" href=\"https://snaptee.co/t/vjezt/?r=fb&teeId=vjezt\" target=\"_blank\" style=\"width: 100%;\">"+ language.es.buyBtn +"</a></div></div>");
-    }, 5000);
-  
-    document.querySelector("[data-action=website]").onkeyup = function(e) {
-      if (this.value.toLowerCase().substring(0,8) === "https://") {
-        alertify.message(language.es.httpsNoRecommend);
-      }
-    };
   }
 } else {
-  window.location.hash = "eng";
-  location.reload(true);
+  blankDescription = language.eng.blankDescription;
+  noFileAPI = language.eng.noFileAPI;
+  errorReading = language.eng.errorReading;
+  dvalueisblank = language.eng.dvalueisblank;
+  unableToExportFields = language.eng.unableToExportFields;
+  urlExportError = language.eng.urlExportError;
+  dyes = language.eng.dyes;
+  dno = language.eng.dno;
+  mainDesc = language.eng.mainDesc;
+  mainSiteDesc = language.eng.mainSiteDesc;
+  instructionalGuide = language.eng.instructionalGuide;
+  donateAlert = language.eng.donateAlert;
+  buyBtn = language.eng.buyBtn;
+  httpsNoRecommend = language.eng.httpsNoRecommend;
 }
+
+// Run Onload
+$(document.body).append('<style>.onoffswitch-inner:before {content: "'+ dyes +'";}.onoffswitch-inner:after {content: "'+ dno +'";}</style>');
+$("#setlanguage option[value=eng]").attr("selected", true);
+$('[data-set=language]').attr('src', $("#setlanguage option:selected").attr('data-imagesrc'));
+
+$("[data-id=convertapp], [data-id=convertsite]").on("click", function() {
+  if ( $(this).attr("data-id").toLowerCase() === "convertapp" ) {
+    document.querySelector(".maindesc").textContent = mainDesc;
+    $("[data-id=appspace]").removeClass("hide");
+    $(".export-for-pgb").addClass("export-pgbapp");
+    $(".export-as-win32-app, .export-as-win-app, .export-as-mac-app, .export-as-lin32-app, .export-as-lin-app").addClass("exportedwebapp");
+  } else if ( $(this).attr("data-id").toLowerCase() === "convertsite" ) {
+    document.querySelector(".maindesc").textContent = mainSiteDesc;
+    $("[data-id=webspace]").removeClass("hide");
+    $(".outputname").addClass("convertsite-picked");
+    $("[data-id=sitename]").addClass("convertsite-chosen");
+    $(".logoisloadedapp, [data-listen=site]").addClass("hide");
+    document.querySelector(".export-for-pgb").href = "https://gonative.io/";
+    document.querySelector(".export-for-pgb").target = "_blank";
+    $(".export-as-win32-app, .export-as-win-app, .export-as-mac-app, .export-as-lin32-app, .export-as-lin-app").addClass("exportedwebsite");
+  }
+
+  $("[data-id=sitename]").focus();
+  $("body").removeClass("noscroll");
+  $(".wholedialog").fadeOut();
+});
+
+// Show Lightbox Video Onload
+var playGuide = function() {
+  $.fancybox.open({
+    youtube : {
+      controls : 0,
+      showinfo : 0
+    },
+    src  : 'https://www.youtube.com/embed/-AszZcClVXA', // Source of the content
+    type : 'iframe', // Content type: image|inline|ajax|iframe|html (optional)
+    opts : {
+      // Promote T-Shirt
+      beforeClose: function() {
+        alertify.message("<div class=\"grid\"><div class=\"centered grid__col--12 tc\"><h2>"+ donateAlert +"</h2><a href=\"https://snaptee.co/t/rjezt/?r=fb&teeId=rjezt\" target=\"_blank\"><img src=\"../assets/images/model-600x600.jpg\" width=\"100%\"></a><a class=\"btn--success\" href=\"https://snaptee.co/t/rjezt/?r=fb&teeId=rjezt\" target=\"_blank\" style=\"width: 100%;\">"+ buyBtn +"</a></div></div>");
+      }
+    }
+  });
+};
+
+// Watch How To Video
+alertify.message("<div class=\"grid\"><div class=\"centered grid__col--12 tc\"><h2>"+ instructionalGuide +"</h2><a class=\"pointer\" onclick=\"playGuide()\"><img src=\"../imgs/playvideo.svg\" width=\"50%\"></a></div></div>");
+
+// Promote T-Shirt
+setTimeout(function() {
+  alertify.message("<div class=\"grid\"><div class=\"centered grid__col--12 tc\"><h2>"+ donateAlert +"</h2><a href=\"https://snaptee.co/t/vjezt/?r=fb&teeId=vjezt\" target=\"_blank\"><img src=\"../assets/images/model-1-600x600.jpg\" width=\"100%\"></a><a class=\"btn--success\" href=\"https://snaptee.co/t/vjezt/?r=fb&teeId=vjezt\" target=\"_blank\" style=\"width: 100%;\">"+ buyBtn +"</a></div></div>");
+}, 5000);
+
+document.querySelector("[data-action=website]").onkeyup = function(e) {
+  if (this.value.toLowerCase().substring(0,8) === "https://") {
+    alertify.message(httpsNoRecommend);
+  }
+};
+
+$("html, body").animate({ scrollTop: 0 }, "slow");
+document.querySelector(".dialog").style.display = "none";
+
+document.querySelector(".export64").onclick = function() {
+  $(".64bit").removeClass("hide");
+  $(".32bit").addClass("hide");
+  $("html, body").animate({ scrollTop: $(".chosenbit").offset().top }, "slow");
+};
+document.querySelector(".export32").onclick = function() {
+  $(".64bit").addClass("hide");
+  $(".32bit").removeClass("hide");
+  $("html, body").animate({ scrollTop: $(".chosenbit").offset().top }, "slow");
+};
 
 // Show Preloader
 $(".export-as-win32-app, .export-as-win-app").click(function() {
@@ -686,7 +676,7 @@ var audioCapture, videoCapture, storagePerm, setOffline, listPermissions,
         // Export Chrome Application
         $("input.chromeappexport").on("click", function() {
           if ( !document.querySelector("[data-value=description]").value ) {
-            alertify.error(language.eng.blankDescription);
+            alertify.error(blankDescription);
           } else {
             var zip = new JSZip();
 
@@ -738,7 +728,7 @@ var audioCapture, videoCapture, storagePerm, setOffline, listPermissions,
         // Export Chrome Popup Extension
         $(".chromepopexport").on("click", function() {
           if ( !document.querySelector("[data-value=description]").value ) {
-            alertify.error(language.eng.blankDescription);
+            alertify.error(blankDescription);
           } else {
             var zip = new JSZip();
             // Your logo
@@ -989,14 +979,7 @@ $(document).ready(function() {
   if (window.File && window.FileReader && window.FileList && window.Blob) {
     // Detect if users browser can download files in Javascript
   } else {
-    if (window.location.hash) {
-      if (location.hash.substring(1) === "eng") {
-        alertify.alert(language.eng.noFileAPI).set("basic", true);
-      }
-      else if (location.hash.substring(1) === "es") {
-        alertify.alert(language.es.noFileAPI).set("basic", true);
-      }
-    }
+    alertify.alert(noFileAPI).set("basic", true);
   }
 
   // Show error if zip is corrupted
@@ -1031,20 +1014,10 @@ $(document).ready(function() {
         // the content is here : zipEntry.asText()
       });
     } catch(e) {
-      if (window.location.hash) {
-        if (location.hash.substring(1) === "eng") {
-          $fileContent = $("<div>", {
-            "class" : "alert alert-danger",
-            text : language.eng.errorReading +" " + theFile.name + " : " + e.message
-          });
-        }
-        else if (location.hash.substring(1) === "es") {
-          $fileContent = $("<div>", {
-            "class" : "alert alert-danger",
-            text : language.es.errorReading +" " + theFile.name + " : " + e.message
-          });
-        }
-      }
+      $fileContent = $("<div>", {
+        "class" : "alert alert-danger",
+        text : errorReading +" " + theFile.name + " : " + e.message
+      });
     }
     $result.append($fileContent);
   }
@@ -1334,7 +1307,7 @@ $(document).ready(function() {
             // Export Chrome Application
             $("input.chromeappexport").on("click", function() {
               if ( !document.querySelector("[data-value=description]").value ) {
-                alertify.error(language.eng.blankDescription);
+                alertify.error(blankDescription);
               } else {
                 $(".preloader").removeClass("hide");
                 var zip = new JSZip();
@@ -1396,7 +1369,7 @@ $(document).ready(function() {
             // Export Chrome Popup Extension
             $(".chromepopexport").on("click", function() {
               if ( !document.querySelector("[data-value=description]").value ) {
-                alertify.error(language.eng.blankDescription);
+                alertify.error(blankDescription);
               } else {
                 $(".preloader").removeClass("hide");
                 var zip = new JSZip();
@@ -1444,14 +1417,7 @@ $(document).ready(function() {
             });
             $(".pgbappexport").on("click", function() {
               if ( (!$("[data-pgb=version]").val()) || (!$("[data-pgb=versionCode]").val()) || (!$("[data-pgb=description]").val()) || (!$("[data-pgb=author]").val()) || (!$("[data-pgb=authoremail]").val()) || (!$("[data-pgb=authorlink]").val()) ) {
-                if (window.location.hash) {
-                  if (location.hash.substring(1) === "eng") {
-                    alertify.error(language.eng.unableToExportFields);
-                  }
-                  else if (location.hash.substring(1) === "es") {
-                    alertify.error(language.es.unableToExportFields);
-                  }
-                }
+                alertify.error(unableToExportFields);
               } else {
                 $(".preloader").removeClass("hide");
                 var zip = new JSZip();
@@ -1590,14 +1556,7 @@ $(document).ready(function() {
   $(".loadzipurl").on("click", function() {
     if ( (!document.getElementById("zipurl").value) ) {
       // Do nothing
-    if (window.location.hash) {
-      if (location.hash.substring(1) === "eng") {
-        alertify.error(language.eng.dvalueisblank);
-      }
-      else if (location.hash.substring(1) === "es") {
-        alertify.error(language.es.dvalueisblank);
-      }
-    }
+      alertify.error(dvalueisblank);
     } else {
       if ( (document.getElementById("zipurl").value.toLowerCase().substring(0,7) === "http://" ) || (document.getElementById("zipurl").value.toLowerCase().substring(0,8) === "https://") && (document.getElementById("zipurl").value.toLowerCase().substring(document.getElementById("zipurl").value.length - 4) === ".zip") ) {
         $(".check").removeClass("hide");
@@ -1822,14 +1781,7 @@ $(document).ready(function() {
           // Export Chrome Application
           $("input.chromeappexport").on("click", function() {
             if ( !document.querySelector("[data-value=description]").value ) {
-              if (window.location.hash) {
-                if (location.hash.substring(1) === "eng") {
-                  alertify.error(language.eng.blankDescription);
-                }
-                else if (location.hash.substring(1) === "es") {
-                  alertify.error(language.es.blankDescription);
-                }
-              }
+              alertify.error(blankDescription);
             } else {
               $(".preloader").removeClass("hide");
               var zip = new JSZip();
@@ -1890,14 +1842,7 @@ $(document).ready(function() {
           // Export Chrome Popup Extension
           $(".chromepopexport").on("click", function() {
             if ( !document.querySelector("[data-value=description]").value ) {
-              if (window.location.hash) {
-                if (location.hash.substring(1) === "eng") {
-                  alertify.error(language.eng.blankDescription);
-                }
-                else if (location.hash.substring(1) === "es") {
-                  alertify.error(language.es.blankDescription);
-                }
-              }
+              alertify.error(blankDescription);
             } else {
               $(".preloader").removeClass("hide");
               var zip = new JSZip();
@@ -1943,14 +1888,7 @@ $(document).ready(function() {
           });
           $(".pgbappexport").on("click", function() {
             if ( (!$("[data-pgb=version]").val()) || (!$("[data-pgb=versionCode]").val()) || (!$("[data-pgb=description]").val()) || (!$("[data-pgb=author]").val()) || (!$("[data-pgb=authoremail]").val()) || (!$("[data-pgb=authorlink]").val()) ) {
-              if (window.location.hash) {
-                if (location.hash.substring(1) === "eng") {
-                  alertify.error(language.eng.unableToExportFields);
-                }
-                else if (location.hash.substring(1) === "es") {
-                  alertify.error(language.es.unableToExportFields);
-                }
-              }
+              alertify.error(unableToExportFields);
             } else {
               $(".preloader").removeClass("hide");
               var zip = new JSZip();
@@ -2076,14 +2014,7 @@ $(document).ready(function() {
           $("html, body").animate({ scrollTop: $(".pickbits").offset().top }, "slow");
         }, 300);
       } else {
-        if (window.location.hash) {
-          if (location.hash.substring(1) === "eng") {
-            alertify.error(language.eng.urlExportError);
-          }
-          else if (location.hash.substring(1) === "es") {
-            alertify.error(language.es.urlExportError);
-          }
-        }
+        alertify.error(urlExportError);
       }
     }
   });
