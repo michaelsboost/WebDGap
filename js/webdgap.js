@@ -6,15 +6,21 @@
 // implemented in JavaScript!
 
 // Set Application Language Onload
-var blankDescription, noFileAPI, errorReading,
-    dvalueisblank, unableToExportFields, urlExportError,
-    dyes, dno, mainDesc, mainSiteDesc,
-    instructionalGuide, donateAlert, buyBtn, httpsNoRecommend,
+var instructionalVideo, blankDescription, noFileAPI, errorReading, dvalueisblank, unableToExportFields, 
+    urlExportError, dyes, dno, mainDesc, mainSiteDesc, instructionalGuide, 
+    donateAlert, buyBtn, convertapp, convertsite, appname, dataDescriptionH1, 
+    dataDescriptionH2, applyvalues, loadZipFile, loadZipFileURL, processorQues, 
+    d64bit, d32bit, dchromeExpChoic, dapp, dpopup, ddescr, ddescrval, 
+    doffline, dpermissions, daudioCapture, dvideoCapture, dfileSystem, 
+    dconfirm, dreset, dtel, dsms, dmailto, dgeo, dmarketlinks, 
+    dfilestorage, dauthour, dauthour, dintentions, dzipnote, 
+    browsernote, updatebrowser, home, github, donate, author,
     language = {
       eng: {
         dyes: "Yes",
         dno: "No",
         instructionalGuide: "Instructional Guide!",
+        instructionalVideo: "https://www.youtube.com/embed/-AszZcClVXA",
         donateAlert: "Help keep this free!",
         buyBtn: "buy now",
         convertapp: "Convert App",
@@ -69,6 +75,7 @@ var blankDescription, noFileAPI, errorReading,
         dyes: "Sí",
         dno: "No",
         instructionalGuide: "Guía de Instrucción!",
+        instructionalVideo: "https://www.youtube.com/embed/-AszZcClVXA",
         donateAlert: "¡Ayuda a mantener esto gratis!",
         buyBtn: "compra ahora",
         convertapp: "Convertir la Aplicación",
@@ -121,25 +128,69 @@ var blankDescription, noFileAPI, errorReading,
       }
     };
 
-// Export App or Site?
+// Set language variables
+function englishWords() {
+  instructionalVideo = language.eng.instructionalVideo;
+  blankDescription = language.eng.blankDescription;
+  noFileAPI = language.eng.noFileAPI;
+  errorReading = language.eng.errorReading;
+  dvalueisblank = language.eng.dvalueisblank;
+  unableToExportFields = language.eng.unableToExportFields;
+  urlExportError = language.eng.urlExportError;
+  dyes = language.eng.dyes;
+  dno = language.eng.dno;
+  mainDesc = language.eng.mainDesc;
+  mainSiteDesc = language.eng.mainSiteDesc;
+  instructionalGuide = language.eng.instructionalGuide;
+  donateAlert = language.eng.donateAlert;
+  buyBtn = language.eng.buyBtn;
+  convertapp = language.eng.convertapp;
+  convertsite = language.eng.convertsite;
+  appname = language.eng.appname;
+  dataDescriptionH1 = language.es.dataDescriptionH1
+  dataDescriptionH2 = language.es.dataDescriptionH2
+  applyvalues = language.es.applyvalues
+  loadZipFile = language.es.loadZipFile
+  loadZipFileURL = language.es.loadZipFileURL
+  processorQues = language.es.processorQues
+  d64bit = language.es.d64bit
+  d32bit = language.es.d32bit
+  dchromeExpChoic = language.es.dchromeExpChoic
+  dapp = language.es.dapp
+  dpopup = language.es.dpopup
+  ddescr = language.es.ddescr
+  ddescrval = language.es.ddescrval
+  doffline = language.es.doffline
+  dpermissions = language.es.dpermissions
+  daudioCapture = language.es.daudioCapture
+  dvideoCapture = language.es.dvideoCapture
+  dfileSystem = language.es.dfileSystem
+  dconfirm = language.es.dconfirm
+  dreset = language.es.dreset
+  dtel = language.es.dtel
+  dsms = language.es.dsms
+  dmailto = language.es.dmailto
+  dgeo = language.es.dgeo
+  dmarketlinks = language.es.dmarketlinks
+  dfilestorage = language.es.dfilestorage
+  dauthour = language.es.dauthour
+  dauthour = language.es.dauthour
+  dintentions = language.es.dintentions
+  dzipnote = language.es.dzipnote
+  browsernote = language.es.browsernote
+  updatebrowser = language.es.updatebrowser
+  home = language.es.home
+  github = language.es.github
+  donate = language.es.donate
+  author = language.es.author
+}
+
 if (window.location.hash) {
   if (location.hash.substring(1) === "eng") {
-    blankDescription = language.eng.blankDescription;
-    noFileAPI = language.eng.noFileAPI;
-    errorReading = language.eng.errorReading;
-    dvalueisblank = language.eng.dvalueisblank;
-    unableToExportFields = language.eng.unableToExportFields;
-    urlExportError = language.eng.urlExportError;
-    dyes = language.eng.dyes;
-    dno = language.eng.dno;
-    mainDesc = language.eng.mainDesc;
-    mainSiteDesc = language.eng.mainSiteDesc;
-    instructionalGuide = language.eng.instructionalGuide;
-    donateAlert = language.eng.donateAlert;
-    buyBtn = language.eng.buyBtn;
-    httpsNoRecommend = language.eng.httpsNoRecommend;
+    englishWords();
   } 
   else if (location.hash.substring(1) === "es") {
+    instructionalVideo = language.es.instructionalVideo;
     blankDescription = language.es.blankDescription;
     noFileAPI = language.es.noFileAPI;
     errorReading = language.es.errorReading;
@@ -154,74 +205,100 @@ if (window.location.hash) {
     donateAlert = language.es.donateAlert;
     buyBtn = language.es.buyBtn;
     httpsNoRecommend = language.es.httpsNoRecommend;
+    convertapp = language.es.convertapp;
+    convertsite = language.es.convertsite;
+    appname = language.es.appname;
+    dataDescriptionH1 = language.es.dataDescriptionH1
+    dataDescriptionH2 = language.es.dataDescriptionH2
+    applyvalues = language.es.applyvalues
+    loadZipFile = language.es.loadZipFile
+    loadZipFileURL = language.es.loadZipFileURL
+    processorQues = language.es.processorQues
+    d64bit = language.es.d64bit
+    d32bit = language.es.d32bit
+    dchromeExpChoic = language.es.dchromeExpChoic
+    dapp = language.es.dapp
+    dpopup = language.es.dpopup
+    ddescr = language.es.ddescr
+    ddescrval = language.es.ddescrval
+    doffline = language.es.doffline
+    dpermissions = language.es.dpermissions
+    daudioCapture = language.es.daudioCapture
+    dvideoCapture = language.es.dvideoCapture
+    dfileSystem = language.es.dfileSystem
+    dconfirm = language.es.dconfirm
+    dreset = language.es.dreset
+    dtel = language.es.dtel
+    dsms = language.es.dsms
+    dmailto = language.es.dmailto
+    dgeo = language.es.dgeo
+    dmarketlinks = language.es.dmarketlinks
+    dfilestorage = language.es.dfilestorage
+    dauthour = language.es.dauthour
+    dauthour = language.es.dauthour
+    dintentions = language.es.dintentions
+    dzipnote = language.es.dzipnote
+    browsernote = language.es.browsernote
+    updatebrowser = language.es.updatebrowser
+    home = language.es.home
+    github = language.es.github
+    donate = language.es.donate
+    author = language.es.author
     
     setTimeout(function() {
       $("#setlanguage option[value=es]").prop("selected", true);
       $('[data-set=language]').attr('src', $("#setlanguage option:selected").attr('data-imagesrc'));
     }, 150);
-    
-    $('[data-language=convertapp]').text(language.es.convertapp);
-    $('[data-language=convertsite]').text(language.es.convertsite);
-    $('[data-language=appname]').attr('placeholder', language.es.appname);
-    $('[data-language=dataDescriptionH1]').html(language.es.dataDescriptionH1);
-    $('[data-language=dataDescriptionH2]').text(language.es.dataDescriptionH2);
-    $('[data-language=applyvalues]').text(language.es.applyvalues);
-    $('[data-language=loadZipFile]').text(language.es.loadZipFile);
-    $('[data-language=loadZipFileURL]').text(language.es.loadZipFileURL);
-    $('[data-language=processorQues]').text(language.es.processorQues);
-    $('[data-language=d64bit]').text(language.es.d64bit);
-    $('[data-language=d32bit]').text(language.es.d32bit);
-    $('[data-language=dchromeExpChoic]').text(language.es.dchromeExpChoic);
-    $('[data-language=dapp]').text(language.es.dapp);
-    $('[data-language=dpopup]').text(language.es.dpopup);
-    $('[data-language=ddescr]').attr('placeholder', language.es.ddescr);
-    $('[data-language=ddescrval]').val(language.es.ddescrval);
-    $('[data-language=doffline]').text(language.es.doffline);
-    $('[data-language=dpermissions]').text(language.es.dpermissions);
-    $('[data-language=daudioCapture]').text(language.es.daudioCapture);
-    $('[data-language=dvideoCapture]').text(language.es.dvideoCapture);
-    $('[data-language=dfileSystem]').text(language.es.dfileSystem);
-    $('[data-language=dconfirm]').val(language.es.dconfirm);
-    $('[data-language=dreset]').val(language.es.dreset);
-    $('[data-language=dtel]').text(language.es.dtel);
-    $('[data-language=dsms]').text(language.es.dsms);
-    $('[data-language=dmailto]').text(language.es.dmailto);
-    $('[data-language=dgeo]').text(language.es.dgeo);
-    $('[data-language=dmarketlinks]').text(language.es.dmarketlinks);
-    $('[data-language=dfilestorage]').text(language.es.dfilestorage);
-    $('input[data-language=dauthour]').attr('placeholder', language.es.dauthour);
-    $('[data-language=dauthour]').text(language.es.dauthour);
-    $('[data-language=dintentions]').text(language.es.dintentions);
-    $('[data-language=dzipnote]').html(language.es.dzipnote);
-    $('[data-language=browsernote]').text(language.es.browsernote);
-    $('[data-language=updatebrowser]').text(language.es.updatebrowser);
-    $('[data-language=home]').text(language.es.home);
-    $('[data-language=github]').text(language.es.github);
-    $('[data-language=donate]').text(language.es.donate);
-    $('[data-language=author]').html(language.es.author);
   }
 } else {
-  blankDescription = language.eng.blankDescription;
-  noFileAPI = language.eng.noFileAPI;
-  errorReading = language.eng.errorReading;
-  dvalueisblank = language.eng.dvalueisblank;
-  unableToExportFields = language.eng.unableToExportFields;
-  urlExportError = language.eng.urlExportError;
-  dyes = language.eng.dyes;
-  dno = language.eng.dno;
-  mainDesc = language.eng.mainDesc;
-  mainSiteDesc = language.eng.mainSiteDesc;
-  instructionalGuide = language.eng.instructionalGuide;
-  donateAlert = language.eng.donateAlert;
-  buyBtn = language.eng.buyBtn;
-  httpsNoRecommend = language.eng.httpsNoRecommend;
+  englishWords();
 }
 
 // Run Onload
 $(document.body).append('<style>.onoffswitch-inner:before {content: "'+ dyes +'";}.onoffswitch-inner:after {content: "'+ dno +'";}</style>');
 $("#setlanguage option[value=eng]").attr("selected", true);
 $('[data-set=language]').attr('src', $("#setlanguage option:selected").attr('data-imagesrc'));
+$('[data-language=convertapp]').text(convertapp);
+$('[data-language=convertsite]').text(convertsite);
+$('[data-language=appname]').attr('placeholder', appname);
+$('[data-language=dataDescriptionH1]').html(dataDescriptionH1);
+$('[data-language=dataDescriptionH2]').text(dataDescriptionH2);
+$('[data-language=applyvalues]').text(applyvalues);
+$('[data-language=loadZipFile]').text(loadZipFile);
+$('[data-language=loadZipFileURL]').text(loadZipFileURL);
+$('[data-language=processorQues]').text(processorQues);
+$('[data-language=d64bit]').text(d64bit);
+$('[data-language=d32bit]').text(d32bit);
+$('[data-language=dchromeExpChoic]').text(dchromeExpChoic);
+$('[data-language=dapp]').text(dapp);
+$('[data-language=dpopup]').text(dpopup);
+$('[data-language=ddescr]').attr('placeholder', ddescr);
+$('[data-language=ddescrval]').val(ddescrval);
+$('[data-language=doffline]').text(doffline);
+$('[data-language=dpermissions]').text(dpermissions);
+$('[data-language=daudioCapture]').text(daudioCapture);
+$('[data-language=dvideoCapture]').text(dvideoCapture);
+$('[data-language=dfileSystem]').text(dfileSystem);
+$('[data-language=dconfirm]').val(dconfirm);
+$('[data-language=dreset]').val(dreset);
+$('[data-language=dtel]').text(dtel);
+$('[data-language=dsms]').text(dsms);
+$('[data-language=dmailto]').text(dmailto);
+$('[data-language=dgeo]').text(dgeo);
+$('[data-language=dmarketlinks]').text(dmarketlinks);
+$('[data-language=dfilestorage]').text(dfilestorage);
+$('input[data-language=dauthour]').attr('placeholder', dauthour);
+$('[data-language=dauthour]').text(dauthour);
+$('[data-language=dintentions]').text(dintentions);
+$('[data-language=dzipnote]').html(dzipnote);
+$('[data-language=browsernote]').text(browsernote);
+$('[data-language=updatebrowser]').text(updatebrowser);
+$('[data-language=home]').text(home);
+$('[data-language=github]').text(github);
+$('[data-language=donate]').text(donate);
+$('[data-language=author]').html(author);
 
+// Export App or Site?
 $("[data-id=convertapp], [data-id=convertsite]").on("click", function() {
   if ( $(this).attr("data-id").toLowerCase() === "convertapp" ) {
     document.querySelector(".maindesc").textContent = mainDesc;
@@ -251,7 +328,7 @@ var playGuide = function() {
       controls : 0,
       showinfo : 0
     },
-    src  : 'https://www.youtube.com/embed/-AszZcClVXA', // Source of the content
+    src  : instructionalVideo, // Source of the content
     type : 'iframe', // Content type: image|inline|ajax|iframe|html (optional)
     opts : {
       // Promote T-Shirt
@@ -270,15 +347,18 @@ setTimeout(function() {
   alertify.message("<div class=\"grid\"><div class=\"centered grid__col--12 tc\"><h2>"+ donateAlert +"</h2><a href=\"https://snaptee.co/t/vjezt/?r=fb&teeId=vjezt\" target=\"_blank\"><img src=\"../assets/images/model-1-600x600.jpg\" width=\"100%\"></a><a class=\"btn--success\" href=\"https://snaptee.co/t/vjezt/?r=fb&teeId=vjezt\" target=\"_blank\" style=\"width: 100%;\">"+ buyBtn +"</a></div></div>");
 }, 5000);
 
+// Alert if HTTPS
 document.querySelector("[data-action=website]").onkeyup = function(e) {
   if (this.value.toLowerCase().substring(0,8) === "https://") {
     alertify.message(httpsNoRecommend);
   }
 };
 
+// Go to top of page
 $("html, body").animate({ scrollTop: 0 }, "slow");
 document.querySelector(".dialog").style.display = "none";
 
+// Handle necessary styles for 64bit and 64bit exportation
 document.querySelector(".export64").onclick = function() {
   $(".64bit").removeClass("hide");
   $(".32bit").addClass("hide");
@@ -761,6 +841,7 @@ var audioCapture, videoCapture, storagePerm, setOffline, listPermissions,
       reader.readAsArrayBuffer(file);
     };
 
+// Handle icon/logo image load
 function displayPreview(file) {
   var reader = new FileReader();
 
@@ -981,6 +1062,12 @@ $(document).ready(function() {
   } else {
     alertify.alert(noFileAPI).set("basic", true);
   }
+  
+  // Set language via onchange
+  $('#setlanguage').on('change', function() {
+    window.location.hash = this.value;
+    location.reload(true);
+  });
 
   // Show error if zip is corrupted
   if (!window.FileReader || !window.ArrayBuffer) {
@@ -1021,12 +1108,6 @@ $(document).ready(function() {
     }
     $result.append($fileContent);
   }
-  
-  // Set language via onchange
-  $('#setlanguage').on('change', function() {
-    window.location.hash = this.value;
-    location.reload(true);
-  });
   
   // Drag and drop image load
   holder.ondragover = function () {
