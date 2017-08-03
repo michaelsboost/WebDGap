@@ -51,71 +51,71 @@ svg, svg * {fill:#f00;}
 
 ## 3. <a name="filestructure">File structure</a>
 
-<img src="https://lh3.ggpht.com/Yotn7-8_rvZ8FcNowaAH08OnCT7c083hATU7Y69pMIOCWJMNstsIQUWXH9KGqUN0_NF0=w170" class="fs"> /app  
-- <img src="http://findicons.com/files/icons/2813/flat_jewels/128/file.png" class="fs"> index.html  
+<img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/folder.png" class="fs"> /app  
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> index.html  
 
-<img src="https://lh3.ggpht.com/Yotn7-8_rvZ8FcNowaAH08OnCT7c083hATU7Y69pMIOCWJMNstsIQUWXH9KGqUN0_NF0=w170" class="fs"> /assets  
+<img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/folder.png" class="fs"> /assets  
 - houses most of the main website's libraries/images (which we will skip for now and only show the necessary files for the application)
-- <img src="http://findicons.com/files/icons/2813/flat_jewels/128/file.png" class="fs"> loadlogo-rounded.png
-- <img src="http://findicons.com/files/icons/2813/flat_jewels/128/file.png" class="fs"> loadlogo-rounded.svg
-- <img src="http://findicons.com/files/icons/2813/flat_jewels/128/file.png" class="fs"> loadlogo.png
-- <img src="http://findicons.com/files/icons/2813/flat_jewels/128/file.png" class="fs"> loadlogo.psd
-- <img src="http://findicons.com/files/icons/2813/flat_jewels/128/file.png" class="fs"> loadlogo.svg
-- <img src="http://findicons.com/files/icons/2813/flat_jewels/128/file.png" class="fs"> loadlogo.xcf
-- <img src="http://findicons.com/files/icons/2813/flat_jewels/128/file.png" class="fs"> YourLin32App.zip - precompiled linux 32bit/i832 app
-- <img src="http://findicons.com/files/icons/2813/flat_jewels/128/file.png" class="fs"> YourLinApp.zip - precompiled linux app
-- <img src="http://findicons.com/files/icons/2813/flat_jewels/128/file.png" class="fs"> YourMacApp.zip - precompiled mac app
-- <img src="http://findicons.com/files/icons/2813/flat_jewels/128/file.png" class="fs"> YourWin32App.zip - precompiled windows 32bit app
-- <img src="http://findicons.com/files/icons/2813/flat_jewels/128/file.png" class="fs"> YourWinApp.zip - precompiled windows app
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> loadlogo-rounded.png
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> loadlogo-rounded.svg
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> loadlogo.png
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> loadlogo.psd
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> loadlogo.svg
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> loadlogo.xcf
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> YourLin32App.zip - precompiled linux 32bit/i832 app
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> YourLinApp.zip - precompiled linux app
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> YourMacApp.zip - precompiled mac app
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> YourWin32App.zip - precompiled windows 32bit app
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> YourWinApp.zip - precompiled windows app
 
-<img src="https://lh3.ggpht.com/Yotn7-8_rvZ8FcNowaAH08OnCT7c083hATU7Y69pMIOCWJMNstsIQUWXH9KGqUN0_NF0=w170" class="fs"> /css  
-- <img src="http://findicons.com/files/icons/2813/flat_jewels/128/file.png" class="fs"> flag-icon.css - css library to show flags for multiple language support
-- <img src="http://findicons.com/files/icons/2813/flat_jewels/128/file.png" class="fs"> jquery.smartbanner.css - library to show via homepage that app is available on google play
-- <img src="http://findicons.com/files/icons/2813/flat_jewels/128/file.png" class="fs"> style.css
+<img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/folder.png" class="fs"> /css  
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> flag-icon.css - css library to show flags for multiple language support
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> jquery.smartbanner.css - library to show via homepage that app is available on google play
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> style.css
 
-<img src="http://findicons.com/files/icons/2813/flat_jewels/128/file.png" class="fs"> favicon.ico  
+<img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> favicon.ico  
 
-<img src="https://lh3.ggpht.com/Yotn7-8_rvZ8FcNowaAH08OnCT7c083hATU7Y69pMIOCWJMNstsIQUWXH9KGqUN0_NF0=w170" class="fs"> /imgs  
-- <img src="http://findicons.com/files/icons/2813/flat_jewels/128/file.png" class="fs"> app.png
-- <img src="http://findicons.com/files/icons/2813/flat_jewels/128/file.png" class="fs"> file.svg
-- <img src="http://findicons.com/files/icons/2813/flat_jewels/128/file.png" class="fs"> file.png
-- <img src="http://findicons.com/files/icons/2813/flat_jewels/128/file.png" class="fs"> folder.png
-- <img src="http://findicons.com/files/icons/2813/flat_jewels/128/file.png" class="fs"> icon.svg
-- <img src="http://findicons.com/files/icons/2813/flat_jewels/128/file.png" class="fs"> logo.svg
-- <img src="http://findicons.com/files/icons/2813/flat_jewels/128/file.png" class="fs"> playvideo.svg
-- <img src="http://findicons.com/files/icons/2813/flat_jewels/128/file.png" class="fs"> preloader.svg
-- <img src="http://findicons.com/files/icons/2813/flat_jewels/128/file.png" class="fs"> screenshot.png
-- <img src="http://findicons.com/files/icons/2813/flat_jewels/128/file.png" class="fs"> sitelogo.svg
-- <img src="http://findicons.com/files/icons/2813/flat_jewels/128/file.png" class="fs"> webdgap-logo.png
+<img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/folder.png" class="fs"> /imgs  
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> app.png
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> file.svg
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> file.png
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> folder.png
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> icon.svg
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> logo.svg
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> playvideo.svg
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> preloader.svg
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> screenshot.png
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> sitelogo.svg
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> webdgap-logo.png
 
-<img src="http://findicons.com/files/icons/2813/flat_jewels/128/file.png" class="fs"> index.html - The main WebDGap interface
+<img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> index.html - The main WebDGap interface
 
-<img src="https://lh3.ggpht.com/Yotn7-8_rvZ8FcNowaAH08OnCT7c083hATU7Y69pMIOCWJMNstsIQUWXH9KGqUN0_NF0=w170" class="fs"> /js  
+<img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/folder.png" class="fs"> /js  
 
-- <img src="http://findicons.com/files/icons/2813/flat_jewels/128/file.png" class="fs"> index.js - javascript for handling various languages for main website
-- <img src="http://findicons.com/files/icons/2813/flat_jewels/128/file.png" class="fs"> jquery.smartbanner.js - library to show via homepage that app is available on google play
-- <img src="http://findicons.com/files/icons/2813/flat_jewels/128/file.png" class="fs"> keys.js - hotkeys for the desktop application
-- <img src="http://findicons.com/files/icons/2813/flat_jewels/128/file.png" class="fs"> webdgap.js - webdgap's javascript application architecture
-- <img src="http://findicons.com/files/icons/2813/flat_jewels/128/file.png" class="fs"> webdgapjs.js - a portable version of webdgap for exporting websites as desktop applications
-- <img src="http://findicons.com/files/icons/2813/flat_jewels/128/file.png" class="fs"> webdgapjs.min.js - a minified and portable version of webdgap for exporting websites as desktop applications
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> index.js - javascript for handling various languages for main website
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> jquery.smartbanner.js - library to show via homepage that app is available on google play
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> keys.js - hotkeys for the desktop application
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> webdgap.js - webdgap's javascript application architecture
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> webdgapjs.js - a portable version of webdgap for exporting websites as desktop applications
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> webdgapjs.min.js - a minified and portable version of webdgap for exporting websites as desktop applications
 
-<img src="https://lh3.ggpht.com/Yotn7-8_rvZ8FcNowaAH08OnCT7c083hATU7Y69pMIOCWJMNstsIQUWXH9KGqUN0_NF0=w170" class="fs"> /libraries  
-- <img src="https://lh3.ggpht.com/Yotn7-8_rvZ8FcNowaAH08OnCT7c083hATU7Y69pMIOCWJMNstsIQUWXH9KGqUN0_NF0=w170" class="fs"> /alertifyjs
-- <img src="https://lh3.ggpht.com/Yotn7-8_rvZ8FcNowaAH08OnCT7c083hATU7Y69pMIOCWJMNstsIQUWXH9KGqUN0_NF0=w170" class="fs"> /fancybox
-- <img src="https://lh3.ggpht.com/Yotn7-8_rvZ8FcNowaAH08OnCT7c083hATU7Y69pMIOCWJMNstsIQUWXH9KGqUN0_NF0=w170" class="fs"> /font-awesome
-- <img src="https://lh3.ggpht.com/Yotn7-8_rvZ8FcNowaAH08OnCT7c083hATU7Y69pMIOCWJMNstsIQUWXH9KGqUN0_NF0=w170" class="fs"> /jquery
-- <img src="https://lh3.ggpht.com/Yotn7-8_rvZ8FcNowaAH08OnCT7c083hATU7Y69pMIOCWJMNstsIQUWXH9KGqUN0_NF0=w170" class="fs"> /jszip  
-- <img src="https://lh3.ggpht.com/Yotn7-8_rvZ8FcNowaAH08OnCT7c083hATU7Y69pMIOCWJMNstsIQUWXH9KGqUN0_NF0=w170" class="fs"> /polyui
-- <img src="https://lh3.ggpht.com/Yotn7-8_rvZ8FcNowaAH08OnCT7c083hATU7Y69pMIOCWJMNstsIQUWXH9KGqUN0_NF0=w170" class="fs"> /prefixfree  
+<img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/folder.png" class="fs"> /libraries  
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/folder.png" class="fs"> /alertifyjs
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/folder.png" class="fs"> /fancybox
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/folder.png" class="fs"> /font-awesome
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/folder.png" class="fs"> /jquery
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/folder.png" class="fs"> /jszip  
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/folder.png" class="fs"> /polyui
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/folder.png" class="fs"> /prefixfree  
 
-<img src="http://findicons.com/files/icons/2813/flat_jewels/128/file.png" class="fs"> LICENSE - MIT
+<img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> LICENSE - MIT
 
-<img src="https://lh3.ggpht.com/Yotn7-8_rvZ8FcNowaAH08OnCT7c083hATU7Y69pMIOCWJMNstsIQUWXH9KGqUN0_NF0=w170" class="fs"> /plugin  
-- <img src="https://lh3.ggpht.com/Yotn7-8_rvZ8FcNowaAH08OnCT7c083hATU7Y69pMIOCWJMNstsIQUWXH9KGqUN0_NF0=w170" class="fs"> /assets - necessary library/styles for the website's ui
-- <img src="http://findicons.com/files/icons/2813/flat_jewels/128/file.png" class="fs"> index.html
+<img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/folder.png" class="fs"> /plugin  
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/folder.png" class="fs"> /assets - necessary library/styles for the website's ui
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> index.html
 
-<img src="http://findicons.com/files/icons/2813/flat_jewels/128/file.png" class="fs"> README.md  
-<img src="http://findicons.com/files/icons/2813/flat_jewels/128/file.png" class="fs"> thesis.md  
+<img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> README.md  
+<img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> thesis.md  
 
 ## 4. <a name="workflow">Workflow</a>
 
