@@ -17,6 +17,7 @@ var language = {
     ldonatepp: "DONAR CON PAYPAL",
     ldonatesc: "DONAR CON SQUARECASH",
     lcontribute: "CONTRIBUIR",
+    lstore: "ALMACENAR",
     lrun: "LANZAMIENTO",
     intro: "¡Convierte fácilmente cualquier sitio web o aplicación web (HTML / CSS / JS) como una aplicación de escritorio nativa!",
     playvid: "Ver video",
@@ -71,6 +72,7 @@ if (window.location.hash) {
     $("[data-language=ldonatepp]").text(language.es.ldonatepp);
     $("[data-language=ldonatesc]").text(language.es.ldonatesc);
     $("[data-language=lcontribute]").text(language.es.lcontribute);
+    $("[data-language=lstore]").text(language.es.lstore);
     $("[data-language=lrun]").text(language.es.lrun);
     $("[data-language=lrun]").attr("href", "app/" + location.hash);
     $("[data-language=intro]").text(language.es.intro);
