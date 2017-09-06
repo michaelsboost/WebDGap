@@ -62,6 +62,7 @@ var instructionalVideo, blankDescription, noFileAPI, errorReading, dvalueisblank
         home: "Home",
         github: "Github",
         donate: "Donate",
+        store: "Store",
         author: "Made by <a href=\"http://mikethedj4.github.io/\" target=\"_blank\">Michael</a> with <span class=\"fa fa-heart\" style=\"color: #f66;\"></span> and <span class=\"fa fa-coffee\" style=\"color: #52bab3;\"></span>.",
         httpsNoRecommend: "https is not recommend.<br /><br /> If needed use <a href=\"https://bitly.com/shorten/\">Bitly</a> to set url to http.",
         noFileApi: "The File APIs are not fully supported in this browser.",
@@ -117,6 +118,7 @@ var instructionalVideo, blankDescription, noFileAPI, errorReading, dvalueisblank
         home: "Casa",
         github: "Github",
         donate: "Donar",
+        store: "Almacenar",
         author: "Hecho por <a href=\"http://mikethedj4.github.io/\" target=\"_blank\">Michael</a> con <span class=\"fa fa-heart\" style=\"color: #f66;\"></span> y <span class=\"fa fa-coffee\" style=\"color: #52bab3;\"></span>.",
         httpsNoRecommend: "https no es recomendable.<br /><br /> Si es necesario, utilice <a href=\"https://bitly.com/shorten/\">Bitly</a> para establecer url a http.",
         noFileAPI: "Las API de archivos no son totalmente compatibles con este navegador.",
@@ -182,6 +184,7 @@ function englishWords() {
   home = language.eng.home
   github = language.eng.github
   donate = language.eng.donate
+  store = language.eng.store
   author = language.eng.author
 }
 
@@ -243,6 +246,7 @@ if (window.location.hash) {
     home = language.es.home
     github = language.es.github
     donate = language.es.donate
+    store = language.es.store
     author = language.es.author
     
     setTimeout(function() {
@@ -296,6 +300,7 @@ $('[data-language=updatebrowser]').text(updatebrowser);
 $('[data-language=home]').text(home);
 $('[data-language=github]').text(github);
 $('[data-language=donate]').text(donate);
+$('[data-language=store]').text(store);
 $('[data-language=author]').html(author);
 
 // Export App or Site?
