@@ -18,6 +18,11 @@ a {
 textarea {
   resize: vertical;
 }
+@media (min-width: 1px) and (max-width: 768px) {
+  [data-id="convertapp"],
+  [data-id="convertsite"] {
+    width: calc(100% - 5%);
+    margin: auto;} }
 
 /* Alignment */
 .center {
