@@ -379,25 +379,25 @@ document.querySelector(".export32").onclick = function() {
 $(".export-as-win32-app, .export-as-win-app").click(function() {
   $(document.body).append('<div class="fixedfill preloader"></div>');
   if ($(this).hasClass("exportedwebsite")) {
-    $(".preloader").html("<div class=\"table\"><div class=\"cell\">\n  <h1>Creating application!</h1>\n  <img class=\"loading\" src=\"../imgs/preloader.svg\">\n  \n<h1>\n    <a class=\"share-facebook\" target=\"_blank\" href=\"https://www.facebook.com/sharer/sharer.php?u=I%20%23converted%20a%20%23website%20to%20a%20%23Windows%20%23application%20using%20%23WebDGap!%20https%3A//mikethedj4.github.io/WebDGap\">\n      <i class=\"fa fa-facebook-square\"></i>\n    </a>\n    <a class=\"share-twitter\" target=\"_blank\" href=\"https://twitter.com/home?status=I%20%23converted%20a%20%23website%20to%20a%20%23Windows%20%23application%20using%20%23WebDGap!%20https%3A//mikethedj4.github.io/WebDGap/\">\n      <i class=\"fa fa-twitter-square\"></i>\n    </a>\n    <a class=\"share-gplus\" target=\"_blank\" href=\"https://plus.google.com/share?url=http%3A//mikethedj4.github.io/WebDGap/\">\n      <i class=\"fa fa-google-plus-square\"></i>\n    </a>\n    <a class=\"share-linkedin-square\" target=\"_blank\" href=\"https://www.linkedin.com/shareArticle?mini=true&url=https%3A//mikethedj4.github.io/WebDGap/&title=WebDGap&summary=I%20%23converted%20a%20%23website%20to%20a%20%23Windows%20%23application%20using%20%23WebDGap!&source=\">\n      <i class=\"fa fa-linkedin-square\"></i>\n    </a>\n    <a target=\"_blank\" href=\"https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=BSYGA2RB5ZJCC\">\n      <i class=\"fa fa-cc-paypal\"></i>\n    </a>\n  </h1>\n</div></div>");
+    $(".preloader").html("<div class=\"table\"><div class=\"cell\">\n  <h1>Creating application!</h1>\n  <img class=\"loading\" src=\"../imgs/preloader.svg\">\n  \n<h1>\n    <a class=\"share-facebook\" target=\"_blank\" href=\"https://www.facebook.com/sharer/sharer.php?u=I%20%23converted%20a%20%23website%20to%20a%20%23Windows%20%23application%20using%20%23WebDGap!%20https%3A//mikethedj4.github.io/WebDGap\">\n      <i class=\"fa fa-facebook-square\"></i>\n    </a>\n    <a class=\"share-twitter\" target=\"_blank\" href=\"https://twitter.com/home?status=I%20%23converted%20a%20%23website%20to%20a%20%23Windows%20%23application%20using%20%23WebDGap!%20https%3A//mikethedj4.github.io/WebDGap/\">\n      <i class=\"fa fa-twitter-square\"></i>\n    </a>\n    <a class=\"share-gplus\" target=\"_blank\" href=\"https://plus.google.com/share?url=http%3A//mikethedj4.github.io/WebDGap/\">\n      <i class=\"fa fa-google-plus-square\"></i>\n    </a>\n    <a class=\"share-linkedin-square\" target=\"_blank\" href=\"https://www.linkedin.com/shareArticle?mini=true&url=https%3A//mikethedj4.github.io/WebDGap/&title=WebDGap&summary=I%20%23converted%20a%20%23website%20to%20a%20%23Windows%20%23application%20using%20%23WebDGap!&source=\">\n      <i class=\"fa fa-linkedin-square\"></i>\n    </a>\n    <a target=\"_blank\" href=\"https://www.paypal.com/cgi-bin/webscr?business=mikethedj4%40yahoo.com&cmd=_xclick&amount=5.0&item_name=Donation&currency_code=USD\">\n      <i class=\"fa fa-cc-paypal\"></i>\n    </a>\n  </h1>\n</div></div>");
   } else if ($(this).hasClass("exportedwebapp")) {
-    $(".preloader").html("<div class=\"table\"><div class=\"cell\">\n  <h1>Creating application!</h1>\n  <img class=\"loading\" src=\"../imgs/preloader.svg\">\n  \n<h1>\n    <a class=\"share-facebook\" target=\"_blank\" href=\"https://www.facebook.com/sharer/sharer.php?u=I%20%23converted%20a%20%23web%20%23application%20to%20a%20%23Windows%20%23app%20using%20%23WebDGap!%20https%3A//mikethedj4.github.io/WebDGap\">\n      <i class=\"fa fa-facebook-square\"></i>\n    </a>\n    <a class=\"share-twitter\" target=\"_blank\" href=\"https://twitter.com/home?status=I%20%23converted%20a%20%23web%20%23application%20to%20a%20%23Windows%20%23app%20using%20%23WebDGap!%20https%3A//mikethedj4.github.io/WebDGap/\">\n      <i class=\"fa fa-twitter-square\"></i>\n    </a>\n    <a class=\"share-gplus\" target=\"_blank\" href=\"https://plus.google.com/share?url=http%3A//mikethedj4.github.io/WebDGap/\">\n      <i class=\"fa fa-google-plus-square\"></i>\n    </a>\n    <a class=\"share-linkedin-square\" target=\"_blank\" href=\"https://www.linkedin.com/shareArticle?mini=true&url=https%3A//mikethedj4.github.io/WebDGap/&title=WebDGap&summary=I%20%23converted%20a%20%23web%20%23application%20to%20a%20%23Windows%20%23app%20using%20%23WebDGap!&source=\">\n      <i class=\"fa fa-linkedin-square\"></i>\n    </a>\n    <a target=\"_blank\" href=\"https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=BSYGA2RB5ZJCC\">\n      <i class=\"fa fa-cc-paypal\"></i>\n    </a>\n  </h1>\n</div></div>");
+    $(".preloader").html("<div class=\"table\"><div class=\"cell\">\n  <h1>Creating application!</h1>\n  <img class=\"loading\" src=\"../imgs/preloader.svg\">\n  \n<h1>\n    <a class=\"share-facebook\" target=\"_blank\" href=\"https://www.facebook.com/sharer/sharer.php?u=I%20%23converted%20a%20%23web%20%23application%20to%20a%20%23Windows%20%23app%20using%20%23WebDGap!%20https%3A//mikethedj4.github.io/WebDGap\">\n      <i class=\"fa fa-facebook-square\"></i>\n    </a>\n    <a class=\"share-twitter\" target=\"_blank\" href=\"https://twitter.com/home?status=I%20%23converted%20a%20%23web%20%23application%20to%20a%20%23Windows%20%23app%20using%20%23WebDGap!%20https%3A//mikethedj4.github.io/WebDGap/\">\n      <i class=\"fa fa-twitter-square\"></i>\n    </a>\n    <a class=\"share-gplus\" target=\"_blank\" href=\"https://plus.google.com/share?url=http%3A//mikethedj4.github.io/WebDGap/\">\n      <i class=\"fa fa-google-plus-square\"></i>\n    </a>\n    <a class=\"share-linkedin-square\" target=\"_blank\" href=\"https://www.linkedin.com/shareArticle?mini=true&url=https%3A//mikethedj4.github.io/WebDGap/&title=WebDGap&summary=I%20%23converted%20a%20%23web%20%23application%20to%20a%20%23Windows%20%23app%20using%20%23WebDGap!&source=\">\n      <i class=\"fa fa-linkedin-square\"></i>\n    </a>\n    <a target=\"_blank\" href=\"https://www.paypal.com/cgi-bin/webscr?business=mikethedj4%40yahoo.com&cmd=_xclick&amount=5.0&item_name=Donation&currency_code=USD\">\n      <i class=\"fa fa-cc-paypal\"></i>\n    </a>\n  </h1>\n</div></div>");
   }
 });
 $(".export-as-mac-app").click(function() {
   $(document.body).append('<div class="fixedfill preloader"></div>');
   if ($(this).hasClass("exportedwebsite")) {
-    $(".preloader").html("<div class=\"table\"><div class=\"cell\">\n  <h1>Creating application!</h1>\n  <img class=\"loading\" src=\"../imgs/preloader.svg\">\n  \n<h1>\n    <a class=\"share-facebook\" target=\"_blank\" href=\"https://www.facebook.com/sharer/sharer.php?u=I%20%23converted%20a%20%23website%20to%20a%20%23Mac%20%23application%20using%20%23WebDGap!%20https%3A//mikethedj4.github.io/WebDGap\">\n      <i class=\"fa fa-facebook-square\"></i>\n    </a>\n    <a class=\"share-twitter\" target=\"_blank\" href=\"https://twitter.com/home?status=I%20%23converted%20a%20%23website%20to%20a%20%23Mac%20%23application%20using%20%23WebDGap!%20https%3A//mikethedj4.github.io/WebDGap/\">\n      <i class=\"fa fa-twitter-square\"></i>\n    </a>\n    <a class=\"share-gplus\" target=\"_blank\" href=\"https://plus.google.com/share?url=http%3A//mikethedj4.github.io/WebDGap/\">\n      <i class=\"fa fa-google-plus-square\"></i>\n    </a>\n    <a class=\"share-linkedin-square\" target=\"_blank\" href=\"https://www.linkedin.com/shareArticle?mini=true&url=https%3A//mikethedj4.github.io/WebDGap/&title=WebDGap&summary=I%20%23converted%20a%20%23website%20to%20a%20%23Mac%20%23application%20using%20%23WebDGap!&source=\">\n      <i class=\"fa fa-linkedin-square\"></i>\n    </a>\n    <a target=\"_blank\" href=\"https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=BSYGA2RB5ZJCC\">\n      <i class=\"fa fa-cc-paypal\"></i>\n    </a>\n  </h1>\n</div></div>");
+    $(".preloader").html("<div class=\"table\"><div class=\"cell\">\n  <h1>Creating application!</h1>\n  <img class=\"loading\" src=\"../imgs/preloader.svg\">\n  \n<h1>\n    <a class=\"share-facebook\" target=\"_blank\" href=\"https://www.facebook.com/sharer/sharer.php?u=I%20%23converted%20a%20%23website%20to%20a%20%23Mac%20%23application%20using%20%23WebDGap!%20https%3A//mikethedj4.github.io/WebDGap\">\n      <i class=\"fa fa-facebook-square\"></i>\n    </a>\n    <a class=\"share-twitter\" target=\"_blank\" href=\"https://twitter.com/home?status=I%20%23converted%20a%20%23website%20to%20a%20%23Mac%20%23application%20using%20%23WebDGap!%20https%3A//mikethedj4.github.io/WebDGap/\">\n      <i class=\"fa fa-twitter-square\"></i>\n    </a>\n    <a class=\"share-gplus\" target=\"_blank\" href=\"https://plus.google.com/share?url=http%3A//mikethedj4.github.io/WebDGap/\">\n      <i class=\"fa fa-google-plus-square\"></i>\n    </a>\n    <a class=\"share-linkedin-square\" target=\"_blank\" href=\"https://www.linkedin.com/shareArticle?mini=true&url=https%3A//mikethedj4.github.io/WebDGap/&title=WebDGap&summary=I%20%23converted%20a%20%23website%20to%20a%20%23Mac%20%23application%20using%20%23WebDGap!&source=\">\n      <i class=\"fa fa-linkedin-square\"></i>\n    </a>\n    <a target=\"_blank\" href=\"https://www.paypal.com/cgi-bin/webscr?business=mikethedj4%40yahoo.com&cmd=_xclick&amount=5.0&item_name=Donation&currency_code=USD\">\n      <i class=\"fa fa-cc-paypal\"></i>\n    </a>\n  </h1>\n</div></div>");
   } else if ($(this).hasClass("exportedwebapp")) {
-    $(".preloader").html("<div class=\"table\"><div class=\"cell\">\n  <h1>Creating application!</h1>\n  <img class=\"loading\" src=\"../imgs/preloader.svg\">\n  \n<h1>\n    <a class=\"share-facebook\" target=\"_blank\" href=\"https://www.facebook.com/sharer/sharer.php?u=I%20%23converted%20a%20%23web%20%23application%20to%20a%20%23Mac%20%23app%20using%20%23WebDGap!%20https%3A//mikethedj4.github.io/WebDGap\">\n      <i class=\"fa fa-facebook-square\"></i>\n    </a>\n    <a class=\"share-twitter\" target=\"_blank\" href=\"https://twitter.com/home?status=I%20%23converted%20a%20%23web%20%23application%20to%20a%20%23Mac%20%23app%20using%20%23WebDGap!%20https%3A//mikethedj4.github.io/WebDGap/\">\n      <i class=\"fa fa-twitter-square\"></i>\n    </a>\n    <a class=\"share-gplus\" target=\"_blank\" href=\"https://plus.google.com/share?url=http%3A//mikethedj4.github.io/WebDGap/\">\n      <i class=\"fa fa-google-plus-square\"></i>\n    </a>\n    <a class=\"share-linkedin-square\" target=\"_blank\" href=\"https://www.linkedin.com/shareArticle?mini=true&url=https%3A//mikethedj4.github.io/WebDGap/&title=WebDGap&summary=I%20%23converted%20a%20%23web%20%23application%20to%20a%20%23Mac%20%23app%20using%20%23WebDGap!&source=\">\n      <i class=\"fa fa-linkedin-square\"></i>\n    </a>\n    <a target=\"_blank\" href=\"https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=BSYGA2RB5ZJCC\">\n      <i class=\"fa fa-cc-paypal\"></i>\n    </a>\n  </h1>\n</div></div>");
+    $(".preloader").html("<div class=\"table\"><div class=\"cell\">\n  <h1>Creating application!</h1>\n  <img class=\"loading\" src=\"../imgs/preloader.svg\">\n  \n<h1>\n    <a class=\"share-facebook\" target=\"_blank\" href=\"https://www.facebook.com/sharer/sharer.php?u=I%20%23converted%20a%20%23web%20%23application%20to%20a%20%23Mac%20%23app%20using%20%23WebDGap!%20https%3A//mikethedj4.github.io/WebDGap\">\n      <i class=\"fa fa-facebook-square\"></i>\n    </a>\n    <a class=\"share-twitter\" target=\"_blank\" href=\"https://twitter.com/home?status=I%20%23converted%20a%20%23web%20%23application%20to%20a%20%23Mac%20%23app%20using%20%23WebDGap!%20https%3A//mikethedj4.github.io/WebDGap/\">\n      <i class=\"fa fa-twitter-square\"></i>\n    </a>\n    <a class=\"share-gplus\" target=\"_blank\" href=\"https://plus.google.com/share?url=http%3A//mikethedj4.github.io/WebDGap/\">\n      <i class=\"fa fa-google-plus-square\"></i>\n    </a>\n    <a class=\"share-linkedin-square\" target=\"_blank\" href=\"https://www.linkedin.com/shareArticle?mini=true&url=https%3A//mikethedj4.github.io/WebDGap/&title=WebDGap&summary=I%20%23converted%20a%20%23web%20%23application%20to%20a%20%23Mac%20%23app%20using%20%23WebDGap!&source=\">\n      <i class=\"fa fa-linkedin-square\"></i>\n    </a>\n    <a target=\"_blank\" href=\"https://www.paypal.com/cgi-bin/webscr?business=mikethedj4%40yahoo.com&cmd=_xclick&amount=5.0&item_name=Donation&currency_code=USD\">\n      <i class=\"fa fa-cc-paypal\"></i>\n    </a>\n  </h1>\n</div></div>");
   }
 });
 $(".export-as-lin32-app, .export-as-lin-app").click(function() {
   $(document.body).append('<div class="fixedfill preloader"></div>');
   if ($(this).hasClass("exportedwebsite")) {
-    $(".preloader").html("<div class=\"table\"><div class=\"cell\">\n  <h1>Creating application!</h1>\n  <img class=\"loading\" src=\"../imgs/preloader.svg\">\n  \n<h1>\n    <a class=\"share-facebook\" target=\"_blank\" href=\"https://www.facebook.com/sharer/sharer.php?u=I%20%23converted%20a%20%23website%20to%20a%20%23Linux%20%23application%20using%20%23WebDGap!%20https%3A//mikethedj4.github.io/WebDGap\">\n      <i class=\"fa fa-facebook-square\"></i>\n    </a>\n    <a class=\"share-twitter\" target=\"_blank\" href=\"https://twitter.com/home?status=I%20%23converted%20a%20%23website%20to%20a%20%23Linux%20%23application%20using%20%23WebDGap!%20https%3A//mikethedj4.github.io/WebDGap/\">\n      <i class=\"fa fa-twitter-square\"></i>\n    </a>\n    <a class=\"share-gplus\" target=\"_blank\" href=\"https://plus.google.com/share?url=http%3A//mikethedj4.github.io/WebDGap/\">\n      <i class=\"fa fa-google-plus-square\"></i>\n    </a>\n    <a class=\"share-linkedin-square\" target=\"_blank\" href=\"https://www.linkedin.com/shareArticle?mini=true&url=https%3A//mikethedj4.github.io/WebDGap/&title=WebDGap&summary=I%20%23converted%20a%20%23website%20to%20a%20%23Linux%20%23application%20using%20%23WebDGap!&source=\">\n      <i class=\"fa fa-linkedin-square\"></i>\n    </a>\n    <a target=\"_blank\" href=\"https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=BSYGA2RB5ZJCC\">\n      <i class=\"fa fa-cc-paypal\"></i>\n    </a>\n  </h1>\n</div></div>");
+    $(".preloader").html("<div class=\"table\"><div class=\"cell\">\n  <h1>Creating application!</h1>\n  <img class=\"loading\" src=\"../imgs/preloader.svg\">\n  \n<h1>\n    <a class=\"share-facebook\" target=\"_blank\" href=\"https://www.facebook.com/sharer/sharer.php?u=I%20%23converted%20a%20%23website%20to%20a%20%23Linux%20%23application%20using%20%23WebDGap!%20https%3A//mikethedj4.github.io/WebDGap\">\n      <i class=\"fa fa-facebook-square\"></i>\n    </a>\n    <a class=\"share-twitter\" target=\"_blank\" href=\"https://twitter.com/home?status=I%20%23converted%20a%20%23website%20to%20a%20%23Linux%20%23application%20using%20%23WebDGap!%20https%3A//mikethedj4.github.io/WebDGap/\">\n      <i class=\"fa fa-twitter-square\"></i>\n    </a>\n    <a class=\"share-gplus\" target=\"_blank\" href=\"https://plus.google.com/share?url=http%3A//mikethedj4.github.io/WebDGap/\">\n      <i class=\"fa fa-google-plus-square\"></i>\n    </a>\n    <a class=\"share-linkedin-square\" target=\"_blank\" href=\"https://www.linkedin.com/shareArticle?mini=true&url=https%3A//mikethedj4.github.io/WebDGap/&title=WebDGap&summary=I%20%23converted%20a%20%23website%20to%20a%20%23Linux%20%23application%20using%20%23WebDGap!&source=\">\n      <i class=\"fa fa-linkedin-square\"></i>\n    </a>\n    <a target=\"_blank\" href=\"https://www.paypal.com/cgi-bin/webscr?business=mikethedj4%40yahoo.com&cmd=_xclick&amount=5.0&item_name=Donation&currency_code=USD\">\n      <i class=\"fa fa-cc-paypal\"></i>\n    </a>\n  </h1>\n</div></div>");
   } else if ($(this).hasClass("exportedwebapp")) {
-    $(".preloader").html("<div class=\"table\"><div class=\"cell\">\n  <h1>Creating application!</h1>\n  <img class=\"loading\" src=\"../imgs/preloader.svg\">\n  \n<h1>\n    <a class=\"share-facebook\" target=\"_blank\" href=\"https://www.facebook.com/sharer/sharer.php?u=I%20%23converted%20a%20%23web%20%23application%20to%20a%20%23Linux%20%23app%20using%20%23WebDGap!%20https%3A//mikethedj4.github.io/WebDGap\">\n      <i class=\"fa fa-facebook-square\"></i>\n    </a>\n    <a class=\"share-twitter\" target=\"_blank\" href=\"https://twitter.com/home?status=I%20%23converted%20a%20%23web%20%23application%20to%20a%20%23Linux%20%23app%20using%20%23WebDGap!%20https%3A//mikethedj4.github.io/WebDGap/\">\n      <i class=\"fa fa-twitter-square\"></i>\n    </a>\n    <a class=\"share-gplus\" target=\"_blank\" href=\"https://plus.google.com/share?url=http%3A//mikethedj4.github.io/WebDGap/\">\n      <i class=\"fa fa-google-plus-square\"></i>\n    </a>\n    <a class=\"share-linkedin-square\" target=\"_blank\" href=\"https://www.linkedin.com/shareArticle?mini=true&url=https%3A//mikethedj4.github.io/WebDGap/&title=WebDGap&summary=I%20%23converted%20a%20%23web%20%23application%20to%20a%20%23Linux%20%23app%20using%20%23WebDGap!&source=\">\n      <i class=\"fa fa-linkedin-square\"></i>\n    </a>\n    <a target=\"_blank\" href=\"https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=BSYGA2RB5ZJCC\">\n      <i class=\"fa fa-cc-paypal\"></i>\n    </a>\n  </h1>\n</div></div>");
+    $(".preloader").html("<div class=\"table\"><div class=\"cell\">\n  <h1>Creating application!</h1>\n  <img class=\"loading\" src=\"../imgs/preloader.svg\">\n  \n<h1>\n    <a class=\"share-facebook\" target=\"_blank\" href=\"https://www.facebook.com/sharer/sharer.php?u=I%20%23converted%20a%20%23web%20%23application%20to%20a%20%23Linux%20%23app%20using%20%23WebDGap!%20https%3A//mikethedj4.github.io/WebDGap\">\n      <i class=\"fa fa-facebook-square\"></i>\n    </a>\n    <a class=\"share-twitter\" target=\"_blank\" href=\"https://twitter.com/home?status=I%20%23converted%20a%20%23web%20%23application%20to%20a%20%23Linux%20%23app%20using%20%23WebDGap!%20https%3A//mikethedj4.github.io/WebDGap/\">\n      <i class=\"fa fa-twitter-square\"></i>\n    </a>\n    <a class=\"share-gplus\" target=\"_blank\" href=\"https://plus.google.com/share?url=http%3A//mikethedj4.github.io/WebDGap/\">\n      <i class=\"fa fa-google-plus-square\"></i>\n    </a>\n    <a class=\"share-linkedin-square\" target=\"_blank\" href=\"https://www.linkedin.com/shareArticle?mini=true&url=https%3A//mikethedj4.github.io/WebDGap/&title=WebDGap&summary=I%20%23converted%20a%20%23web%20%23application%20to%20a%20%23Linux%20%23app%20using%20%23WebDGap!&source=\">\n      <i class=\"fa fa-linkedin-square\"></i>\n    </a>\n    <a target=\"_blank\" href=\"https://www.paypal.com/cgi-bin/webscr?business=mikethedj4%40yahoo.com&cmd=_xclick&amount=5.0&item_name=Donation&currency_code=USD\">\n      <i class=\"fa fa-cc-paypal\"></i>\n    </a>\n  </h1>\n</div></div>");
   }
 });
 $(".pgbappexport").click(function() {
@@ -405,19 +405,19 @@ $(".pgbappexport").click(function() {
     // alert code is where code exports
   } else {
     $(document.body).append('<div class="fixedfill preloader"></div>');
-    $(".preloader").html("<div class=\"table\"><div class=\"cell\">\n  <h1>Creating application!</h1>\n  <img class=\"loading\" src=\"../imgs/preloader.svg\">\n  \n<h1>\n    <a class=\"share-facebook\" target=\"_blank\" href=\"https://www.facebook.com/sharer/sharer.php?u=I%20%23converted%20a%20%23web%20%23application%20to%20a%20%23PhoneGap%20%23app%20using%20%23WebDGap!%20https%3A//mikethedj4.github.io/WebDGap\">\n      <i class=\"fa fa-facebook-square\"></i>\n    </a>\n    <a class=\"share-twitter\" target=\"_blank\" href=\"https://twitter.com/home?status=I%20%23converted%20a%20%23web%20%23application%20to%20a%20%23PhoneGap%20%23app%20using%20%23WebDGap!%20https%3A//mikethedj4.github.io/WebDGap/\">\n      <i class=\"fa fa-twitter-square\"></i>\n    </a>\n    <a class=\"share-gplus\" target=\"_blank\" href=\"https://plus.google.com/share?url=http%3A//mikethedj4.github.io/WebDGap/\">\n      <i class=\"fa fa-google-plus-square\"></i>\n    </a>\n    <a class=\"share-linkedin-square\" target=\"_blank\" href=\"https://www.linkedin.com/shareArticle?mini=true&url=https%3A//mikethedj4.github.io/WebDGap/&title=WebDGap&summary=I%20%23converted%20a%20%23web%20%23application%20to%20a%20%23PhoneGap%20%23app%20using%20%23WebDGap!&source=\">\n      <i class=\"fa fa-linkedin-square\"></i>\n    </a>\n    <a target=\"_blank\" href=\"https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=BSYGA2RB5ZJCC\">\n      <i class=\"fa fa-cc-paypal\"></i>\n    </a>\n  </h1>\n</div></div>");
+    $(".preloader").html("<div class=\"table\"><div class=\"cell\">\n  <h1>Creating application!</h1>\n  <img class=\"loading\" src=\"../imgs/preloader.svg\">\n  \n<h1>\n    <a class=\"share-facebook\" target=\"_blank\" href=\"https://www.facebook.com/sharer/sharer.php?u=I%20%23converted%20a%20%23web%20%23application%20to%20a%20%23PhoneGap%20%23app%20using%20%23WebDGap!%20https%3A//mikethedj4.github.io/WebDGap\">\n      <i class=\"fa fa-facebook-square\"></i>\n    </a>\n    <a class=\"share-twitter\" target=\"_blank\" href=\"https://twitter.com/home?status=I%20%23converted%20a%20%23web%20%23application%20to%20a%20%23PhoneGap%20%23app%20using%20%23WebDGap!%20https%3A//mikethedj4.github.io/WebDGap/\">\n      <i class=\"fa fa-twitter-square\"></i>\n    </a>\n    <a class=\"share-gplus\" target=\"_blank\" href=\"https://plus.google.com/share?url=http%3A//mikethedj4.github.io/WebDGap/\">\n      <i class=\"fa fa-google-plus-square\"></i>\n    </a>\n    <a class=\"share-linkedin-square\" target=\"_blank\" href=\"https://www.linkedin.com/shareArticle?mini=true&url=https%3A//mikethedj4.github.io/WebDGap/&title=WebDGap&summary=I%20%23converted%20a%20%23web%20%23application%20to%20a%20%23PhoneGap%20%23app%20using%20%23WebDGap!&source=\">\n      <i class=\"fa fa-linkedin-square\"></i>\n    </a>\n    <a target=\"_blank\" href=\"https://www.paypal.com/cgi-bin/webscr?business=mikethedj4%40yahoo.com&cmd=_xclick&amount=5.0&item_name=Donation&currency_code=USD\">\n      <i class=\"fa fa-cc-paypal\"></i>\n    </a>\n  </h1>\n</div></div>");
   }
 });
 $("input.chromeappexport").click(function() {
   if ( document.querySelector("[data-value=description]").value ) {
     $(document.body).append('<div class="fixedfill preloader"></div>');
-    $(".preloader").html("<div class=\"table\"><div class=\"cell\">\n  <h1>Creating application!</h1>\n  <img class=\"loading\" src=\"../imgs/preloader.svg\">\n  \n<h1>\n    <a class=\"share-facebook\" target=\"_blank\" href=\"https://www.facebook.com/sharer/sharer.php?u=I%20%23converted%20a%20%23web%20%23application%20to%20a%20%23Chrome%20%23app%20using%20%23WebDGap!%20https%3A//mikethedj4.github.io/WebDGap\">\n      <i class=\"fa fa-facebook-square\"></i>\n    </a>\n    <a class=\"share-twitter\" target=\"_blank\" href=\"https://twitter.com/home?status=I%20%23converted%20a%20%23web%20%23application%20to%20a%20%23Chrome%20%23app%20using%20%23WebDGap!%20https%3A//mikethedj4.github.io/WebDGap/\">\n      <i class=\"fa fa-twitter-square\"></i>\n    </a>\n    <a class=\"share-gplus\" target=\"_blank\" href=\"https://plus.google.com/share?url=http%3A//mikethedj4.github.io/WebDGap/\">\n      <i class=\"fa fa-google-plus-square\"></i>\n    </a>\n    <a class=\"share-linkedin-square\" target=\"_blank\" href=\"https://www.linkedin.com/shareArticle?mini=true&url=https%3A//mikethedj4.github.io/WebDGap/&title=WebDGap&summary=I%20%23converted%20a%20%23web%20%23application%20to%20a%20%23Chrome%20%23app%20using%20%23WebDGap!&source=\">\n      <i class=\"fa fa-linkedin-square\"></i>\n    </a>\n    <a target=\"_blank\" href=\"https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=BSYGA2RB5ZJCC\">\n      <i class=\"fa fa-cc-paypal\"></i>\n    </a>\n  </h1>\n</div></div>");
+    $(".preloader").html("<div class=\"table\"><div class=\"cell\">\n  <h1>Creating application!</h1>\n  <img class=\"loading\" src=\"../imgs/preloader.svg\">\n  \n<h1>\n    <a class=\"share-facebook\" target=\"_blank\" href=\"https://www.facebook.com/sharer/sharer.php?u=I%20%23converted%20a%20%23web%20%23application%20to%20a%20%23Chrome%20%23app%20using%20%23WebDGap!%20https%3A//mikethedj4.github.io/WebDGap\">\n      <i class=\"fa fa-facebook-square\"></i>\n    </a>\n    <a class=\"share-twitter\" target=\"_blank\" href=\"https://twitter.com/home?status=I%20%23converted%20a%20%23web%20%23application%20to%20a%20%23Chrome%20%23app%20using%20%23WebDGap!%20https%3A//mikethedj4.github.io/WebDGap/\">\n      <i class=\"fa fa-twitter-square\"></i>\n    </a>\n    <a class=\"share-gplus\" target=\"_blank\" href=\"https://plus.google.com/share?url=http%3A//mikethedj4.github.io/WebDGap/\">\n      <i class=\"fa fa-google-plus-square\"></i>\n    </a>\n    <a class=\"share-linkedin-square\" target=\"_blank\" href=\"https://www.linkedin.com/shareArticle?mini=true&url=https%3A//mikethedj4.github.io/WebDGap/&title=WebDGap&summary=I%20%23converted%20a%20%23web%20%23application%20to%20a%20%23Chrome%20%23app%20using%20%23WebDGap!&source=\">\n      <i class=\"fa fa-linkedin-square\"></i>\n    </a>\n    <a target=\"_blank\" href=\"https://www.paypal.com/cgi-bin/webscr?business=mikethedj4%40yahoo.com&cmd=_xclick&amount=5.0&item_name=Donation&currency_code=USD\">\n      <i class=\"fa fa-cc-paypal\"></i>\n    </a>\n  </h1>\n</div></div>");
   }
 });
 $(".chromepopexport").click(function() {
   if ( document.querySelector("[data-value=description]").value ) {
     $(document.body).append('<div class="fixedfill preloader"></div>');
-    $(".preloader").html("<div class=\"table\"><div class=\"cell\">\n  <h1>Creating application!</h1>\n  <img class=\"loading\" src=\"../imgs/preloader.svg\">\n  \n<h1>\n    <a class=\"share-facebook\" target=\"_blank\" href=\"https://www.facebook.com/sharer/sharer.php?u=I%20%23converted%20a%20%23web%20%23application%20to%20a%20%23Chrome%20%23extension%20using%20%23WebDGap!%20https%3A//mikethedj4.github.io/WebDGap\">\n      <i class=\"fa fa-facebook-square\"></i>\n    </a>\n    <a class=\"share-twitter\" target=\"_blank\" href=\"https://twitter.com/home?status=I%20%23converted%20a%20%23web%20%23application%20to%20a%20%23Chrome%20%23extension%20using%20%23WebDGap!%20https%3A//mikethedj4.github.io/WebDGap/\">\n      <i class=\"fa fa-twitter-square\"></i>\n    </a>\n    <a class=\"share-gplus\" target=\"_blank\" href=\"https://plus.google.com/share?url=http%3A//mikethedj4.github.io/WebDGap/\">\n      <i class=\"fa fa-google-plus-square\"></i>\n    </a>\n    <a class=\"share-linkedin-square\" target=\"_blank\" href=\"https://www.linkedin.com/shareArticle?mini=true&url=https%3A//mikethedj4.github.io/WebDGap/&title=WebDGap&summary=I%20%23converted%20a%20%23web%20%23application%20to%20a%20%23Chrome%20%23extension%20using%20%23WebDGap!&source=\">\n      <i class=\"fa fa-linkedin-square\"></i>\n    </a>\n    <a target=\"_blank\" href=\"https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=BSYGA2RB5ZJCC\">\n      <i class=\"fa fa-cc-paypal\"></i>\n    </a>\n  </h1>\n</div></div>");
+    $(".preloader").html("<div class=\"table\"><div class=\"cell\">\n  <h1>Creating application!</h1>\n  <img class=\"loading\" src=\"../imgs/preloader.svg\">\n  \n<h1>\n    <a class=\"share-facebook\" target=\"_blank\" href=\"https://www.facebook.com/sharer/sharer.php?u=I%20%23converted%20a%20%23web%20%23application%20to%20a%20%23Chrome%20%23extension%20using%20%23WebDGap!%20https%3A//mikethedj4.github.io/WebDGap\">\n      <i class=\"fa fa-facebook-square\"></i>\n    </a>\n    <a class=\"share-twitter\" target=\"_blank\" href=\"https://twitter.com/home?status=I%20%23converted%20a%20%23web%20%23application%20to%20a%20%23Chrome%20%23extension%20using%20%23WebDGap!%20https%3A//mikethedj4.github.io/WebDGap/\">\n      <i class=\"fa fa-twitter-square\"></i>\n    </a>\n    <a class=\"share-gplus\" target=\"_blank\" href=\"https://plus.google.com/share?url=http%3A//mikethedj4.github.io/WebDGap/\">\n      <i class=\"fa fa-google-plus-square\"></i>\n    </a>\n    <a class=\"share-linkedin-square\" target=\"_blank\" href=\"https://www.linkedin.com/shareArticle?mini=true&url=https%3A//mikethedj4.github.io/WebDGap/&title=WebDGap&summary=I%20%23converted%20a%20%23web%20%23application%20to%20a%20%23Chrome%20%23extension%20using%20%23WebDGap!&source=\">\n      <i class=\"fa fa-linkedin-square\"></i>\n    </a>\n    <a target=\"_blank\" href=\"https://www.paypal.com/cgi-bin/webscr?business=mikethedj4%40yahoo.com&cmd=_xclick&amount=5.0&item_name=Donation&currency_code=USD\">\n      <i class=\"fa fa-cc-paypal\"></i>\n    </a>\n  </h1>\n</div></div>");
   }
 });
 
@@ -519,57 +519,11 @@ var audioCapture, videoCapture, storagePerm, setOffline, listPermissions,
     listIntentions, telIntent, smsIntent, mailtoIntent, geoIntent, marketIntent,
     filestorageIntent,
     loader = $("#load"),
-    c16  = $(".n16"),
-    c32  = $(".n32"),
-    c64  = $(".n64"),
-    c96  = $(".n96"),
-    c72  = $(".n72"),
-    c48  = $(".n48"),
-    c36  = $(".n36"),
-    c144 = $(".n144"),
-    c57  = $(".n57"),
-    c114 = $(".n114"),
-    c159 = $(".n159"),
-    c99  = $(".n99"),
-    c30   = $(".n30"),
-    c44   = $(".n44"),
-    c106  = $(".n106"),
-    c70   = $(".n70"),
-    c71   = $(".n71"),
-    c170  = $(".n170"),
-    c150  = $(".n150"),
-    c360  = $(".n360"),
-    c310  = $(".n310"),
-    c50   = $(".n50"),
-    c120  = $(".n120"),
     cImgWinWide1 = $(".nwinwide1"),
     cImgWinWide2 = $(".nwinwide2"),
     canvas      = $(".holder"),
     holder      = document.getElementById("imageloader"),
     loadFiles   = $("#file, .load"),
-    ctx16       = c16[0].getContext("2d"),
-    ctx32       = c32[0].getContext("2d"),
-    ctx64       = c64[0].getContext("2d"),
-    ctx96       = c96[0].getContext("2d"),
-    ctx72       = c72[0].getContext("2d"),
-    ctx48       = c48[0].getContext("2d"),
-    ctx36       = c36[0].getContext("2d"),
-    ctx144      = c144[0].getContext("2d"),
-    ctx57       = c57[0].getContext("2d"),
-    ctx114      = c114[0].getContext("2d"),
-    ctx159      = c159[0].getContext("2d"),
-    ctx99       = c99[0].getContext("2d"),
-    ctx30       = c30[0].getContext("2d"),
-    ctx44       = c44[0].getContext("2d"),
-    ctx106      = c106[0].getContext("2d"),
-    ctx70       = c70[0].getContext("2d"),
-    ctx71       = c71[0].getContext("2d"),
-    ctx170      = c170[0].getContext("2d"),
-    ctx150      = c150[0].getContext("2d"),
-    ctx360      = c360[0].getContext("2d"),
-    ctx310      = c310[0].getContext("2d"),
-    ctx50       = c50[0].getContext("2d"),
-    ctx120      = c120[0].getContext("2d"),
     ctxWinWide1 = cImgWinWide1[0].getContext("2d"),
     ctxWinWide2 = cImgWinWide2[0].getContext("2d"),
     ctx         = canvas[0].getContext("2d"),
@@ -588,15 +542,12 @@ var audioCapture, videoCapture, storagePerm, setOffline, listPermissions,
             var zip = new JSZip(data);
 
             // Your Logo
-            var Img16 = c16[0].toDataURL("image/png");
-            var Img32 = c32[0].toDataURL("image/png");
-            var Img64 = c64[0].toDataURL("image/png");
-            var Img128 = canvas[0].toDataURL("image/png");
-            zip.file("resources/default_app/icons/16.png", Img16.split('base64,')[1],{base64: true});
-            zip.file("resources/default_app/icons/32.png", Img32.split('base64,')[1],{base64: true});
-            zip.file("resources/default_app/icons/64.png", Img64.split('base64,')[1],{base64: true});
-            zip.file("resources/default_app/icons/128.png", Img128.split('base64,')[1],{base64: true});
-            zip.file("resources/default_app/icons/logo.png", $(".imgorigholder > img").attr("src").split("base64,")[1],{base64: true});
+            zip.file("resources/default_app/icons/16.png", document.querySelector("[data-webdgapsize=f16]").src.split('base64,')[1],{base64: true});
+            zip.file("resources/default_app/icons/32.png", document.querySelector("[data-webdgapsize=f32]").src.split('base64,')[1],{base64: true});
+            zip.file("resources/default_app/icons/64.png", document.querySelector("[data-webdgapsize=f64]").src.split('base64,')[1],{base64: true});
+            zip.file("resources/default_app/icons/128.png", document.querySelector("[data-webdgapsize=f128]").src.split('base64,')[1],{base64: true});
+            zip.file("resources/default_app/icons/logo.png", document.querySelector("[data-webdgapimgload=webdgapimg]").src.split("base64,")[1],{base64: true});
+            
             // Files for exported app
             zip.file("resources/default_app/css/style.css", "html, body {\n  height: 100%;\n  padding: 0;\n  margin: 0;\n  overflow: hidden;\n}\n\niframe {\n  width: 100%;\n  height: 100%;\n  border: 0;\n}");
             zip.file("resources/default_app/index.html", "<!DOCTYPE html>\n<html>\n  <head>\n    <title>"+ $("[data-id=sitename]").val() +"</title>\n    <meta charset=\"utf-8\">\n    <meta name=\"viewport\" content=\"initial-scale=1.0\">\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=9\" />\n    <link type=\"text/css\" rel=\"stylesheet\" href=\"css/style.css\" />\n  </head>\n  <body>\n    <iframe src=\""+ $("[data-action=website]").val() +"\">\n      Your browser does not support the iFrame html elements.\n    </iframe>\n  </body>\n</html>");
@@ -618,19 +569,16 @@ var audioCapture, videoCapture, storagePerm, setOffline, listPermissions,
             var zip = new JSZip(data);
 
             // Your Logo
-            var Img16 = c16[0].toDataURL("image/png");
-            var Img32 = c32[0].toDataURL("image/png");
-            var Img64 = c64[0].toDataURL("image/png");
-            var Img128 = canvas[0].toDataURL("image/png");
-            zip.file("app/icons/16.png", Img16.split('base64,')[1],{base64: true});
-            zip.file("app/icons/32.png", Img32.split('base64,')[1],{base64: true});
-            zip.file("app/icons/64.png", Img64.split('base64,')[1],{base64: true});
-            zip.file("app/icons/128.png", Img128.split('base64,')[1],{base64: true});
-            zip.file("app/icons/logo.png", $(".imgorigholder > img").attr("src").split("base64,")[1],{base64: true});
+            zip.file("app/icons/16.png", document.querySelector("[data-webdgapsize=f16]").src.split('base64,')[1],{base64: true});
+            zip.file("app/icons/32.png", document.querySelector("[data-webdgapsize=f32]").src.split('base64,')[1],{base64: true});
+            zip.file("app/icons/64.png", document.querySelector("[data-webdgapsize=f64]").src.split('base64,')[1],{base64: true});
+            zip.file("app/icons/128.png", document.querySelector("[data-webdgapsize=f128]").src.split('base64,')[1],{base64: true});
+            zip.file("app/icons/logo.png", document.querySelector("[data-webdgapimgload=webdgapimg]").src.split("base64,")[1],{base64: true});
+            
             // Files for exported app
             zip.file("package.json", '{\n  "main"  : "app/index.html",\n  "name"  : "'+ $("[data-id=sitename]").val() +'",\n  "window": {\n      "toolbar" : false,\n      "icon"    : "app/icons/128.png",\n      "width"   : 1000,\n      "height"  : 600,\n      "position": "center"\n  }\n}');
             zip.file("app/index.html", '<!doctype html>\n<html>\n <head>\n    <title>'+ $("[data-id=sitename]").val() +'</title>\n    <style>\n      iframe {\n        position: absolute;\n        top: 0;\n        left: 0;\n        width: 100%;\n        height: 100%;\n        overflow: visible;\n        border: 0;\n      }\n    </style>\n  </head>\n <body>\n    <iframe src="'+ $("[data-action=website]").val() +'">\n      Your browser does not support the iFrame html elements.\n    </iframe>\n  </body>\n</html>');
-            // zip.file("README", "If WebDGap was at all helpful for you. Would you consider donating to the project?\nhttps://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BSYGA2RB5ZJCC\n\n")
+            // zip.file("README", "If WebDGap was at all helpful for you. Would you consider donating to the project?\nhttps://www.paypal.com/cgi-bin/webscr?business=mikethedj4%40yahoo.com&cmd=_xclick&amount=5.0&item_name=Donation&currency_code=USD\n\n")
             // Export application
             var content = zip.generate({type:"blob"});
             saveAs(content, $("[data-id=sitename]").val().replace(/ /g, "-").toLowerCase() + "-win32site.zip");
@@ -649,21 +597,18 @@ var audioCapture, videoCapture, storagePerm, setOffline, listPermissions,
             var zip = new JSZip(data);
 
             // Your Logo
-            var Img16 = c16[0].toDataURL("image/png");
-            var Img32 = c32[0].toDataURL("image/png");
-            var Img64 = c64[0].toDataURL("image/png");
-            var Img128 = canvas[0].toDataURL("image/png");
-            zip.file("data/content/icons/16.png", Img16.split('base64,')[1],{base64: true});
-            zip.file("data/content/icons/32.png", Img32.split('base64,')[1],{base64: true});
-            zip.file("data/content/icons/64.png", Img64.split('base64,')[1],{base64: true});
-            zip.file("data/content/icons/128.png", Img128.split('base64,')[1],{base64: true});
-            zip.file("data/content/icons/logo.png", $(".imgorigholder > img").attr("src").split("base64,")[1],{base64: true});
+            zip.file("data/content/icons/16.png", document.querySelector("[data-webdgapsize=f16]").src.split('base64,')[1],{base64: true});
+            zip.file("data/content/icons/32.png", document.querySelector("[data-webdgapsize=f32]").src.split('base64,')[1],{base64: true});
+            zip.file("data/content/icons/64.png", document.querySelector("[data-webdgapsize=f64]").src.split('base64,')[1],{base64: true});
+            zip.file("data/content/icons/128.png", document.querySelector("[data-webdgapsize=f128]").src.split('base64,')[1],{base64: true});
+            zip.file("data/content/icons/logo.png", document.querySelector("[data-webdgapimgload=webdgapimg]").src.split("base64,")[1],{base64: true});
+            
             // Files for exported app
             zip.file("data/package.json", '{\n  "main"  : "content/index.html",\n  "name"  : "'+ $("[data-id=sitename]").val() +'",\n  "window": {\n    "toolbar"    : false\n  }\n}');
             zip.file("data/content/index.html", '<!doctype html>\n<html>\n <head>\n    <title>'+ $("[data-id=sitename]").val() +'</title>\n    <style>\n      iframe {\n        position: absolute;\n        top: 0;\n        left: 0;\n        width: 100%;\n        height: 100%;\n        overflow: visible;\n        border: 0;\n      }\n    </style>\n  </head>\n <body>\n    <iframe src="'+ $("[data-action=website]").val() +'"></iframe>\n\n    <script src="js/main.js"></script>\n  </body>\n</html>');
             zip.file("data/content/js/main.js", 'document.addEventListener("DOMContentLoaded", function() {\n  // Load library\n  var gui = require("nw.gui");\n\n  // Reference to window\n  var win = gui.Window.get();\n\n  // Create menu container\n  var Menu = new gui.Menu({\n    type: "menubar"\n  });\n\n  //initialize default mac menu\n  Menu.createMacBuiltin("'+ $("[data-id=sitename]").val() +'");\n\n  // Get the root menu from the default mac menu\n  var rootMenu = Menu.items[0].submenu;\n  var windowMenu = Menu.items[2].submenu;\n\n  // Append new item to root menu\n  windowMenu.insert(\n    new gui.MenuItem({\n      type: "normal",\n      label: "Toggle Fullscreen",\n      key: "F",\n      modifiers: "cmd",\n      click : function () {\n        win.toggleFullscreen();\n      }\n    })\n  );\n\n  windowMenu.insert(\n    new gui.MenuItem({\n      type: "normal",\n      label: "Reload App",\n      key: "r",\n      modifiers: "cmd",\n      click : function () {\n        win.reload();\n      }\n    })\n  );\n\n  // Remove About Node-Webkit\n  rootMenu.removeAt(0);\n\n  // Append Menu to Window\n  gui.Window.get().menu = Menu;\n});');
             zip.file("run.sh", "open -a /Applications/"+ $("[data-id=sitename]").val() +".app/Contents/data/"+ $("[data-id=sitename]").val().replace(/ /g, "") +".app");
-            // zip.file("README", "If WebDGap was at all helpful for you. Would you consider donating to the project?\nhttps://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BSYGA2RB5ZJCC\n\n");
+            // zip.file("README", "If WebDGap was at all helpful for you. Would you consider donating to the project?\nhttps://www.paypal.com/cgi-bin/webscr?business=mikethedj4%40yahoo.com&cmd=_xclick&amount=5.0&item_name=Donation&currency_code=USD\n\n");
             // Export application
             var content = zip.generate({type:"blob"});
             saveAs(content, $("[data-id=sitename]").val().replace(/ /g, "-").toLowerCase() + "-macsite.zip");
@@ -687,15 +632,12 @@ var audioCapture, videoCapture, storagePerm, setOffline, listPermissions,
             appName.load(data);
 
             // Your Logo
-            var Img16 = c16[0].toDataURL("image/png");
-            var Img32 = c32[0].toDataURL("image/png");
-            var Img64 = c64[0].toDataURL("image/png");
-            var Img128 = canvas[0].toDataURL("image/png");
-            appName.file("resources/default_app/icons/16.png", Img16.split('base64,')[1],{base64: true});
-            appName.file("resources/default_app/icons/32.png", Img32.split('base64,')[1],{base64: true});
-            appName.file("resources/default_app/icons/64.png", Img64.split('base64,')[1],{base64: true});
-            appName.file("resources/default_app/icons/128.png", Img128.split('base64,')[1],{base64: true});
-            appName.file("resources/default_app/icons/logo.png", $(".imgorigholder > img").attr("src").split("base64,")[1],{base64: true});
+            appName.file("resources/default_app/icons/16.png", document.querySelector("[data-webdgapsize=f16]").src.split('base64,')[1],{base64: true});
+            appName.file("resources/default_app/icons/32.png", document.querySelector("[data-webdgapsize=f32]").src.split('base64,')[1],{base64: true});
+            appName.file("resources/default_app/icons/64.png", document.querySelector("[data-webdgapsize=f64]").src.split('base64,')[1],{base64: true});
+            appName.file("resources/default_app/icons/128.png", document.querySelector("[data-webdgapsize=f128]").src.split('base64,')[1],{base64: true});
+            appName.file("resources/default_app/icons/logo.png", document.querySelector("[data-webdgapimgload=webdgapimg]").src.split("base64,")[1],{base64: true});
+            
             // Files for exported app
             appName.file("resources/default_app/index.html", '<!DOCTYPE html>\n<html>\n  <head>\n    <title>'+ $("[data-id=sitename]").val() +'</title>\n    <style>\n      html, body {\n        height: 100%;\n      }\n      body {\n        margin: 0;\n        padding: 0;\n        overflow: hidden;\n      }\n      iframe {\n        width: 100%;\n        height: 100%;\n        border: 0;\n      }\n    </style>\n  </head>\n  <body>\n    <iframe src="'+ $("[data-action=website]").val() +'"></iframe>\n  </body>\n</html>');
             appName.file("resources/default_app/package.json", "{\n  \"name\": \""+ $("[data-id=sitename]").val() +"\",\n  \"productName\": \""+ $("[data-id=sitename]").val() +"\",\n  \"version\": \"1.0.0\",\n  \"main\": \"default_app.js\",\n  \"license\": \"MIT\"\n}\n");
@@ -722,15 +664,12 @@ var audioCapture, videoCapture, storagePerm, setOffline, listPermissions,
             appName.load(data);
 
             // Your Logo
-            var Img16 = c16[0].toDataURL("image/png");
-            var Img32 = c32[0].toDataURL("image/png");
-            var Img64 = c64[0].toDataURL("image/png");
-            var Img128 = canvas[0].toDataURL("image/png");
-            appName.file("app/icons/16.png", Img16.split('base64,')[1],{base64: true});
-            appName.file("app/icons/32.png", Img32.split('base64,')[1],{base64: true});
-            appName.file("app/icons/64.png", Img64.split('base64,')[1],{base64: true});
-            appName.file("app/icons/128.png", Img128.split('base64,')[1],{base64: true});
-            appName.file("app/icons/logo.png", $(".imgorigholder > img").attr("src").split("base64,")[1],{base64: true});
+            appName.file("app/icons/16.png", document.querySelector("[data-webdgapsize=f16]").src.split('base64,')[1],{base64: true});
+            appName.file("app/icons/32.png", document.querySelector("[data-webdgapsize=f32]").src.split('base64,')[1],{base64: true});
+            appName.file("app/icons/64.png", document.querySelector("[data-webdgapsize=f64]").src.split('base64,')[1],{base64: true});
+            appName.file("app/icons/128.png", document.querySelector("[data-webdgapsize=f128]").src.split('base64,')[1],{base64: true});
+            appName.file("app/icons/logo.png", document.querySelector("[data-webdgapimgload=webdgapimg]").src.split("base64,")[1],{base64: true});
+            
             // Files for exported app
             appName.file("package.json", '{\n  "main"  : "app/index.html",\n  "name"  : "'+ $("[data-id=sitename]").val() +'",\n  "window": {\n      "toolbar" : false,\n      "icon"    : "app/icons/128.png",\n      "width"   : 1000,\n      "height"  : 600,\n      "position": "center"\n  }\n}');
             appName.file("app/index.html", '<!doctype html>\n<html>\n <head>\n    <title>'+ $("[data-id=sitename]").val() +'</title>\n    <style>\n      iframe {\n        position: absolute;\n        top: 0;\n        left: 0;\n        width: 100%;\n        height: 100%;\n        overflow: visible;\n        border: 0;\n      }\n    </style>\n  </head>\n <body>\n    <iframe src="app/index.html"></iframe>\n  </body>\n</html>');
@@ -766,15 +705,11 @@ var audioCapture, videoCapture, storagePerm, setOffline, listPermissions,
             var zip = new JSZip();
 
             // Your Logo
-            var Img16 = c16[0].toDataURL("image/png");
-            var Img32 = c32[0].toDataURL("image/png");
-            var Img64 = c64[0].toDataURL("image/png");
-            var Img128 = canvas[0].toDataURL("image/png");
-            zip.file("img/16.png", Img16.split('base64,')[1],{base64: true});
-            zip.file("img/32.png", Img32.split('base64,')[1],{base64: true});
-            zip.file("img/64.png", Img64.split('base64,')[1],{base64: true});
-            zip.file("img/128.png", Img128.split('base64,')[1],{base64: true});
-            zip.file("img/logo.png", $(".imgorigholder > img").attr("src").split("base64,")[1],{base64: true});
+            zip.file("img/16.png", document.querySelector("[data-webdgapsize=f16]").src.split('base64,')[1],{base64: true});
+            zip.file("img/32.png", document.querySelector("[data-webdgapsize=f32]").src.split('base64,')[1],{base64: true});
+            zip.file("img/64.png", document.querySelector("[data-webdgapsize=f64]").src.split('base64,')[1],{base64: true});
+            zip.file("img/128.png", document.querySelector("[data-webdgapsize=f128]").src.split('base64,')[1],{base64: true});
+            zip.file("img/logo.png", document.querySelector("[data-webdgapimgload=webdgapimg]").src.split("base64,")[1],{base64: true});
             
             if (document.getElementById("audiocapture").checked) {
               audioCapture = ", \"audioCapture\"";
@@ -817,15 +752,11 @@ var audioCapture, videoCapture, storagePerm, setOffline, listPermissions,
           } else {
             var zip = new JSZip();
             // Your logo
-            var Img16 = c16[0].toDataURL("image/png");
-            var Img32 = c32[0].toDataURL("image/png");
-            var Img64 = c64[0].toDataURL("image/png");
-            var Img128 = canvas[0].toDataURL("image/png");
-            zip.file("assets/16.png", Img16.split('base64,')[1],{base64: true});
-            zip.file("assets/32.png", Img32.split('base64,')[1],{base64: true});
-            zip.file("assets/64.png", Img64.split('base64,')[1],{base64: true});
-            zip.file("assets/128.png", Img128.split('base64,')[1],{base64: true});
-            zip.file("assets/logo.png", $(".imgorigholder > img").attr("src").split("base64,")[1],{base64: true});
+            zip.file("assets/16.png", document.querySelector("[data-webdgapsize=f16]").src.split('base64,')[1],{base64: true});
+            zip.file("assets/32.png", document.querySelector("[data-webdgapsize=f32]").src.split('base64,')[1],{base64: true});
+            zip.file("assets/64.png", document.querySelector("[data-webdgapsize=f64]").src.split('base64,')[1],{base64: true});
+            zip.file("assets/128.png", document.querySelector("[data-webdgapsize=f128]").src.split('base64,')[1],{base64: true});
+            zip.file("assets/logo.png", document.querySelector("[data-webdgapimgload=webdgapimg]").src.split("base64,")[1],{base64: true});
             
             // Files for exported app
             zip.file("background.js", "/**\n * Listens for the app launching, then creates the window.\n *\n * @see http://developer.chrome.com/apps/app.runtime.html\n * @see http://developer.chrome.com/apps/app.window.html\n */\nchrome.app.runtime.onLaunched.addListener(function(launchData) {\n  chrome.app.window.create(\n    'index.html',\n    {\n      id: 'mainWindow',\n      innerBounds: {\n        'width': 800,\n        'height': 600\n      }\n    }\n  );\n});");
@@ -851,186 +782,84 @@ function displayPreview(file) {
   var reader = new FileReader();
 
   reader.onload = function(e) {
-    var img   = new Image();
-    var img16 = new Image();
-    var img32 = new Image();
-    var img64 = new Image();
-    var img96   = new Image();
-    var img72   = new Image();
-    var img48   = new Image();
-    var img36   = new Image();
-    var img144  = new Image();
-    var img57   = new Image();
-    var img114  = new Image();
-    var img159  = new Image();
-    var img99   = new Image();
+    // Image Container for WebDGap
+    var addwebdgap = document.createElement("div");
+    addwebdgap.style.display = "none";
+    addwebdgap.setAttribute("data-webdgap", "container");
+    document.body.appendChild(addwebdgap);
+    var webdgapContainer = document.querySelector("[data-webdgap=container]");
+    webdgapContainer.innerHTML = '<div data-webdgapimg="webdgapimgholder"></div>';
+
+    // Load images
+    var webdgaporigimg = document.createElement("img");
+    webdgaporigimg.setAttribute("data-webdgapimgload", "webdgapimg");
+    webdgaporigimg.src = e.target.result;
+    webdgapContainer.appendChild(webdgaporigimg);
+
+    // Load image sizes  
+    function embedImage(size) {
+      // Load images
+      var webdgap_img = new Image();
+      webdgap_img.src = e.target.result;
+      webdgap_img.onload = function() {
+        var webdgap_canvas = document.createElement("canvas");
+        webdgap_canvas.width = size;
+        webdgap_canvas.height = size;
+        var webdgap_ctx = webdgap_canvas.getContext("2d");
+        webdgap_ctx.clearRect(0, 0, size, size);
+        webdgap_ctx.drawImage(this, 0, 0, size, size);
+        var webdgap_dataURL = webdgap_canvas.toDataURL("image/png");
+        var webdgap_image = document.createElement("img");
+        webdgap_image.setAttribute("data-webdgapsize", "f" + size);
+        webdgap_image.src = webdgap_dataURL;
+
+        // Image Container for WebDGap
+        webdgapContainer.appendChild(webdgap_image);
+      };
+    }
+    embedImage("16");
+    embedImage("32");
+    embedImage("64");
+    embedImage("128");
+    // Android Icons
+    embedImage("96");
+    embedImage("72");
+    embedImage("48");
+    embedImage("36");
+    // iOS Icons
+    embedImage("72");
+    embedImage("144");
+    embedImage("57");
+    embedImage("114");
+    // Win Phone 8 Icon
+    embedImage("159");
+    embedImage("99");
+    // Blackberry Icons
+    // embedImage("80");
+    // PhoneGap Windows Icons
+    embedImage("30");
+    embedImage("44");
+    embedImage("106");
+    embedImage("70");
+    embedImage("71");
+    embedImage("170");
+    embedImage("150");
+    embedImage("360");
+    embedImage("310");
+    embedImage("50");
+    embedImage("120");
     
-    // PhoneGap Windows Icon
-    var img30       = new Image();
-    var img44       = new Image();
-    var img106      = new Image();
-    var img70       = new Image();
-    var img71       = new Image();
-    var img170      = new Image();
-    var img150      = new Image();
-    var img360      = new Image();
-    var img310      = new Image();
-    var img50       = new Image();
-    var img120      = new Image();
+    var img = new Image();
     var imgWinWide1 = new Image();
     var imgWinWide2 = new Image();
     
-    img.src   = e.target.result;
-    img16.src = e.target.result;
-    img32.src = e.target.result;
-    img64.src = e.target.result;
-    img16.onload = function() {
-      // x, y, width, height
-      ctx16.clearRect(0, 0, 16, 16);
-      ctx16.drawImage(img16, 0, 0, 16, 16);
-    }
-    img32.onload = function() {
-      // x, y, width, height
-      ctx32.clearRect(0, 0, 32, 32);
-      ctx32.drawImage(img32, 0, 0, 32, 32);
-    }
-    img64.onload = function() {
-      // x, y, width, height
-      ctx64.clearRect(0, 0, 64, 64);
-      ctx64.drawImage(img64, 0, 0, 64, 64);
-    }
+    img.src = e.target.result;
+    imgWinWide1.src = e.target.result;
+    imgWinWide2.src = e.target.result;
     img.onload = function() {
       // x, y, width, height
       ctx.clearRect(0, 0, 128, 128);
       ctx.drawImage(img, 0, 0, 128, 128);
-    }
-    
-    img96.src    = e.target.result;
-    img72.src    = e.target.result;
-    img48.src    = e.target.result;
-    img36.src    = e.target.result;
-    img144.src   = e.target.result;
-    img57.src    = e.target.result;
-    img114.src   = e.target.result;
-    img159.src   = e.target.result;
-    img99.src    = e.target.result;
-    
-    // PhoneGap Windows Icon
-    img30.src       = e.target.result;
-    img44.src       = e.target.result;
-    img106.src      = e.target.result;
-    img70.src       = e.target.result;
-    img71.src       = e.target.result;
-    img170.src      = e.target.result;
-    img150.src      = e.target.result;
-    img360.src      = e.target.result;
-    img310.src      = e.target.result;
-    img50.src       = e.target.result;
-    img120.src      = e.target.result;
-    imgWinWide1.src = e.target.result;
-    imgWinWide2.src = e.target.result;
-
-    img96.onload = function() {
-      // x, y, width, height
-      ctx96.clearRect(0, 0, 96, 96);
-      ctx96.drawImage(img64, 0, 0, 96, 96);
-    }
-    img72.onload = function() {
-      // x, y, width, height
-      ctx72.clearRect(0, 0, 72, 72);
-      ctx72.drawImage(img64, 0, 0, 72, 72);
-    }
-    img48.onload = function() {
-      // x, y, width, height
-      ctx48.clearRect(0, 0, 48, 48);
-      ctx48.drawImage(img64, 0, 0, 48, 48);
-    }
-    img36.onload = function() {
-      // x, y, width, height
-      ctx36.clearRect(0, 0, 36, 36);
-      ctx36.drawImage(img64, 0, 0, 36, 36);
-    }
-    img144.onload = function() {
-      // x, y, width, height
-      ctx144.clearRect(0, 0, 144, 144);
-      ctx144.drawImage(img64, 0, 0, 144, 144);
-    }
-    img57.onload = function() {
-      // x, y, width, height
-      ctx57.clearRect(0, 0, 57, 57);
-      ctx57.drawImage(img64, 0, 0, 57, 57);
-    }
-    img114.onload = function() {
-      // x, y, width, height
-      ctx114.clearRect(0, 0, 114, 114);
-      ctx114.drawImage(img64, 0, 0, 114, 114);
-    }
-    img159.onload = function() {
-      // x, y, width, height
-      ctx159.clearRect(0, 0, 159, 159);
-      ctx159.drawImage(img159, 0, 0, 159, 159);
-    }
-    img99.onload = function() {
-      // x, y, width, height
-      ctx99.clearRect(0, 0, 99, 99);
-      ctx99.drawImage(img99, 0, 0, 99, 99);
-    }
-
-    // PhoneGap Windows Icon
-    img30.onload = function() {
-      // x, y, width, height
-      ctx30.clearRect(0, 0, 30, 30);
-      ctx30.drawImage(img30, 0, 0, 30, 30);
-    }
-    img44.onload = function() {
-      // x, y, width, height
-      ctx44.clearRect(0, 0, 44, 44);
-      ctx44.drawImage(img44, 0, 0, 44, 44);
-    }
-    img106.onload = function() {
-      // x, y, width, height
-      ctx106.clearRect(0, 0, 106, 106);
-      ctx106.drawImage(img106, 0, 0, 106, 106);
-    }
-    img70.onload = function() {
-      // x, y, width, height
-      ctx70.clearRect(0, 0, 70, 70);
-      ctx70.drawImage(img70, 0, 0, 70, 70);
-    }
-    img71.onload = function() {
-      // x, y, width, height
-      ctx71.clearRect(0, 0, 71, 71);
-      ctx71.drawImage(img71, 0, 0, 71, 71);
-    }
-    img170.onload = function() {
-      // x, y, width, height
-      ctx170.clearRect(0, 0, 170, 170);
-      ctx170.drawImage(img170, 0, 0, 170, 170);
-    }
-    img150.onload = function() {
-      // x, y, width, height
-      ctx150.clearRect(0, 0, 150, 150);
-      ctx150.drawImage(img150, 0, 0, 150, 150);
-    }
-    img360.onload = function() {
-      // x, y, width, height
-      ctx360.clearRect(0, 0, 360, 360);
-      ctx360.drawImage(img360, 0, 0, 360, 360);
-    }
-    img310.onload = function() {
-      // x, y, width, height
-      ctx310.clearRect(0, 0, 310, 310);
-      ctx310.drawImage(img310, 0, 0, 310, 310);
-    }
-    img50.onload = function() {
-      // x, y, width, height
-      ctx50.clearRect(0, 0, 50, 50);
-      ctx50.drawImage(img50, 0, 0, 50, 50);
-    }
-    img120.onload = function() {
-      // x, y, width, height
-      ctx120.clearRect(0, 0, 120, 120);
-      ctx120.drawImage(img120, 0, 0, 120, 120);
     }
     imgWinWide1.onload = function() {
       // x, y, width, height
@@ -1042,18 +871,6 @@ function displayPreview(file) {
       ctxWinWide2.clearRect(0, 0, 744, 360);
       ctxWinWide2.drawImage(imgWinWide2, 0, 0, 744, 360);
     }
-    
-    var imgorigholder = $(".imgorigholder");
-    var imgOrigUrl = e.target.result;
-    var imgOrig = $("<img>");
-    imgOrig.attr("src", imgOrigUrl);
-    imgorigholder.empty();
-    imgorigholder.append(imgOrig);
-
-    // tag.onload = function() {
-    //   var dataUrl = e.target.result;
-    //   $(".img--avatar").attr("src", dataUrl);
-    // }
   }
   $(".img--avatar").addClass("hide");
   $("[data-id=sitename]").attr("disabled", "true");
@@ -1201,20 +1018,16 @@ $(document).ready(function() {
                 zip.folder("app/").load(webAppZipBinary);
 
                 // Your Logo
-                var Img16 = c16[0].toDataURL("image/png");
-                var Img32 = c32[0].toDataURL("image/png");
-                var Img64 = c64[0].toDataURL("image/png");
-                var Img128 = canvas[0].toDataURL("image/png");
-                zip.file("app/icons/16.png", Img16.split('base64,')[1],{base64: true});
-                zip.file("app/icons/32.png", Img32.split('base64,')[1],{base64: true});
-                zip.file("app/icons/64.png", Img64.split('base64,')[1],{base64: true});
-                zip.file("app/icons/128.png", Img128.split('base64,')[1],{base64: true});
-                zip.file("app/icons/logo.png", $(".imgorigholder > img").attr("src").split("base64,")[1],{base64: true});
+                zip.file("app/icons/16.png", document.querySelector("[data-webdgapsize=f16]").src.split('base64,')[1],{base64: true});
+                zip.file("app/icons/32.png", document.querySelector("[data-webdgapsize=f32]").src.split('base64,')[1],{base64: true});
+                zip.file("app/icons/64.png", document.querySelector("[data-webdgapsize=f64]").src.split('base64,')[1],{base64: true});
+                zip.file("app/icons/128.png", document.querySelector("[data-webdgapsize=f128]").src.split('base64,')[1],{base64: true});
+                zip.file("app/icons/logo.png", document.querySelector("[data-webdgapimgload=webdgapimg]").src.split("base64,")[1],{base64: true});
 
                 // For 32bit Windows Application
                 zip.file("package.json", '{\n  "main"  : "index.html",\n  "name"  : "'+ $("[data-id=sitename]").val() +'",\n  "window": {\n      "toolbar" : false,\n      "icon"    : "app/icons/128.png",\n      "width"   : 1000,\n      "height"  : 600,\n      "position": "center"\n  }\n}');
                 zip.file("index.html", '<!doctype html>\n<html>\n <head>\n    <title>'+ $("[data-id=sitename]").val() +'</title>\n    <style>\n      iframe {\n        position: absolute;\n        top: 0;\n        left: 0;\n        width: 100%;\n        height: 100%;\n        overflow: visible;\n        border: 0;\n      }\n    </style>\n  </head>\n <body>\n    <iframe src="app/index.html"></iframe>\n  </body>\n</html>');
-                // zip.file("README", "If WebDGap was at all helpful for you. Would you consider donating to the project?\nhttps://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BSYGA2RB5ZJCC\n\n");
+                // zip.file("README", "If WebDGap was at all helpful for you. Would you consider donating to the project?\nhttps://www.paypal.com/cgi-bin/webscr?business=mikethedj4%40yahoo.com&cmd=_xclick&amount=5.0&item_name=Donation&currency_code=USD\n\n");
 
                 // Export your application
                 var content = zip.generate({type:"blob"});
@@ -1236,20 +1049,16 @@ $(document).ready(function() {
                 zip.folder("app/").load(webAppZipBinary);
 
                 // Your Logo
-                var Img16 = c16[0].toDataURL("image/png");
-                var Img32 = c32[0].toDataURL("image/png");
-                var Img64 = c64[0].toDataURL("image/png");
-                var Img128 = canvas[0].toDataURL("image/png");
-                zip.file("app/icons/16.png", Img16.split('base64,')[1],{base64: true});
-                zip.file("app/icons/32.png", Img32.split('base64,')[1],{base64: true});
-                zip.file("app/icons/64.png", Img64.split('base64,')[1],{base64: true});
-                zip.file("app/icons/128.png", Img128.split('base64,')[1],{base64: true});
-                zip.file("app/icons/logo.png", $(".imgorigholder > img").attr("src").split("base64,")[1],{base64: true});
+                zip.file("app/icons/16.png", document.querySelector("[data-webdgapsize=f16]").src.split('base64,')[1],{base64: true});
+                zip.file("app/icons/32.png", document.querySelector("[data-webdgapsize=f32]").src.split('base64,')[1],{base64: true});
+                zip.file("app/icons/64.png", document.querySelector("[data-webdgapsize=f64]").src.split('base64,')[1],{base64: true});
+                zip.file("app/icons/128.png", document.querySelector("[data-webdgapsize=f128]").src.split('base64,')[1],{base64: true});
+                zip.file("app/icons/logo.png", document.querySelector("[data-webdgapimgload=webdgapimg]").src.split("base64,")[1],{base64: true});
 
                 // For 32bit Windows Application
                 zip.file("package.json", '{\n  "main"  : "index.html",\n  "name"  : "'+ $("[data-id=sitename]").val() +'",\n  "window": {\n      "toolbar" : false,\n      "icon"    : "app/icons/128.png",\n      "width"   : 1000,\n      "height"  : 600,\n      "position": "center"\n  }\n}');
                 zip.file("index.html", '<!doctype html>\n<html>\n <head>\n    <title>'+ $("[data-id=sitename]").val() +'</title>\n    <style>\n      iframe {\n        position: absolute;\n        top: 0;\n        left: 0;\n        width: 100%;\n        height: 100%;\n        overflow: visible;\n        border: 0;\n      }\n    </style>\n  </head>\n <body>\n    <iframe src="app/index.html"></iframe>\n  </body>\n</html>');
-                // zip.file("README", "If WebDGap was at all helpful for you. Would you consider donating to the project?\nhttps://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BSYGA2RB5ZJCC\n\n");
+                // zip.file("README", "If WebDGap was at all helpful for you. Would you consider donating to the project?\nhttps://www.paypal.com/cgi-bin/webscr?business=mikethedj4%40yahoo.com&cmd=_xclick&amount=5.0&item_name=Donation&currency_code=USD\n\n");
 
                 // Export your application
                 var content = zip.generate({type:"blob"});
@@ -1274,15 +1083,11 @@ $(document).ready(function() {
                 appName.folder("app/").load(webAppZipBinary);
 
                 // Your Logo
-                var Img16 = c16[0].toDataURL("image/png");
-                var Img32 = c32[0].toDataURL("image/png");
-                var Img64 = c64[0].toDataURL("image/png");
-                var Img128 = canvas[0].toDataURL("image/png");
-                appName.file("app/icons/16.png", Img16.split('base64,')[1],{base64: true});
-                appName.file("app/icons/32.png", Img32.split('base64,')[1],{base64: true});
-                appName.file("app/icons/64.png", Img64.split('base64,')[1],{base64: true});
-                appName.file("app/icons/128.png", Img128.split('base64,')[1],{base64: true});
-                appName.file("app/icons/logo.png", $(".imgorigholder > img").attr("src").split("base64,")[1],{base64: true});
+                appName.file("app/icons/16.png", document.querySelector("[data-webdgapsize=f16]").src.split('base64,')[1],{base64: true});
+                appName.file("app/icons/32.png", document.querySelector("[data-webdgapsize=f32]").src.split('base64,')[1],{base64: true});
+                appName.file("app/icons/64.png", document.querySelector("[data-webdgapsize=f64]").src.split('base64,')[1],{base64: true});
+                appName.file("app/icons/128.png", document.querySelector("[data-webdgapsize=f128]").src.split('base64,')[1],{base64: true});
+                appName.file("app/icons/logo.png", document.querySelector("[data-webdgapimgload=webdgapimg]").src.split("base64,")[1],{base64: true});
 
                 // Files for exported app
                 appName.file("package.json", '{\n  "main"  : "app/index.html",\n  "name"  : "'+ $("[data-id=sitename]").val() +'",\n  "window": {\n      "toolbar" : false,\n      "icon"    : "app/icons/128.png",\n      "width"   : 1000,\n      "height"  : 600,\n      "position": "center"\n  }\n}');
@@ -1311,15 +1116,11 @@ $(document).ready(function() {
                 appName.folder("app/").load(webAppZipBinary);
 
                 // Your Logo
-                var Img16 = c16[0].toDataURL("image/png");
-                var Img32 = c32[0].toDataURL("image/png");
-                var Img64 = c64[0].toDataURL("image/png");
-                var Img128 = canvas[0].toDataURL("image/png");
-                appName.file("app/icons/16.png", Img16.split('base64,')[1],{base64: true});
-                appName.file("app/icons/32.png", Img32.split('base64,')[1],{base64: true});
-                appName.file("app/icons/64.png", Img64.split('base64,')[1],{base64: true});
-                appName.file("app/icons/128.png", Img128.split('base64,')[1],{base64: true});
-                appName.file("app/icons/logo.png", $(".imgorigholder > img").attr("src").split("base64,")[1],{base64: true});
+                appName.file("app/icons/16.png", document.querySelector("[data-webdgapsize=f16]").src.split('base64,')[1],{base64: true});
+                appName.file("app/icons/32.png", document.querySelector("[data-webdgapsize=f32]").src.split('base64,')[1],{base64: true});
+                appName.file("app/icons/64.png", document.querySelector("[data-webdgapsize=f64]").src.split('base64,')[1],{base64: true});
+                appName.file("app/icons/128.png", document.querySelector("[data-webdgapsize=f128]").src.split('base64,')[1],{base64: true});
+                appName.file("app/icons/logo.png", document.querySelector("[data-webdgapimgload=webdgapimg]").src.split("base64,")[1],{base64: true});
 
                 // Files for exported app
                 appName.file("package.json", '{\n  "main"  : "app/index.html",\n  "name"  : "'+ $("[data-id=sitename]").val() +'",\n  "window": {\n      "toolbar" : false,\n      "icon"    : "app/icons/128.png",\n      "width"   : 1000,\n      "height"  : 600,\n      "position": "center"\n  }\n}');
@@ -1349,22 +1150,18 @@ $(document).ready(function() {
                 zip.folder("data/content/app").load(webAppZipBinary);
 
                 // Your Logo
-                var Img16 = c16[0].toDataURL("image/png");
-                var Img32 = c32[0].toDataURL("image/png");
-                var Img64 = c64[0].toDataURL("image/png");
-                var Img128 = canvas[0].toDataURL("image/png");
-                zip.file("data/content/app/icons/16.png", Img16.split('base64,')[1],{base64: true});
-                zip.file("data/content/app/icons/32.png", Img32.split('base64,')[1],{base64: true});
-                zip.file("data/content/app/icons/64.png", Img64.split('base64,')[1],{base64: true});
-                zip.file("data/content/app/icons/128.png", Img128.split('base64,')[1],{base64: true});
-                zip.file("data/content/app/icons/logo.png", $(".imgorigholder > img").attr("src").split("base64,")[1],{base64: true});
+                zip.file("data/content/app/icons/16.png", document.querySelector("[data-webdgapsize=f16]").src.split('base64,')[1],{base64: true});
+                zip.file("data/content/app/icons/32.png", document.querySelector("[data-webdgapsize=f32]").src.split('base64,')[1],{base64: true});
+                zip.file("data/content/app/icons/64.png", document.querySelector("[data-webdgapsize=f64]").src.split('base64,')[1],{base64: true});
+                zip.file("data/content/app/icons/128.png", document.querySelector("[data-webdgapsize=f128]").src.split('base64,')[1],{base64: true});
+                zip.file("data/content/app/icons/logo.png", document.querySelector("[data-webdgapimgload=webdgapimg]").src.split("base64,")[1],{base64: true});
 
                 // For Mac Application
                 zip.file("data/package.json", '{\n  "main"  : "content/index.html",\n  "name"  : "'+ $("[data-id=sitename]").val() +'",\n  "window": {\n    "toolbar"    : false\n  }\n}');
                 zip.file("data/content/index.html", '<!doctype html>\n<html>\n <head>\n    <title>'+ $("[data-id=sitename]").val() +'</title>\n    <style>\n      iframe {\n        position: absolute;\n        top: 0;\n        left: 0;\n        width: 100%;\n        height: 100%;\n        overflow: visible;\n        border: 0;\n      }\n    </style>\n  </head>\n <body>\n    <iframe src="app/index.html"></iframe>\n\n    <script src="js/main.js"></script>\n  </body>\n</html>');
                 zip.file("data/content/js/main.js", 'document.addEventListener("DOMContentLoaded", function() {\n  // Load library\n  var gui = require("nw.gui");\n\n  // Reference to window\n  var win = gui.Window.get();\n\n  // Create menu container\n  var Menu = new gui.Menu({\n    type: "menubar"\n  });\n\n  //initialize default mac menu\n  Menu.createMacBuiltin("'+ $("[data-id=sitename]").val() +'");\n\n  // Get the root menu from the default mac menu\n  var rootMenu = Menu.items[0].submenu;\n  var windowMenu = Menu.items[2].submenu;\n\n  // Append new item to root menu\n  windowMenu.insert(\n    new gui.MenuItem({\n      type: "normal",\n      label: "Toggle Fullscreen",\n      key: "F",\n      modifiers: "cmd",\n      click : function () {\n        win.toggleFullscreen();\n      }\n    })\n  );\n\n  windowMenu.insert(\n    new gui.MenuItem({\n      type: "normal",\n      label: "Reload App",\n      key: "r",\n      modifiers: "cmd",\n      click : function () {\n        win.reload();\n      }\n    })\n  );\n\n  // Remove About Node-Webkit\n  rootMenu.removeAt(0);\n\n  // Append Menu to Window\n  gui.Window.get().menu = Menu;\n});');
                 zip.file("run.sh", "open -a /Applications/"+ $("[data-id=sitename]").val().replace(/ /g, "") +".app/Contents/data/"+ $("[data-id=sitename]").val().replace(/ /g, "") +".app");
-                // zip.file("README", "If WebDGap was at all helpful for you. Would you consider donating to the project?\nhttps://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BSYGA2RB5ZJCC\n\n");
+                // zip.file("README", "If WebDGap was at all helpful for you. Would you consider donating to the project?\nhttps://www.paypal.com/cgi-bin/webscr?business=mikethedj4%40yahoo.com&cmd=_xclick&amount=5.0&item_name=Donation&currency_code=USD\n\n");
 
                 // Export your application
                 var content = zip.generate({type:"blob"});
@@ -1402,15 +1199,11 @@ $(document).ready(function() {
                 zip.folder("html").folder("app").load(webAppZipBinary);
 
                 // Your Logo
-                var Img16 = c16[0].toDataURL("image/png");
-                var Img32 = c32[0].toDataURL("image/png");
-                var Img64 = c64[0].toDataURL("image/png");
-                var Img128 = canvas[0].toDataURL("image/png");
-                zip.file("img/16.png", Img16.split('base64,')[1],{base64: true});
-                zip.file("img/32.png", Img32.split('base64,')[1],{base64: true});
-                zip.file("img/64.png", Img64.split('base64,')[1],{base64: true});
-                zip.file("img/128.png", Img128.split('base64,')[1],{base64: true});
-                zip.file("img/logo.png", $(".imgorigholder > img").attr("src").split("base64,")[1],{base64: true});
+                zip.file("img/16.png", document.querySelector("[data-webdgapsize=f16]").src.split('base64,')[1],{base64: true});
+                zip.file("img/32.png", document.querySelector("[data-webdgapsize=f32]").src.split('base64,')[1],{base64: true});
+                zip.file("img/64.png", document.querySelector("[data-webdgapsize=f64]").src.split('base64,')[1],{base64: true});
+                zip.file("img/128.png", document.querySelector("[data-webdgapsize=f128]").src.split('base64,')[1],{base64: true});
+                zip.file("img/logo.png", document.querySelector("[data-webdgapimgload=webdgapimg]").src.split("base64,")[1],{base64: true});
                 
                 if (document.getElementById("audiocapture").checked) {
                   audioCapture = ", \"audioCapture\"";
@@ -1440,7 +1233,7 @@ $(document).ready(function() {
                 zip.file("html/embed.html", "<!DOCTYPE html>\n<html>\n  <head>\n    <meta charset=\"UTF-8\">\n    <title>"+ $("[data-id=sitename]").val() +"</title>\n    <link rel=\"stylesheet\" href=\"../css/reset.css\">\n    <link rel=\"stylesheet\" href=\"../css/style.css\">\n  </head>\n  <body>\n    <iframe src=\"app/index.html\">\n  </body>\n</html>");
                 zip.file("js/background.js", "/**\n * Listens for the app launching then creates the window\n *\n * @see http://developer.chrome.com/apps/app.runtime.html\n * @see http://developer.chrome.com/apps/app.window.html\n */\nchrome.app.runtime.onLaunched.addListener(function () {\n    runApp();\n});\n\n/**\n * Listens for the app restarting then re-creates the window.\n *\n * @see http://developer.chrome.com/apps/app.runtime.html\n */\nchrome.app.runtime.onRestarted.addListener(function () {\n    runApp();\n});\n\n/**\n * Creates the window for the application.\n *\n * @see http://developer.chrome.com/apps/app.window.html\n */\nfunction runApp() {\n    // Creat a new Chrome app window\n    chrome.app.window.create('html/embed.html', {\"id\":\"embed\",\"frame\":{\"type\":\"chrome\"},\"innerBounds\":{\"width\":1180,\"height\":900}}, onWindowLoaded());\n}\n\n/**\n * Called before the contentWindow's onload event\n *\n * @see http://developer.chrome.com/apps/app.window.html\n */\nfunction onWindowLoaded(popup) {\n    return function (win) {\n        // On window loaded event\n        win.contentWindow.onload = function () {\n            // Get webview \n            var webview = win.contentWindow.document.getElementById('webview');\n\n            // Sign up for 'permissionrequest' event\n            webview.addEventListener('permissionrequest', function (e) {\n                // Allow all permission requests\n                e.request.allow();\n            });\n\n            // Sign up for 'newwindow' event\n            // Emitted when a target='_blank' link is clicked within the webview\n            webview.addEventListener('newwindow', function (e) {\n                // Popup?\n                if (e.initialWidth > 0 && e.initialHeight > 0) {\n                    // Open it in a popup window with a set width and height\n                    return chrome.app.window.create('html/embed.html', { frame: { type: 'chrome' }, innerBounds: { width: e.initialWidth, height: e.initialHeight } }, onWindowLoaded(e));\n                }\n\n                // Open the link in a new browser tab/window\n                win.contentWindow.open(e.targetUrl);\n            });\n\n            // Is this a popup window?\n            if (popup) {\n                // Override webview source with popup's target URL\n                webview.src = popup.targetUrl;\n            }\n        };\n    };\n}\n");
                 zip.file("manifest.json", "{\n   \"app\": {\n      \"background\": {\n         \"pages\": [ \"html/embed.html\" ],\n         \"scripts\": [ \"js/background.js\" ]\n      }\n   },\n   \"description\": \""+ $("[data-value=description]").val() +"\",\n   \"icons\": {\n      \"128\": \"img/128.png\",\n      \"16\" : \"img/16.png\",\n      \"32\" : \"img/32.png\",\n      \"64\" : \"img/64.png\"\n   },\n   \"manifest_version\": 2,\n   \"name\": \""+ $("[data-id=sitename]").val() +"\",\n   "+ setOffline +",\n   \"permissions\": [ \"http://*/\", \"https://*/\""+ listPermissions +" ],\n   \"version\": \""+ $("[data-value=version]").val() +"\"\n}\n");
-                // zip.file("README", "If WebDGap was at all helpful for you. Would you consider donating to the project?\nhttps://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BSYGA2RB5ZJCC\n\n");
+                // zip.file("README", "If WebDGap was at all helpful for you. Would you consider donating to the project?\nhttps://www.paypal.com/cgi-bin/webscr?business=mikethedj4%40yahoo.com&cmd=_xclick&amount=5.0&item_name=Donation&currency_code=USD\n\n");
 
                 // Export Chrome Application
                 var content = zip.generate({type:"blob"});
@@ -1464,22 +1257,18 @@ $(document).ready(function() {
                 zip.folder("app").load(webAppZipBinary);
 
                 // Your Logo
-                var Img16 = c16[0].toDataURL("image/png");
-                var Img32 = c32[0].toDataURL("image/png");
-                var Img64 = c64[0].toDataURL("image/png");
-                var Img128 = canvas[0].toDataURL("image/png");
-                zip.file("assets/16.png", Img16.split('base64,')[1],{base64: true});
-                zip.file("assets/32.png", Img32.split('base64,')[1],{base64: true});
-                zip.file("assets/64.png", Img64.split('base64,')[1],{base64: true});
-                zip.file("assets/128.png", Img128.split('base64,')[1],{base64: true});
-                zip.file("assets/logo.png", $(".imgorigholder > img").attr("src").split("base64,")[1],{base64: true});
+                zip.file("assets/16.png", document.querySelector("[data-webdgapsize=f16]").src.split('base64,')[1],{base64: true});
+                zip.file("assets/32.png", document.querySelector("[data-webdgapsize=f32]").src.split('base64,')[1],{base64: true});
+                zip.file("assets/64.png", document.querySelector("[data-webdgapsize=f64]").src.split('base64,')[1],{base64: true});
+                zip.file("assets/128.png", document.querySelector("[data-webdgapsize=f128]").src.split('base64,')[1],{base64: true});
+                zip.file("assets/logo.png", document.querySelector("[data-webdgapimgload=webdgapimg]").src.split("base64,")[1],{base64: true});
 
                 // For Chrome Extension
                 zip.file("background.js", "/**\n * Listens for the app launching, then creates the window.\n *\n * @see http://developer.chrome.com/apps/app.runtime.html\n * @see http://developer.chrome.com/apps/app.window.html\n */\nchrome.app.runtime.onLaunched.addListener(function(launchData) {\n  chrome.app.window.create(\n    'index.html',\n    {\n      id: 'mainWindow',\n      innerBounds: {\n        'width': 800,\n        'height': 600\n      }\n    }\n  );\n});");
                 zip.file("css/style.css", "html, body {\n  margin: 0;\n  padding: 0;\n  width: 100%;\n  height: 100%;\n}\n\nbody {\n  min-width: 300px;\n  min-height: 420px;\n}\n\nwebview, iframe {\n  width: 100%;\n  height: 100%;\n  border: 0;\n}");
                 zip.file("index.html", "<!DOCTYPE html>\n<html>\n  <head>\n    <title>"+ $("[data-id=sitename]").val() +"</title>\n    <link rel=\"stylesheet\" href=\"css/style.css\" />\n  </head>\n  <body>\n    <iframe src=\"app/index.html\">\n      Your Chromebook does not support the iFrame html element.\n    </iframe>\n  </body>\n</html>");
                 zip.file("manifest.json", "{\n  \"manifest_version\": 2,\n  \"name\": \""+ $("[data-id=sitename]").val() +"\",\n  \"short_name\": \""+ $("[data-id=sitename]").val() +"\",\n  \"description\": \""+ $("[data-value=description]").val() +"\",\n  \"version\": \""+ $("[data-value=version]").val() +"\",\n  \"minimum_chrome_version\": \"38\",\n  \"permissions\": [ \"storage\", \"unlimitedStorage\", \"http://*/\", \"https://*/\" ],\n  \"icons\": {\n    \"16\": \"assets/16.png\",\n    \"32\": \"assets/32.png\",\n    \"64\": \"assets/64.png\",\n    \"128\": \"assets/128.png\"\n  },\n\n  \"browser_action\": {\n    \"default_icon\": \"assets/128.png\",\n    \"default_title\": \""+ $("[data-id=sitename]").val() +"\",\n    \"default_popup\": \"index.html\"\n  },\n  \n  \"content_security_policy\": \"script-src 'self' 'unsafe-eval'; object-src 'self'\"\n}");
-                // zip.file("README", "If WebDGap was at all helpful for you. Would you consider donating to the project?\nhttps://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BSYGA2RB5ZJCC\n\n");
+                // zip.file("README", "If WebDGap was at all helpful for you. Would you consider donating to the project?\nhttps://www.paypal.com/cgi-bin/webscr?business=mikethedj4%40yahoo.com&cmd=_xclick&amount=5.0&item_name=Donation&currency_code=USD\n\n");
 
                 // Export Chrome Extension
                 var content = zip.generate({type:"blob"});
@@ -1510,62 +1299,37 @@ $(document).ready(function() {
 
                 // Your Web Application
                 zip.folder("www").load(webAppZipBinary);
-
-                // Your Logo
-                var Img96    = c96[0].toDataURL("image/png");
-                var Img72    = c72[0].toDataURL("image/png");
-                var Img48    = c48[0].toDataURL("image/png");
-                var Img36    = c36[0].toDataURL("image/png");
-                var Img144   = c144[0].toDataURL("image/png");
-                var Img57    = c57[0].toDataURL("image/png");
-                var Img114   = c114[0].toDataURL("image/png");
-                var Img159   = c159[0].toDataURL("image/png");
-                var Img99    = c99[0].toDataURL("image/png");
-
-                // PhoneGap Windows Icon
-                var Img30    = c30[0].toDataURL("image/png");
-                var Img44    = c44[0].toDataURL("image/png");
-                var Img106   = c106[0].toDataURL("image/png");
-                var Img70    = c70[0].toDataURL("image/png");
-                var Img71    = c71[0].toDataURL("image/png");
-                var Img170   = c170[0].toDataURL("image/png");
-                var Img150   = c150[0].toDataURL("image/png");
-                var Img360   = c360[0].toDataURL("image/png");
-                var Img310   = c310[0].toDataURL("image/png");
-                var Img50    = c50[0].toDataURL("image/png");
-                var Img120   = c120[0].toDataURL("image/png");
                 var ImgWinWide1 = cImgWinWide1[0].toDataURL("image/png");
                 var ImgWinWide2 = cImgWinWide2[0].toDataURL("image/png");
-                
-                
+
                 // Main Icon
-                zip.file("logo.png", $(".imgorigholder > img").attr("src").split("base64,")[1],{base64: true});
-                
+                zip.file("logo.png", document.querySelector("[data-webdgapimgload=webdgapimg]").src.split("base64,")[1],{base64: true});
+
                 // Android Icon
-                zip.file("res/icon/android/icon-96-xhdpi.png", Img96.split('base64,')[1],{base64: true});
-                zip.file("res/icon/android/icon-72-hdpi.png", Img72.split('base64,')[1],{base64: true});
-                zip.file("res/icon/android/icon-48-mdpi.png", Img48.split('base64,')[1],{base64: true});
-                zip.file("res/icon/android/icon-36-ldpi.png", Img36.split('base64,')[1],{base64: true});
+                zip.file("res/icon/android/icon-96-xhdpi.png", document.querySelector("[data-webdgapsize=f96]").src.split('base64,')[1],{base64: true});
+                zip.file("res/icon/android/icon-72-hdpi.png", document.querySelector("[data-webdgapsize=f72]").src.split('base64,')[1],{base64: true});
+                zip.file("res/icon/android/icon-48-mdpi.png", document.querySelector("[data-webdgapsize=f48]").src.split('base64,')[1],{base64: true});
+                zip.file("res/icon/android/icon-36-ldpi.png", document.querySelector("[data-webdgapsize=f36]").src.split('base64,')[1],{base64: true});
                 // iOS Icon
-                zip.file("res/icon/ios/icon-72.png", Img72.split('base64,')[1],{base64: true});
-                zip.file("res/icon/ios/icon-72-2x.png", Img144.split('base64,')[1],{base64: true});
-                zip.file("res/icon/ios/icon-57.png", Img57.split('base64,')[1],{base64: true});
-                zip.file("res/icon/ios/icon-57-2x.png", Img114.split('base64,')[1],{base64: true});
+                zip.file("res/icon/ios/icon-72.png", document.querySelector("[data-webdgapsize=f72]").src.split('base64,')[1],{base64: true});
+                zip.file("res/icon/ios/icon-72-2x.png", document.querySelector("[data-webdgapsize=f144]").src.split('base64,')[1],{base64: true});
+                zip.file("res/icon/ios/icon-57.png", document.querySelector("[data-webdgapsize=f57]").src.split('base64,')[1],{base64: true});
+                zip.file("res/icon/ios/icon-57-2x.png", document.querySelector("[data-webdgapsize=f114]").src.split('base64,')[1],{base64: true});
                 // Windows Phone 8 Icon
-                zip.file("res/icon/wp8/ApplicationIcon.png", Img159.split('base64,')[1],{base64: true});
-                zip.file("res/icon/wp8/Background.png", Img99.split('base64,')[1],{base64: true});
+                zip.file("res/icon/wp8/ApplicationIcon.png", document.querySelector("[data-webdgapsize=f159]").src.split('base64,')[1],{base64: true});
+                zip.file("res/icon/wp8/Background.png", document.querySelector("[data-webdgapsize=f99]").src.split('base64,')[1],{base64: true});
                 // PhoneGap Windows Icon
-                zip.file("res/icon/windows/Square30x30Logo.scale-100.png", Img30.split('base64,')[1],{base64: true});
-                zip.file("res/icon/windows/Square44x44Logo.scale-100.png", Img44.split('base64,')[1],{base64: true});
-                zip.file("res/icon/windows/Square44x44Logo.scale-240.png", Img106.split('base64,')[1],{base64: true});
-                zip.file("res/icon/windows/Square70x70Logo.scale-100.png", Img70.split('base64,')[1],{base64: true});
-                zip.file("res/icon/windows/Square71x71Logo.scale-100.png", Img71.split('base64,')[1],{base64: true});
-                zip.file("res/icon/windows/Square71x71Logo.scale-240.png", Img170.split('base64,')[1],{base64: true});
-                zip.file("res/icon/windows/Square150x150Logo.scale-100.png", Img150.split('base64,')[1],{base64: true});
-                zip.file("res/icon/windows/Square150x150Logo.scale-240.png", Img360.split('base64,')[1],{base64: true});
-                zip.file("res/icon/windows/Square310x310Logo.scale-100.png", Img310.split('base64,')[1],{base64: true});
-                zip.file("res/icon/windows/StoreLogo.scale-100.png", Img50.split('base64,')[1],{base64: true});
-                zip.file("res/icon/windows/StoreLogo.scale-240.png", Img120.split('base64,')[1],{base64: true});
+                zip.file("res/icon/windows/Square30x30Logo.scale-100.png", document.querySelector("[data-webdgapsize=f30]").src.split('base64,')[1],{base64: true});
+                zip.file("res/icon/windows/Square44x44Logo.scale-100.png", document.querySelector("[data-webdgapsize=f44]").src.split('base64,')[1],{base64: true});
+                zip.file("res/icon/windows/Square44x44Logo.scale-240.png", document.querySelector("[data-webdgapsize=f106]").src.split('base64,')[1],{base64: true});
+                zip.file("res/icon/windows/Square70x70Logo.scale-100.png", document.querySelector("[data-webdgapsize=f70]").src.split('base64,')[1],{base64: true});
+                zip.file("res/icon/windows/Square71x71Logo.scale-100.png", document.querySelector("[data-webdgapsize=f71]").src.split('base64,')[1],{base64: true});
+                zip.file("res/icon/windows/Square71x71Logo.scale-240.png", document.querySelector("[data-webdgapsize=f170]").src.split('base64,')[1],{base64: true});
+                zip.file("res/icon/windows/Square150x150Logo.scale-100.png", document.querySelector("[data-webdgapsize=f150]").src.split('base64,')[1],{base64: true});
+                zip.file("res/icon/windows/Square150x150Logo.scale-240.png", document.querySelector("[data-webdgapsize=f360]").src.split('base64,')[1],{base64: true});
+                zip.file("res/icon/windows/Square310x310Logo.scale-100.png", document.querySelector("[data-webdgapsize=f310]").src.split('base64,')[1],{base64: true});
+                zip.file("res/icon/windows/StoreLogo.scale-100.png", document.querySelector("[data-webdgapsize=f50]").src.split('base64,')[1],{base64: true});
+                zip.file("res/icon/windows/StoreLogo.scale-240.png", document.querySelector("[data-webdgapsize=f120]").src.split('base64,')[1],{base64: true});
                 zip.file("res/icon/windows/Wide310x150Logo.scale-100.png", ImgWinWide1.split('base64,')[1],{base64: true});
                 zip.file("res/icon/windows/Wide310x150Logo.scale-240.png", ImgWinWide2.split('base64,')[1],{base64: true});
 
@@ -1675,20 +1439,16 @@ $(document).ready(function() {
               zip.folder("app/").load(webAppZipBinary);
 
               // Your Logo
-              var Img16 = c16[0].toDataURL("image/png");
-              var Img32 = c32[0].toDataURL("image/png");
-              var Img64 = c64[0].toDataURL("image/png");
-              var Img128 = canvas[0].toDataURL("image/png");
-              zip.file("app/icons/16.png", Img16.split('base64,')[1],{base64: true});
-              zip.file("app/icons/32.png", Img32.split('base64,')[1],{base64: true});
-              zip.file("app/icons/64.png", Img64.split('base64,')[1],{base64: true});
-              zip.file("app/icons/128.png", Img128.split('base64,')[1],{base64: true});
-              zip.file("app/icons/logo.png", $(".imgorigholder > img").attr("src").split("base64,")[1],{base64: true});
+              zip.file("app/icons/16.png", document.querySelector("[data-webdgapsize=f16]").src.split('base64,')[1],{base64: true});
+              zip.file("app/icons/32.png", document.querySelector("[data-webdgapsize=f32]").src.split('base64,')[1],{base64: true});
+              zip.file("app/icons/64.png", document.querySelector("[data-webdgapsize=f64]").src.split('base64,')[1],{base64: true});
+              zip.file("app/icons/128.png", document.querySelector("[data-webdgapsize=f128]").src.split('base64,')[1],{base64: true});
+              zip.file("app/icons/logo.png", document.querySelector("[data-webdgapimgload=webdgapimg]").src.split("base64,")[1],{base64: true});
 
               // For 32bit Windows Application
               zip.file("package.json", '{\n  "main"  : "index.html",\n  "name"  : "'+ $("[data-id=sitename]").val() +'",\n  "window": {\n      "toolbar" : false,\n      "icon"    : "app/icons/128.png",\n      "width"   : 1000,\n      "height"  : 600,\n      "position": "center"\n  }\n}');
               zip.file("index.html", '<!doctype html>\n<html>\n <head>\n    <title>'+ $("[data-id=sitename]").val() +'</title>\n    <style>\n      iframe {\n        position: absolute;\n        top: 0;\n        left: 0;\n        width: 100%;\n        height: 100%;\n        overflow: visible;\n        border: 0;\n      }\n    </style>\n  </head>\n <body>\n    <iframe src="app/index.html"></iframe>\n  </body>\n</html>');
-              // zip.file("README", "If WebDGap was at all helpful for you. Would you consider donating to the project?\nhttps://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BSYGA2RB5ZJCC\n\n");
+              // zip.file("README", "If WebDGap was at all helpful for you. Would you consider donating to the project?\nhttps://www.paypal.com/cgi-bin/webscr?business=mikethedj4%40yahoo.com&cmd=_xclick&amount=5.0&item_name=Donation&currency_code=USD\n\n");
 
               // Export your application
               var content = zip.generate({type:"blob"});
@@ -1710,20 +1470,16 @@ $(document).ready(function() {
               zip.folder("app/").load(webAppZipBinary);
 
               // Your Logo
-              var Img16 = c16[0].toDataURL("image/png");
-              var Img32 = c32[0].toDataURL("image/png");
-              var Img64 = c64[0].toDataURL("image/png");
-              var Img128 = canvas[0].toDataURL("image/png");
-              zip.file("app/icons/16.png", Img16.split('base64,')[1],{base64: true});
-              zip.file("app/icons/32.png", Img32.split('base64,')[1],{base64: true});
-              zip.file("app/icons/64.png", Img64.split('base64,')[1],{base64: true});
-              zip.file("app/icons/128.png", Img128.split('base64,')[1],{base64: true});
-              zip.file("app/icons/logo.png", $(".imgorigholder > img").attr("src").split("base64,")[1],{base64: true});
+              zip.file("app/icons/16.png", document.querySelector("[data-webdgapsize=f16]").src.split('base64,')[1],{base64: true});
+              zip.file("app/icons/32.png", document.querySelector("[data-webdgapsize=f32]").src.split('base64,')[1],{base64: true});
+              zip.file("app/icons/64.png", document.querySelector("[data-webdgapsize=f64]").src.split('base64,')[1],{base64: true});
+              zip.file("app/icons/128.png", document.querySelector("[data-webdgapsize=f128]").src.split('base64,')[1],{base64: true});
+              zip.file("app/icons/logo.png", document.querySelector("[data-webdgapimgload=webdgapimg]").src.split("base64,")[1],{base64: true});
 
               // For 32bit Windows Application
               zip.file("package.json", '{\n  "main"  : "index.html",\n  "name"  : "'+ $("[data-id=sitename]").val() +'",\n  "window": {\n      "toolbar" : false,\n      "icon"    : "app/icons/128.png",\n      "width"   : 1000,\n      "height"  : 600,\n      "position": "center"\n  }\n}');
               zip.file("index.html", '<!doctype html>\n<html>\n <head>\n    <title>'+ $("[data-id=sitename]").val() +'</title>\n    <style>\n      iframe {\n        position: absolute;\n        top: 0;\n        left: 0;\n        width: 100%;\n        height: 100%;\n        overflow: visible;\n        border: 0;\n      }\n    </style>\n  </head>\n <body>\n    <iframe src="app/index.html"></iframe>\n  </body>\n</html>');
-              // zip.file("README", "If WebDGap was at all helpful for you. Would you consider donating to the project?\nhttps://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BSYGA2RB5ZJCC\n\n");
+              // zip.file("README", "If WebDGap was at all helpful for you. Would you consider donating to the project?\nhttps://www.paypal.com/cgi-bin/webscr?business=mikethedj4%40yahoo.com&cmd=_xclick&amount=5.0&item_name=Donation&currency_code=USD\n\n");
 
               // Export your application
               var content = zip.generate({type:"blob"});
@@ -1748,15 +1504,11 @@ $(document).ready(function() {
               appName.folder("app/").load(webAppZipBinary);
 
               // Your Logo
-              var Img16 = c16[0].toDataURL("image/png");
-              var Img32 = c32[0].toDataURL("image/png");
-              var Img64 = c64[0].toDataURL("image/png");
-              var Img128 = canvas[0].toDataURL("image/png");
-              appName.file("app/icons/16.png", Img16.split('base64,')[1],{base64: true});
-              appName.file("app/icons/32.png", Img32.split('base64,')[1],{base64: true});
-              appName.file("app/icons/64.png", Img64.split('base64,')[1],{base64: true});
-              appName.file("app/icons/128.png", Img128.split('base64,')[1],{base64: true});
-              appName.file("app/icons/logo.png", $(".imgorigholder > img").attr("src").split("base64,")[1],{base64: true});
+              appName.file("app/icons/16.png", document.querySelector("[data-webdgapsize=f16]").src.split('base64,')[1],{base64: true});
+              appName.file("app/icons/32.png", document.querySelector("[data-webdgapsize=f32]").src.split('base64,')[1],{base64: true});
+              appName.file("app/icons/64.png", document.querySelector("[data-webdgapsize=f64]").src.split('base64,')[1],{base64: true});
+              appName.file("app/icons/128.png", document.querySelector("[data-webdgapsize=f128]").src.split('base64,')[1],{base64: true});
+              appName.file("app/icons/logo.png", document.querySelector("[data-webdgapimgload=webdgapimg]").src.split("base64,")[1],{base64: true});
 
               // Files for exported app
               appName.file("package.json", '{\n  "main"  : "app/index.html",\n  "name"  : "'+ $("[data-id=sitename]").val() +'",\n  "window": {\n      "toolbar" : false,\n      "icon"    : "app/icons/128.png",\n      "width"   : 1000,\n      "height"  : 600,\n      "position": "center"\n  }\n}');
@@ -1785,15 +1537,11 @@ $(document).ready(function() {
               appName.folder("app/").load(webAppZipBinary);
 
               // Your Logo
-              var Img16 = c16[0].toDataURL("image/png");
-              var Img32 = c32[0].toDataURL("image/png");
-              var Img64 = c64[0].toDataURL("image/png");
-              var Img128 = canvas[0].toDataURL("image/png");
-              appName.file("app/icons/16.png", Img16.split('base64,')[1],{base64: true});
-              appName.file("app/icons/32.png", Img32.split('base64,')[1],{base64: true});
-              appName.file("app/icons/64.png", Img64.split('base64,')[1],{base64: true});
-              appName.file("app/icons/128.png", Img128.split('base64,')[1],{base64: true});
-              appName.file("app/icons/logo.png", $(".imgorigholder > img").attr("src").split("base64,")[1],{base64: true});
+              appName.file("app/icons/16.png", document.querySelector("[data-webdgapsize=f16]").src.split('base64,')[1],{base64: true});
+              appName.file("app/icons/32.png", document.querySelector("[data-webdgapsize=f32]").src.split('base64,')[1],{base64: true});
+              appName.file("app/icons/64.png", document.querySelector("[data-webdgapsize=f64]").src.split('base64,')[1],{base64: true});
+              appName.file("app/icons/128.png", document.querySelector("[data-webdgapsize=f128]").src.split('base64,')[1],{base64: true});
+              appName.file("app/icons/logo.png", document.querySelector("[data-webdgapimgload=webdgapimg]").src.split("base64,")[1],{base64: true});
 
               // Files for exported app
               appName.file("package.json", '{\n  "main"  : "app/index.html",\n  "name"  : "'+ $("[data-id=sitename]").val() +'",\n  "window": {\n      "toolbar" : false,\n      "icon"    : "app/icons/128.png",\n      "width"   : 1000,\n      "height"  : 600,\n      "position": "center"\n  }\n}');
@@ -1823,22 +1571,18 @@ $(document).ready(function() {
               zip.folder("data/content/app").load(webAppZipBinary);
 
               // Your Logo
-              var Img16 = c16[0].toDataURL("image/png");
-              var Img32 = c32[0].toDataURL("image/png");
-              var Img64 = c64[0].toDataURL("image/png");
-              var Img128 = canvas[0].toDataURL("image/png");
-              zip.file("data/content/app/icons/16.png", Img16.split('base64,')[1],{base64: true});
-              zip.file("data/content/app/icons/32.png", Img32.split('base64,')[1],{base64: true});
-              zip.file("data/content/app/icons/64.png", Img64.split('base64,')[1],{base64: true});
-              zip.file("data/content/app/icons/128.png", Img128.split('base64,')[1],{base64: true});
-              zip.file("data/content/app/icons/logo.png", $(".imgorigholder > img").attr("src").split("base64,")[1],{base64: true});
+              zip.file("data/content/app/icons/16.png", document.querySelector("[data-webdgapsize=f16]").src.split('base64,')[1],{base64: true});
+              zip.file("data/content/app/icons/32.png", document.querySelector("[data-webdgapsize=f32]").src.split('base64,')[1],{base64: true});
+              zip.file("data/content/app/icons/64.png", document.querySelector("[data-webdgapsize=f64]").src.split('base64,')[1],{base64: true});
+              zip.file("data/content/app/icons/128.png", document.querySelector("[data-webdgapsize=f128]").src.split('base64,')[1],{base64: true});
+              zip.file("data/content/app/icons/logo.png", document.querySelector("[data-webdgapimgload=webdgapimg]").src.split("base64,")[1],{base64: true});
 
               // For Mac Application
               zip.file("data/package.json", '{\n  "main"  : "content/index.html",\n  "name"  : "'+ $("[data-id=sitename]").val() +'",\n  "window": {\n    "toolbar"    : false\n  }\n}');
               zip.file("data/content/index.html", '<!doctype html>\n<html>\n <head>\n    <title>'+ $("[data-id=sitename]").val() +'</title>\n    <style>\n      iframe {\n        position: absolute;\n        top: 0;\n        left: 0;\n        width: 100%;\n        height: 100%;\n        overflow: visible;\n        border: 0;\n      }\n    </style>\n  </head>\n <body>\n    <iframe src="app/index.html"></iframe>\n\n    <script src="js/main.js"></script>\n  </body>\n</html>');
               zip.file("data/content/js/main.js", 'document.addEventListener("DOMContentLoaded", function() {\n  // Load library\n  var gui = require("nw.gui");\n\n  // Reference to window\n  var win = gui.Window.get();\n\n  // Create menu container\n  var Menu = new gui.Menu({\n    type: "menubar"\n  });\n\n  //initialize default mac menu\n  Menu.createMacBuiltin("'+ $("[data-id=sitename]").val() +'");\n\n  // Get the root menu from the default mac menu\n  var rootMenu = Menu.items[0].submenu;\n  var windowMenu = Menu.items[2].submenu;\n\n  // Append new item to root menu\n  windowMenu.insert(\n    new gui.MenuItem({\n      type: "normal",\n      label: "Toggle Fullscreen",\n      key: "F",\n      modifiers: "cmd",\n      click : function () {\n        win.toggleFullscreen();\n      }\n    })\n  );\n\n  windowMenu.insert(\n    new gui.MenuItem({\n      type: "normal",\n      label: "Reload App",\n      key: "r",\n      modifiers: "cmd",\n      click : function () {\n        win.reload();\n      }\n    })\n  );\n\n  // Remove About Node-Webkit\n  rootMenu.removeAt(0);\n\n  // Append Menu to Window\n  gui.Window.get().menu = Menu;\n});');
               zip.file("run.sh", "open -a /Applications/"+ $("[data-id=sitename]").val().replace(/ /g, "") +".app/Contents/data/"+ $("[data-id=sitename]").val().replace(/ /g, "") +".app");
-              // zip.file("README", "If WebDGap was at all helpful for you. Would you consider donating to the project?\nhttps://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BSYGA2RB5ZJCC\n\n");
+              // zip.file("README", "If WebDGap was at all helpful for you. Would you consider donating to the project?\nhttps://www.paypal.com/cgi-bin/webscr?business=mikethedj4%40yahoo.com&cmd=_xclick&amount=5.0&item_name=Donation&currency_code=USD\n\n");
 
               // Export your application
               var content = zip.generate({type:"blob"});
@@ -1876,15 +1620,11 @@ $(document).ready(function() {
               zip.folder("html").folder("app").load(webAppZipBinary);
 
               // Your Logo
-              var Img16 = c16[0].toDataURL("image/png");
-              var Img32 = c32[0].toDataURL("image/png");
-              var Img64 = c64[0].toDataURL("image/png");
-              var Img128 = canvas[0].toDataURL("image/png");
-              zip.file("img/16.png", Img16.split('base64,')[1],{base64: true});
-              zip.file("img/32.png", Img32.split('base64,')[1],{base64: true});
-              zip.file("img/64.png", Img64.split('base64,')[1],{base64: true});
-              zip.file("img/128.png", Img128.split('base64,')[1],{base64: true});
-              zip.file("img/logo.png", $(".imgorigholder > img").attr("src").split("base64,")[1],{base64: true});
+              zip.file("img/16.png", document.querySelector("[data-webdgapsize=f16]").src.split('base64,')[1],{base64: true});
+              zip.file("img/32.png", document.querySelector("[data-webdgapsize=f32]").src.split('base64,')[1],{base64: true});
+              zip.file("img/64.png", document.querySelector("[data-webdgapsize=f64]").src.split('base64,')[1],{base64: true});
+              zip.file("img/128.png", document.querySelector("[data-webdgapsize=f128]").src.split('base64,')[1],{base64: true});
+              zip.file("img/logo.png", document.querySelector("[data-webdgapimgload=webdgapimg]").src.split("base64,")[1],{base64: true});
               
               if (document.getElementById("audiocapture").checked) {
                 audioCapture = ", \"audioCapture\"";
@@ -1937,15 +1677,11 @@ $(document).ready(function() {
               zip.folder("app").load(webAppZipBinary);
 
               // Your Logo
-              var Img16 = c16[0].toDataURL("image/png");
-              var Img32 = c32[0].toDataURL("image/png");
-              var Img64 = c64[0].toDataURL("image/png");
-              var Img128 = canvas[0].toDataURL("image/png");
-              zip.file("assets/16.png", Img16.split('base64,')[1],{base64: true});
-              zip.file("assets/32.png", Img32.split('base64,')[1],{base64: true});
-              zip.file("assets/64.png", Img64.split('base64,')[1],{base64: true});
-              zip.file("assets/128.png", Img128.split('base64,')[1],{base64: true});
-              zip.file("assets/logo.png", $(".imgorigholder > img").attr("src").split("base64,")[1],{base64: true});
+              zip.file("assets/16.png", document.querySelector("[data-webdgapsize=f16]").src.split('base64,')[1],{base64: true});
+              zip.file("assets/32.png", document.querySelector("[data-webdgapsize=f32]").src.split('base64,')[1],{base64: true});
+              zip.file("assets/64.png", document.querySelector("[data-webdgapsize=f64]").src.split('base64,')[1],{base64: true});
+              zip.file("assets/128.png", document.querySelector("[data-webdgapsize=f128]").src.split('base64,')[1],{base64: true});
+              zip.file("assets/logo.png", document.querySelector("[data-webdgapimgload=webdgapimg]").src.split("base64,")[1],{base64: true});
 
               // For Chrome Extension
               zip.file("background.js", "/**\n * Listens for the app launching, then creates the window.\n *\n * @see http://developer.chrome.com/apps/app.runtime.html\n * @see http://developer.chrome.com/apps/app.window.html\n */\nchrome.app.runtime.onLaunched.addListener(function(launchData) {\n  chrome.app.window.create(\n    'index.html',\n    {\n      id: 'mainWindow',\n      innerBounds: {\n        'width': 800,\n        'height': 600\n      }\n    }\n  );\n});");
@@ -1981,61 +1717,37 @@ $(document).ready(function() {
 
               // Your Web Application
               zip.folder("www").load(webAppZipBinary);
-
-              // Your Logo
-              var Img96    = c96[0].toDataURL("image/png");
-              var Img72    = c72[0].toDataURL("image/png");
-              var Img48    = c48[0].toDataURL("image/png");
-              var Img36    = c36[0].toDataURL("image/png");
-              var Img144   = c144[0].toDataURL("image/png");
-              var Img57    = c57[0].toDataURL("image/png");
-              var Img114   = c114[0].toDataURL("image/png");
-              var Img159   = c159[0].toDataURL("image/png");
-              var Img99    = c99[0].toDataURL("image/png");
-
-              // PhoneGap Windows Icon
-              var Img30 = c30[0].toDataURL("image/png");
-              var Img44 = c44[0].toDataURL("image/png");
-              var Img106 = c106[0].toDataURL("image/png");
-              var Img70 = c70[0].toDataURL("image/png");
-              var Img71 = c71[0].toDataURL("image/png");
-              var Img170 = c170[0].toDataURL("image/png");
-              var Img150 = c150[0].toDataURL("image/png");
-              var Img360 = c360[0].toDataURL("image/png");
-              var Img310 = c310[0].toDataURL("image/png");
-              var Img50 = c50[0].toDataURL("image/png");
-              var Img120 = c120[0].toDataURL("image/png");
               var ImgWinWide1 = cImgWinWide1[0].toDataURL("image/png");
               var ImgWinWide2 = cImgWinWide2[0].toDataURL("image/png");
               
               // Main Icon
-              zip.file("logo.png", $(".imgorigholder > img").attr("src").split("base64,")[1],{base64: true});
+              zip.file("logo.png", document.querySelector("[data-webdgapimgload=webdgapimg]").src.split("base64,")[1],{base64: true});
               
               // Android Icon
-              zip.file("res/icon/android/icon-96-xhdpi.png", Img96.split('base64,')[1],{base64: true});
-              zip.file("res/icon/android/icon-72-hdpi.png", Img72.split('base64,')[1],{base64: true});
-              zip.file("res/icon/android/icon-48-mdpi.png", Img48.split('base64,')[1],{base64: true});
-              zip.file("res/icon/android/icon-36-ldpi.png", Img36.split('base64,')[1],{base64: true});
+              zip.file("res/icon/android/icon-96-xhdpi.png", document.querySelector("[data-webdgapsize=f96]").src.split('base64,')[1],{base64: true});
+              zip.file("res/icon/android/icon-72-hdpi.png", document.querySelector("[data-webdgapsize=f72]").src.split('base64,')[1],{base64: true});
+              zip.file("res/icon/android/icon-48-mdpi.png", document.querySelector("[data-webdgapsize=f48]").src.split('base64,')[1],{base64: true});
+              zip.file("res/icon/android/icon-36-ldpi.png", document.querySelector("[data-webdgapsize=f36]").src.split('base64,')[1],{base64: true});
               // iOS Icon
-              zip.file("res/icon/ios/icon-72.png", Img72.split('base64,')[1],{base64: true});
-              zip.file("res/icon/ios/icon-72-2x.png", Img144.split('base64,')[1],{base64: true});
-              zip.file("res/icon/ios/icon-57.png", Img57.split('base64,')[1],{base64: true});
-              zip.file("res/icon/ios/icon-57-2x.png", Img114.split('base64,')[1],{base64: true});
+              zip.file("res/icon/ios/icon-72.png", document.querySelector("[data-webdgapsize=f72]").src.split('base64,')[1],{base64: true});
+              zip.file("res/icon/ios/icon-72-2x.png", document.querySelector("[data-webdgapsize=f144]").src.split('base64,')[1],{base64: true});
+              zip.file("res/icon/ios/icon-57.png", document.querySelector("[data-webdgapsize=f57]").src.split('base64,')[1],{base64: true});
+              zip.file("res/icon/ios/icon-57-2x.png", document.querySelector("[data-webdgapsize=f114]").src.split('base64,')[1],{base64: true});
               // Windows Phone 8 Icon
-              zip.file("res/icon/wp8/ApplicationIcon.png", Img159.split('base64,')[1],{base64: true});
-              zip.file("res/icon/wp8/Background.png", Img99.split('base64,')[1],{base64: true});
+              zip.file("res/icon/wp8/ApplicationIcon.png", document.querySelector("[data-webdgapsize=f159]").src.split('base64,')[1],{base64: true});
+              zip.file("res/icon/wp8/Background.png", document.querySelector("[data-webdgapsize=f99]").src.split('base64,')[1],{base64: true});
               // PhoneGap Windows Icon
-              zip.file("res/icon/windows/Square30x30Logo.scale-100.png", Img30.split('base64,')[1],{base64: true});
-              zip.file("res/icon/windows/Square44x44Logo.scale-100.png", Img44.split('base64,')[1],{base64: true});
-              zip.file("res/icon/windows/Square44x44Logo.scale-240.png", Img106.split('base64,')[1],{base64: true});
-              zip.file("res/icon/windows/Square70x70Logo.scale-100.png", Img70.split('base64,')[1],{base64: true});
-              zip.file("res/icon/windows/Square71x71Logo.scale-100.png", Img71.split('base64,')[1],{base64: true});
-              zip.file("res/icon/windows/Square71x71Logo.scale-240.png", Img170.split('base64,')[1],{base64: true});
-              zip.file("res/icon/windows/Square150x150Logo.scale-100.png", Img150.split('base64,')[1],{base64: true});
-              zip.file("res/icon/windows/Square150x150Logo.scale-240.png", Img360.split('base64,')[1],{base64: true});
-              zip.file("res/icon/windows/Square310x310Logo.scale-100.png", Img310.split('base64,')[1],{base64: true});
-              zip.file("res/icon/windows/StoreLogo.scale-100.png", Img50.split('base64,')[1],{base64: true});
-              zip.file("res/icon/windows/StoreLogo.scale-240.png", Img120.split('base64,')[1],{base64: true});
+              zip.file("res/icon/windows/Square30x30Logo.scale-100.png", document.querySelector("[data-webdgapsize=f30]").src.split('base64,')[1],{base64: true});
+              zip.file("res/icon/windows/Square44x44Logo.scale-100.png", document.querySelector("[data-webdgapsize=f44]").src.split('base64,')[1],{base64: true});
+              zip.file("res/icon/windows/Square44x44Logo.scale-240.png", document.querySelector("[data-webdgapsize=f106]").src.split('base64,')[1],{base64: true});
+              zip.file("res/icon/windows/Square70x70Logo.scale-100.png", document.querySelector("[data-webdgapsize=f70]").src.split('base64,')[1],{base64: true});
+              zip.file("res/icon/windows/Square71x71Logo.scale-100.png", document.querySelector("[data-webdgapsize=f71]").src.split('base64,')[1],{base64: true});
+              zip.file("res/icon/windows/Square71x71Logo.scale-240.png", document.querySelector("[data-webdgapsize=f170]").src.split('base64,')[1],{base64: true});
+              zip.file("res/icon/windows/Square150x150Logo.scale-100.png", document.querySelector("[data-webdgapsize=f150]").src.split('base64,')[1],{base64: true});
+              zip.file("res/icon/windows/Square150x150Logo.scale-240.png", document.querySelector("[data-webdgapsize=f360]").src.split('base64,')[1],{base64: true});
+              zip.file("res/icon/windows/Square310x310Logo.scale-100.png", document.querySelector("[data-webdgapsize=f310]").src.split('base64,')[1],{base64: true});
+              zip.file("res/icon/windows/StoreLogo.scale-100.png", document.querySelector("[data-webdgapsize=f50]").src.split('base64,')[1],{base64: true});
+              zip.file("res/icon/windows/StoreLogo.scale-240.png", document.querySelector("[data-webdgapsize=f120]").src.split('base64,')[1],{base64: true});
               zip.file("res/icon/windows/Wide310x150Logo.scale-100.png", ImgWinWide1.split('base64,')[1],{base64: true});
               zip.file("res/icon/windows/Wide310x150Logo.scale-240.png", ImgWinWide2.split('base64,')[1],{base64: true});
 
