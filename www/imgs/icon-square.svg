@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:sketch="http://www.bohemiancoding.com/sketch/ns"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="493"
+   height="493"
+   viewBox="0 0 493 493"
+   version="1.1"
+   id="svg4380"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="icon-square.svg">
+  <metadata
+     id="metadata4421">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>WebDGap</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1252"
+     inkscape:window-height="684"
+     id="namedview4419"
+     showgrid="false"
+     inkscape:zoom="0.67698661"
+     inkscape:cx="46.36089"
+     inkscape:cy="188.67451"
+     inkscape:window-x="14"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg4380" />
+  <!-- Generator: Sketch 3.4.4 (17249) - http://www.bohemiancoding.com/sketch -->
+  <title
+     id="title4382">kodeweave</title>
+  <desc
+     id="desc4384">Created with Sketch.</desc>
+  <rect
+     style="opacity:1;fill:url(#linearGradient5598);fill-opacity:1;stroke:none;stroke-width:3.70000005;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     id="rect5590"
+     width="493"
+     height="493"
+     x="0"
+     y="0" />
+  <defs
+     id="defs4386">
+    <linearGradient
+       x1="0.86267906"
+       y1="1.3210086"
+       x2="1.7007848"
+       y2="0.69053823"
+       id="linearGradient-1">
+      <stop
+         stop-color="#71DA99"
+         offset="0%"
+         id="stop4389" />
+      <stop
+         stop-color="#47B5D5"
+         offset="100%"
+         id="stop4391" />
+    </linearGradient>
+    <filter
+       x="-0.5"
+       y="-0.5"
+       width="2"
+       height="2"
+       filterUnits="objectBoundingBox"
+       id="filter-2">
+      <feOffset
+         dx="0"
+         dy="2"
+         in="SourceAlpha"
+         result="shadowOffsetOuter1"
+         id="feOffset4394" />
+      <feGaussianBlur
+         stdDeviation="2"
+         in="shadowOffsetOuter1"
+         result="shadowBlurOuter1"
+         id="feGaussianBlur4396" />
+      <feColorMatrix
+         values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.35 0"
+         in="shadowBlurOuter1"
+         type="matrix"
+         result="shadowMatrixOuter1"
+         id="feColorMatrix4398" />
+      <feMerge
+         id="feMerge4400">
+        <feMergeNode
+           in="shadowMatrixOuter1"
+           id="feMergeNode4402" />
+        <feMergeNode
+           in="SourceGraphic"
+           id="feMergeNode4404" />
+      </feMerge>
+    </filter>
+    <linearGradient
+       x1="402.8204"
+       y1="82.727808"
+       x2="80.544952"
+       y2="400.30735"
+       id="linearGradient-3"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         stop-color="#70D99A"
+         offset="0%"
+         id="stop4407" />
+      <stop
+         stop-color="#48B5D4"
+         offset="100%"
+         id="stop4409" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient-1"
+       id="linearGradient5598"
+       x1="20.679888"
+       y1="4.0686078"
+       x2="-465.29724"
+       y2="490.04575"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(468.2515,0)" />
+  </defs>
+  <g
+     id="Page-1"
+     sketch:type="MSPage"
+     style="fill:none;fill-rule:evenodd;stroke:none;stroke-width:1"
+     transform="translate(0.3124985,24.911134)">
+    <g
+       id="webdgap"
+       sketch:type="MSLayerGroup"
+       transform="translate(4,3)">
+      <g
+         id="svg4212"
+         sketch:type="MSShapeGroup">
+        <g
+           id="g4827"
+           transform="translate(0.139844,0.519131)">
+          <path
+             style="fill:#ffffff"
+             d="m 243.51172,57.669922 0,1.125 -86.33789,186.501958 26.25781,67.13671 60.53711,-158.23047 61.09375,158.23047 27.81445,-71.44726 -89.36523,-183.316408 z m -0.625,167.160158 -60.53711,157.8125 L 140.77734,278.37305 91.251953,385.35547 401.12305,385.50781 347.38867,272.9707 303.98047,382.08594 242.88672,224.83008 Z"
+             transform="translate(-4.139844,-3.519131)"
+             id="path4825"
+             inkscape:connector-curvature="0" />
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

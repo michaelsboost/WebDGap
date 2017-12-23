@@ -15,6 +15,14 @@ a, .pointer {
 a {
   text-decoration: none;
 }
+textarea {
+  resize: vertical;
+}
+@media (min-width: 1px) and (max-width: 768px) {
+  [data-id="convertapp"],
+  [data-id="convertsite"] {
+    width: calc(100% - 5%);
+    margin: auto;} }
 
 /* Alignment */
 .center {
@@ -183,13 +191,13 @@ a {
   box-sizing: border-box;
 }
 .onoffswitch-inner:before {
-  content: "Yes";
+  content: " ";
   padding-left: 10px;
   background-color: #34A7C1;
   color: #fff;
 }
 .onoffswitch-inner:after {
-  content: "No";
+  content: " ";
   padding-right: 10px;
   background-color: #eee;
   color: #999;
@@ -224,16 +232,6 @@ a {
 /* Preloader */
 .loading {
   height: 50%;
-}
-.share, .donate {
-  display: inline-block;
-  background: #656a6e;
-  color: #ebfff1;
-  padding: 5px 6px;
-  font-size: 24px;
-  position: relative;
-  top: -6px;
-  border-radius: 4px;
 }
 
 /* Footer */
@@ -313,10 +311,4 @@ a {
 }
 .wfill {
   width: 100%;
-}
-.nostyle {
-  border: 0;
-  background: transparent;
-  padding: 0;
-  margin: 0;
 }
