@@ -453,6 +453,8 @@ Here's a simple example...
       }
     }
 
+Now the words and phrases are inside of a variable which makes displaying the content very easy.  
+
     $("[data-language=setflag]").attr('src', setflag);
     document.title = appTitle;
     $("meta[name-description]").attr('content', appdescrip);
@@ -488,7 +490,6 @@ Sites talking about WebDGap:
 - [Web Designer Depot](https://www.webdesignerdepot.com/2017/06/5-essential-open-source-tools-for-web-designers/)  
 - [Bubble](https://forum.bubble.is/t/bubble-based-chrome-extension-get-current-url/10622/20)  
 - [TekZoom](http://www.tekzoom.com.br/webdgap-crie-aplicativos-para-windows-linux-e-os-x-gratis/)  
-- [Dylan Lott's Web Development Resources](http://dylanlott.github.io/2016/05/23/Web-Development-Resources/)  
 - [Quora](https://www.quora.com/Whats-the-best-programming-language-for-applications-and-GUIs)  
 - [StackOverflow](https://stackoverflow.com/questions/19075208/html5-game-to-native-app/29959025#29959025)  
 - [InfotonicsMedia](http://www.infotonicsmedia.com/mobile-technologies)  
