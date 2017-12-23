@@ -488,8 +488,10 @@ WebDGap originally launched in June 1st, 2015 via [Sourceforge](https://sourcefo
 Sites talking about WebDGap:  
 - [Windows Report](http://windowsreport.com/run-website-as-desktop-app/)  
 - [Web Designer Depot](https://www.webdesignerdepot.com/2017/06/5-essential-open-source-tools-for-web-designers/)  
-- [Bubble](https://forum.bubble.is/t/bubble-based-chrome-extension-get-current-url/10622/20)  
+- [Nova Solutions](https://novasolutionsmiami.com/web-design/5-open-source-tools-that-simplify-website-design/)  
 - [TekZoom](http://www.tekzoom.com.br/webdgap-crie-aplicativos-para-windows-linux-e-os-x-gratis/)  
-- [Quora](https://www.quora.com/Whats-the-best-programming-language-for-applications-and-GUIs)  
+- [Bubble](https://forum.bubble.is/t/bubble-based-chrome-extension-get-current-url/10622/20)  
 - [StackOverflow](https://stackoverflow.com/questions/19075208/html5-game-to-native-app/29959025#29959025)  
+- [Quora](https://www.quora.com/Whats-the-best-programming-language-for-applications-and-GUIs)  
+- [Construct 3 Forum](https://www.scirra.com/forum/quot-exported-games-won-t-work-until-you-upload-them-quot-with-nw-js_t194218)  
 - [InfotonicsMedia](http://www.infotonicsmedia.com/mobile-technologies)  
