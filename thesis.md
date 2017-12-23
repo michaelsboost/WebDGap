@@ -14,7 +14,8 @@
    2. [Operating Systems](#os)
    3. [PhoneGap](#phonegap)
    4. [Exportation](#exportation)
-   5. [WINE](#wine)
+   5. [Internationalization](#internationalization)
+   6. [WINE](#wine)
 5. [Community adoption & publicity](#collabnshares)
 
 ## 1. <a name="intro">Introduction</a>
@@ -55,63 +56,63 @@ svg, svg * {fill:#f00;}
 - <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> index.html  
 
 <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/folder.png" class="fs"> /assets  
-- houses most of the main website's libraries/images (which we will skip for now and only show the necessary files for the application)
-- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> loadlogo-rounded.png
-- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> loadlogo-rounded.svg
-- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> loadlogo.png
-- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> loadlogo.psd
-- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> loadlogo.svg
-- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> loadlogo.xcf
-- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> YourLin32App.zip - precompiled linux 32bit/i832 app
-- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> YourLinApp.zip - precompiled linux app
-- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> YourMacApp.zip - precompiled mac app
-- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> YourWin32App.zip - precompiled windows 32bit app
-- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> YourWinApp.zip - precompiled windows app
+- houses most of the main website's libraries/images (which we will skip for now and only show the necessary files for the application)  
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> loadlogo-rounded.png  
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> loadlogo-rounded.svg  
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> loadlogo.png  
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> loadlogo.psd  
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> loadlogo.svg  
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> loadlogo.xcf  
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> YourLin32App.zip - precompiled linux 32bit/i832 app  
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> YourLinApp.zip - precompiled linux app  
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> YourMacApp.zip - precompiled mac app  
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> YourWin32App.zip - precompiled windows 32bit app  
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> YourWinApp.zip - precompiled windows app  
 
 <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/folder.png" class="fs"> /css  
-- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> flag-icon.css - css library to show flags for multiple language support
-- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> jquery.smartbanner.css - library to show via homepage that app is available on google play
-- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> style.css
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> flag-icon.css - css library to show flags for multiple language support  
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> jquery.smartbanner.css - library to show via homepage that app is available on google play  
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> style.css  
 
-<img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> favicon.ico  
+<img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> favicon.ico    
 
 <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/folder.png" class="fs"> /imgs  
-- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> app.png
-- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> file.svg
-- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> file.png
-- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> folder.png
-- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> icon.svg
-- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> logo.svg
-- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> playvideo.svg
-- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> preloader.svg
-- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> screenshot.png
-- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> sitelogo.svg
-- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> webdgap-logo.png
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> app.png  
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> file.svg  
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> file.png  
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> folder.png  
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> icon.svg  
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> logo.svg  
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> playvideo.svg  
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> preloader.svg  
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> screenshot.png  
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> sitelogo.svg  
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> webdgap-logo.png  
 
-<img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> index.html - The main WebDGap interface
+<img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> index.html - The main WebDGap interface  
 
-<img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/folder.png" class="fs"> /js  
+<img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/folder.png" class="fs"> /js    
 
-- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> index.js - javascript for handling various languages for main website
-- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> jquery.smartbanner.js - library to show via homepage that app is available on google play
-- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> keys.js - hotkeys for the desktop application
-- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> webdgap.js - webdgap's javascript application architecture
-- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> webdgapjs.js - a portable version of webdgap for exporting websites as desktop applications
-- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> webdgapjs.min.js - a minified and portable version of webdgap for exporting websites as desktop applications
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> index.js - javascript for handling various languages for main website  
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> jquery.smartbanner.js - library to show via homepage that app is available on google play  
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> keys.js - hotkeys for the desktop application  
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> webdgap.js - webdgap's javascript application architecture  
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> webdgapjs.js - a portable version of webdgap for exporting websites as desktop applications  
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> webdgapjs.min.js - a minified and portable version of webdgap for exporting websites as desktop applications  
 
-<img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/folder.png" class="fs"> /libraries  
-- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/folder.png" class="fs"> /alertifyjs
-- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/folder.png" class="fs"> /fancybox
-- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/folder.png" class="fs"> /font-awesome
-- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/folder.png" class="fs"> /jquery
+<img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/folder.png" class="fs"> /libraries    
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/folder.png" class="fs"> /alertifyjs  
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/folder.png" class="fs"> /fancybox  
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/folder.png" class="fs"> /font-awesome  
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/folder.png" class="fs"> /jquery  
 - <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/folder.png" class="fs"> /jszip  
-- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/folder.png" class="fs"> /polyui
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/folder.png" class="fs"> /polyui  
 - <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/folder.png" class="fs"> /prefixfree  
 
 <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> LICENSE - MIT
 
 <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/folder.png" class="fs"> /plugin  
-- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/folder.png" class="fs"> /assets - necessary library/styles for the website's ui
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/folder.png" class="fs"> /assets - necessary library/styles for the website's ui  
 - <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> index.html
 
 <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> README.md  
@@ -137,7 +138,7 @@ Here's a list of the few libraries and frameworks WebDGap uses in order to run p
 
 ### 4.1 <a name="userloadsapp">User loads WebDGap</a>
 
-User is first asked to export either a website or an app (aka compressed web app's source code as a desktop/chrome/phonegap app)
+User is first asked to export either a website or an app (aka compressed web app's source code as a desktop/chrome/phonegap app). When the user chooses what he/she wants to do WebDGap then makes the necessary visual changes to correspond with the users command to execute that action.
 
     $("[data-id=convertapp], [data-id=convertsite]").on("click", function() {
       if ( $(this).attr("data-id").toLowerCase() === "convertapp" ) {
@@ -161,15 +162,13 @@ User is first asked to export either a website or an app (aka compressed web app
       $(".wholedialog").fadeOut();
     });
 
-This function handles the necessary display styles to export your website or app to a desktop/chrome/phonegap application.
+To make the exportation process more seamless and user friendly. Whenever a user completes a step and a scroll is necessary. WebDGap scrolls the user to the next available step using JQuery's [animate](http://api.jquery.com/animate/) method.
 
     document.querySelector(".export64").onclick = function() {
       $(".64bit").removeClass("hide");
       $(".32bit").addClass("hide");
       $("html, body").animate({ scrollTop: $(".chosenbit").offset().top }, "slow");
     };
-
-After each input is filled and you move to the next section WebDGap will scroll you to where you need to go to proceed with exporting your app for desktop/chrome/phonegap. As you can see above.
 
 ### 4.2 <a name="os">Operating Systems</a>
 
@@ -179,13 +178,13 @@ The main premise was I wanted to make sure your app supported the usage of [Node
 
 ### 4.3 <a name="phonegap">PhoneGap</a>
 
-With how big and important mobile development is, it would be a poor decision to not integrate some kind of mobile exportation. WebDGap makes the process simple. You can export your web app as a [PhoneGap Build](https://build.phonegap.com/) application and use the [PhoneGap Build](https://build.phonegap.com/) service to create your web app as a mobile application.
+Mobile phones and tablets have revolutionized the way we interact with out day to day lives, thus it would be a poor decision to not integrate some kind of mobile exportation. WebDGap makes the process simple. You can export your web app as a [PhoneGap Build](https://build.phonegap.com/) application and use the [PhoneGap Build](https://build.phonegap.com/) service to create your web app as a mobile application.
 
-WebDGap was also released for Android as well without any backend code needed either!
+WebDGap was also [released for Android](https://play.google.com/store/apps/details?id=com.michael.webdgap) as well without any backend code needed!
 
 ### 4.4 <a name="exportation">Exportation</a>
 
-After I decided what framework I was going to use to run the desktop app I then needed to figure out how I am going to merge your web app's code with the desktop app. Now because there's no server being used there's some drawbacks. Main drawback is there's no frontend API for compiling web apps as desktop applications. Thus I decided to use [JSZip](https://stuk.github.io/jszip/) to handle the zip packaging. I take a precompiled version of [NW.js](https://nwjs.io/) and merge your web app's code into the desktop app and export you the merged randition.
+After I decided what framework I was going to use to run the desktop app I then needed to figure out how I am going to merge your web app's code with the desktop app. Now because there's no server being used there's some drawbacks. Main drawback is there's no frontend API for compiling web apps as desktop applications. Thus I decided to use [JSZip](https://stuk.github.io/jszip/) to handle the zip packaging. I take a precompiled version of [NW.js](https://nwjs.io/) and merge your web app's code into the desktop app and then export the new merged randition. Thus converting a website or your web application as a desktop app. Simple I know :)
 
     var executeApp  = function(file) {
       $(".chromeappcheck").addClass("hide");
@@ -202,15 +201,12 @@ After I decided what framework I was going to use to run the desktop app I then 
             var zip = new JSZip(data);
 
             // Your Logo
-            var Img16 = c16[0].toDataURL("image/png");
-            var Img32 = c32[0].toDataURL("image/png");
-            var Img64 = c64[0].toDataURL("image/png");
-            var Img128 = canvas[0].toDataURL("image/png");
-            zip.file("resources/default_app/icons/16.png", Img16.split('base64,')[1],{base64: true});
-            zip.file("resources/default_app/icons/32.png", Img32.split('base64,')[1],{base64: true});
-            zip.file("resources/default_app/icons/64.png", Img64.split('base64,')[1],{base64: true});
-            zip.file("resources/default_app/icons/128.png", Img128.split('base64,')[1],{base64: true});
-            zip.file("resources/default_app/icons/logo.png", $(".imgorigholder > img").attr("src").split("base64,")[1],{base64: true});
+            zip.file("resources/default_app/icons/16.png", document.querySelector("[data-webdgapsize=f16]").src.split('base64,')[1],{base64: true});
+            zip.file("resources/default_app/icons/32.png", document.querySelector("[data-webdgapsize=f32]").src.split('base64,')[1],{base64: true});
+            zip.file("resources/default_app/icons/64.png", document.querySelector("[data-webdgapsize=f64]").src.split('base64,')[1],{base64: true});
+            zip.file("resources/default_app/icons/128.png", document.querySelector("[data-webdgapsize=f128]").src.split('base64,')[1],{base64: true});
+            zip.file("resources/default_app/icons/logo.png", document.querySelector("[data-webdgapimgload=webdgapimg]").src.split("base64,")[1],{base64: true});
+            
             // Files for exported app
             zip.file("resources/default_app/css/style.css", "html, body {\n  height: 100%;\n  padding: 0;\n  margin: 0;\n  overflow: hidden;\n}\n\niframe {\n  width: 100%;\n  height: 100%;\n  border: 0;\n}");
             zip.file("resources/default_app/index.html", "<!DOCTYPE html>\n<html>\n  <head>\n    <title>"+ $("[data-id=sitename]").val() +"</title>\n    <meta charset=\"utf-8\">\n    <meta name=\"viewport\" content=\"initial-scale=1.0\">\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=9\" />\n    <link type=\"text/css\" rel=\"stylesheet\" href=\"css/style.css\" />\n  </head>\n  <body>\n    <iframe src=\""+ $("[data-action=website]").val() +"\">\n      Your browser does not support the iFrame html elements.\n    </iframe>\n  </body>\n</html>");
@@ -230,69 +226,62 @@ After I decided what framework I was going to use to run the desktop app I then 
 
 If you're converting a website it all starts when you load in your image...
 
-
     function displayPreview(file) {
       var reader = new FileReader();
 
       reader.onload = function(e) {
-        var img   = new Image();
-        var img16 = new Image();
-        var img32 = new Image();
-        var img64 = new Image();
-        
-        img.src   = e.target.result;
-        img16.src = e.target.result;
-        img32.src = e.target.result;
-        img64.src = e.target.result;
-        img16.onload = function() {
-          // x, y, width, height
-          ctx16.clearRect(0, 0, 16, 16);
-          ctx16.drawImage(img16, 0, 0, 16, 16);
+        // Image Container for WebDGap
+        var addwebdgap = document.createElement("div");
+        addwebdgap.style.display = "none";
+        addwebdgap.setAttribute("data-webdgap", "container");
+        document.body.appendChild(addwebdgap);
+        var webdgapContainer = document.querySelector("[data-webdgap=container]");
+        webdgapContainer.innerHTML = '<div data-webdgapimg="webdgapimgholder"></div>';
+
+        // Load images
+        var webdgaporigimg = document.createElement("img");
+        webdgaporigimg.setAttribute("data-webdgapimgload", "webdgapimg");
+        webdgaporigimg.src = e.target.result;
+        webdgapContainer.appendChild(webdgaporigimg);
+
+        // Load image sizes  
+        function embedImage(size) {
+          // Load images
+          var webdgap_img = new Image();
+          webdgap_img.src = e.target.result;
+          webdgap_img.onload = function() {
+            var webdgap_canvas = document.createElement("canvas");
+            webdgap_canvas.width = size;
+            webdgap_canvas.height = size;
+            var webdgap_ctx = webdgap_canvas.getContext("2d");
+            webdgap_ctx.clearRect(0, 0, size, size);
+            webdgap_ctx.drawImage(this, 0, 0, size, size);
+            var webdgap_dataURL = webdgap_canvas.toDataURL("image/png");
+            var webdgap_image = document.createElement("img");
+            webdgap_image.setAttribute("data-webdgapsize", "f" + size);
+            webdgap_image.src = webdgap_dataURL;
+
+            // Image Container for WebDGap
+            webdgapContainer.appendChild(webdgap_image);
+          };
         }
-        img32.onload = function() {
-          // x, y, width, height
-          ctx32.clearRect(0, 0, 32, 32);
-          ctx32.drawImage(img32, 0, 0, 32, 32);
-        }
-        img64.onload = function() {
-          // x, y, width, height
-          ctx64.clearRect(0, 0, 64, 64);
-          ctx64.drawImage(img64, 0, 0, 64, 64);
-        }
+        embedImage("16");
+        embedImage("32");
+        embedImage("64");
+        embedImage("128");
+
+        var img = new Image();
+        img.src = e.target.result;
         img.onload = function() {
           // x, y, width, height
           ctx.clearRect(0, 0, 128, 128);
           ctx.drawImage(img, 0, 0, 128, 128);
         }
-        
-        var imgorigholder = $(".imgorigholder");
-        var imgOrigUrl = e.target.result;
-        var imgOrig = $("<img>");
-        imgOrig.attr("src", imgOrigUrl);
-        imgorigholder.empty();
-        imgorigholder.append(imgOrig);
       }
       $(".img--avatar").addClass("hide");
       $("[data-id=sitename]").attr("disabled", "true");
       reader.readAsDataURL(file);
     }
-
-    loader.on("change", function(evt) {
-      var file = evt.target.files[0];
-      displayPreview(file);
-      $("[data-action=displayfooter]").removeClass("hide");
-
-      if ( $(".convertsite-picked").is(":visible") ) {
-        $(".logoisloadedsite, .logoisloadedapp, .loadavatar").addClass("hide");
-        $(".logo, .check, .outputname").removeClass("hide");
-        $("html, body").animate({ scrollTop: $(".pickbits").offset().top }, "slow");
-        executeApp(file);
-      } else {
-        $(".loadavatar").addClass("hide");
-        $(".loadzip, .logo, .outputname, .logoisloadedapp").removeClass("hide");
-        $("html, body").animate({ scrollTop: $(".logoisloadedapp").offset().top }, "slow");
-      }
-    });
 
 If you're converting an HTML/CSS/JS app; then it proceeds with exporting your compressed zip file;
 
@@ -333,15 +322,11 @@ If you're converting an HTML/CSS/JS app; then it proceeds with exporting your co
                   zip.folder("app/").load(webAppZipBinary);
 
                   // Your Logo
-                  var Img16 = c16[0].toDataURL("image/png");
-                  var Img32 = c32[0].toDataURL("image/png");
-                  var Img64 = c64[0].toDataURL("image/png");
-                  var Img128 = canvas[0].toDataURL("image/png");
-                  zip.file("app/icons/16.png", Img16.split('base64,')[1],{base64: true});
-                  zip.file("app/icons/32.png", Img32.split('base64,')[1],{base64: true});
-                  zip.file("app/icons/64.png", Img64.split('base64,')[1],{base64: true});
-                  zip.file("app/icons/128.png", Img128.split('base64,')[1],{base64: true});
-                  zip.file("app/icons/logo.png", $(".imgorigholder > img").attr("src").split("base64,")[1],{base64: true});
+                  zip.file("app/icons/16.png", document.querySelector("[data-webdgapsize=f16]").src.split('base64,')[1],{base64: true});
+                  zip.file("app/icons/32.png", document.querySelector("[data-webdgapsize=f32]").src.split('base64,')[1],{base64: true});
+                  zip.file("app/icons/64.png", document.querySelector("[data-webdgapsize=f64]").src.split('base64,')[1],{base64: true});
+                  zip.file("app/icons/128.png", document.querySelector("[data-webdgapsize=f128]").src.split('base64,')[1],{base64: true});
+                  zip.file("app/icons/logo.png", document.querySelector("[data-webdgapimgload=webdgapimg]").src.split("base64,")[1],{base64: true});
 
                   // For 32bit Windows Application
                   zip.file("package.json", '{\n  "main"  : "index.html",\n  "name"  : "'+ $("[data-id=sitename]").val() +'",\n  "window": {\n      "toolbar" : false,\n      "icon"    : "app/icons/128.png",\n      "width"   : 1000,\n      "height"  : 600,\n      "position": "center"\n  }\n}');
@@ -432,7 +417,11 @@ With Android it's the same correlation upon exportation it's just done a little 
       }
     }
 
-To correlate for multiple languages WebDGap uses JSON format for words and phrases and a hash which runs the language and is triggered via a select element/dropdown.
+### 4.5 <a name="internationalization">Internationalization</a>
+
+WebDGap was originally built in English. However to make the process more user friendly and reach a broader audience. We integrated the use for what some call Internationalization or Localization. Which is just a fancy term for a multilingual application.
+
+To correlate for the use of multiple languages WebDGap uses JSON format for words and phrases and a hash which runs the language and is triggered via a select element/dropdown.
 
 Here's a simple example...
 
@@ -482,9 +471,9 @@ Here's a simple example...
       location.reload(true);
     });
 
-Lastly, there's a Windows application called [Resource Hacker](http://angusj.com/resourcehacker/). This application allows you to change the Windows application's .exe icon along with it's metadata. 
+### 4.6 <a name="wine">WINE</a>
 
-### 4.5 <a name="wine">WINE</a>
+Lastly, there's a Windows application called [Resource Hacker](http://angusj.com/resourcehacker/). This application allows you to change the Windows application's .exe icon along with it's metadata. Except it's a Windows application. So in order to run Windows apps on Mac and Linux operating systems you would use an application called [WINE](https://www.winehq.org/).
 
 [WINE](https://www.winehq.org/) (originally an acronym for "Wine Is Not an Emulator") is a compatibility layer capable of running Windows applications on several POSIX-compliant operating systems, such as Linux, macOS, & BSD. Instead of simulating internal Windows logic like a virtual machine or emulator, Wine translates Windows API calls into POSIX calls on-the-fly, eliminating the performance and memory penalties of other methods and allowing you to cleanly integrate Windows applications into your desktop. [source](https://www.winehq.org/)
 
@@ -492,14 +481,14 @@ Remember! [WINE](https://www.winehq.org/) will make it possible for Mac and Linu
 
 ## 5. <a name="collabnshares">Community adoption & publicity</a>
 
-WebDGap launched in June 1st, 2015 [Sourceforge](https://sourceforge.net/projects/webdgap/).
+WebDGap originally launched in June 1st, 2015 via [Sourceforge](https://sourceforge.net/projects/webdgap/) since then has moved to Github for community collaboration. Remember team work makes the dream work!
 
-Sites talking about WebDGap: 
-- [Windows Report](http://windowsreport.com/run-website-as-desktop-app/)
-- [Web Designer Depot](https://www.webdesignerdepot.com/2017/06/5-essential-open-source-tools-for-web-designers/)
-- [Bubble](https://forum.bubble.is/t/bubble-based-chrome-extension-get-current-url/10622/20)
-- [TekZoom](http://www.tekzoom.com.br/webdgap-crie-aplicativos-para-windows-linux-e-os-x-gratis/)
-- [Dylan Lott's Web Development Resources](http://dylanlott.github.io/2016/05/23/Web-Development-Resources/)
-- [Quora](https://www.quora.com/Whats-the-best-programming-language-for-applications-and-GUIs)
-- [StackOverflow](https://stackoverflow.com/questions/19075208/html5-game-to-native-app/29959025#29959025)
-- [InfotonicsMedia](http://www.infotonicsmedia.com/mobile-technologies)
+Sites talking about WebDGap:  
+- [Windows Report](http://windowsreport.com/run-website-as-desktop-app/)  
+- [Web Designer Depot](https://www.webdesignerdepot.com/2017/06/5-essential-open-source-tools-for-web-designers/)  
+- [Bubble](https://forum.bubble.is/t/bubble-based-chrome-extension-get-current-url/10622/20)  
+- [TekZoom](http://www.tekzoom.com.br/webdgap-crie-aplicativos-para-windows-linux-e-os-x-gratis/)  
+- [Dylan Lott's Web Development Resources](http://dylanlott.github.io/2016/05/23/Web-Development-Resources/)  
+- [Quora](https://www.quora.com/Whats-the-best-programming-language-for-applications-and-GUIs)  
+- [StackOverflow](https://stackoverflow.com/questions/19075208/html5-game-to-native-app/29959025#29959025)  
+- [InfotonicsMedia](http://www.infotonicsmedia.com/mobile-technologies)  
