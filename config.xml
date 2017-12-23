@@ -2,8 +2,8 @@
 <widget xmlns = "http://www.w3.org/ns/widgets"
   xmlns:gap   = "http://phonegap.com/ns/1.0"
   id          = "com.michael.webdgap"
-  version     = "0.0.4"
-  versionCode = "6">
+  version     = "0.0.5"
+  versionCode = "7">
   <name>WebDGap</name>
   <description>
     Easily convert any website or web application as a native Windows/Linux/Mac/Chrome Application, Chrome Extention and even release PhoneGap builds for Mobile devices too.

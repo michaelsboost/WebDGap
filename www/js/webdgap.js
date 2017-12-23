@@ -1,4 +1,4 @@
-// Version: 0.0.3
+// Version: 0.0.5
 // WebDGap, copyright (c) by Michael Schwartz and others
 // Distributed under an MIT license: https://github.com/mikethedj4/WebDGap/blob/gh-pages/LICENSE
 
