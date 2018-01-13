@@ -44,7 +44,7 @@ var language = {
     userbio: "Usuario",
     madewwebdgap: "Hecho con WebDGap",
     submitapp: "¡Presente el suyo hoy!",
-    madeby: "Hecho con <span class=\"fa fa-heart\" style=\"color: #f66;\"></span> y <span class=\"fa fa-coffee\" style=\"color: #52bab3;\"></span> por <a href=\"http://mikethedj4.github.io/\" target=\"_blank\">Michael</a> y otros."
+    madeby: "Hecho con <span class=\"fa fa-heart\" style=\"color: #f66;\"></span> y <span class=\"fa fa-coffee\" style=\"color: #52bab3;\"></span> por <a href=\"http://michaelsboost.github.io/\" target=\"_blank\">Michael</a> y otros."
   }
 };
 
