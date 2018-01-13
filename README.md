@@ -52,13 +52,13 @@ MIT
 [Chrome](https://chrome.google.com/webstore/detail/webdgap/aommkjnlphiacgajemkmbnfebfbfjfhn)  
 [Chrome Extension](https://chrome.google.com/webstore/detail/webdgap/odpmjbmeopdfhcikkhpeaemfbmghpobk)  
 [Android](https://play.google.com/store/apps/details?id=com.michael.webdgap)  
-[JS Plugin](https://mikethedj4.github.io/WebDGap/plugin/)  *(aka [WebDGapJS](https://mikethedj4.github.io/WebDGap/plugin/))*
+[JS Plugin](https://michaelsboost.github.io/WebDGap/plugin/)  *(aka [WebDGapJS](https://michaelsboost.github.io/WebDGap/plugin/))*
 
 For command line use you can use [nativefier](https://github.com/jiahaog/nativefier) to convert any website to a desktop app. (**NOTE**: nativefier uses an Electron wrapper. WebDGap uses a NW.js wrapper. Difference is Electron runs on 64bit processors while NW.js runs on 64bits and 32bit processors)
 
 ### Free Software, Hell Yeah!
 
-- [kodeWeave](https://mikethedj4.github.io/kodeWeave/)
+- [kodeWeave](https://michaelsboost.github.io/kodeWeave/)
 - [AngularJS](http://angularjs.org)
 - [Ionic Framework](http://ionicframework.com/)
 - [jQuery](http://jquery.com)
@@ -68,11 +68,11 @@ For command line use you can use [nativefier](https://github.com/jiahaog/nativef
 - [JSZip](https://stuk.github.io/jszip/)
 - [Twitter Bootstrap](http://twitter.github.com/bootstrap/)
 - [Poly UI Kit](https://github.com/Guilh/Poly)
-- [CodePen](http://codepen.io/mikethedj4)
+- [CodePen](http://codepen.io/michaelsboost)
 
 ### Author
 
-- [michael schwartz](http://mikethedj4.github.io/) and with [tom gibson's](http://www.tomgibsonconsulting.com/) help on making WebDGap available for Mobile users :)
+- [michael schwartz](http://michaelsboost.github.io/) and with [tom gibson's](http://www.tomgibsonconsulting.com/) help on making WebDGap available for Mobile users :)
 
 ### Development
 
@@ -82,4 +82,4 @@ You can submit a pull request or simply share the project :)
 
 Of course WebDGap is free and open source, so you can always fork the project and have fun :)
 
-If WebDGap was at all helpful for you. You can show your appreciation by [Donating via SquareCash](https://cash.me/$mschwar4) and/or [PayPal](https://www.paypal.me/mikethedj4)
+If WebDGap was at all helpful for you. You can show your appreciation by [Donating via SquareCash](https://cash.me/$michaelsboost) and/or [PayPal](https://www.paypal.me/mikethedj4)
