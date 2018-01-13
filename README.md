@@ -1,7 +1,7 @@
 # WebDGap
 Easily create websites as multi-platform desktop apps!
 
-![](https://raw.githubusercontent.com/mikethedj4/WebDGap/gh-pages/imgs/screenshot.png)
+![](https://raw.githubusercontent.com/michaelsboost/WebDGap/gh-pages/imgs/screenshot.png)
 
 ### Converting a Web Application to a native Desktop Application.
 
