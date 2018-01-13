@@ -1,7 +1,7 @@
 # WebDGap
 Easily create websites as multi-platform desktop apps!
 
-![](https://raw.githubusercontent.com/mikethedj4/WebDGap/gh-pages/imgs/screenshot.png)
+![](https://raw.githubusercontent.com/michaelsboost/WebDGap/gh-pages/imgs/screenshot.png)
 
 ### Converting a Web Application to a native Desktop Application.
 
@@ -52,7 +52,7 @@ MIT
 [Chrome](https://chrome.google.com/webstore/detail/webdgap/aommkjnlphiacgajemkmbnfebfbfjfhn)  
 [Chrome Extension](https://chrome.google.com/webstore/detail/webdgap/odpmjbmeopdfhcikkhpeaemfbmghpobk)  
 [Android](https://play.google.com/store/apps/details?id=com.michael.webdgap)  
-[JS Plugin](https://mikethedj4.github.io/WebDGap/plugin/)  *(aka [WebDGapJS](https://mikethedj4.github.io/WebDGap/plugin/))*
+[JS Plugin](https://mikethedj4.github.io/WebDGap/plugin/)  *(aka [WebDGapJS](https://michaelsboost.github.io/WebDGap/plugin/))*
 
 For command line use you can use [nativefier](https://github.com/jiahaog/nativefier) to convert any website to a desktop app. (**NOTE**: nativefier uses an Electron wrapper. WebDGap uses a NW.js wrapper. Difference is Electron runs on 64bit processors while NW.js runs on 64bits and 32bit processors)
 
@@ -67,11 +67,11 @@ For command line use you can use [nativefier](https://github.com/jiahaog/nativef
 - [JSZip](https://stuk.github.io/jszip/)
 - [Twitter Bootstrap](http://twitter.github.com/bootstrap/)
 - [Poly UI Kit](https://github.com/Guilh/Poly)
-- [CodePen](http://codepen.io/mikethedj4)
+- [CodePen](http://codepen.io/michaelsboost)
 
 ### Author
 
-- [michael schwartz](http://mikethedj4.github.io/) and with [tom gibson's](http://www.tomgibsonconsulting.com/) help on making WebDGap available for Mobile users :)
+- [michael schwartz](http://michaelsboost.github.io/) and with [tom gibson's](http://www.tomgibsonconsulting.com/) help on making WebDGap available for Mobile users :)
 
 ### Development
 
@@ -81,6 +81,6 @@ You can submit a pull request or simply share the project :)
 
 Of course WebDGap is free and open source, so you can always fork the project and have fun :)
 
-If WebDGap was at all helpful for you. [Would you consider donating to the project?](https://cash.me/$mschwar4)
+If WebDGap was at all helpful for you. [Would you consider donating to the project?](https://cash.me/$michaelsboost)
 
 [You can donate via PayPal too!](https://www.paypal.com/us/cgi-bin/webscr?cmd=_flow&SESSION=JryIEtO_GiYnqlvRfV6BGnO6bAxR3JtIQif2j1z1eFYuoLkYf_XZOY6QbWe&dispatch=5885d80a13c0db1f8e263663d3faee8dcce3e160f5b9538489e17951d2c62172)
