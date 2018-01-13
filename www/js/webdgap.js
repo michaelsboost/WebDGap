@@ -1,8 +1,8 @@
-// Version: 0.0.5
+// Version: 0.0.6
 // WebDGap, copyright (c) by Michael Schwartz and others
-// Distributed under an MIT license: https://github.com/mikethedj4/WebDGap/blob/gh-pages/LICENSE
+// Distributed under an MIT license: https://github.com/michaelsboost/WebDGap/blob/gh-pages/LICENSE
 
-// This is WebDGap (https://mikethedj4.github.io/WebDGap/), Easily create multi-platform desktop apps.
+// This is WebDGap (https://michaelsboost.github.io/WebDGap/), Easily create multi-platform desktop apps.
 // implemented in JavaScript!
 
 if (navigator.onLine) {
@@ -165,9 +165,9 @@ $(".export-as-win32-app, .export-as-win-app").click(function() {
   }
   $(document.body).append('<div class="fixedfill preloader"></div>');
   if ($(this).hasClass("exportedwebsite")) {
-    $(".preloader").html("<div class=\"table\"><div class=\"cell\">\n  <h1>Creating application!</h1>\n  <img class=\"loading\" src=\"imgs/preloader.svg\">\n  \n<h1>\n    <a class=\"share\" href=\"javascript:void(0)\" onclick=\"window.plugins.socialsharing.share('I #converted a #website to a #Windows #application using #WebDGap!', null, null, 'https://mikethedj4.github.io/WebDGap/')\">Share</a>\n    <a class=\"donate\" href=\"https://cash.me/$michaelsboost\" target=\"_blank\" onclick=\"window.open('https://cash.me/$michaelsboost', '_system')\">Donate</a>\n    <a target=\"_blank\" href=\"https://www.paypal.com/cgi-bin/webscr?business=mikethedj4%40yahoo.com&cmd=_xclick&amount=5.0&item_name=Donation&currency_code=USD\">\n      <i class=\"fa fa-cc-paypal\"></i>\n    </a>\n  </h1>\n</div></div>");
+    $(".preloader").html("<div class=\"table\"><div class=\"cell\">\n  <h1>Creating application!</h1>\n  <img class=\"loading\" src=\"imgs/preloader.svg\">\n  \n<h1>\n    <a class=\"share\" href=\"javascript:void(0)\" onclick=\"window.plugins.socialsharing.share('I #converted a #website to a #Windows #application using #WebDGap!', null, null, 'https://michaelsboost.github.io/WebDGap/')\">Share</a>\n    <a class=\"donate\" href=\"https://cash.me/$michaelsboost\" target=\"_blank\" onclick=\"window.open('https://cash.me/$michaelsboost', '_system')\">Donate</a>\n    <a target=\"_blank\" href=\"https://www.paypal.com/cgi-bin/webscr?business=mikethedj4%40yahoo.com&cmd=_xclick&amount=5.0&item_name=Donation&currency_code=USD\">\n      <i class=\"fa fa-cc-paypal\"></i>\n    </a>\n  </h1>\n</div></div>");
   } else if ($(this).hasClass("exportedwebapp")) {
-    $(".preloader").html("<div class=\"table\"><div class=\"cell\">\n  <h1>Creating application!</h1>\n  <img class=\"loading\" src=\"imgs/preloader.svg\">\n  \n<h1>\n    <a class=\"share\" href=\"javascript:void(0)\" onclick=\"window.plugins.socialsharing.share('I #converted a #web #app to a #Windows #application using #WebDGap!', null, null, 'https://mikethedj4.github.io/WebDGap/')\">Share</a>\n    <a class=\"donate\" href=\"https://cash.me/$michaelsboost\" target=\"_blank\" onclick=\"window.open('https://cash.me/$michaelsboost', '_system')\">Donate</a>\n    <a target=\"_blank\" href=\"https://www.paypal.com/cgi-bin/webscr?business=mikethedj4%40yahoo.com&cmd=_xclick&amount=5.0&item_name=Donation&currency_code=USD\">\n      <i class=\"fa fa-cc-paypal\"></i>\n    </a>\n  </h1>\n</div></div>");
+    $(".preloader").html("<div class=\"table\"><div class=\"cell\">\n  <h1>Creating application!</h1>\n  <img class=\"loading\" src=\"imgs/preloader.svg\">\n  \n<h1>\n    <a class=\"share\" href=\"javascript:void(0)\" onclick=\"window.plugins.socialsharing.share('I #converted a #web #app to a #Windows #application using #WebDGap!', null, null, 'https://michaelsboost.github.io/WebDGap/')\">Share</a>\n    <a class=\"donate\" href=\"https://cash.me/$michaelsboost\" target=\"_blank\" onclick=\"window.open('https://cash.me/$michaelsboost', '_system')\">Donate</a>\n    <a target=\"_blank\" href=\"https://www.paypal.com/cgi-bin/webscr?business=mikethedj4%40yahoo.com&cmd=_xclick&amount=5.0&item_name=Donation&currency_code=USD\">\n      <i class=\"fa fa-cc-paypal\"></i>\n    </a>\n  </h1>\n</div></div>");
   }
 });
 $(".export-as-mac-app").click(function() {
@@ -177,9 +177,9 @@ $(".export-as-mac-app").click(function() {
   }
   $(document.body).append('<div class="fixedfill preloader"></div>');
   if ($(this).hasClass("exportedwebsite")) {
-    $(".preloader").html("<div class=\"table\"><div class=\"cell\">\n  <h1>Creating application!</h1>\n  <img class=\"loading\" src=\"imgs/preloader.svg\">\n  \n<h1>\n    <a class=\"share\" href=\"javascript:void(0)\" onclick=\"window.plugins.socialsharing.share('I #converted a #website to a #Mac #application using #WebDGap!', null, null, 'https://mikethedj4.github.io/WebDGap/')\">Share</a>\n    <a class=\"donate\" href=\"https://cash.me/$michaelsboost\" target=\"_blank\" onclick=\"window.open('https://cash.me/$michaelsboost', '_system')\">Donate</a>\n    <a target=\"_blank\" href=\"https://www.paypal.com/cgi-bin/webscr?business=mikethedj4%40yahoo.com&cmd=_xclick&amount=5.0&item_name=Donation&currency_code=USD\">\n      <i class=\"fa fa-cc-paypal\"></i>\n    </a>\n  </h1>\n</div></div>");
+    $(".preloader").html("<div class=\"table\"><div class=\"cell\">\n  <h1>Creating application!</h1>\n  <img class=\"loading\" src=\"imgs/preloader.svg\">\n  \n<h1>\n    <a class=\"share\" href=\"javascript:void(0)\" onclick=\"window.plugins.socialsharing.share('I #converted a #website to a #Mac #application using #WebDGap!', null, null, 'https://michaelsboost.github.io/WebDGap/')\">Share</a>\n    <a class=\"donate\" href=\"https://cash.me/$michaelsboost\" target=\"_blank\" onclick=\"window.open('https://cash.me/$michaelsboost', '_system')\">Donate</a>\n    <a target=\"_blank\" href=\"https://www.paypal.com/cgi-bin/webscr?business=mikethedj4%40yahoo.com&cmd=_xclick&amount=5.0&item_name=Donation&currency_code=USD\">\n      <i class=\"fa fa-cc-paypal\"></i>\n    </a>\n  </h1>\n</div></div>");
   } else if ($(this).hasClass("exportedwebapp")) {
-    $(".preloader").html("<div class=\"table\"><div class=\"cell\">\n  <h1>Creating application!</h1>\n  <img class=\"loading\" src=\"imgs/preloader.svg\">\n  \n<h1>\n    <a class=\"share\" href=\"javascript:void(0)\" onclick=\"window.plugins.socialsharing.share('I #converted a #web #app to a #Mac #application using #WebDGap!', null, null, 'https://mikethedj4.github.io/WebDGap/')\">Share</a>\n    <a class=\"donate\" href=\"https://cash.me/$michaelsboost\" target=\"_blank\" onclick=\"window.open('https://cash.me/$michaelsboost', '_system')\">Donate</a>\n    <a target=\"_blank\" href=\"https://www.paypal.com/cgi-bin/webscr?business=mikethedj4%40yahoo.com&cmd=_xclick&amount=5.0&item_name=Donation&currency_code=USD\">\n      <i class=\"fa fa-cc-paypal\"></i>\n    </a>\n  </h1>\n</div></div>");
+    $(".preloader").html("<div class=\"table\"><div class=\"cell\">\n  <h1>Creating application!</h1>\n  <img class=\"loading\" src=\"imgs/preloader.svg\">\n  \n<h1>\n    <a class=\"share\" href=\"javascript:void(0)\" onclick=\"window.plugins.socialsharing.share('I #converted a #web #app to a #Mac #application using #WebDGap!', null, null, 'https://michaelsboost.github.io/WebDGap/')\">Share</a>\n    <a class=\"donate\" href=\"https://cash.me/$michaelsboost\" target=\"_blank\" onclick=\"window.open('https://cash.me/$michaelsboost', '_system')\">Donate</a>\n    <a target=\"_blank\" href=\"https://www.paypal.com/cgi-bin/webscr?business=mikethedj4%40yahoo.com&cmd=_xclick&amount=5.0&item_name=Donation&currency_code=USD\">\n      <i class=\"fa fa-cc-paypal\"></i>\n    </a>\n  </h1>\n</div></div>");
   }
 });
 $(".export-as-lin32-app, .export-as-lin-app").click(function() {
@@ -189,9 +189,9 @@ $(".export-as-lin32-app, .export-as-lin-app").click(function() {
   }
   $(document.body).append('<div class="fixedfill preloader"></div>');
   if ($(this).hasClass("exportedwebsite")) {
-    $(".preloader").html("<div class=\"table\"><div class=\"cell\">\n  <h1>Creating application!</h1>\n  <img class=\"loading\" src=\"imgs/preloader.svg\">\n  \n<h1>\n    <a class=\"share\" href=\"javascript:void(0)\" onclick=\"window.plugins.socialsharing.share('I #converted a #website to a #Linux #application using #WebDGap!', null, null, 'https://mikethedj4.github.io/WebDGap/')\">Share</a>\n    <a class=\"donate\" href=\"https://cash.me/$michaelsboost\" target=\"_blank\" onclick=\"window.open('https://cash.me/$michaelsboost', '_system')\">Donate</a>\n    <a target=\"_blank\" href=\"https://www.paypal.com/cgi-bin/webscr?business=mikethedj4%40yahoo.com&cmd=_xclick&amount=5.0&item_name=Donation&currency_code=USD\">\n      <i class=\"fa fa-cc-paypal\"></i>\n    </a>\n  </h1>\n</div></div>");
+    $(".preloader").html("<div class=\"table\"><div class=\"cell\">\n  <h1>Creating application!</h1>\n  <img class=\"loading\" src=\"imgs/preloader.svg\">\n  \n<h1>\n    <a class=\"share\" href=\"javascript:void(0)\" onclick=\"window.plugins.socialsharing.share('I #converted a #website to a #Linux #application using #WebDGap!', null, null, 'https://michaelsboost.github.io/WebDGap/')\">Share</a>\n    <a class=\"donate\" href=\"https://cash.me/$michaelsboost\" target=\"_blank\" onclick=\"window.open('https://cash.me/$michaelsboost', '_system')\">Donate</a>\n    <a target=\"_blank\" href=\"https://www.paypal.com/cgi-bin/webscr?business=mikethedj4%40yahoo.com&cmd=_xclick&amount=5.0&item_name=Donation&currency_code=USD\">\n      <i class=\"fa fa-cc-paypal\"></i>\n    </a>\n  </h1>\n</div></div>");
   } else if ($(this).hasClass("exportedwebapp")) {
-    $(".preloader").html("<div class=\"table\"><div class=\"cell\">\n  <h1>Creating application!</h1>\n  <img class=\"loading\" src=\"imgs/preloader.svg\">\n  \n<h1>\n    <a class=\"share\" href=\"javascript:void(0)\" onclick=\"window.plugins.socialsharing.share('I #converted a #web #app to a #Linux #application using #WebDGap!', null, null, 'https://mikethedj4.github.io/WebDGap/')\">Share</a>\n    <a class=\"donate\" href=\"https://cash.me/$michaelsboost\" target=\"_blank\" onclick=\"window.open('https://cash.me/$michaelsboost', '_system')\">Donate</a>\n    <a target=\"_blank\" href=\"https://www.paypal.com/cgi-bin/webscr?business=mikethedj4%40yahoo.com&cmd=_xclick&amount=5.0&item_name=Donation&currency_code=USD\">\n      <i class=\"fa fa-cc-paypal\"></i>\n    </a>\n  </h1>\n</div></div>");
+    $(".preloader").html("<div class=\"table\"><div class=\"cell\">\n  <h1>Creating application!</h1>\n  <img class=\"loading\" src=\"imgs/preloader.svg\">\n  \n<h1>\n    <a class=\"share\" href=\"javascript:void(0)\" onclick=\"window.plugins.socialsharing.share('I #converted a #web #app to a #Linux #application using #WebDGap!', null, null, 'https://michaelsboost.github.io/WebDGap/')\">Share</a>\n    <a class=\"donate\" href=\"https://cash.me/$michaelsboost\" target=\"_blank\" onclick=\"window.open('https://cash.me/$michaelsboost', '_system')\">Donate</a>\n    <a target=\"_blank\" href=\"https://www.paypal.com/cgi-bin/webscr?business=mikethedj4%40yahoo.com&cmd=_xclick&amount=5.0&item_name=Donation&currency_code=USD\">\n      <i class=\"fa fa-cc-paypal\"></i>\n    </a>\n  </h1>\n</div></div>");
   }
 });
 $(".pgbappexport").click(function() {
@@ -199,19 +199,19 @@ $(".pgbappexport").click(function() {
     // alert code is where code exports
   } else {
     $(document.body).append('<div class="fixedfill preloader"></div>');
-    $(".preloader").html("<div class=\"table\"><div class=\"cell\">\n  <h1>Creating application!</h1>\n  <img class=\"loading\" src=\"imgs/preloader.svg\">\n  \n<h1>\n    <a class=\"share\" href=\"javascript:void(0)\" onclick=\"window.plugins.socialsharing.share('I #converted a #web #app to a #PhoneGap #application using #WebDGap!', null, null, 'https://mikethedj4.github.io/WebDGap/')\">Share</a>\n    <a class=\"donate\" href=\"https://cash.me/$michaelsboost\" target=\"_blank\" onclick=\"window.open('https://cash.me/$michaelsboost', '_system')\">Donate</a>\n    <a target=\"_blank\" href=\"https://www.paypal.com/cgi-bin/webscr?business=mikethedj4%40yahoo.com&cmd=_xclick&amount=5.0&item_name=Donation&currency_code=USD\">\n      <i class=\"fa fa-cc-paypal\"></i>\n    </a>\n  </h1>\n</div></div>");
+    $(".preloader").html("<div class=\"table\"><div class=\"cell\">\n  <h1>Creating application!</h1>\n  <img class=\"loading\" src=\"imgs/preloader.svg\">\n  \n<h1>\n    <a class=\"share\" href=\"javascript:void(0)\" onclick=\"window.plugins.socialsharing.share('I #converted a #web #app to a #PhoneGap #application using #WebDGap!', null, null, 'https://michaelsboost.github.io/WebDGap/')\">Share</a>\n    <a class=\"donate\" href=\"https://cash.me/$michaelsboost\" target=\"_blank\" onclick=\"window.open('https://cash.me/$michaelsboost', '_system')\">Donate</a>\n    <a target=\"_blank\" href=\"https://www.paypal.com/cgi-bin/webscr?business=mikethedj4%40yahoo.com&cmd=_xclick&amount=5.0&item_name=Donation&currency_code=USD\">\n      <i class=\"fa fa-cc-paypal\"></i>\n    </a>\n  </h1>\n</div></div>");
   }
 });
 $("input.chromeappexport").click(function() {
   if ( document.querySelector("[data-value=description]").value ) {
     $(document.body).append('<div class="fixedfill preloader"></div>');
-    $(".preloader").html("<div class=\"table\"><div class=\"cell\">\n  <h1>Creating application!</h1>\n  <img class=\"loading\" src=\"imgs/preloader.svg\">\n  \n<h1>\n    <a class=\"share\" href=\"javascript:void(0)\" onclick=\"window.plugins.socialsharing.share('I #converted a #web #app to a #Chrome #application using #WebDGap!', null, null, 'https://mikethedj4.github.io/WebDGap/')\">Share</a>\n    <a class=\"donate\" href=\"https://cash.me/$michaelsboost\" target=\"_blank\" onclick=\"window.open('https://cash.me/$michaelsboost', '_system')\">Donate</a>\n    <a target=\"_blank\" href=\"https://www.paypal.com/cgi-bin/webscr?business=mikethedj4%40yahoo.com&cmd=_xclick&amount=5.0&item_name=Donation&currency_code=USD\">\n      <i class=\"fa fa-cc-paypal\"></i>\n    </a>\n  </h1>\n</div></div>");
+    $(".preloader").html("<div class=\"table\"><div class=\"cell\">\n  <h1>Creating application!</h1>\n  <img class=\"loading\" src=\"imgs/preloader.svg\">\n  \n<h1>\n    <a class=\"share\" href=\"javascript:void(0)\" onclick=\"window.plugins.socialsharing.share('I #converted a #web #app to a #Chrome #application using #WebDGap!', null, null, 'https://michaelsboost.github.io/WebDGap/')\">Share</a>\n    <a class=\"donate\" href=\"https://cash.me/$michaelsboost\" target=\"_blank\" onclick=\"window.open('https://cash.me/$michaelsboost', '_system')\">Donate</a>\n    <a target=\"_blank\" href=\"https://www.paypal.com/cgi-bin/webscr?business=mikethedj4%40yahoo.com&cmd=_xclick&amount=5.0&item_name=Donation&currency_code=USD\">\n      <i class=\"fa fa-cc-paypal\"></i>\n    </a>\n  </h1>\n</div></div>");
   }
 });
 $(".chromepopexport").click(function() {
   if ( document.querySelector("[data-value=description]").value ) {
     $(document.body).append('<div class="fixedfill preloader"></div>');
-    $(".preloader").html("<div class=\"table\"><div class=\"cell\">\n  <h1>Creating application!</h1>\n  <img class=\"loading\" src=\"imgs/preloader.svg\">\n  \n<h1>\n    <a class=\"share\" href=\"javascript:void(0)\" onclick=\"window.plugins.socialsharing.share('I #converted a #web #app to a #Chrome popup #extension using #WebDGap!', null, null, 'https://mikethedj4.github.io/WebDGap/')\">Share</a>\n    <a class=\"donate\" href=\"https://cash.me/$michaelsboost\" target=\"_blank\" onclick=\"window.open('https://cash.me/$michaelsboost', '_system')\">Donate</a>\n    <a target=\"_blank\" href=\"https://www.paypal.com/cgi-bin/webscr?business=mikethedj4%40yahoo.com&cmd=_xclick&amount=5.0&item_name=Donation&currency_code=USD\">\n      <i class=\"fa fa-cc-paypal\"></i>\n    </a>\n  </h1>\n</div></div>");
+    $(".preloader").html("<div class=\"table\"><div class=\"cell\">\n  <h1>Creating application!</h1>\n  <img class=\"loading\" src=\"imgs/preloader.svg\">\n  \n<h1>\n    <a class=\"share\" href=\"javascript:void(0)\" onclick=\"window.plugins.socialsharing.share('I #converted a #web #app to a #Chrome popup #extension using #WebDGap!', null, null, 'https://michaelsboost.github.io/WebDGap/')\">Share</a>\n    <a class=\"donate\" href=\"https://cash.me/$michaelsboost\" target=\"_blank\" onclick=\"window.open('https://cash.me/$michaelsboost', '_system')\">Donate</a>\n    <a target=\"_blank\" href=\"https://www.paypal.com/cgi-bin/webscr?business=mikethedj4%40yahoo.com&cmd=_xclick&amount=5.0&item_name=Donation&currency_code=USD\">\n      <i class=\"fa fa-cc-paypal\"></i>\n    </a>\n  </h1>\n</div></div>");
   }
 });
 
@@ -338,7 +338,7 @@ var audioCapture, videoCapture, storagePerm, setOffline, listPermissions,
           if (!navigator.onLine) {
             return false;
           }
-          JSZipUtils.getBinaryContent("https://mikethedj4.github.io/WebDGap/assets/YourWinApp.zip", function(err, data) {
+          JSZipUtils.getBinaryContent("https://michaelsboost.github.io/WebDGap/assets/YourWinApp.zip", function(err, data) {
             if(err) {
               throw err // or handle err
             }
@@ -372,7 +372,7 @@ var audioCapture, videoCapture, storagePerm, setOffline, listPermissions,
           if (!navigator.onLine) {
             return false;
           }
-          JSZipUtils.getBinaryContent("https://mikethedj4.github.io/WebDGap/assets/YourWin32App.zip", function(err, data) {
+          JSZipUtils.getBinaryContent("https://michaelsboost.github.io/WebDGap/assets/YourWin32App.zip", function(err, data) {
             if(err) {
               throw err // or handle err
             }
@@ -407,7 +407,7 @@ var audioCapture, videoCapture, storagePerm, setOffline, listPermissions,
           if (!navigator.onLine) {
             return false;
           }
-          JSZipUtils.getBinaryContent("https://mikethedj4.github.io/WebDGap/assets/YourMacApp.zip", function(err, data) {
+          JSZipUtils.getBinaryContent("https://michaelsboost.github.io/WebDGap/assets/YourMacApp.zip", function(err, data) {
             if(err) {
               throw err // or handle err
             }
@@ -445,7 +445,7 @@ var audioCapture, videoCapture, storagePerm, setOffline, listPermissions,
           if (!navigator.onLine) {
             return false;
           }
-          JSZipUtils.getBinaryContent("https://mikethedj4.github.io/WebDGap/assets/YourLinApp.zip", function(err, data) {
+          JSZipUtils.getBinaryContent("https://michaelsboost.github.io/WebDGap/assets/YourLinApp.zip", function(err, data) {
             if(err) {
               throw err // or handle err
             }
@@ -484,7 +484,7 @@ var audioCapture, videoCapture, storagePerm, setOffline, listPermissions,
           if (!navigator.onLine) {
             return false;
           }
-          JSZipUtils.getBinaryContent("https://mikethedj4.github.io/WebDGap/assets/YourLin32App.zip", function(err, data) {
+          JSZipUtils.getBinaryContent("https://michaelsboost.github.io/WebDGap/assets/YourLin32App.zip", function(err, data) {
             if(err) {
               throw err // or handle err
             }
@@ -856,7 +856,7 @@ $(document).ready(function() {
               if (!navigator.onLine) {
                 return false;
               }
-              JSZipUtils.getBinaryContent("https://mikethedj4.github.io/WebDGap/assets/YourWinApp.zip", function(err, data) {
+              JSZipUtils.getBinaryContent("https://michaelsboost.github.io/WebDGap/assets/YourWinApp.zip", function(err, data) {
                 if(err) {
                   throw err // or handle err
                 }
@@ -891,7 +891,7 @@ $(document).ready(function() {
               if (!navigator.onLine) {
                 return false;
               }
-              JSZipUtils.getBinaryContent("https://mikethedj4.github.io/WebDGap/assets/YourWin32App.zip", function(err, data) {
+              JSZipUtils.getBinaryContent("https://michaelsboost.github.io/WebDGap/assets/YourWin32App.zip", function(err, data) {
                 if(err) {
                   throw err // or handle err
                 }
@@ -928,7 +928,7 @@ $(document).ready(function() {
               if (!navigator.onLine) {
                 return false;
               }
-              JSZipUtils.getBinaryContent("https://mikethedj4.github.io/WebDGap/assets/YourLinApp.zip", function(err, data) {
+              JSZipUtils.getBinaryContent("https://michaelsboost.github.io/WebDGap/assets/YourLinApp.zip", function(err, data) {
                 if(err) {
                   throw err // or handle err
                 }
@@ -965,7 +965,7 @@ $(document).ready(function() {
               if (!navigator.onLine) {
                 return false;
               }
-              JSZipUtils.getBinaryContent("https://mikethedj4.github.io/WebDGap/assets/YourLin32App.zip", function(err, data) {
+              JSZipUtils.getBinaryContent("https://michaelsboost.github.io/WebDGap/assets/YourLin32App.zip", function(err, data) {
                 if(err) {
                   throw err // or handle err
                 }
@@ -1004,7 +1004,7 @@ $(document).ready(function() {
               if (!navigator.onLine) {
                 return false;
               }
-              JSZipUtils.getBinaryContent("https://mikethedj4.github.io/WebDGap/assets/YourMacApp.zip", function(err, data) {
+              JSZipUtils.getBinaryContent("https://michaelsboost.github.io/WebDGap/assets/YourMacApp.zip", function(err, data) {
                 if(err) {
                   throw err // or handle err
                 }
