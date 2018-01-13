@@ -1,8 +1,8 @@
-// Version: 1.2.6
+// Version: 1.2.7
 // WebDGap, copyright (c) by Michael Schwartz and others
-// Distributed under an MIT license: https://github.com/mikethedj4/WebDGap/blob/gh-pages/LICENSE
+// Distributed under an MIT license: https://github.com/michaelsboost/WebDGap/blob/gh-pages/LICENSE
 
-// This is WebDGap (https://mikethedj4.github.io/WebDGap/), Easily create multi-platform desktop apps.
+// This is WebDGap (https://michaelsboost.github.io/WebDGap/), Easily create multi-platform desktop apps.
 // implemented in JavaScript!
 
 function webdgap(os, YourName, AppImg, url) {
@@ -88,11 +88,11 @@ function webdgap(os, YourName, AppImg, url) {
     var jsziputilsurl = document.createElement("script");
     var filesaverurl  = document.createElement("script");
     jszipurl.type = "text/javascript";
-    jszipurl.src = "https://mikethedj4.github.io/WebDGap/dist/jszip.min.js";
+    jszipurl.src = "https://michaelsboost.github.io/WebDGap/dist/jszip.min.js";
     jsziputilsurl.type = "text/javascript";
-    jsziputilsurl.src = "https://mikethedj4.github.io/WebDGap/dist/jszip-utils.js";
+    jsziputilsurl.src = "https://michaelsboost.github.io/WebDGap/dist/jszip-utils.js";
     filesaverurl.type = "text/javascript";
-    filesaverurl.src = "https://mikethedj4.github.io/WebDGap/dist/FileSaver.js";
+    filesaverurl.src = "https://michaelsboost.github.io/WebDGap/dist/FileSaver.js";
     document.head.appendChild(jszipurl);
     document.head.appendChild(jsziputilsurl);
     document.head.appendChild(filesaverurl);
@@ -102,7 +102,7 @@ function webdgap(os, YourName, AppImg, url) {
   function executeApp() {
     // Detect Chosen Operating System
     if (os === "win") {
-      JSZipUtils.getBinaryContent("https://mikethedj4.github.io/WebDGap/assets/YourWinApp.zip", function(err, data) {
+      JSZipUtils.getBinaryContent("https://michaelsboost.github.io/WebDGap/assets/YourWinApp.zip", function(err, data) {
         if(err) {
           throw err // or handle err
         }
@@ -126,7 +126,7 @@ function webdgap(os, YourName, AppImg, url) {
         return false;
       });
     } else if (os === "win32") {
-      JSZipUtils.getBinaryContent("https://mikethedj4.github.io/WebDGap/assets/YourWin32App.zip", function(err, data) {
+      JSZipUtils.getBinaryContent("https://michaelsboost.github.io/WebDGap/assets/YourWin32App.zip", function(err, data) {
         if(err) {
           throw err // or handle err
         }
@@ -150,7 +150,7 @@ function webdgap(os, YourName, AppImg, url) {
         return false;
       });
     } else if (os === "mac") {
-      JSZipUtils.getBinaryContent("https://mikethedj4.github.io/WebDGap/assets/YourMacApp.zip", function(err, data) {
+      JSZipUtils.getBinaryContent("https://michaelsboost.github.io/WebDGap/assets/YourMacApp.zip", function(err, data) {
         if(err) {
           throw err // or handle err
         }
@@ -176,7 +176,7 @@ function webdgap(os, YourName, AppImg, url) {
         return false;
       });
     } else if (os === "lin") {
-      JSZipUtils.getBinaryContent("https://mikethedj4.github.io/WebDGap/assets/YourLinApp.zip", function(err, data) {
+      JSZipUtils.getBinaryContent("https://michaelsboost.github.io/WebDGap/assets/YourLinApp.zip", function(err, data) {
         if(err) {
           throw err // or handle err
         }
@@ -205,7 +205,7 @@ function webdgap(os, YourName, AppImg, url) {
         return false;
       });
     }  else if (os === "lin32") {
-      JSZipUtils.getBinaryContent("https://mikethedj4.github.io/WebDGap/assets/YourLin32App.zip", function(err, data) {
+      JSZipUtils.getBinaryContent("https://michaelsboost.github.io/WebDGap/assets/YourLin32App.zip", function(err, data) {
         if(err) {
           throw err // or handle err
         }
@@ -306,7 +306,7 @@ function webdgap(os, YourName, AppImg, url) {
       saveAs(content, YourName.replace(/ /g, "-").toLowerCase() + "-pgb.zip");
       endExportMSG();
     } else {
-      alert("Oops something went wrong. Maybe wrong argument for operating system? Are you using a valid image url? - https://mikethedj4.github.io/WebDGap/plugin/");
+      alert("Oops something went wrong. Maybe wrong argument for operating system? Are you using a valid image url? - https://michaelsboost.github.io/WebDGap/plugin/");
     }
     return false;
   }
