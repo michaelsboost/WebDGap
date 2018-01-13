@@ -1,7 +1,7 @@
 # WebDGap Chrome Extension
 Easily create websites as multi-platform desktop apps!
 
-![](https://raw.githubusercontent.com/mikethedj4/WebDGap/gh-pages/imgs/screenshot.png)
+![](https://raw.githubusercontent.com/michaelsboost/WebDGap/gh-pages/imgs/screenshot.png)
 
 # [Watch The How To Guide!](https://www.youtube.com/watch?v=-AszZcClVXA)
 
@@ -17,7 +17,7 @@ WebDGap uses a number of open source projects to work properly:
 * [jQuery](http://jquery.com/) - duh
 * [JSZip](https://stuk.github.io/jszip/) - package zip files in javascript
 * [node-webkit](http://nwjs.io/) - run web apps as desktop apps
-* [WebDGapJS](https://github.com/mikethedj4/WebDGap/plugin) - Allows you to convert the website as a desktop application
+* [WebDGapJS](https://github.com/michaelsboost/WebDGap/plugin) - Allows you to convert the website as a desktop application
 
 ### License
 MIT
@@ -33,7 +33,7 @@ MIT
 [Chrome](https://chrome.google.com/webstore/detail/webdgap/aommkjnlphiacgajemkmbnfebfbfjfhn)  
 [Chrome Extension](https://chrome.google.com/webstore/detail/webdgap/odpmjbmeopdfhcikkhpeaemfbmghpobk)  
 [Android](https://play.google.com/store/apps/details?id=com.michael.webdgap)  
-[JS Plugin](https://mikethedj4.github.io/WebDGap/plugin/)  *(aka [WebDGapJS](https://mikethedj4.github.io/WebDGap/plugin/))*
+[JS Plugin](https://michaelsboost.github.io/WebDGap/plugin/)  *(aka [WebDGapJS](https://michaelsboost.github.io/WebDGap/plugin/))*
 
 For command line use you can use [nativefier](https://github.com/jiahaog/nativefier) to convert any website to a desktop app. (**NOTE**: nativefier uses an Electron wrapper. WebDGap uses a NW.js wrapper. Difference is Electron runs on 64bit processors while NW.js runs on 64bits and 32bit processors)
 
@@ -48,11 +48,11 @@ For command line use you can use [nativefier](https://github.com/jiahaog/nativef
 - [JSZip](https://stuk.github.io/jszip/)
 - [Twitter Bootstrap](http://twitter.github.com/bootstrap/)
 - [Poly UI Kit](https://github.com/Guilh/Poly)
-- [CodePen](http://codepen.io/mikethedj4)
+- [CodePen](http://codepen.io/michaelsboost)
 
 ### Author
 
-- [michael schwartz](http://mikethedj4.github.io/) and with [tom gibson's](http://www.tomgibsonconsulting.com/) help on making WebDGap available for Mobile users :)
+- [michael schwartz](http://michaelsboost.github.io/) and with [tom gibson's](http://www.tomgibsonconsulting.com/) help on making WebDGap available for Mobile users :)
 
 ### Development
 
