@@ -140,7 +140,7 @@ textarea {
   position: relative;
   top: -19px;
 }
-.preloader {
+.preloader, .donatebanner {
   background: #ebfff1;
 }
 .bold {
