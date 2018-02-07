@@ -43,80 +43,73 @@ So you're exporting a website like [Ecosia](https://www.ecosia.org/) as a deskto
 
 WebDGap’s architecture is unique in the sense that it has no database of its own and a very minimal backend. The server just serves static files, since all the application logic is client-side. This was done for cost-effectiveness and stability but it proved to have several advantages (and also imposed a few limitations). It offers a smoother user experience than its competitors and attempts to bridge the gap between desktop development making it less robust and easier for web developers to make desktop applications regardless of what operating system's being used. Another positive side effect of this architecture is that it inspires more confidence.
 
-<style>
-body {background:#fff;}
-* {color: #000;}
-svg, svg * {fill:#f00;}
-.fs {height:17px;}
-</style>
-
 ## 3. <a name="filestructure">File structure</a>
 
-<img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/folder.png" class="fs"> /app  
-- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> index.html  
+<img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/folder.png" height="17"> /app  
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" height="17"> index.html  
 
-<img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/folder.png" class="fs"> /assets  
+<img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/folder.png" height="17"> /assets  
 - houses most of the main website's libraries/images (which we will skip for now and only show the necessary files for the application)  
-- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> loadlogo-rounded.png  
-- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> loadlogo-rounded.svg  
-- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> loadlogo.png  
-- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> loadlogo.psd  
-- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> loadlogo.svg  
-- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> loadlogo.xcf  
-- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> YourLin32App.zip - precompiled linux 32bit/i832 app  
-- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> YourLinApp.zip - precompiled linux app  
-- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> YourMacApp.zip - precompiled mac app  
-- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> YourWin32App.zip - precompiled windows 32bit app  
-- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> YourWinApp.zip - precompiled windows app  
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" height="17"> loadlogo-rounded.png  
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" height="17"> loadlogo-rounded.svg  
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" height="17"> loadlogo.png  
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" height="17"> loadlogo.psd  
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" height="17"> loadlogo.svg  
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" height="17"> loadlogo.xcf  
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" height="17"> YourLin32App.zip - precompiled linux 32bit/i832 app  
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" height="17"> YourLinApp.zip - precompiled linux app  
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" height="17"> YourMacApp.zip - precompiled mac app  
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" height="17"> YourWin32App.zip - precompiled windows 32bit app  
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" height="17"> YourWinApp.zip - precompiled windows app  
 
-<img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/folder.png" class="fs"> /css  
-- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> flag-icon.css - css library to show flags for multiple language support  
-- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> jquery.smartbanner.css - library to show via homepage that app is available on google play  
-- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> style.css  
+<img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/folder.png" height="17"> /css  
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" height="17"> flag-icon.css - css library to show flags for multiple language support  
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" height="17"> jquery.smartbanner.css - library to show via homepage that app is available on google play  
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" height="17"> style.css  
 
-<img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> favicon.ico    
+<img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" height="17"> favicon.ico    
 
-<img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/folder.png" class="fs"> /imgs  
-- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> app.png  
-- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> file.svg  
-- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> file.png  
-- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> folder.png  
-- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> icon.svg  
-- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> logo.svg  
-- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> playvideo.svg  
-- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> preloader.svg  
-- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> screenshot.png  
-- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> sitelogo.svg  
-- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> webdgap-logo.png  
+<img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/folder.png" height="17"> /imgs  
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" height="17"> app.png  
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" height="17"> file.svg  
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" height="17"> file.png  
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" height="17"> folder.png  
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" height="17"> icon.svg  
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" height="17"> logo.svg  
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" height="17"> playvideo.svg  
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" height="17"> preloader.svg  
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" height="17"> screenshot.png  
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" height="17"> sitelogo.svg  
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" height="17"> webdgap-logo.png  
 
-<img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> index.html - The main WebDGap interface  
+<img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" height="17"> index.html - The main WebDGap interface  
 
-<img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/folder.png" class="fs"> /js    
+<img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/folder.png" height="17"> /js    
 
-- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> index.js - javascript for handling various languages for main website  
-- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> jquery.smartbanner.js - library to show via homepage that app is available on google play  
-- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> keys.js - hotkeys for the desktop application  
-- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> webdgap.js - webdgap's javascript application architecture  
-- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> webdgapjs.js - a portable version of webdgap for exporting websites as desktop applications  
-- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> webdgapjs.min.js - a minified and portable version of webdgap for exporting websites as desktop applications  
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" height="17"> index.js - javascript for handling various languages for main website  
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" height="17"> jquery.smartbanner.js - library to show via homepage that app is available on google play  
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" height="17"> keys.js - hotkeys for the desktop application  
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" height="17"> webdgap.js - webdgap's javascript application architecture  
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" height="17"> webdgapjs.js - a portable version of webdgap for exporting websites as desktop applications  
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" height="17"> webdgapjs.min.js - a minified and portable version of webdgap for exporting websites as desktop applications  
 
-<img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/folder.png" class="fs"> /libraries    
-- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/folder.png" class="fs"> /alertifyjs  
-- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/folder.png" class="fs"> /fancybox  
-- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/folder.png" class="fs"> /font-awesome  
-- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/folder.png" class="fs"> /jquery  
-- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/folder.png" class="fs"> /jszip  
-- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/folder.png" class="fs"> /polyui  
-- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/folder.png" class="fs"> /prefixfree  
+<img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/folder.png" height="17"> /libraries    
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/folder.png" height="17"> /alertifyjs  
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/folder.png" height="17"> /fancybox  
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/folder.png" height="17"> /font-awesome  
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/folder.png" height="17"> /jquery  
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/folder.png" height="17"> /jszip  
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/folder.png" height="17"> /polyui  
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/folder.png" height="17"> /prefixfree  
 
-<img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> LICENSE - MIT
+<img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" height="17"> LICENSE - MIT
 
-<img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/folder.png" class="fs"> /plugin  
-- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/folder.png" class="fs"> /assets - necessary library/styles for the website's ui  
-- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> index.html
+<img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/folder.png" height="17"> /plugin  
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/folder.png" height="17"> /assets - necessary library/styles for the website's ui  
+- <img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" height="17"> index.html
 
-<img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> README.md  
-<img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" class="fs"> thesis.md  
+<img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" height="17"> README.md  
+<img src="https://cdn.rawgit.com/mikethedj4/WebDGap/gh-pages/imgs/file.svg" height="17"> thesis.md  
 
 ## 4. <a name="workflow">Workflow</a>
 
