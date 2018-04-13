@@ -284,6 +284,22 @@ textarea {
   }
 }
 
+.discontinued {
+  display: block;
+  padding-top: 10px;
+  text-align: center;
+}
+@media (max-width:970px) {
+  .discontinued {
+    padding-top: 100px!important;
+    background: #000;
+    color: #888;
+  }
+  .foot {
+    height: auto;
+  }
+}
+
 /* Misc */
 .fl {
   float: left;
