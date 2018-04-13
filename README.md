@@ -49,10 +49,10 @@ MIT
 [Mac](https://sourceforge.net/projects/webdgap/files/v1.2.5%20%28requires%20wifi%29/WebDGap-mac.zip/download) *(deprecated)*  
 [Linux 64](https://sourceforge.net/projects/webdgap/files/v1.2.5%20%28requires%20wifi%29/WebDGap-lin.zip/download) *(deprecated)*  
 [Linux 32](https://sourceforge.net/projects/webdgap/files/v1.2.5%20%28requires%20wifi%29/WebDGap-lin32.zip/download) *(deprecated)*  
-[Chrome](https://chrome.google.com/webstore/detail/webdgap/aommkjnlphiacgajemkmbnfebfbfjfhn)  
-[Chrome Extension](https://chrome.google.com/webstore/detail/webdgap/odpmjbmeopdfhcikkhpeaemfbmghpobk)  
-[Android](https://play.google.com/store/apps/details?id=com.michael.webdgap)  
-[JS Plugin](https://michaelsboost.github.io/WebDGap/plugin/)  *(aka [WebDGapJS](https://michaelsboost.github.io/WebDGap/plugin/))*
+[Chrome](https://chrome.google.com/webstore/detail/webdgap/aommkjnlphiacgajemkmbnfebfbfjfhn) *(deprecated)*  
+[Chrome Extension](https://chrome.google.com/webstore/detail/webdgap/odpmjbmeopdfhcikkhpeaemfbmghpobk) *(deprecated)*  
+[Android](https://play.google.com/store/apps/details?id=com.michael.webdgap) *(deprecated)*  
+[JS Plugin](https://michaelsboost.github.io/WebDGap/plugin/)  *(aka [WebDGapJS](https://michaelsboost.github.io/WebDGap/plugin/))*  *(deprecated)*  
 
 For command line use you can use [nativefier](https://github.com/jiahaog/nativefier) to convert any website to a desktop app. (**NOTE**: nativefier uses an Electron wrapper. WebDGap uses a NW.js wrapper. Difference is Electron runs on 64bit processors while NW.js runs on 64bits and 32bit processors)
 
@@ -77,6 +77,9 @@ For command line use you can use [nativefier](https://github.com/jiahaog/nativef
 ### Development
 
 Want to contribute? Great!  
+
+*As of April 13th 2017 WebDGap is no longer an active project.
+All updates as of that date and on are solely contributor based implementations.*
 
 You can submit a pull request or simply share the project :)
 
