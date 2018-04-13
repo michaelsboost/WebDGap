@@ -241,7 +241,7 @@ textarea {
   background: #000;
   color: #888;
   text-align: right;
-/*  height: 104px;*/
+  height: 104px;
 }
 .footlinks a {
   display: inline-block;
@@ -294,6 +294,9 @@ textarea {
     padding-top: 100px!important;
     background: #000;
     color: #888;
+  }
+  .foot {
+    height: auto;
   }
 }
 
