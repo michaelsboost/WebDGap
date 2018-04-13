@@ -44,7 +44,8 @@ var language = {
     userbio: "Usuario",
     madewwebdgap: "Hecho con WebDGap",
     submitapp: "¡Presente el suyo hoy!",
-    madeby: "Hecho con <span class=\"fa fa-heart\" style=\"color: #f66;\"></span> y <span class=\"fa fa-coffee\" style=\"color: #52bab3;\"></span> por <a href=\"http://michaelsboost.github.io/\" target=\"_blank\">Michael</a> y otros."
+    madeby: "Hecho con <span class=\"fa fa-heart\" style=\"color: #f66;\"></span> y <span class=\"fa fa-coffee\" style=\"color: #52bab3;\"></span> por <a href=\"http://michaelsboost.github.io/\" target=\"_blank\">Michael</a> y otros.",
+    "discontinued": "A partir del 13 de abril de 2018, WebDGap ya no es un proyecto activo.<br>Todas las actualizaciones a partir de esa fecha y en adelante son implementaciones basadas exclusivamente en colaboradores."
   }
 };
 
@@ -98,6 +99,7 @@ if (window.location.hash) {
     $("[data-language=madewwebdgap]").text(language.es.madewwebdgap);
     $("[data-language=submitapp]").text(language.es.submitapp);
     $("[data-language=madeby]").html(language.es.madeby);
+    $("[data-language=discontinued]").html(language.es.discontinued);
   }
 }
 

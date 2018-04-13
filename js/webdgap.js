@@ -76,7 +76,8 @@ var instructionalVideo, blankDescription, noFileAPI, errorReading, dvalueisblank
         donateimg: "../imgs/donate.svg",
         yestxt: "../imgs/yes.svg",
         creatingapplication: "Creating application!",
-        creatingextension: "Creando una extensión de Chrome!"
+        creatingextension: "Creating your Chrome extension!",
+        discontinued: "As of April 13th, 2018 WebDGap is no longer an active project.<br>All updates as of that date and on are solely contributor based implementations."
       },
       es: {
         dyes: "Sí",
@@ -137,7 +138,8 @@ var instructionalVideo, blankDescription, noFileAPI, errorReading, dvalueisblank
         donateimg: "../imgs/donar.svg",
         yestxt: "../imgs/sí.svg",
         creatingapplication: "¡Creando aplicación!",
-        creatingextension: "¡Creando una extensión de Chrome!"
+        creatingextension: "¡Creando una extensión de Chrome!",
+        discontinued: "A partir del 13 de abril de 2018, WebDGap ya no es un proyecto activo.<br>Todas las actualizaciones a partir de esa fecha y en adelante son implementaciones basadas exclusivamente en colaboradores."
       }
     };
 
@@ -202,6 +204,7 @@ function englishWords() {
   yestxt = language.eng.yestxt;
   creatingapplication = language.eng.creatingapplication;
   creatingextension = language.eng.creatingextension;
+  discontinued = language.eng.discontinued;
 }
 
 if (window.location.hash) {
@@ -269,6 +272,7 @@ if (window.location.hash) {
     yestxt = language.es.yestxt;
     creatingapplication = language.es.creatingapplication;
     creatingextension = language.es.creatingextension;
+    discontinued = language.es.discontinued;
     
     setTimeout(function() {
       $("#setlanguage option[value=es]").prop("selected", true);
@@ -326,6 +330,8 @@ $('[data-language=author]').html(author);
 $('[data-language=donateheader]').text(donateheader);
 $('[data-language=donateimg]').attr("src", donateimg);
 $('[data-language=yestxt]').attr("src", yestxt);
+$('[data-language=yestxt]').attr("src", yestxt);
+$('[data-language=discontinued]').html(discontinued);
 
 // Export App or Site?
 $("[data-id=convertapp], [data-id=convertsite]").on("click", function() {
