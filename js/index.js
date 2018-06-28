@@ -78,8 +78,10 @@ if (window.location.hash) {
     $("[data-language=lrun]").attr("href", "app/" + location.hash);
     $("[data-language=intro]").text(language.es.intro);
     $("[data-language=playvid]").text(language.es.playvid);
-    $("[data-language=vidURL1]").attr('href', language.es.vidURL1);
-    $("[data-language=vidURL2]").attr('src', language.es.vidURL2);
+    window.onload = function() {
+      $("[data-language=vidURL2]").attr('src', language.es.vidURL2);
+      $("[data-language=vidURL1]").attr('href', language.es.vidURL1);
+    };
     $("[data-language=donatebtn]").text(language.es.donatebtn);
     $("[data-language=donateh1]").text(language.es.donateh1);
     $("[data-language=donateh2]").text(language.es.donateh2);
