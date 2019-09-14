@@ -3,6 +3,10 @@ Easily create websites as multi-platform desktop apps!
 
 ![](https://raw.githubusercontent.com/michaelsboost/WebDGap/gh-pages/imgs/screenshot.png)
 
+### Did you know?
+
+WebDGap was the first application released on the web that allowed you to create multi-platform desktop applications in the browser.
+
 ### Converting a Web Application to a native Desktop Application.
 
  1. WebDGap requires you to add your application's name first.
@@ -51,7 +55,7 @@ MIT
 [Linux 32](https://sourceforge.net/projects/webdgap/files/v1.2.5%20%28requires%20wifi%29/WebDGap-lin32.zip/download) *(deprecated)*  
 [Chrome](https://chrome.google.com/webstore/detail/webdgap/aommkjnlphiacgajemkmbnfebfbfjfhn) *(deprecated)*  
 [Chrome Extension](https://chrome.google.com/webstore/detail/webdgap/odpmjbmeopdfhcikkhpeaemfbmghpobk) *(deprecated)*  
-[Android](https://play.google.com/store/apps/details?id=com.michael.webdgap) *(deprecated)*  
+[Android](https://sourceforge.net/projects/webdgap/files/v1.2.5%20%28requires%20wifi%29/WebDGap-android.apk/download) *(deprecated)*  
 [JS Plugin](https://michaelsboost.github.io/WebDGap/plugin/)  *(aka [WebDGapJS](https://michaelsboost.github.io/WebDGap/plugin/))*  *(deprecated)*  
 
 For command line use you can use [nativefier](https://github.com/jiahaog/nativefier) to convert any website to a desktop app. (**NOTE**: nativefier uses an Electron wrapper. WebDGap uses a NW.js wrapper. Difference is Electron runs on 64bit processors while NW.js runs on 64bits and 32bit processors)
