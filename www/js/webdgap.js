@@ -1,4 +1,4 @@
-// Version: 0.0.6
+// Version: 0.0.7
 // WebDGap, copyright (c) by Michael Schwartz and others
 // Distributed under an MIT license: https://github.com/michaelsboost/WebDGap/blob/gh-pages/LICENSE
 
@@ -14,23 +14,12 @@ if (navigator.onLine) {
         showinfo : 0
       },
       src  : 'https://www.youtube.com/embed/-AszZcClVXA', // Source of the content
-      type : 'iframe', // Content type: image|inline|ajax|iframe|html (optional)
-      opts : {
-        // Promote T-Shirt
-        beforeClose: function() {
-          alertify.message("<div class=\"grid\"><div class=\"centered grid__col--12 tc\"><h2>Help keep this free!</h2><a href=\"https://snaptee.co/t/rjezt/?r=fb&teeId=rjezt\" target=\"_blank\"><img src=\"imgs/model-600x600.jpg\" width=\"100%\"></a><a class=\"btn--success\" href=\"https://snaptee.co/t/rjezt/?r=fb&teeId=rjezt\" target=\"_blank\" style=\"width: 100%;\">Buy Now</a></div></div>");
-        }
-      }
+      type : 'iframe' // Content type: image|inline|ajax|iframe|html (optional)
     });
   };
 
   // Watch How To Video
   alertify.message("<div class=\"grid\"><div class=\"centered grid__col--12 tc\"><h2>Instructional Guide!</h2><a class=\"pointer\" href=\"javascript:playGuide()\"><img src=\"imgs/playvideo.svg\" width=\"50%\"></a><a class=\"btn--success\" href=\"javascript:playGuide()\" style=\"width: 100%;\">Watch Video</a></div></div>");
-
-  // Promote T-Shirt
-  setTimeout(function() {
-    alertify.message("<div class=\"grid\"><div class=\"centered grid__col--12 tc\"><h2>Help keep this free!</h2><a href=\"https://snaptee.co/t/vjezt/?r=fb&teeId=vjezt\" target=\"_blank\"><img src=\"imgs/model-1-600x600.jpg\" width=\"100%\"></a><a class=\"btn--success\" href=\"https://snaptee.co/t/vjezt/?r=fb&teeId=vjezt\" target=\"_blank\" style=\"width: 100%;\">Buy Now</a></div></div>");
-  }, 5000);
 
   $(document).on('onComplete.fb', function( e, instance, slide ) {
     document.addEventListener("pause", function(e) {
@@ -165,9 +154,9 @@ $(".export-as-win32-app, .export-as-win-app").click(function() {
   }
   $(document.body).append('<div class="fixedfill preloader"></div>');
   if ($(this).hasClass("exportedwebsite")) {
-    $(".preloader").html("<div class=\"table\"><div class=\"cell\">\n  <h1>Creating application!</h1>\n  <img class=\"loading\" src=\"imgs/preloader.svg\">\n  \n<h1>\n    <a class=\"share\" href=\"javascript:void(0)\" onclick=\"window.plugins.socialsharing.share('I #converted a #website to a #Windows #application using #WebDGap!', null, null, 'https://michaelsboost.github.io/WebDGap/')\">Share</a>\n    <a class=\"donate\" href=\"https://cash.me/$michaelsboost\" target=\"_blank\" onclick=\"window.open('https://cash.me/$michaelsboost', '_system')\">Donate</a>\n    <a target=\"_blank\" href=\"https://www.paypal.com/cgi-bin/webscr?business=mikethedj4%40yahoo.com&cmd=_xclick&amount=5.0&item_name=Donation&currency_code=USD\">\n      <i class=\"fa fa-cc-paypal\"></i>\n    </a>\n  </h1>\n</div></div>");
+    $(".preloader").html("<div class=\"table\"><div class=\"cell\">\n  <h1>Creating application!</h1>\n  <img class=\"loading\" src=\"imgs/preloader.svg\">\n  \n<h1>\n    <a class=\"share\" href=\"javascript:void(0)\" onclick=\"window.plugins.socialsharing.share('I #converted a #website to a #Windows #application using #WebDGap!', null, null, 'https://michaelsboost.github.io/WebDGap/')\">Share</a>\n  </h1>\n</div></div>");
   } else if ($(this).hasClass("exportedwebapp")) {
-    $(".preloader").html("<div class=\"table\"><div class=\"cell\">\n  <h1>Creating application!</h1>\n  <img class=\"loading\" src=\"imgs/preloader.svg\">\n  \n<h1>\n    <a class=\"share\" href=\"javascript:void(0)\" onclick=\"window.plugins.socialsharing.share('I #converted a #web #app to a #Windows #application using #WebDGap!', null, null, 'https://michaelsboost.github.io/WebDGap/')\">Share</a>\n    <a class=\"donate\" href=\"https://cash.me/$michaelsboost\" target=\"_blank\" onclick=\"window.open('https://cash.me/$michaelsboost', '_system')\">Donate</a>\n    <a target=\"_blank\" href=\"https://www.paypal.com/cgi-bin/webscr?business=mikethedj4%40yahoo.com&cmd=_xclick&amount=5.0&item_name=Donation&currency_code=USD\">\n      <i class=\"fa fa-cc-paypal\"></i>\n    </a>\n  </h1>\n</div></div>");
+    $(".preloader").html("<div class=\"table\"><div class=\"cell\">\n  <h1>Creating application!</h1>\n  <img class=\"loading\" src=\"imgs/preloader.svg\">\n  \n<h1>\n    <a class=\"share\" href=\"javascript:void(0)\" onclick=\"window.plugins.socialsharing.share('I #converted a #web #app to a #Windows #application using #WebDGap!', null, null, 'https://michaelsboost.github.io/WebDGap/')\">Share</a>\n  </h1>\n</div></div>");
   }
 });
 $(".export-as-mac-app").click(function() {
@@ -177,9 +166,9 @@ $(".export-as-mac-app").click(function() {
   }
   $(document.body).append('<div class="fixedfill preloader"></div>');
   if ($(this).hasClass("exportedwebsite")) {
-    $(".preloader").html("<div class=\"table\"><div class=\"cell\">\n  <h1>Creating application!</h1>\n  <img class=\"loading\" src=\"imgs/preloader.svg\">\n  \n<h1>\n    <a class=\"share\" href=\"javascript:void(0)\" onclick=\"window.plugins.socialsharing.share('I #converted a #website to a #Mac #application using #WebDGap!', null, null, 'https://michaelsboost.github.io/WebDGap/')\">Share</a>\n    <a class=\"donate\" href=\"https://cash.me/$michaelsboost\" target=\"_blank\" onclick=\"window.open('https://cash.me/$michaelsboost', '_system')\">Donate</a>\n    <a target=\"_blank\" href=\"https://www.paypal.com/cgi-bin/webscr?business=mikethedj4%40yahoo.com&cmd=_xclick&amount=5.0&item_name=Donation&currency_code=USD\">\n      <i class=\"fa fa-cc-paypal\"></i>\n    </a>\n  </h1>\n</div></div>");
+    $(".preloader").html("<div class=\"table\"><div class=\"cell\">\n  <h1>Creating application!</h1>\n  <img class=\"loading\" src=\"imgs/preloader.svg\">\n  \n<h1>\n    <a class=\"share\" href=\"javascript:void(0)\" onclick=\"window.plugins.socialsharing.share('I #converted a #website to a #Mac #application using #WebDGap!', null, null, 'https://michaelsboost.github.io/WebDGap/')\">Share</a>\n  </h1>\n</div></div>");
   } else if ($(this).hasClass("exportedwebapp")) {
-    $(".preloader").html("<div class=\"table\"><div class=\"cell\">\n  <h1>Creating application!</h1>\n  <img class=\"loading\" src=\"imgs/preloader.svg\">\n  \n<h1>\n    <a class=\"share\" href=\"javascript:void(0)\" onclick=\"window.plugins.socialsharing.share('I #converted a #web #app to a #Mac #application using #WebDGap!', null, null, 'https://michaelsboost.github.io/WebDGap/')\">Share</a>\n    <a class=\"donate\" href=\"https://cash.me/$michaelsboost\" target=\"_blank\" onclick=\"window.open('https://cash.me/$michaelsboost', '_system')\">Donate</a>\n    <a target=\"_blank\" href=\"https://www.paypal.com/cgi-bin/webscr?business=mikethedj4%40yahoo.com&cmd=_xclick&amount=5.0&item_name=Donation&currency_code=USD\">\n      <i class=\"fa fa-cc-paypal\"></i>\n    </a>\n  </h1>\n</div></div>");
+    $(".preloader").html("<div class=\"table\"><div class=\"cell\">\n  <h1>Creating application!</h1>\n  <img class=\"loading\" src=\"imgs/preloader.svg\">\n  \n<h1>\n    <a class=\"share\" href=\"javascript:void(0)\" onclick=\"window.plugins.socialsharing.share('I #converted a #web #app to a #Mac #application using #WebDGap!', null, null, 'https://michaelsboost.github.io/WebDGap/')\">Share</a>\n  </h1>\n</div></div>");
   }
 });
 $(".export-as-lin32-app, .export-as-lin-app").click(function() {
@@ -189,9 +178,9 @@ $(".export-as-lin32-app, .export-as-lin-app").click(function() {
   }
   $(document.body).append('<div class="fixedfill preloader"></div>');
   if ($(this).hasClass("exportedwebsite")) {
-    $(".preloader").html("<div class=\"table\"><div class=\"cell\">\n  <h1>Creating application!</h1>\n  <img class=\"loading\" src=\"imgs/preloader.svg\">\n  \n<h1>\n    <a class=\"share\" href=\"javascript:void(0)\" onclick=\"window.plugins.socialsharing.share('I #converted a #website to a #Linux #application using #WebDGap!', null, null, 'https://michaelsboost.github.io/WebDGap/')\">Share</a>\n    <a class=\"donate\" href=\"https://cash.me/$michaelsboost\" target=\"_blank\" onclick=\"window.open('https://cash.me/$michaelsboost', '_system')\">Donate</a>\n    <a target=\"_blank\" href=\"https://www.paypal.com/cgi-bin/webscr?business=mikethedj4%40yahoo.com&cmd=_xclick&amount=5.0&item_name=Donation&currency_code=USD\">\n      <i class=\"fa fa-cc-paypal\"></i>\n    </a>\n  </h1>\n</div></div>");
+    $(".preloader").html("<div class=\"table\"><div class=\"cell\">\n  <h1>Creating application!</h1>\n  <img class=\"loading\" src=\"imgs/preloader.svg\">\n  \n<h1>\n    <a class=\"share\" href=\"javascript:void(0)\" onclick=\"window.plugins.socialsharing.share('I #converted a #website to a #Linux #application using #WebDGap!', null, null, 'https://michaelsboost.github.io/WebDGap/')\">Share</a>\n  </h1>\n</div></div>");
   } else if ($(this).hasClass("exportedwebapp")) {
-    $(".preloader").html("<div class=\"table\"><div class=\"cell\">\n  <h1>Creating application!</h1>\n  <img class=\"loading\" src=\"imgs/preloader.svg\">\n  \n<h1>\n    <a class=\"share\" href=\"javascript:void(0)\" onclick=\"window.plugins.socialsharing.share('I #converted a #web #app to a #Linux #application using #WebDGap!', null, null, 'https://michaelsboost.github.io/WebDGap/')\">Share</a>\n    <a class=\"donate\" href=\"https://cash.me/$michaelsboost\" target=\"_blank\" onclick=\"window.open('https://cash.me/$michaelsboost', '_system')\">Donate</a>\n    <a target=\"_blank\" href=\"https://www.paypal.com/cgi-bin/webscr?business=mikethedj4%40yahoo.com&cmd=_xclick&amount=5.0&item_name=Donation&currency_code=USD\">\n      <i class=\"fa fa-cc-paypal\"></i>\n    </a>\n  </h1>\n</div></div>");
+    $(".preloader").html("<div class=\"table\"><div class=\"cell\">\n  <h1>Creating application!</h1>\n  <img class=\"loading\" src=\"imgs/preloader.svg\">\n  \n<h1>\n    <a class=\"share\" href=\"javascript:void(0)\" onclick=\"window.plugins.socialsharing.share('I #converted a #web #app to a #Linux #application using #WebDGap!', null, null, 'https://michaelsboost.github.io/WebDGap/')\">Share</a>\n  </h1>\n</div></div>");
   }
 });
 $(".pgbappexport").click(function() {
@@ -199,19 +188,19 @@ $(".pgbappexport").click(function() {
     // alert code is where code exports
   } else {
     $(document.body).append('<div class="fixedfill preloader"></div>');
-    $(".preloader").html("<div class=\"table\"><div class=\"cell\">\n  <h1>Creating application!</h1>\n  <img class=\"loading\" src=\"imgs/preloader.svg\">\n  \n<h1>\n    <a class=\"share\" href=\"javascript:void(0)\" onclick=\"window.plugins.socialsharing.share('I #converted a #web #app to a #PhoneGap #application using #WebDGap!', null, null, 'https://michaelsboost.github.io/WebDGap/')\">Share</a>\n    <a class=\"donate\" href=\"https://cash.me/$michaelsboost\" target=\"_blank\" onclick=\"window.open('https://cash.me/$michaelsboost', '_system')\">Donate</a>\n    <a target=\"_blank\" href=\"https://www.paypal.com/cgi-bin/webscr?business=mikethedj4%40yahoo.com&cmd=_xclick&amount=5.0&item_name=Donation&currency_code=USD\">\n      <i class=\"fa fa-cc-paypal\"></i>\n    </a>\n  </h1>\n</div></div>");
+    $(".preloader").html("<div class=\"table\"><div class=\"cell\">\n  <h1>Creating application!</h1>\n  <img class=\"loading\" src=\"imgs/preloader.svg\">\n  \n<h1>\n    <a class=\"share\" href=\"javascript:void(0)\" onclick=\"window.plugins.socialsharing.share('I #converted a #web #app to a #PhoneGap #application using #WebDGap!', null, null, 'https://michaelsboost.github.io/WebDGap/')\">Share</a>\n  </h1>\n</div></div>");
   }
 });
 $("input.chromeappexport").click(function() {
   if ( document.querySelector("[data-value=description]").value ) {
     $(document.body).append('<div class="fixedfill preloader"></div>');
-    $(".preloader").html("<div class=\"table\"><div class=\"cell\">\n  <h1>Creating application!</h1>\n  <img class=\"loading\" src=\"imgs/preloader.svg\">\n  \n<h1>\n    <a class=\"share\" href=\"javascript:void(0)\" onclick=\"window.plugins.socialsharing.share('I #converted a #web #app to a #Chrome #application using #WebDGap!', null, null, 'https://michaelsboost.github.io/WebDGap/')\">Share</a>\n    <a class=\"donate\" href=\"https://cash.me/$michaelsboost\" target=\"_blank\" onclick=\"window.open('https://cash.me/$michaelsboost', '_system')\">Donate</a>\n    <a target=\"_blank\" href=\"https://www.paypal.com/cgi-bin/webscr?business=mikethedj4%40yahoo.com&cmd=_xclick&amount=5.0&item_name=Donation&currency_code=USD\">\n      <i class=\"fa fa-cc-paypal\"></i>\n    </a>\n  </h1>\n</div></div>");
+    $(".preloader").html("<div class=\"table\"><div class=\"cell\">\n  <h1>Creating application!</h1>\n  <img class=\"loading\" src=\"imgs/preloader.svg\">\n  \n<h1>\n    <a class=\"share\" href=\"javascript:void(0)\" onclick=\"window.plugins.socialsharing.share('I #converted a #web #app to a #Chrome #application using #WebDGap!', null, null, 'https://michaelsboost.github.io/WebDGap/')\">Share</a>\n  </h1>\n</div></div>");
   }
 });
 $(".chromepopexport").click(function() {
   if ( document.querySelector("[data-value=description]").value ) {
     $(document.body).append('<div class="fixedfill preloader"></div>');
-    $(".preloader").html("<div class=\"table\"><div class=\"cell\">\n  <h1>Creating application!</h1>\n  <img class=\"loading\" src=\"imgs/preloader.svg\">\n  \n<h1>\n    <a class=\"share\" href=\"javascript:void(0)\" onclick=\"window.plugins.socialsharing.share('I #converted a #web #app to a #Chrome popup #extension using #WebDGap!', null, null, 'https://michaelsboost.github.io/WebDGap/')\">Share</a>\n    <a class=\"donate\" href=\"https://cash.me/$michaelsboost\" target=\"_blank\" onclick=\"window.open('https://cash.me/$michaelsboost', '_system')\">Donate</a>\n    <a target=\"_blank\" href=\"https://www.paypal.com/cgi-bin/webscr?business=mikethedj4%40yahoo.com&cmd=_xclick&amount=5.0&item_name=Donation&currency_code=USD\">\n      <i class=\"fa fa-cc-paypal\"></i>\n    </a>\n  </h1>\n</div></div>");
+    $(".preloader").html("<div class=\"table\"><div class=\"cell\">\n  <h1>Creating application!</h1>\n  <img class=\"loading\" src=\"imgs/preloader.svg\">\n  \n<h1>\n    <a class=\"share\" href=\"javascript:void(0)\" onclick=\"window.plugins.socialsharing.share('I #converted a #web #app to a #Chrome popup #extension using #WebDGap!', null, null, 'https://michaelsboost.github.io/WebDGap/')\">Share</a>\n  </h1>\n</div></div>");
   }
 });
 
@@ -392,7 +381,6 @@ var audioCapture, videoCapture, storagePerm, setOffline, listPermissions,
             // Files for exported app
             zip.file("package.json", '{\n  "main"  : "app/index.html",\n  "name"  : "'+ $("[data-id=sitename]").val() +'",\n  "window": {\n      "toolbar" : false,\n      "icon"    : "app/icons/128.png",\n      "width"   : 1000,\n      "height"  : 600,\n      "position": "center"\n  }\n}');
             zip.file("app/index.html", '<!doctype html>\n<html>\n <head>\n    <title>'+ $("[data-id=sitename]").val() +'</title>\n    <style>\n      iframe {\n        position: absolute;\n        top: 0;\n        left: 0;\n        width: 100%;\n        height: 100%;\n        overflow: visible;\n        border: 0;\n      }\n    </style>\n  </head>\n <body>\n    <iframe src="'+ $("[data-action=website]").val() +'">\n      Your browser does not support the iFrame html elements.\n    </iframe>\n  </body>\n</html>');
-            // zip.file("README", "If WebDGap was at all helpful for you. Would you consider donating to the project?\nhttps://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BSYGA2RB5ZJCC\n\n")
             // Export application
             var content = zip.generate({type:"blob"});
             saveFile(content, $("[data-id=sitename]").val().replace(/ /g, "-").toLowerCase() + "-win32site.zip", function(){
@@ -429,7 +417,6 @@ var audioCapture, videoCapture, storagePerm, setOffline, listPermissions,
             zip.file("data/content/index.html", '<!doctype html>\n<html>\n <head>\n    <title>'+ $("[data-id=sitename]").val() +'</title>\n    <style>\n      iframe {\n        position: absolute;\n        top: 0;\n        left: 0;\n        width: 100%;\n        height: 100%;\n        overflow: visible;\n        border: 0;\n      }\n    </style>\n  </head>\n <body>\n    <iframe src="'+ $("[data-action=website]").val() +'"></iframe>\n\n    <script src="js/main.js"></script>\n  </body>\n</html>');
             zip.file("data/content/js/main.js", 'document.addEventListener("DOMContentLoaded", function() {\n  // Load library\n  var gui = require("nw.gui");\n\n  // Reference to window\n  var win = gui.Window.get();\n\n  // Create menu container\n  var Menu = new gui.Menu({\n    type: "menubar"\n  });\n\n  //initialize default mac menu\n  Menu.createMacBuiltin("'+ $("[data-id=sitename]").val() +'");\n\n  // Get the root menu from the default mac menu\n  var rootMenu = Menu.items[0].submenu;\n  var windowMenu = Menu.items[2].submenu;\n\n  // Append new item to root menu\n  windowMenu.insert(\n    new gui.MenuItem({\n      type: "normal",\n      label: "Toggle Fullscreen",\n      key: "F",\n      modifiers: "cmd",\n      click : function () {\n        win.toggleFullscreen();\n      }\n    })\n  );\n\n  windowMenu.insert(\n    new gui.MenuItem({\n      type: "normal",\n      label: "Reload App",\n      key: "r",\n      modifiers: "cmd",\n      click : function () {\n        win.reload();\n      }\n    })\n  );\n\n  // Remove About Node-Webkit\n  rootMenu.removeAt(0);\n\n  // Append Menu to Window\n  gui.Window.get().menu = Menu;\n});');
             zip.file("run.sh", "open -a /Applications/"+ $("[data-id=sitename]").val() +".app/Contents/data/"+ $("[data-id=sitename]").val().replace(/ /g, "") +".app");
-            // zip.file("README", "If WebDGap was at all helpful for you. Would you consider donating to the project?\nhttps://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BSYGA2RB5ZJCC\n\n");
             // Export application
             var content = zip.generate({type:"blob"});
             saveFile(content, $("[data-id=sitename]").val().replace(/ /g, "-").toLowerCase() + "-macsite.zip", function(){
@@ -877,7 +864,6 @@ $(document).ready(function() {
                 // For 32bit Windows Application
                 zip.file("package.json", '{\n  "main"  : "index.html",\n  "name"  : "'+ $("[data-id=sitename]").val() +'",\n  "window": {\n      "toolbar" : false,\n      "icon"    : "app/icons/128.png",\n      "width"   : 1000,\n      "height"  : 600,\n      "position": "center"\n  }\n}');
                 zip.file("index.html", '<!doctype html>\n<html>\n <head>\n    <title>'+ $("[data-id=sitename]").val() +'</title>\n    <style>\n      iframe {\n        position: absolute;\n        top: 0;\n        left: 0;\n        width: 100%;\n        height: 100%;\n        overflow: visible;\n        border: 0;\n      }\n    </style>\n  </head>\n <body>\n    <iframe src="app/index.html"></iframe>\n  </body>\n</html>');
-                // zip.file("README", "If WebDGap was at all helpful for you. Would you consider donating to the project?\nhttps://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BSYGA2RB5ZJCC\n\n");
 
                 // Export your application
                 var content = zip.generate({type:"blob"});
@@ -912,7 +898,6 @@ $(document).ready(function() {
                 // For 32bit Windows Application
                 zip.file("package.json", '{\n  "main"  : "index.html",\n  "name"  : "'+ $("[data-id=sitename]").val() +'",\n  "window": {\n      "toolbar" : false,\n      "icon"    : "app/icons/128.png",\n      "width"   : 1000,\n      "height"  : 600,\n      "position": "center"\n  }\n}');
                 zip.file("index.html", '<!doctype html>\n<html>\n <head>\n    <title>'+ $("[data-id=sitename]").val() +'</title>\n    <style>\n      iframe {\n        position: absolute;\n        top: 0;\n        left: 0;\n        width: 100%;\n        height: 100%;\n        overflow: visible;\n        border: 0;\n      }\n    </style>\n  </head>\n <body>\n    <iframe src="app/index.html"></iframe>\n  </body>\n</html>');
-                // zip.file("README", "If WebDGap was at all helpful for you. Would you consider donating to the project?\nhttps://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BSYGA2RB5ZJCC\n\n");
 
                 // Export your application
                 var content = zip.generate({type:"blob"});
@@ -1027,7 +1012,6 @@ $(document).ready(function() {
                 zip.file("data/content/index.html", '<!doctype html>\n<html>\n <head>\n    <title>'+ $("[data-id=sitename]").val() +'</title>\n    <style>\n      iframe {\n        position: absolute;\n        top: 0;\n        left: 0;\n        width: 100%;\n        height: 100%;\n        overflow: visible;\n        border: 0;\n      }\n    </style>\n  </head>\n <body>\n    <iframe src="app/index.html"></iframe>\n\n    <script src="js/main.js"></script>\n  </body>\n</html>');
                 zip.file("data/content/js/main.js", 'document.addEventListener("DOMContentLoaded", function() {\n  // Load library\n  var gui = require("nw.gui");\n\n  // Reference to window\n  var win = gui.Window.get();\n\n  // Create menu container\n  var Menu = new gui.Menu({\n    type: "menubar"\n  });\n\n  //initialize default mac menu\n  Menu.createMacBuiltin("'+ $("[data-id=sitename]").val() +'");\n\n  // Get the root menu from the default mac menu\n  var rootMenu = Menu.items[0].submenu;\n  var windowMenu = Menu.items[2].submenu;\n\n  // Append new item to root menu\n  windowMenu.insert(\n    new gui.MenuItem({\n      type: "normal",\n      label: "Toggle Fullscreen",\n      key: "F",\n      modifiers: "cmd",\n      click : function () {\n        win.toggleFullscreen();\n      }\n    })\n  );\n\n  windowMenu.insert(\n    new gui.MenuItem({\n      type: "normal",\n      label: "Reload App",\n      key: "r",\n      modifiers: "cmd",\n      click : function () {\n        win.reload();\n      }\n    })\n  );\n\n  // Remove About Node-Webkit\n  rootMenu.removeAt(0);\n\n  // Append Menu to Window\n  gui.Window.get().menu = Menu;\n});');
                 zip.file("run.sh", "open -a /Applications/"+ $("[data-id=sitename]").val().replace(/ /g, "") +".app/Contents/data/"+ $("[data-id=sitename]").val().replace(/ /g, "") +".app");
-                // zip.file("README", "If WebDGap was at all helpful for you. Would you consider donating to the project?\nhttps://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BSYGA2RB5ZJCC\n\n");
 
                 // Export your application
                 var content = zip.generate({type:"blob"});
@@ -1100,7 +1084,6 @@ $(document).ready(function() {
                 zip.file("html/embed.html", "<!DOCTYPE html>\n<html>\n  <head>\n    <meta charset=\"UTF-8\">\n    <title>"+ $("[data-id=sitename]").val() +"</title>\n    <link rel=\"stylesheet\" href=\"../css/reset.css\">\n    <link rel=\"stylesheet\" href=\"../css/style.css\">\n  </head>\n  <body>\n    <iframe src=\"app/index.html\">\n  </body>\n</html>");
                 zip.file("js/background.js", "/**\n * Listens for the app launching then creates the window\n *\n * @see http://developer.chrome.com/apps/app.runtime.html\n * @see http://developer.chrome.com/apps/app.window.html\n */\nchrome.app.runtime.onLaunched.addListener(function () {\n    runApp();\n});\n\n/**\n * Listens for the app restarting then re-creates the window.\n *\n * @see http://developer.chrome.com/apps/app.runtime.html\n */\nchrome.app.runtime.onRestarted.addListener(function () {\n    runApp();\n});\n\n/**\n * Creates the window for the application.\n *\n * @see http://developer.chrome.com/apps/app.window.html\n */\nfunction runApp() {\n    // Creat a new Chrome app window\n    chrome.app.window.create('html/embed.html', {\"id\":\"embed\",\"frame\":{\"type\":\"chrome\"},\"innerBounds\":{\"width\":1180,\"height\":900}}, onWindowLoaded());\n}\n\n/**\n * Called before the contentWindow's onload event\n *\n * @see http://developer.chrome.com/apps/app.window.html\n */\nfunction onWindowLoaded(popup) {\n    return function (win) {\n        // On window loaded event\n        win.contentWindow.onload = function () {\n            // Get webview \n            var webview = win.contentWindow.document.getElementById('webview');\n\n            // Sign up for 'permissionrequest' event\n            webview.addEventListener('permissionrequest', function (e) {\n                // Allow all permission requests\n                e.request.allow();\n            });\n\n            // Sign up for 'newwindow' event\n            // Emitted when a target='_blank' link is clicked within the webview\n            webview.addEventListener('newwindow', function (e) {\n                // Popup?\n                if (e.initialWidth > 0 && e.initialHeight > 0) {\n                    // Open it in a popup window with a set width and height\n                    return chrome.app.window.create('html/embed.html', { frame: { type: 'chrome' }, innerBounds: { width: e.initialWidth, height: e.initialHeight } }, onWindowLoaded(e));\n                }\n\n                // Open the link in a new browser tab/window\n                win.contentWindow.open(e.targetUrl);\n            });\n\n            // Is this a popup window?\n            if (popup) {\n                // Override webview source with popup's target URL\n                webview.src = popup.targetUrl;\n            }\n        };\n    };\n}\n");
                 zip.file("manifest.json", "{\n   \"app\": {\n      \"background\": {\n         \"pages\": [ \"html/embed.html\" ],\n         \"scripts\": [ \"js/background.js\" ]\n      }\n   },\n   \"description\": \""+ $("[data-value=description]").val() +"\",\n   \"icons\": {\n      \"128\": \"img/128.png\",\n      \"16\" : \"img/16.png\",\n      \"32\" : \"img/32.png\",\n      \"64\" : \"img/64.png\"\n   },\n   \"manifest_version\": 2,\n   \"name\": \""+ $("[data-id=sitename]").val() +"\",\n   "+ setOffline +",\n   \"permissions\": [ \"http://*/\", \"https://*/\""+ listPermissions +" ],\n   \"version\": \""+ $("[data-value=version]").val() +"\"\n}\n");
-                // zip.file("README", "If WebDGap was at all helpful for you. Would you consider donating to the project?\nhttps://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BSYGA2RB5ZJCC\n\n");
 
                 // Export Chrome Application
                 var content = zip.generate({type:"blob"});
@@ -1136,7 +1119,6 @@ $(document).ready(function() {
                 zip.file("css/style.css", "html, body {\n  margin: 0;\n  padding: 0;\n  width: 100%;\n  height: 100%;\n}\n\nbody {\n  min-width: 300px;\n  min-height: 420px;\n}\n\nwebview, iframe {\n  width: 100%;\n  height: 100%;\n  border: 0;\n}");
                 zip.file("index.html", "<!DOCTYPE html>\n<html>\n  <head>\n    <title>"+ $("[data-id=sitename]").val() +"</title>\n    <link rel=\"stylesheet\" href=\"css/style.css\" />\n  </head>\n  <body>\n    <iframe src=\"app/index.html\">\n      Your Chromebook does not support the iFrame html element.\n    </iframe>\n  </body>\n</html>");
                 zip.file("manifest.json", "{\n  \"manifest_version\": 2,\n  \"name\": \""+ $("[data-id=sitename]").val() +"\",\n  \"short_name\": \""+ $("[data-id=sitename]").val() +"\",\n  \"description\": \""+ $("[data-value=description]").val() +"\",\n  \"version\": \""+ $("[data-value=version]").val() +"\",\n  \"minimum_chrome_version\": \"38\",\n  \"permissions\": [ \"storage\", \"unlimitedStorage\", \"http://*/\", \"https://*/\" ],\n  \"icons\": {\n    \"16\": \"assets/16.png\",\n    \"32\": \"assets/32.png\",\n    \"64\": \"assets/64.png\",\n    \"128\": \"assets/128.png\"\n  },\n\n  \"browser_action\": {\n    \"default_icon\": \"assets/128.png\",\n    \"default_title\": \""+ $("[data-id=sitename]").val() +"\",\n    \"default_popup\": \"index.html\"\n  },\n  \n  \"content_security_policy\": \"script-src 'self' 'unsafe-eval'; object-src 'self'\"\n}");
-                // zip.file("README", "If WebDGap was at all helpful for you. Would you consider donating to the project?\nhttps://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BSYGA2RB5ZJCC\n\n");
 
                 // Export Chrome Extension
                 var content = zip.generate({type:"blob"});
