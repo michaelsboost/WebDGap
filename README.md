@@ -82,7 +82,7 @@ For command line use you can use [nativefier](https://github.com/jiahaog/nativef
 
 Want to contribute? Great!  
 
-*As of April 13th 2018 WebDGap is no longer an active project.  
+*As of October 19th 2019 WebDGap is no longer an active project.  
 All updates as of that date and on are solely contributor based implementations.*
 
 You can submit a pull request or simply share the project :)

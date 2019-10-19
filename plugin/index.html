@@ -9,13 +9,17 @@
     <meta name="author" content="Michael Schwartz">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="assets/images/logo.png" type="image/x-icon">
-    <meta name="description" content="">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Franklin:400,400i,600,600i">
     <link rel="stylesheet" href="assets/tether/tether.min.css">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/dropdown/css/style.css">
     <link rel="stylesheet" href="assets/theme/css/style.css">
     <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
+    <meta property="og:url"         content="https://michaelsboost.com/WebDGap" />
+    <meta property="og:type"        content="website" />
+    <meta property="og:title"       content="WebDGapJS" />
+    <meta property="og:description" content="Easily convert websites to multi-platform desktop apps with 1 line of code!" />
+    <meta property="og:image"       content="https://raw.githubusercontent.com/michaelsboost/WebDGap/gh-pages/imgs/icon-square.svg" />
     <style>
       select.dropdown {
        cursor: pointer;
@@ -39,6 +43,13 @@
     </style>
     <script>
       document.addEventListener("DOMContentLoaded", function() {
+        var website = "https://"+ document.domain +"/";
+        if (!document.domain) {
+          website = "https://michaelsboost.com/";
+        }
+        appimg.value = website + "WebDGap/assets/images/icon.svg";
+        appurl.value = website + "WebDGap/app/";
+        
         document.querySelector("[data-action=download]").onclick = function() {
           webdgap(""+osexport.value+"", ""+appname.value+"", ""+appimg.value+"", ""+appurl.value+"");
         };
@@ -117,7 +128,7 @@
               <h1 class="mbr-section-title display-1 heading-title">WebDGapJS</h1>
               <p class="mbr-section-subtitle sub-2 heading-text" data-language="appdescrip">Exporting a website as a desktop application has never been easier!</p>
               <div class="mbr-section-subtitle sub-2 heading-text">
-                webdgap("<select id="osexport"><option>win</option><option>win32</option><option>mac</option><option>lin</option><option>lin32</option><option selected>chrome</option><option>chromeext</option><option>phonegap</option></select>", "<input id="appname" type="text" value="WebDGap">", "<input id="appimg" type="text" value="https://michaelsboost.github.io/WebDGap/assets/images/icon.svg">", "<input id="appurl" type="text" value="https://michaelsboost.github.io/WebDGap/app/">");
+                webdgap("<select id="osexport"><option>win</option><option>win32</option><option>mac</option><option>lin</option><option>lin32</option><option selected>chrome</option><option>chromeext</option><option>phonegap</option></select>", "<input id="appname" type="text" value="WebDGap">", "<input id="appimg" type="text">", "<input id="appurl" type="text">");
               </div>
               <div class="mbr-section-btn">
                 <a class="btn btn-lg btn-success" data-action="download" data-language="lrundemo">Test Out</a>
